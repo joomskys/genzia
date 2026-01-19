@@ -1,0 +1,44 @@
+// Sidebar
+#cms-sidebar{
+	.cms-widget,
+	.widget{
+		&:not(:last-child){
+			margin-bottom: 40px;
+		}
+		&:last-child{
+			position: sticky;
+			top: 10px;
+		}
+	}
+	&.cms-shop-sidebar{
+		.cms-widget,
+		.widget{
+			&:not(:last-child){
+				margin-bottom: 56px;
+			}
+		}
+	}
+}
+// Blog Sidebar
+.cms-blog-widget{
+	background-color: var(--cms-bg-light);
+	padding: 40px;
+	border-radius: 16px;
+	@media #{$max-tablet}{
+		padding: 40px 20px;
+	}
+	@media #{$max-mobile-extra}{
+		padding: 40px;
+	}
+	@media #{$max-xsmobile}{
+		padding: 40px 20px;
+	}
+	// Search
+	&.widget_cms_search{
+		background-color: var(--cms-accent-regular);
+		.cms-wgtitle{
+			color: var(--cms-white);
+		}
+	}
+}
+// Shop Sidebar

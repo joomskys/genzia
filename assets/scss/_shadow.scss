@@ -1,0 +1,30 @@
+$cms_shadow_lists:( //'7' : '0 0 0 3px var(--cms-shadow-color) inset',
+    '1' : '0px 4px 24px rgba(22, 22, 22, 0.07)',
+    '2' : '0px 4px 24px rgba(22, 22, 22, 0.12)',
+    'none' : 'none'
+);
+@each $name, $shadow in $cms_shadow_lists{
+    .cms-shadow-#{$name},
+	.elementor img.cms-shadow#{$name},
+	.cms-hover-shadow-#{$name}:hover,
+	.elementor .cms-hover-shadow-#{$name}:hover,
+	.cms-hover-change:hover .cms-on-hover-shadow-#{$name}{
+        @include box-shadow(#{$shadow}!important);
+    }
+    // drop shadow
+	.cms-drop-shadow-#{$name},
+	.cms-hover-drop-shadow-#{$name}:hover,
+	.cms-hover-change:hover .cms-on-hover-drop-shadow-#{$name}{
+		@include drop-shadow(#{$shadow});
+	}
+	/**
+	 * Filter Shadow 
+	 * use for wrap of clip-path
+	 * 
+	*/
+	.cms-filter-shadow-#{$name},
+	.cms-hover-filter-shadow-#{$name}:hover,
+	.cms-hover-change:hover .cms-on-hover-filter-shadow-#{$name}{
+		filter: drop-shadow(#{$shadow});
+	}
+}

@@ -1,0 +1,87 @@
+.cms-theme-cursor{
+    //cursor: none;
+}
+.cursor-close-black{
+    cursor: url('../images/cursor/pointer-close-black.png'), auto;
+}
+.cursor-close-white{
+    cursor: url('../images/cursor/pointer-close-white.png'), auto;
+}
+.cursor-pointer{
+    cursor: pointer;
+}
+.drag-cursor{
+    cursor:none;
+}
+//
+#cms-theme-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999999;
+    visibility: hidden;
+    width: 10px;
+    height: 10px;
+    &.cms-visible{
+        visibility: visible;
+    }
+    // Drag cursor
+    &[class*="cms-drag"]{
+        cursor: none;
+    }
+    .cms--drag,
+    .cms--drag-vert{
+        visibility: hidden;
+        opacity: 0;
+        cursor: none;
+        width: 124px;
+        height: 124px;
+        border:1px solid;
+        border-radius: 50%;
+        @include transition();
+    }
+    &.cms-drag-white .cms--drag{
+        boder-color: white;
+        color: white;
+    }
+    &.cms-drag-black .cms--drag{
+        boder-color: black;
+        color: black;
+    }
+    &.cms-drag-accent .cms--drag{
+        border-color: var(--cms-accent-regular);
+        color: var(--cms-accent-regular);
+    }
+    // On hover
+    &.cms-drag{
+        .cms--drag{
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+    &.cms-drag-vert.cms-visible{
+        .cms--drag-vert{
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+    // Cursor Text
+    &.cms-cursor-text{
+        width: 123px;
+        height: 123px;
+        border-radius: 50%;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        font-weight: 700;
+        background-color: var(--cms-accent-regular);
+        color:white;
+        &:not(.cms-visible){
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}

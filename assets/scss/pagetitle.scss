@@ -1,0 +1,91 @@
+// Page Title
+//--------------------------------------------------
+/* Post Page Title */
+$ptitle_spacing_top: 148px;
+$ptitle_spacing_top_small: 70px;
+
+$ptitle_spacing_bot: 0;
+$ptitle_spacing_bot_small: 0;
+//
+$ptitle_spacing_top2: 128px;
+$ptitle_spacing_top_small2: 70px;
+
+$ptitle_spacing_bot2: 140px;
+$ptitle_spacing_bot_small2: 70px;
+
+//
+.cms-ptitle-1{
+	padding: $ptitle_spacing_top 0 $ptitle_spacing_bot;
+	@media #{$max-tablet}{
+		padding: $ptitle_spacing_top_small 0 $ptitle_spacing_bot_small;
+	}
+}
+//
+.cms-ptitle-2{
+	padding: $ptitle_spacing_top2 0 $ptitle_spacing_bot2;
+	@media #{$max-tablet}{
+		padding: $ptitle_spacing_top_small2 0 $ptitle_spacing_bot_small2;
+	}
+}
+//
+.cms-ptitle-3{
+	padding: 93px 0 91px;
+}
+.cms-ptitle{
+	color: var(--cms-ptitle-color);
+	position: relative;
+	background-image: var(--cms-ptitle-bg-image);
+	background-color: var(--cms-ptitle-bg-color);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	//background-attachment: fixed;
+	&:before,
+	&:after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+	&:before{
+		background-color: var(--cms-ptitle-bg-overlay);
+		z-index: 1;
+	}
+	&:after{
+		background: linear-gradient(0deg, rgba($primary_color_regular, 0.1), rgba($primary_color_regular, 0.1));
+	}
+	.title{
+		color: var(--cms-ptitle-color);
+	}
+	// Header Transparent
+	&.ptitle-header-transparent{
+		padding-top: calc(#{$ptitle_spacing_top} + var(--cms-wrap-header-height, var(--cms-header-height)));
+		@media #{$max-tablet}{
+			padding-top: calc(#{$ptitle_spacing_top_small} + var(--cms-wrap-header-height, var(--cms-header-height)));
+		}
+		// Layout 3
+		&.cms-ptitle-3{
+			padding-top: calc(93px  + var(--cms-wrap-header-height, var(--cms-header-height)));
+			@media #{$max-tablet}{
+				padding-top: calc(68px  + var(--cms-wrap-header-height, var(--cms-header-height)));
+			}
+		}
+	}
+	// Blog Standard
+}
+/* Breadcrumb */
+.cms-breadcrumb {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	margin: 0;
+	text-align: center;
+	gap: 8px;
+	.cms-bhome{
+		@include transform(translateY(-3px));
+		margin-inline-end: 5px;
+		font-size: 18px;
+	}
+}

@@ -1,0 +1,144 @@
+.welcome-page {
+    min-height: 75vh;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -ms-flex-align: center !important;
+    align-items: center !important;
+}
+
+.welcome-page-inner {
+    margin: 0 auto;
+    position: relative;
+    z-index: 999;
+    padding: 3em;
+    border-radius: 12px;
+    background: #fff;
+    text-align: center;
+    min-width: 992px;
+    -webkit-box-shadow: 1px 1px 10px 0 rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 1px 1px 10px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 1px 1px 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.welcome-page-content {
+    padding: 2em 3em 3em 3em;
+    position: relative;
+}
+
+.welcome-page .welcome-page-content button {
+    background-color: #00c881;
+    border: none;
+    color: #fff;
+    padding: 8px 30px;
+    text-transform: uppercase;
+    font-size: 18px;
+    line-height: 1.5;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: 0.3s all;
+    -webkit-transition: 0.3s all;
+    -moz-transition: 0.3s all;
+    -o-transition: 0.3s all;
+    -ms-transition: 0.3s all;
+    border-radius: 35px;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    -ms-border-radius: 35px;
+    -o-border-radius: 35px;
+}
+
+.welcome-page .welcome-page-content button:hover {
+    background-color: #ddd;
+    color: #000;
+}
+
+.welcome-page .welcome-page-content .welcome-page-title {
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.welcome-page .welcome-page-content .welcome-page-description {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.welcome-page .welcome-page-content .welcome-page-actions {
+    margin-bottom: 15px;
+}
+
+.font-weight-bold {
+    font-weight: bold;
+}
+
+.font-italic {
+    font-style: italic;
+}
+
+.welcome-page .button.loading:before, .gt-notice .button.loading:before {
+    content: "\f463";
+    display: inline-block;
+    font: normal 20px/1 dashicons;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    vertical-align: top;
+    animation: rotation 2s infinite linear;
+    margin: 3px 5px 0 -2px;
+}
+
+.gt-notice {
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.08) !important;
+    overflow: hidden !important;
+    border-radius: 0.25rem !important;
+    border: 1px solid #dee2e6 !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
+
+.gt-notice .gt-notice-inner {
+    display: flex;
+    padding: 30px;
+}
+
+.gt-notice-body {
+    padding-left: 30px;
+}
+
+.gt-theme-author {
+    color: #646970;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.gt-theme-description {
+    color: #50575e;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.gt-notice-actions-description {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.gt-notice-actions-note {
+    margin-top: 15px;
+}
+
+.gt-divide {
+    margin: 15px 0;
+}
+
+.notice.gt-notice {
+    border: none;
+    box-shadow: none;
+    padding: 0;
+}
+
+.wp-core-ui .notice.gt-notice.is-dismissible {
+    padding-right: 0;
+}

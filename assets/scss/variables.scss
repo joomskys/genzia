@@ -1,0 +1,201 @@
+$cms_theme_colors_custom:();
+$_cms_theme_colors :join($cms_theme_colors, $cms_theme_colors_custom);
+
+// Color
+$_white: #fff;
+$white: $_white;
+$border-color: var(--cms-border-color);
+// Rating
+$star_icon_font: "cmsi";
+$star_icon: url('../svgs/core/star.svg');
+$star_icon_filled: url('../svgs/star-filled.svg');
+$star_icon_color: var(--cms-warning);
+$star_icon_filled_color: var(--cms-warning);
+$star_icon_w: 14px;
+$star_icon_h: 14px;
+$star_icon_space: 5px;
+// WooCommerce
+$wc_star_color: var(--cms-warning);
+$wc_star_hover_color: var(--cms-warning);
+
+// Grid
+$gutters: 32px;
+$gap: $gutters;
+$container-width: $elementor_container_width; //var(--container-max-width, 1280px);
+
+// Modal
+$modal_slide_width: var(--cms-modal-width, 400px);
+// Mousewheel
+$mousewheel-width: 80px;
+
+// Reponsive
+$mobile-menu-screen: $container-width;
+$min-desktop-menu: "screen and (min-width: #{$mobile-menu-screen})";
+$max-mobile-menu: "screen and (max-width: #{$mobile-menu-screen} - 1px)";
+
+$min-wide: "screen and (min-width: 1600px)";
+
+$min-desktop-large: "screen and (min-width: 1441px)";
+$min-desktop: "screen and (min-width: 1201px)";
+
+$max-laptop-large: "screen and (max-width: 1599px)";
+$max-laptop: "screen and (max-width: 1440px)";
+$min-laptop: "screen and (min-width: 1201px)";
+
+$max-tablet-extra: "screen and (max-width: 1200px)";
+$min-tablet-extra: "screen and (min-width: 1025px)";
+$min-881: "screen and (min-width: 881px)";
+
+$max-tablet: "screen and (max-width: 1024px)";
+$min-tablet: "screen and (min-width: 768px)";
+$min-max-tablet: "screen and (min-width: 769px) and (max-width: 1024px)";
+
+$max-xmobile: "screen and (max-width: 1023px)";
+
+$max-mobile-extra : "screen and (max-width: 880px)";
+$min-mobile-extra : "screen and (min-width: 768px)";
+
+$max-mobile: "screen and (max-width: 767px)";
+
+$min-smobile: "screen and (min-width: 576px)";
+$max-smobile: "screen and (max-width: 575px)";
+
+$max-xsmobile: "screen and (max-width: 429px)";
+
+$min-widescreen : "screen and (min-width: 1601px)";
+
+$hidden-wide: "screen and (min-width: 1600px)";
+$hidden-desktop: "screen and (min-width: 1367px)";
+
+$hidden-min-mobile-extra: "screen and (min-width: 881px)";
+$hidden-min-mobile-extra2: "screen and (min-width: 768px)";
+
+$hidden-laptop-large: "screen and (max-width: 1599px)";
+$hidden-laptop: "screen and (max-width: 1366px)";
+
+$hidden-tablet: "screen and (min-width: 1025px)";
+$hidden-max-tablet: "screen and (max-width: 1024px)";
+
+$hidden-max-mobile-extra: "screen and (max-width: 779px)";
+
+$hidden-smobile: $max-smobile;
+
+// Form
+$placeholder_color: var(--cms-body);
+$form_field_height: var(--cms-form-field-height, 3.222rem);
+$form_field_radius: 10px;
+
+$form_field_border: 0 0 0 1px var(--cms-bg-light) inset;
+$form_field_border_hover: 0 0 0 1px var(--cms-accent) inset;
+$form_field_border_width: 1px;
+$form_field_border_color: var(--cms-bg-light);
+$form_field_border_color_hover: var(--cms-accent);
+
+$form_field_color: var(--cms-body);
+$form_field_bg_color: var(--cms-bg-light);
+
+$form_btn_color: var(--cms-white);
+$form_btn_bg_color: var(--cms-menu);
+$form_btn_color_hover: var(--cms-white);
+$form_btn_bg_hover_color: var(--cms-accent);
+
+$form_field_checkbox_border: 0 0 0 1px var(--cms-bg-light) inset;
+$form_field_checkbox_border_hover: 0 0 0 1px var(--cms-accent) inset;
+$form_field_checkbox_bg: transparent;
+$form_field_checkbox_bg_hover: var(--cms-accent);
+// fix
+:root{
+	// Container Space Left
+	--cms-container-space:calc(calc(100vw - #{$container-width})/2);
+
+	// Elementor Default
+	--container-max-width : #{$container-width + $gutters};
+	--container-default-padding-block-start: #{$gutters/2};
+	--container-default-padding-inline-end: #{$gutters/2};
+	--container-default-padding-block-end: #{$gutters/2};
+    --container-default-padding-inline-start: #{$gutters/2};
+	// Fix
+	--cms-accent: var(--cms-accent-regular);
+	--cms-accent-rgb: var(--cms-accent-regular-rgb);
+	--cms-accent-85: #{rgba(var(--cms-accent-regular-rgb),0.85)};
+
+	--cms-primary: var(--cms-primary-regular);
+	--cms-primary-rgb: var(--cms-primary-regular-rgb);
+
+	--cms-white: #{$_white};
+	--cms-transparent: transparent;
+	--cms-white-rgb: 255,255,255;
+	--cms-white-20: #{rgba(255,255,255,0.2)};
+	--cms-white-35: #{rgba(255,255,255,0.35)};
+	--cms-white-50: #{rgba(255,255,255,0.5)};
+	--cms-white-60: #{rgba(255,255,255,0.6)};
+	--cms-white-70: #{rgba(255,255,255,0.7)};
+	--cms-border-color: $custom_color_divider;
+	--cms-body: var(--cms-body-color);
+	--cms-warning: #FFAA00;
+	--cms-error: #EE443F;
+	--cms-invalid-bg: #f9f6f2;
+	--cms-invalid-color: #282828;
+	//
+	--cms-divider-30:#{rgba(var(--cms-divider-rgb), 0.3)};
+	--cms-divider-50:#{rgba(var(--cms-divider-rgb), 0.5)};
+	--cms-divider-light:var(--cms-divider-50);
+	--cms-stroke-55:#{rgba(var(--cms-stroke-rgb), 0.55)};
+	// Custom color from main color
+	--cms-menu-60:#{rgba(var(--cms-menu-rgb), 0.6)};
+	--cms-menu-80:#{rgba(var(--cms-menu-rgb), 0.8)};
+	--cms-heading-15:#{rgba(var(--cms-heading-regular-rgb), 0.15)};
+	--cms-heading-80:#{rgba(var(--cms-heading-regular-rgb), 0.8)};
+	// Dropdown
+	--dropdown-regular: var(--cms-menu);
+	--dropdown-hover: var(--cms-accent);
+	--dropdown-active: var(--cms-accent);
+	--dropdown-bg: var(--cms-white);
+	--dropdown-shadow: 0px 4px 24px rgba(22, 22, 22, 0.12);
+	--dropdown-radius:10px;
+	--dropdown-radius-mobile:10px;
+	// Form
+	--cms-default-form-field-height: 58px;
+	--cms-label-color: var(--cms-body);
+	--cms-form-field-border-style: solid;
+	--cms-form-field-border-width:1px;
+	--cms-form-field-border-color: #{$form_field_border_color};
+	--cms-form-field-radius: #{$form_field_radius};
+	--cms-form-field-border: #{$form_field_border};
+	--cms-form-field-padding-top:15px;
+	--cms-form-field-padding-end:24px;
+	--cms-form-field-padding-bottom:15px;
+	--cms-form-field-padding-start:24px;
+	--cms-form-field-min-width:100%;
+	--cms-form-field-width:100%;
+	--cms-form-field-color: #{$form_field_color};
+	--cms-form-field-bg-color: #{$form_field_bg_color};
+	--cms-form-field-border-hover: #{$form_field_border_hover};
+	--cms-form-field-bg-hover-color: var(--cms-form-field-bg-color, #{$form_field_bg_color});
+	--cms-form-field-border-style-hover: var(--cms-form-field-border-style);
+	--cms-form-field-border-width-hover: var(--cms-form-field-border-width);
+	--cms-form-field-border-color-hover: #{$form_field_border_color_hover};
+	--cms-form-input-min-width: 100%;
+	--cms-form-input-max-width: 100%;
+	// select
+	--cms-form-select-height:#{ $form_field_height};
+	--cms-form-select-border: var(--cms-form-field-border);
+	--cms-form-select-radius: var(--cms-form-field-radius);
+	--cms-form-select-padding-top: var(--cms-form-field-padding-top);
+	--cms-form-select-padding-end: var(--cms-form-field-padding-end);
+	--cms-form-select-padding-bottom: var(--cms-form-field-padding-bottom);
+	--cms-form-select-padding-start: var(--cms-form-field-padding-start);
+	--cms-form-field-textarea-padding-top:15px;
+	--cms-form-field-textarea-padding-bot:15px;
+	--cms-form-field-textarea-border-width: var(--cms-form-field-border-width);
+	--cms-form-textarea-radius: var(--cms-form-field-radius);
+	--cms-form-textarea-height: 108px;
+	--cms-form-textarea-max-height: auto;
+	--cms-placeholder-color: #{$placeholder_color};
+	// btn
+	--cms-form-btn-color:#{$form_btn_color};
+	--cms-form-btn-bg: #{$form_btn_bg_color};
+	--cms-form-btn-height: #{$form_field_height};
+	--cms-form-btn-color-hover: #{$form_btn_color_hover};
+	--cms-form-btn-bg-hover: #{$form_btn_bg_hover_color};
+}

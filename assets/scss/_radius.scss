@@ -1,0 +1,257 @@
+// All
+.cms-radius{
+	border-radius: var(--cms-radius, 0);
+}
+$cms_radius:(4, 6, 10, 16);
+@each $size in $cms_radius{
+	.cms-radius-#{$size},
+	.elementor img.cms-radius-#{$size}{
+		@include border-radius(#{$size}px);
+	}
+}
+// Top Left
+$cms_radius_tl:();
+@each $size in $cms_radius_tl{
+	.cms-radius-tl-#{$size},
+	.elementor img.cms-radius-tl-#{$size}{
+		@include border-radius(#{$size}px 0 0 0);
+		[dir="rtl"] &{
+			@include border-radius(0 #{$size}px 0 0);
+		}
+	}
+}
+// Top Right
+$cms_radius_tr:();
+@each $size in $cms_radius_tr{
+	.cms-radius-tr-#{$size},
+	.elementor img.cms-radius-tr-#{$size}{
+		@include border-radius(0 #{$size}px 0 0);
+		[dir="rtl"] &{
+			@include border-radius(#{$size}px 0 0 0);
+		}
+	}
+}
+// Bottom Left
+$cms_radius_bl:();
+@each $size in $cms_radius_bl{
+	.cms-radius-bl-#{$size},
+	.elementor img.cms-radius-bl-#{$size}{
+		@include border-radius(0 0 0 #{$size}px);
+		[dir="rtl"] &{
+			@include border-radius(0 0 #{$size}px 0);
+		}
+	}
+}
+// Bottom Right
+$cms_radius_br:();
+@each $size in $cms_radius_br{
+	.cms-radius-br-#{$size},
+	.elementor img.cms-radius-br-#{$size}{
+		@include border-radius(0 0 #{$size}px 0);
+		[dir="rtl"] &{
+			@include border-radius(0 0 0 #{$size}px);
+		}
+	}
+}
+// Top Left / Top Right
+$cms_radius_tltr:(16);
+@each $size in $cms_radius_tltr{
+	.cms-radius-tltr-#{$size},
+	.elementor img.cms-radius-tltr-#{$size}{
+		@include border-radius(#{$size}px #{$size}px 0 0!important);
+	}
+}
+// Top Left / Top Right / Bottom right
+$cms_radius_trb:();
+@each $size in $cms_radius_trb{
+	.cms-radius-tltrbr-#{$size},
+	.elementor img.cms-radius-tltrbr-#{$size}{
+		@include border-radius(#{$size}px #{$size}px #{$size}px 0!important);
+		[dir="rtl"] &{
+			@include border-radius(#{$size}px #{$size}px 0 #{$size}px!important);
+		}
+	}
+}
+// Top Left / Top Right / Bottom Left
+$cms_radius_tltrbl:();
+@each $size in $cms_radius_tltrbl{
+	.cms-radius-tltrbl-#{$size},
+	.elementor img.cms-radius-tltrbl-#{$size}{
+		@include border-radius(#{$size}px #{$size}px 0 #{$size}px !important);
+		[dir="rtl"] &{
+			@include border-radius(#{$size}px #{$size}px #{$size}px 0 !important);
+		}
+	}
+}
+// Top left / Bottom left
+$cms_radius_tlbl:();
+@each $size in $cms_radius_tlbl{
+	.cms-radius-tlbl-#{$size},
+	.elementor img.cms-radius-tlbl-#{$size}{
+		border-radius:#{$size}px 0 0 #{$size}px;
+		[dir="rtl"] &{
+			border-radius:0 #{$size}px #{$size}px 0;
+		}
+	}
+}
+// Top left / Bottom Right
+$cms_radius_tlbr:();
+@each $size in $cms_radius_tlbr{
+	.cms-radius-tlbr-#{$size},
+	.elementor img.cms-radius-tlbr-#{$size}{
+		@include border-radius(#{$size}px 0 #{$size}px 0!important);
+		[dir="rtl"] &{
+			@include border-radius(0 #{$size}px 0 #{$size}px!important);
+		}
+	}
+}
+// Top left / Bottom Right / Bottom Left
+$cms_radius_tbl:(16);
+@each $size in $cms_radius_tbl{
+	.cms-radius-tlblbr-#{$size},
+	.elementor img.cms-radius-tlblbr-#{$size}{
+		@include border-radius(#{$size}px 0 #{$size}px #{$size}px!important);
+		[dir="rtl"] &{
+			@include border-radius(0 #{$size}px #{$size}px #{$size}px!important);
+		}
+	}
+}
+// Top Right / Bottom Right / Bottom Left
+$cms_radius_trblbr:(16);
+@each $size in $cms_radius_trblbr{
+	.cms-radius-trblbr-#{$size},
+	.elementor img.cms-radius-trblbr-#{$size}{
+		@include border-radius(0 #{$size}px #{$size}px #{$size}px!important);
+		[dir="rtl"] &{
+			@include border-radius(#{$size}px #{$size}px #{$size}px 0!important);
+		}
+	}
+}
+// Top right / Bottom Right
+$cms_radius_trbr:();
+@each $size in $cms_radius_trbr{
+	.cms-radius-trbr-#{$size},
+	.elementor img.cms-radius-trbr-#{$size}{
+		border-top-right-radius:#{$size}px;
+	    border-bottom-right-radius: #{$size}px;
+		[dir="rtl"] &{
+			border-top-left-radius:#{$size}px;
+	    	border-bottom-left-radius: #{$size}px;
+		}
+	}
+}
+// Top Right / Bottom Right / Bottom Left
+$cms_radius_trbrbl:();
+@each $size in $cms_radius_trbrbl{
+	.cms-radius-trbrbl-#{$size},
+	.elementor img.cms-radius-trbrbl-#{$size}{
+		@include border-radius(0 #{$size}px #{$size}px #{$size}px);
+		[dir="rtl"] &{
+			@include border-radius(#{$size}px 0 #{$size}px #{$size}px);
+		}
+	}
+}
+// Bottom left
+$cms_radius_bl:();
+@each $size in $cms_radius_bl{
+	.cms-radius-bl-#{$size},
+	.elementor img.cms-radius-bl-#{$size}{
+		@include border-radius(0 0 0 #{$size}px!important);
+		[dir="rtl"] &{
+			@include border-radius(0 0 #{$size}px 0!important);
+		}
+	}
+}
+// Bottom Right
+$cms_radius_br:();
+@each $size in $cms_radius_br{
+	.cms-radius-br-#{$size},
+	.elementor img.cms-radius-br-#{$size}{
+		@include border-radius(0 0 #{$size}px 0);
+		[dir="rtl"] &{
+			@include border-radius(0 0 0 #{$size}px);
+		}
+	}
+}
+// Bottom Left / Right
+$cms_radius_blbr:();
+@each $size in $cms_radius_blbr{
+	.cms-radius-blbr-#{$size},
+	.elementor img.cms-radius-blbr-#{$size}{
+		@include border-radius(0 0 #{$size}px #{$size}px!important);
+	}
+}
+// Top Right / Bottom Left
+$cms_radius_hover_trbl:();
+@each $size in $cms_radius_hover_trbl{
+	.cms-radius-trbl-#{$size},
+	.elementor img.cms-radius-trbl-#{$size}{
+		@include border-radius(0 #{$size}px 0 #{$size}px);
+		[dir="rtl"] &{
+			@include border-radius(#{$size}px 0 #{$size}px 0);
+		}
+	}
+}
+// Top Left / Bottom Left / Bottom Right
+$cms_radius_hover_tlblbr:();
+$cms_radius_hover:();
+// On Hover
+.cms-hover-change:hover,
+.cms-hover-change.active{
+	@each $size in $cms_radius_hover{
+		.cms-on-hover-radius-#{$size}{
+			@include border-radius(#{$size}px);
+		}
+	}
+	@each $size in $cms_radius_tlbr{
+		.cms-on-hover-radius-tlbr-#{$size}{
+			@include border-radius(#{$size}px 0 #{$size}px 0);
+			[dir="rtl"] &{
+				@include border-radius(0 #{$size}px 0 #{$size}px);
+			}
+		}
+	}
+	@each $size in $cms_radius_hover_trbl{
+		.cms-on-hover-radius-trbl-#{$size}{
+			@include border-radius(0 #{$size}px 0 #{$size}px);
+			[dir="rtl"] &{
+				@include border-radius(#{$size}px 0 0 #{$size}px);
+			}
+		}
+	}
+	@each $size in $cms_radius_hover_tlblbr{
+		.cms-on-hover-radius-tlblbr-#{$size}{
+			@include border-radius(#{$size}px 0 #{$size}px #{$size}px!important);
+			[dir="rtl"] &{
+				@include border-radius(#{$size}px #{$size}px #{$size}px 0!important);
+			}
+		}
+	}
+}
+// Responsive
+$cms_radius_mobile:();
+@media #{$max-mobile}{
+	@each $size in $cms_radius_mobile{
+		.cms-radius-mobile-#{$size}{
+			@include border-radius(#{$size}px);
+		}
+	}
+}
+
+// Custom 
+.elementor .cms-radius-tltr-circle,
+.cms-radius-tltr-circle{
+	border-radius: 999px 999px 0 0;
+}
+.elementor .cms-radius-blbr-circle,
+.cms-radius-blbr-circle{
+	border-radius: 0 0 999px 999px;
+}
+.elementor .cms-radius-rounded,
+.cms-radius-rounded{
+	border-radius: 999px!important;
+}
+.elementor .cms-radius-rounded-bottom,
+.cms-radius-rounded-bottom{
+	border-radius: 0 0 999px 999px!important;
+}

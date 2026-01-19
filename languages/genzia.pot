@@ -1,0 +1,5416 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: Translator Name <translations@example.com>\n"
+"POT-Creation-Date: 2026-01-02 13:56+0700\n"
+"PO-Revision-Date: 2024-05-31 16:00+0700\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Service-Id-Version: 1.0.0\n"
+"X-Generator: Poedit 3.4.4\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: 404.php:20
+msgid "Oops! That page can’t be found."
+msgstr ""
+
+#: 404.php:27
+msgid ""
+"The page requested couldn't be found. This could be a spelling error in "
+"the URL or a removed page."
+msgstr ""
+
+#: 404.php:36
+msgid "Back To Home"
+msgstr ""
+
+#: comments.php:31
+msgid "1 Comment"
+msgstr ""
+
+#: comments.php:33 inc/template-tags.php:2271
+#: inc/theme-options/args/content.php:45
+#: inc/theme-options/args/content.php:90
+msgid "Comments"
+msgstr ""
+
+#: comments.php:53
+msgid "Comments are closed."
+msgstr ""
+
+#: elementor/core/elementor.php:19
+msgid "Desktop"
+msgstr ""
+
+#: elementor/core/elementor.php:25
+#, php-format
+msgid "Hide On %s"
+msgstr ""
+
+#: elementor/core/elementor.php:28 inc/theme-options/theme-options.php:276
+msgid "Hide"
+msgstr ""
+
+#: elementor/core/elementor.php:29 inc/theme-options/theme-options.php:275
+msgid "Show"
+msgstr ""
+
+#: elementor/core/elementor.php:61 elementor/core/widgets/cms_button.php:92
+#: elementor/core/widgets/cms_copyright.php:108
+#: elementor/core/widgets/cms_quickcontact.php:54
+#: elementor/core/widgets/cms_social_icons.php:172
+msgid "Alignment"
+msgstr ""
+
+#: elementor/core/elementor.php:70 elementor/core/elementor.php:2575
+#: elementor/core/widgets/cms_button.php:97
+#: elementor/core/widgets/cms_copyright.php:113
+#: elementor/core/widgets/cms_quickcontact.php:58
+#: elementor/core/widgets/cms_social_icons.php:177
+#: inc/theme-options/args/sidebar.php:17
+msgid "Left"
+msgstr ""
+
+#: elementor/core/elementor.php:74 elementor/core/elementor.php:266
+#: elementor/core/elementor.php:1239 elementor/core/elementor.php:2579
+#: elementor/core/elementor.php:2607
+#: elementor/core/widgets/cms_banner.php:422
+#: elementor/core/widgets/cms_button.php:101
+#: elementor/core/widgets/cms_copyright.php:117
+#: elementor/core/widgets/cms_counter.php:302
+#: elementor/core/widgets/cms_quickcontact.php:62
+#: elementor/core/widgets/cms_social_icons.php:181
+#: inc/theme-options/theme-options.php:383
+msgid "Center"
+msgstr ""
+
+#: elementor/core/elementor.php:78 elementor/core/elementor.php:2583
+#: elementor/core/widgets/cms_button.php:105
+#: elementor/core/widgets/cms_copyright.php:121
+#: elementor/core/widgets/cms_quickcontact.php:66
+#: elementor/core/widgets/cms_social_icons.php:185
+#: inc/theme-options/args/sidebar.php:18
+msgid "Right"
+msgstr ""
+
+#: elementor/core/elementor.php:82
+msgid "Between"
+msgstr ""
+
+#: elementor/core/elementor.php:179 elementor/core/elementor.php:230
+#: elementor/core/elementor.php:445 elementor/core/elementor.php:597
+#: elementor/core/elementor.php:779 elementor/core/elementor.php:825
+#: elementor/core/elementor.php:840 elementor/core/elementor.php:959
+#: elementor/core/elementor.php:1255 elementor/core/elementor.php:2639
+#: elementor/core/elementor.php:2834 elementor/core/elementor.php:2988
+#: elementor/core/widgets/cms_banner.php:421
+#: elementor/core/widgets/cms_button.php:125
+#: elementor/core/widgets/cms_button.php:166
+#: elementor/core/widgets/cms_button.php:204
+#: elementor/core/widgets/cms_contact_form.php:151
+#: elementor/core/widgets/cms_gallery.php:111
+#: elementor/core/widgets/cms_gallery.php:127
+#: elementor/core/widgets/cms_language_switcher.php:84
+#: elementor/core/widgets/cms_language_switcher.php:97
+#: elementor/core/widgets/cms_language_switcher.php:110
+#: elementor/core/widgets/cms_language_switcher.php:126
+#: elementor/core/widgets/cms_newsletter.php:239
+#: elementor/core/widgets/cms_newsletter.php:280
+#: elementor/core/widgets/cms_posts_grid.php:133
+#: elementor/core/widgets/cms_products.php:109
+#: elementor/core/widgets/cms_products.php:121
+#: elementor/core/widgets/cms_products.php:193
+#: elementor/core/widgets/cms_slider.php:787
+#: elementor/core/widgets/cms_slider.php:803
+#: elementor/core/widgets/cms_teams.php:334
+#: inc/post-type-options/page-options.php:55 inc/template-tags.php:3337
+#: inc/template-tags.php:3696 inc/template-tags.php:3889
+#: inc/template-tags.php:4593 inc/theme-functions.php:296
+#: inc/theme-functions.php:330 inc/theme-functions.php:346
+#: inc/theme-functions.php:374 inc/theme-options/args/general.php:28
+#: inc/theme-options/args/header.php:135
+#: inc/theme-options/theme-options.php:111
+#: inc/theme-options/theme-options.php:139
+#: inc/theme-options/theme-options.php:167
+#: inc/theme-options/theme-options.php:247
+#: inc/theme-options/theme-options.php:279
+#: inc/theme-options/theme-options.php:350
+#: inc/theme-options/theme-options.php:387
+#: inc/theme-options/theme-options.php:773
+#: inc/theme-options/theme-options.php:861
+#: inc/theme-options/theme-options.php:951
+#: inc/theme-options/theme-options.php:1088
+msgid "Default"
+msgstr ""
+
+#: elementor/core/elementor.php:199
+#: elementor/core/widgets/cms_posts_grid.php:117
+#: elementor/core/widgets/cms_products.php:178
+#: elementor/core/widgets/cms_teams.php:316
+msgid "Grid Settings"
+msgstr ""
+
+#: elementor/core/elementor.php:222
+#: elementor/core/widgets/cms_gallery.php:103
+#: elementor/core/widgets/cms_posts_grid.php:125
+#: elementor/core/widgets/cms_products.php:185
+#: elementor/core/widgets/cms_teams.php:326
+msgid "Columns"
+msgstr ""
+
+#: elementor/core/elementor.php:237 elementor/core/elementor.php:826
+#: elementor/core/widgets/cms_gallery.php:117
+msgid "Auto"
+msgstr ""
+
+#: elementor/core/elementor.php:246
+#: elementor/core/widgets/cms_social_icons.php:198
+msgid "Gap"
+msgstr ""
+
+#: elementor/core/elementor.php:258
+msgid "Column Alignment"
+msgstr ""
+
+#: elementor/core/elementor.php:262 elementor/core/elementor.php:1240
+#: elementor/core/widgets/cms_counter.php:298
+#: inc/theme-options/theme-options.php:382
+msgid "Start"
+msgstr ""
+
+#: elementor/core/elementor.php:270 elementor/core/elementor.php:1241
+#: elementor/core/widgets/cms_counter.php:306
+#: inc/theme-options/theme-options.php:384
+msgid "End"
+msgstr ""
+
+#: elementor/core/elementor.php:281
+msgid "Add separator?"
+msgstr ""
+
+#: elementor/core/elementor.php:469 inc/template-tags.php:3357
+msgid "Body"
+msgstr ""
+
+#: elementor/core/elementor.php:474 elementor/core/elementor.php:961
+#: elementor/core/widgets/cms_contact_form.php:152 inc/template-tags.php:3358
+msgid "White"
+msgstr ""
+
+#: elementor/core/elementor.php:503 inc/template-tags.php:3361
+msgid "Backdrop"
+msgstr ""
+
+#: elementor/core/elementor.php:511 elementor/core/elementor.php:714
+#: elementor/core/elementor.php:1480 elementor/core/elementor.php:2645
+#: elementor/core/widgets/cms_newsletter.php:240
+#: elementor/core/widgets/cms_slider.php:1004 inc/template-tags.php:3364
+#: inc/theme-options/args/header.php:136
+#: inc/theme-options/theme-options.php:112
+#: inc/theme-options/theme-options.php:140
+#: inc/theme-options/theme-options.php:168
+#: inc/theme-options/theme-options.php:447
+msgid "Custom"
+msgstr ""
+
+#: elementor/core/elementor.php:598
+msgid "Primary"
+msgstr ""
+
+#: elementor/core/elementor.php:599
+msgid "Secondary"
+msgstr ""
+
+#: elementor/core/elementor.php:679 elementor/core/widgets/cms_banner.php:154
+#: elementor/core/widgets/cms_banner.php:249
+#: elementor/core/widgets/cms_banner.php:292
+#: elementor/core/widgets/cms_blog.php:86
+#: elementor/core/widgets/cms_clients.php:100
+#: elementor/core/widgets/cms_download.php:86
+#: elementor/core/widgets/cms_heading.php:168
+#: elementor/core/widgets/cms_heading.php:189
+#: elementor/core/widgets/cms_heading.php:211
+#: elementor/core/widgets/cms_heading.php:237
+#: elementor/core/widgets/cms_language_switcher.php:145
+#: elementor/core/widgets/cms_navigation_menu.php:195
+#: elementor/core/widgets/cms_navigation_menu.php:216
+#: elementor/core/widgets/cms_navigation_menu.php:226
+#: elementor/core/widgets/cms_navigation_menu.php:236
+#: elementor/core/widgets/cms_page_title.php:134
+#: elementor/core/widgets/cms_page_title.php:159
+#: elementor/core/widgets/cms_page_title.php:184
+#: elementor/core/widgets/cms_posts_carousel.php:88
+#: elementor/core/widgets/cms_process.php:125
+#: elementor/core/widgets/cms_process.php:146
+#: elementor/core/widgets/cms_progress.php:108
+#: elementor/core/widgets/cms_progress.php:131
+#: elementor/core/widgets/cms_progress.php:154
+#: elementor/core/widgets/cms_progress.php:214
+#: elementor/core/widgets/cms_quickcontact.php:136
+#: elementor/core/widgets/cms_quickcontact.php:207
+#: elementor/core/widgets/cms_quickcontact.php:289
+#: elementor/core/widgets/cms_quickcontact.php:352
+#: elementor/core/widgets/cms_quickcontact.php:372
+#: elementor/core/widgets/cms_quickcontact.php:433
+#: elementor/core/widgets/cms_quickcontact.php:465
+#: elementor/core/widgets/cms_social_icons.php:215
+#: elementor/core/widgets/cms_social_icons.php:253
+#: elementor/core/widgets/cms_tabs.php:123
+#: elementor/core/widgets/cms_tabs.php:144
+#: elementor/core/widgets/cms_tabs.php:166
+#: elementor/core/widgets/cms_tabs.php:188
+#: elementor/core/widgets/cms_testimonials.php:190
+#: elementor/core/widgets/cms_video_player.php:210
+#: elementor/core/widgets/cms_video_player.php:231
+#: elementor/core/widgets/cms_video_player.php:285
+#: elementor/core/widgets/cms_video_player.php:327
+msgid "Color"
+msgstr ""
+
+#: elementor/core/elementor.php:736 elementor/core/widgets/cms_slider.php:734
+msgid "Carousel Settings"
+msgstr ""
+
+#: elementor/core/elementor.php:758
+msgid "Item Shadow?"
+msgstr ""
+
+#: elementor/core/elementor.php:761
+#: elementor/core/widgets/cms_language_switcher.php:85
+#: elementor/core/widgets/cms_language_switcher.php:98
+#: elementor/core/widgets/cms_newsletter.php:281
+#: elementor/core/widgets/cms_pricing.php:150
+msgid "Yes"
+msgstr ""
+
+#: elementor/core/elementor.php:762
+#: elementor/core/widgets/cms_language_switcher.php:86
+#: elementor/core/widgets/cms_language_switcher.php:99
+#: elementor/core/widgets/cms_newsletter.php:282
+#: elementor/core/widgets/cms_pricing.php:151
+msgid "No"
+msgstr ""
+
+#: elementor/core/elementor.php:776
+#: elementor/core/widgets/cms_page_title.php:56
+#: elementor/core/widgets/cms_slider.php:454
+#: inc/theme-options/theme-options.php:340
+msgid "Content Width"
+msgstr ""
+
+#: elementor/core/elementor.php:782
+msgid "Full to Start"
+msgstr ""
+
+#: elementor/core/elementor.php:783
+msgid "Full to End"
+msgstr ""
+
+#: elementor/core/elementor.php:784
+msgid "Full to Start (Large)"
+msgstr ""
+
+#: elementor/core/elementor.php:785
+msgid "Full to End (Large)"
+msgstr ""
+
+#: elementor/core/elementor.php:786
+msgid "Full to Start (Medium Large)"
+msgstr ""
+
+#: elementor/core/elementor.php:787
+msgid "Full to End (Medium Large)"
+msgstr ""
+
+#: elementor/core/elementor.php:788
+msgid "Full to Start (Extra Large)"
+msgstr ""
+
+#: elementor/core/elementor.php:789
+msgid "Full to End (Extra Large)"
+msgstr ""
+
+#: elementor/core/elementor.php:807
+msgid "Slide Direction"
+msgstr ""
+
+#: elementor/core/elementor.php:810
+#: elementor/core/widgets/cms_text_scroll.php:180
+msgid "Right to Left"
+msgstr ""
+
+#: elementor/core/elementor.php:811
+#: elementor/core/widgets/cms_text_scroll.php:181
+msgid "Left to Right"
+msgstr ""
+
+#: elementor/core/elementor.php:822 elementor/core/widgets/cms_slider.php:784
+msgid "Slides to Show"
+msgstr ""
+
+#: elementor/core/elementor.php:836 elementor/core/widgets/cms_slider.php:799
+msgid "Slides to Scroll"
+msgstr ""
+
+#: elementor/core/elementor.php:838 elementor/core/widgets/cms_slider.php:801
+msgid "Set how many slides are scrolled per swipe."
+msgstr ""
+
+#: elementor/core/elementor.php:849 elementor/core/widgets/cms_slider.php:815
+#: elementor/core/widgets/cms_text_scroll.php:159
+msgid "Space Between"
+msgstr ""
+
+#: elementor/core/elementor.php:869 elementor/core/widgets/cms_slider.php:766
+msgid "Effect"
+msgstr ""
+
+#: elementor/core/elementor.php:873 elementor/core/widgets/cms_slider.php:770
+msgid "Slide"
+msgstr ""
+
+#: elementor/core/elementor.php:874 elementor/core/widgets/cms_slider.php:771
+msgid "Fade"
+msgstr ""
+
+#: elementor/core/elementor.php:885
+msgid "Scroll Effect"
+msgstr ""
+
+#: elementor/core/elementor.php:886
+msgid ""
+"When this option is YES, please change 'Autoplay Speed' to 0, and "
+"'Animation Speed' to 9000"
+msgstr ""
+
+#: elementor/core/elementor.php:898 elementor/core/widgets/cms_slider.php:835
+msgid "Mousewheel Control"
+msgstr ""
+
+#: elementor/core/elementor.php:907 elementor/core/widgets/cms_slider.php:844
+msgid "Mousewheel release On Edges"
+msgstr ""
+
+#: elementor/core/elementor.php:914 elementor/core/widgets/cms_slider.php:851
+msgid ""
+"Swiper will release mousewheel event and allow page scrolling when swiper "
+"is on edge positions (in the beginning or in the end)"
+msgstr ""
+
+#: elementor/core/elementor.php:920 elementor/core/widgets/cms_slider.php:857
+msgid "Mousewheel sensitivity"
+msgstr ""
+
+#: elementor/core/elementor.php:938 elementor/core/widgets/cms_slider.php:875
+msgid ""
+"Multiplier of mousewheel data, allows to tweak mouse wheel sensitivity"
+msgstr ""
+
+#: elementor/core/elementor.php:946
+msgid "Drag Cursor"
+msgstr ""
+
+#: elementor/core/elementor.php:955
+msgid "Drag Cursor Style"
+msgstr ""
+
+#: elementor/core/elementor.php:960
+#: elementor/core/widgets/cms_contact_form.php:153
+msgid "Black"
+msgstr ""
+
+#: elementor/core/elementor.php:962
+msgid "Accent"
+msgstr ""
+
+#: elementor/core/elementor.php:973
+msgid "Centered Slide"
+msgstr ""
+
+#: elementor/core/elementor.php:981 elementor/core/widgets/cms_slider.php:882
+msgid "Lazyload"
+msgstr ""
+
+#: elementor/core/elementor.php:990 elementor/core/widgets/cms_slider.php:892
+msgid "Infinite Loop"
+msgstr ""
+
+#: elementor/core/elementor.php:999 elementor/core/widgets/cms_slider.php:902
+#: elementor/core/widgets/cms_video_player.php:386
+msgid "Autoplay"
+msgstr ""
+
+#: elementor/core/elementor.php:1008
+#: elementor/core/widgets/cms_slider.php:911
+msgid "Autoplay Speed"
+msgstr ""
+
+#: elementor/core/elementor.php:1020
+#: elementor/core/widgets/cms_slider.php:923
+msgid "Pause on Hover"
+msgstr ""
+
+#: elementor/core/elementor.php:1032
+#: elementor/core/widgets/cms_slider.php:935
+msgid "Pause on Interaction"
+msgstr ""
+
+#: elementor/core/elementor.php:1044
+#: elementor/core/widgets/cms_slider.php:948
+msgid "Animation Speed"
+msgstr ""
+
+#: elementor/core/elementor.php:1054
+#: elementor/core/widgets/cms_slider.php:959
+msgid "Show Arrows"
+msgstr ""
+
+#: elementor/core/elementor.php:1063
+msgid "Arrows Color"
+msgstr ""
+
+#: elementor/core/elementor.php:1076
+msgid "Arrows Background Color"
+msgstr ""
+
+#: elementor/core/elementor.php:1089
+msgid "Arrows Border Color"
+msgstr ""
+
+#: elementor/core/elementor.php:1102
+msgid "Arrows Hover Color"
+msgstr ""
+
+#: elementor/core/elementor.php:1115
+msgid "Arrows Background Hover Color"
+msgstr ""
+
+#: elementor/core/elementor.php:1128
+msgid "Arrows Border Hover Color"
+msgstr ""
+
+#: elementor/core/elementor.php:1150
+#: elementor/core/widgets/cms_slider.php:978
+msgid "Show Dots"
+msgstr ""
+
+#: elementor/core/elementor.php:1159
+msgid "Dot Color"
+msgstr ""
+
+#: elementor/core/elementor.php:1173
+msgid "Dot Hover/Active Color"
+msgstr ""
+
+#: elementor/core/elementor.php:1216
+msgid "Enable Filter"
+msgstr ""
+
+#: elementor/core/elementor.php:1225
+msgid "Filter Default Title"
+msgstr ""
+
+#: elementor/core/elementor.php:1227 elementor/core/elementor.php:1275
+msgid "All"
+msgstr ""
+
+#: elementor/core/elementor.php:1236
+msgid "Filter Alignment"
+msgstr ""
+
+#: elementor/core/elementor.php:1252
+msgid "Filter Layout"
+msgstr ""
+
+#: elementor/core/elementor.php:1256
+#: elementor/core/widgets/cms_accordion.php:61
+#: elementor/core/widgets/cms_banner.php:65
+#: elementor/core/widgets/cms_blog.php:57
+#: elementor/core/widgets/cms_button.php:57
+#: elementor/core/widgets/cms_clients.php:70
+#: elementor/core/widgets/cms_contact_form.php:79
+#: elementor/core/widgets/cms_copyright.php:66
+#: elementor/core/widgets/cms_counter.php:82
+#: elementor/core/widgets/cms_cta.php:63
+#: elementor/core/widgets/cms_download.php:60
+#: elementor/core/widgets/cms_fancy_box.php:74
+#: elementor/core/widgets/cms_gallery.php:60
+#: elementor/core/widgets/cms_google_map.php:59
+#: elementor/core/widgets/cms_heading.php:61
+#: elementor/core/widgets/cms_language_switcher.php:57
+#: elementor/core/widgets/cms_navigation_menu.php:66
+#: elementor/core/widgets/cms_newsletter.php:70
+#: elementor/core/widgets/cms_page_title.php:79
+#: elementor/core/widgets/cms_post_feature.php:61
+#: elementor/core/widgets/cms_pricing.php:59
+#: elementor/core/widgets/cms_products.php:58
+#: elementor/core/widgets/cms_progress.php:66
+#: elementor/core/widgets/cms_quickcontact.php:84
+#: elementor/core/widgets/cms_slider.php:73
+#: elementor/core/widgets/cms_social_icons.php:60
+#: elementor/core/widgets/cms_tabs.php:63
+#: elementor/core/widgets/cms_teams.php:74
+#: elementor/core/widgets/cms_testimonials.php:73
+#: elementor/core/widgets/cms_text_scroll.php:62
+#: elementor/core/widgets/cms_video_player.php:62
+#: inc/theme-functions.php:1261
+msgid "Layout 1"
+msgstr ""
+
+#: elementor/core/elementor.php:1371
+msgid "Circle Text Settings"
+msgstr ""
+
+#: elementor/core/elementor.php:1381 elementor/core/elementor.php:1751
+#: inc/theme-functions.php:1846
+msgid "Choose Icon"
+msgstr ""
+
+#: elementor/core/elementor.php:1389 elementor/core/elementor.php:1757
+msgid "Choose Image"
+msgstr ""
+
+#: elementor/core/elementor.php:1413
+msgid "Circle Text"
+msgstr ""
+
+#: elementor/core/elementor.php:1424 elementor/core/elementor.php:1749
+msgid "Icon Type"
+msgstr ""
+
+#: elementor/core/elementor.php:1427 elementor/core/elementor.php:1826
+#: elementor/core/widgets/cms_banner.php:306
+#: elementor/core/widgets/cms_button.php:140
+#: elementor/core/widgets/cms_quickcontact.php:156
+#: elementor/core/widgets/cms_quickcontact.php:324
+#: elementor/core/widgets/cms_quickcontact.php:405
+#: elementor/core/widgets/cms_quickcontact.php:500
+#: elementor/core/widgets/cms_social_icons.php:84
+#: elementor/core/widgets/cms_tabs.php:242 inc/template-tags.php:5993
+#: inc/theme-functions.php:1836 inc/theme-options/theme-options.php:816
+msgid "Icon"
+msgstr ""
+
+#: elementor/core/elementor.php:1428 elementor/core/elementor.php:1827
+#: elementor/core/elementor.php:2257
+#: elementor/core/widgets/cms_clients.php:118
+#: elementor/core/widgets/cms_heading.php:302
+#: elementor/core/widgets/cms_slider.php:102
+#: elementor/core/widgets/cms_teams.php:104
+msgid "Image"
+msgstr ""
+
+#: elementor/core/elementor.php:1429 elementor/core/elementor.php:1828
+#: elementor/core/elementor.php:2989 inc/template-tags.php:3695
+#: inc/template-tags.php:4807 inc/theme-functions.php:304
+msgid "None"
+msgstr ""
+
+#: elementor/core/elementor.php:1479 inc/theme-options/theme-options.php:446
+msgid "Page"
+msgstr ""
+
+#: elementor/core/elementor.php:1486 inc/theme-options/theme-options.php:444
+msgid "Link Type"
+msgstr ""
+
+#: elementor/core/elementor.php:1503
+msgid "Select"
+msgstr ""
+
+#: elementor/core/elementor.php:1524 inc/theme-options/theme-options.php:474
+msgid "Custom Link"
+msgstr ""
+
+#: elementor/core/elementor.php:1526 elementor/core/elementor.php:2000
+#: elementor/core/elementor.php:2189
+#: elementor/core/widgets/cms_banner.php:332
+#: elementor/core/widgets/cms_navigation_menu.php:142
+#: elementor/core/widgets/cms_quickcontact.php:526
+#: elementor/core/widgets/cms_slider.php:197
+#: elementor/core/widgets/cms_slider.php:224
+#: elementor/core/widgets/cms_social_icons.php:110
+msgid "https://your-link.com"
+msgstr ""
+
+#: elementor/core/elementor.php:1735
+msgid "Icon/Image Settings"
+msgstr ""
+
+#: elementor/core/elementor.php:1871
+#: elementor/core/widgets/cms_quickcontact.php:217
+#: elementor/core/widgets/cms_quickcontact.php:299
+#: elementor/core/widgets/cms_quickcontact.php:382
+#: elementor/core/widgets/cms_quickcontact.php:475
+#: elementor/core/widgets/cms_social_icons.php:222
+msgid "Hover Color"
+msgstr ""
+
+#: elementor/core/elementor.php:1964 elementor/core/elementor.php:2164
+#: elementor/core/widgets/cms_banner.php:191
+#: elementor/core/widgets/cms_blog.php:100
+#: elementor/core/widgets/cms_counter.php:204
+#: elementor/core/widgets/cms_counter.php:213
+#: elementor/core/widgets/cms_fancy_box.php:144
+#: elementor/core/widgets/cms_fancy_box.php:236
+#: elementor/core/widgets/cms_tabs.php:290
+msgid "Link Settings"
+msgstr ""
+
+#: elementor/core/elementor.php:1966 elementor/core/elementor.php:2166
+#: elementor/core/widgets/cms_pricing.php:257
+#: elementor/core/widgets/cms_text_scroll.php:112
+#: elementor/core/widgets/cms_video_player.php:296
+#: inc/theme-options/theme-options.php:435
+msgid "Text"
+msgstr ""
+
+#: elementor/core/elementor.php:1987
+#: elementor/core/widgets/cms_counter.php:203
+msgid "Link Text"
+msgstr ""
+
+#: elementor/core/elementor.php:1998
+msgid "Your Link"
+msgstr ""
+
+#: elementor/core/elementor.php:2016
+#: elementor/core/widgets/cms_text_scroll.php:190
+msgid "Text Color"
+msgstr ""
+
+#: elementor/core/elementor.php:2030 elementor/core/elementor.php:3167
+#: elementor/core/widgets/cms_fancy_box.php:319
+#: elementor/core/widgets/cms_newsletter.php:143
+msgid "Button Color"
+msgstr ""
+
+#: elementor/core/elementor.php:2044
+msgid "Text Color Hover"
+msgstr ""
+
+#: elementor/core/elementor.php:2058 elementor/core/elementor.php:3181
+#: elementor/core/widgets/cms_fancy_box.php:333
+msgid "Button Color Hover"
+msgstr ""
+
+#: elementor/core/elementor.php:2187
+#: elementor/core/widgets/cms_banner.php:327
+#: elementor/core/widgets/cms_blog.php:101
+#: elementor/core/widgets/cms_clients.php:137
+#: elementor/core/widgets/cms_navigation_menu.php:206
+#: elementor/core/widgets/cms_quickcontact.php:521
+#: elementor/core/widgets/cms_social_icons.php:105
+#: elementor/core/widgets/cms_teams.php:139
+msgid "Link"
+msgstr ""
+
+#: elementor/core/elementor.php:2230
+#: elementor/core/widgets/cms_heading.php:303
+msgid "Signature Settings"
+msgstr ""
+
+#: elementor/core/elementor.php:2239
+#: elementor/core/widgets/cms_clients.php:129
+#: elementor/core/widgets/cms_heading.php:319
+#: elementor/core/widgets/cms_teams.php:114
+#: elementor/core/widgets/cms_teams.php:116
+#: elementor/core/widgets/cms_teams.php:220
+#: elementor/core/widgets/cms_teams.php:232
+#: elementor/core/widgets/cms_teams.php:244
+#: elementor/core/widgets/cms_testimonials.php:109 inc/extensions/cf7.php:354
+#: inc/theme-functions.php:1862
+msgid "Name"
+msgstr ""
+
+#: elementor/core/elementor.php:2242
+msgid "Signature Name"
+msgstr ""
+
+#: elementor/core/elementor.php:2248 elementor/core/widgets/cms_teams.php:122
+#: elementor/core/widgets/cms_teams.php:124
+#: elementor/core/widgets/cms_teams.php:221
+#: elementor/core/widgets/cms_teams.php:233
+#: elementor/core/widgets/cms_teams.php:245
+#: elementor/core/widgets/cms_testimonials.php:117
+#: elementor/core/widgets/cms_testimonials.php:119
+#: inc/theme-functions.php:1870 inc/theme-options/theme-options.php:1118
+msgid "Position"
+msgstr ""
+
+#: elementor/core/elementor.php:2251
+msgid "Your Position"
+msgstr ""
+
+#: elementor/core/elementor.php:2335
+msgid "Rotate"
+msgstr ""
+
+#: elementor/core/elementor.php:2336
+msgid "Transform Settings"
+msgstr ""
+
+#: elementor/core/elementor.php:2353
+msgid "3D Rotate"
+msgstr ""
+
+#: elementor/core/elementor.php:2355 elementor/core/elementor.php:2469
+#: inc/theme-functions.php:400 inc/theme-options/theme-options.php:243
+msgid "On"
+msgstr ""
+
+#: elementor/core/elementor.php:2356 elementor/core/elementor.php:2470
+#: inc/theme-functions.php:401 inc/theme-options/theme-options.php:244
+msgid "Off"
+msgstr ""
+
+#: elementor/core/elementor.php:2365
+msgid "Rotate X"
+msgstr ""
+
+#: elementor/core/elementor.php:2384
+msgid "Rotate Y"
+msgstr ""
+
+#: elementor/core/elementor.php:2403
+msgid "Perspective"
+msgstr ""
+
+#: elementor/core/elementor.php:2422
+msgid "Offset X"
+msgstr ""
+
+#: elementor/core/elementor.php:2445
+msgid "Offset Y"
+msgstr ""
+
+#: elementor/core/elementor.php:2467
+msgid "Scale Keep Proportions"
+msgstr ""
+
+#: elementor/core/elementor.php:2479
+msgid "Scale"
+msgstr ""
+
+#: elementor/core/elementor.php:2498
+msgid "Scale X"
+msgstr ""
+
+#: elementor/core/elementor.php:2517
+msgid "Scale Y"
+msgstr ""
+
+#: elementor/core/elementor.php:2537
+msgid "Skew X"
+msgstr ""
+
+#: elementor/core/elementor.php:2555
+msgid "Skew Y"
+msgstr ""
+
+#: elementor/core/elementor.php:2571
+msgid "X Origin"
+msgstr ""
+
+#: elementor/core/elementor.php:2599
+msgid "Y Origin"
+msgstr ""
+
+#: elementor/core/elementor.php:2603
+#: elementor/core/widgets/cms_language_switcher.php:127
+msgid "Top"
+msgstr ""
+
+#: elementor/core/elementor.php:2611
+#: elementor/core/widgets/cms_language_switcher.php:128
+msgid "Bottom"
+msgstr ""
+
+#: elementor/core/elementor.php:2659
+msgid "Taxonomy"
+msgstr ""
+
+#: elementor/core/elementor.php:2669
+#: elementor/core/widgets/cms_copyright.php:81
+#: elementor/core/widgets/cms_gallery.php:96
+#: elementor/core/widgets/cms_language_switcher.php:73
+#: elementor/core/widgets/cms_pricing.php:206
+msgid "Settings"
+msgstr ""
+
+#: elementor/core/elementor.php:2710 elementor/core/elementor.php:2786
+#, php-format
+msgid "Select Term of %s"
+msgstr ""
+
+#: elementor/core/elementor.php:2814 elementor/core/widgets/cms_blog.php:111
+msgid "Source Settings"
+msgstr ""
+
+#: elementor/core/elementor.php:2821 inc/template-tags.php:4574
+msgid "Post Type"
+msgstr ""
+
+#: elementor/core/elementor.php:2831
+msgid "Taxonomy By"
+msgstr ""
+
+#: elementor/core/elementor.php:2835
+msgid "Category"
+msgstr ""
+
+#: elementor/core/elementor.php:2836 inc/theme-options/args/content.php:84
+msgid "Tags"
+msgstr ""
+
+#: elementor/core/elementor.php:2843 elementor/core/widgets/cms_blog.php:127
+#: elementor/core/widgets/cms_gallery.php:124
+msgid "Order By"
+msgstr ""
+
+#: elementor/core/elementor.php:2847 elementor/core/widgets/cms_blog.php:131
+#: elementor/core/widgets/cms_products.php:122
+#: inc/theme-options/args/content.php:33
+#: inc/theme-options/args/content.php:72
+msgid "Date"
+msgstr ""
+
+#: elementor/core/elementor.php:2848 elementor/core/widgets/cms_blog.php:132
+#: elementor/core/widgets/cms_products.php:123
+msgid "ID"
+msgstr ""
+
+#: elementor/core/elementor.php:2849 elementor/core/widgets/cms_blog.php:133
+#: inc/theme-options/args/content.php:27
+#: inc/theme-options/args/content.php:61
+msgid "Author"
+msgstr ""
+
+#: elementor/core/elementor.php:2850
+#: elementor/core/widgets/cms_accordion.php:176
+#: elementor/core/widgets/cms_banner.php:142
+#: elementor/core/widgets/cms_banner.php:319
+#: elementor/core/widgets/cms_blog.php:134
+#: elementor/core/widgets/cms_contact_form.php:273
+#: elementor/core/widgets/cms_counter.php:183
+#: elementor/core/widgets/cms_cta.php:116
+#: elementor/core/widgets/cms_download.php:79
+#: elementor/core/widgets/cms_download.php:108
+#: elementor/core/widgets/cms_fancy_box.php:123
+#: elementor/core/widgets/cms_fancy_box.php:196
+#: elementor/core/widgets/cms_google_map.php:168
+#: elementor/core/widgets/cms_google_map.php:199
+#: elementor/core/widgets/cms_google_map.php:247
+#: elementor/core/widgets/cms_heading.php:343
+#: elementor/core/widgets/cms_navigation_menu.php:128
+#: elementor/core/widgets/cms_navigation_menu.php:185
+#: elementor/core/widgets/cms_newsletter.php:185
+#: elementor/core/widgets/cms_page_title.php:147
+#: elementor/core/widgets/cms_process.php:187
+#: elementor/core/widgets/cms_process.php:309
+#: elementor/core/widgets/cms_products.php:128
+#: elementor/core/widgets/cms_progress.php:120
+#: elementor/core/widgets/cms_progress.php:176
+#: elementor/core/widgets/cms_quickcontact.php:129
+#: elementor/core/widgets/cms_quickcontact.php:173
+#: elementor/core/widgets/cms_quickcontact.php:254
+#: elementor/core/widgets/cms_quickcontact.php:341
+#: elementor/core/widgets/cms_quickcontact.php:422
+#: elementor/core/widgets/cms_quickcontact.php:513
+#: elementor/core/widgets/cms_slider.php:164
+#: elementor/core/widgets/cms_slider.php:363
+#: elementor/core/widgets/cms_slider.php:533
+#: elementor/core/widgets/cms_social_icons.php:97
+#: elementor/core/widgets/cms_social_icons.php:232
+#: elementor/core/widgets/cms_tabs.php:215 inc/template-tags.php:4958
+#: inc/template-tags.php:6120 inc/theme-options/args/404-page.php:8
+msgid "Title"
+msgstr ""
+
+#: elementor/core/elementor.php:2851 elementor/core/widgets/cms_blog.php:135
+#: elementor/core/widgets/cms_gallery.php:128
+#: elementor/core/widgets/cms_products.php:126
+msgid "Random"
+msgstr ""
+
+#: elementor/core/elementor.php:2858 elementor/core/widgets/cms_blog.php:142
+msgid "Sort Order"
+msgstr ""
+
+#: elementor/core/elementor.php:2862 elementor/core/widgets/cms_blog.php:146
+msgid "Descending"
+msgstr ""
+
+#: elementor/core/elementor.php:2863 elementor/core/widgets/cms_blog.php:147
+msgid "Ascending"
+msgstr ""
+
+#: elementor/core/elementor.php:2870 elementor/core/widgets/cms_blog.php:154
+msgid "Total items"
+msgstr ""
+
+#: elementor/core/elementor.php:2925
+msgid "Form Style Settings"
+msgstr ""
+
+#: elementor/core/elementor.php:2931
+msgid "Label Color"
+msgstr ""
+
+#: elementor/core/elementor.php:2939
+msgid "Field Height"
+msgstr ""
+
+#: elementor/core/elementor.php:2956
+msgid "Field Color"
+msgstr ""
+
+#: elementor/core/elementor.php:2963
+msgid "Placeholder Color"
+msgstr ""
+
+#: elementor/core/elementor.php:2970
+msgid "Field Background Color"
+msgstr ""
+
+#: elementor/core/elementor.php:2977
+msgid "Field Background Hover Color"
+msgstr ""
+
+#: elementor/core/elementor.php:2985
+msgid "Field Border Style"
+msgstr ""
+
+#: elementor/core/elementor.php:2990
+msgid "Solid"
+msgstr ""
+
+#: elementor/core/elementor.php:2991
+msgid "Dotted"
+msgstr ""
+
+#: elementor/core/elementor.php:2992
+msgid "Double"
+msgstr ""
+
+#: elementor/core/elementor.php:2993
+msgid "Dashed"
+msgstr ""
+
+#: elementor/core/elementor.php:3004
+msgid "Field Border Width"
+msgstr ""
+
+#: elementor/core/elementor.php:3016
+msgid "Field Border Width Hover"
+msgstr ""
+
+#: elementor/core/elementor.php:3027
+msgid "Field Border Color"
+msgstr ""
+
+#: elementor/core/elementor.php:3034
+msgid "Field Border Hover Color"
+msgstr ""
+
+#: elementor/core/elementor.php:3042
+msgid "Field Radius"
+msgstr ""
+
+#: elementor/core/elementor.php:3059
+msgid "Field Padding Start"
+msgstr ""
+
+#: elementor/core/elementor.php:3076
+msgid "Field Padding End"
+msgstr ""
+
+#: elementor/core/elementor.php:3092
+msgid "Checkbox/Radio Border Color"
+msgstr ""
+
+#: elementor/core/elementor.php:3101
+msgid "Field Select Arrow"
+msgstr ""
+
+#: elementor/core/elementor.php:3113
+msgid "Textarea Height"
+msgstr ""
+
+#: elementor/core/elementor.php:3132
+msgid "Button Height"
+msgstr ""
+
+#: elementor/core/elementor.php:3151
+msgid "Button Radius"
+msgstr ""
+
+#: elementor/core/elementor.php:3174
+msgid "Button Background Color"
+msgstr ""
+
+#: elementor/core/elementor.php:3188
+msgid "Button Background Color Hover"
+msgstr ""
+
+#: elementor/core/elementor.php:3195
+msgid "Invalid Color"
+msgstr ""
+
+#: elementor/core/elementor.php:3203
+msgid "Invalid Background"
+msgstr ""
+
+#: elementor/core/widgets/cms_accordion.php:26
+msgid "CMS Accordion"
+msgstr ""
+
+#: elementor/core/widgets/cms_accordion.php:49
+#: elementor/core/widgets/cms_banner.php:53
+#: elementor/core/widgets/cms_blog.php:45
+#: elementor/core/widgets/cms_button.php:45
+#: elementor/core/widgets/cms_clients.php:58
+#: elementor/core/widgets/cms_contact_form.php:67
+#: elementor/core/widgets/cms_counter.php:58
+#: elementor/core/widgets/cms_cta.php:51
+#: elementor/core/widgets/cms_download.php:48
+#: elementor/core/widgets/cms_fancy_box.php:50
+#: elementor/core/widgets/cms_gallery.php:48
+#: elementor/core/widgets/cms_google_map.php:47
+#: elementor/core/widgets/cms_heading.php:49
+#: elementor/core/widgets/cms_language_switcher.php:44
+#: elementor/core/widgets/cms_navigation_menu.php:54
+#: elementor/core/widgets/cms_newsletter.php:46
+#: elementor/core/widgets/cms_page_title.php:48
+#: elementor/core/widgets/cms_post_feature.php:48
+#: elementor/core/widgets/cms_posts_carousel.php:49
+#: elementor/core/widgets/cms_posts_grid.php:47
+#: elementor/core/widgets/cms_pricing.php:47
+#: elementor/core/widgets/cms_process.php:57
+#: elementor/core/widgets/cms_products.php:46
+#: elementor/core/widgets/cms_progress.php:54
+#: elementor/core/widgets/cms_quickcontact.php:47
+#: elementor/core/widgets/cms_slider.php:56
+#: elementor/core/widgets/cms_social_icons.php:48
+#: elementor/core/widgets/cms_tabs.php:51
+#: elementor/core/widgets/cms_teams.php:51
+#: elementor/core/widgets/cms_testimonials.php:49
+#: elementor/core/widgets/cms_text_scroll.php:50
+#: elementor/core/widgets/cms_video_player.php:50
+#: inc/post-type-options/args-page/footer.php:12 inc/template-tags.php:4591
+#: inc/template-tags.php:4787 inc/theme-options/theme-options.php:732
+#: inc/theme-options/theme-options.php:858
+#: inc/theme-options/theme-options.php:902
+#: inc/theme-options/theme-options.php:948
+#: inc/theme-options/theme-options.php:1025
+#: inc/theme-options/theme-options.php:1085
+msgid "Layout"
+msgstr ""
+
+#: elementor/core/widgets/cms_accordion.php:56
+#: elementor/core/widgets/cms_banner.php:60
+#: elementor/core/widgets/cms_blog.php:52
+#: elementor/core/widgets/cms_button.php:52
+#: elementor/core/widgets/cms_clients.php:65
+#: elementor/core/widgets/cms_contact_form.php:74
+#: elementor/core/widgets/cms_copyright.php:61
+#: elementor/core/widgets/cms_counter.php:77
+#: elementor/core/widgets/cms_cta.php:58
+#: elementor/core/widgets/cms_download.php:55
+#: elementor/core/widgets/cms_fancy_box.php:69
+#: elementor/core/widgets/cms_gallery.php:55
+#: elementor/core/widgets/cms_google_map.php:54
+#: elementor/core/widgets/cms_heading.php:56
+#: elementor/core/widgets/cms_language_switcher.php:52
+#: elementor/core/widgets/cms_navigation_menu.php:61
+#: elementor/core/widgets/cms_newsletter.php:65
+#: elementor/core/widgets/cms_page_title.php:74
+#: elementor/core/widgets/cms_post_feature.php:56
+#: elementor/core/widgets/cms_posts_carousel.php:57
+#: elementor/core/widgets/cms_posts_grid.php:55
+#: elementor/core/widgets/cms_pricing.php:54
+#: elementor/core/widgets/cms_process.php:64
+#: elementor/core/widgets/cms_products.php:53
+#: elementor/core/widgets/cms_progress.php:61
+#: elementor/core/widgets/cms_quickcontact.php:79
+#: elementor/core/widgets/cms_social_icons.php:55
+#: elementor/core/widgets/cms_tabs.php:58
+#: elementor/core/widgets/cms_teams.php:70
+#: elementor/core/widgets/cms_testimonials.php:68
+#: elementor/core/widgets/cms_text_scroll.php:57
+#: elementor/core/widgets/cms_video_player.php:57
+msgid "Templates"
+msgstr ""
+
+#: elementor/core/widgets/cms_accordion.php:65
+#: elementor/core/widgets/cms_copyright.php:70
+#: elementor/core/widgets/cms_navigation_menu.php:70
+#: elementor/core/widgets/cms_newsletter.php:74
+#: elementor/core/widgets/cms_quickcontact.php:88
+#: elementor/core/widgets/cms_social_icons.php:64
+msgid "Layout 1 (Black)"
+msgstr ""
+
+#: elementor/core/widgets/cms_accordion.php:69
+#: elementor/core/widgets/cms_banner.php:69
+#: elementor/core/widgets/cms_button.php:61
+#: elementor/core/widgets/cms_contact_form.php:83
+#: elementor/core/widgets/cms_counter.php:86
+#: elementor/core/widgets/cms_cta.php:67
+#: elementor/core/widgets/cms_fancy_box.php:82
+#: elementor/core/widgets/cms_google_map.php:63
+#: elementor/core/widgets/cms_heading.php:65
+#: elementor/core/widgets/cms_language_switcher.php:61
+#: elementor/core/widgets/cms_navigation_menu.php:74
+#: elementor/core/widgets/cms_newsletter.php:78
+#: elementor/core/widgets/cms_page_title.php:83
+#: elementor/core/widgets/cms_process.php:69
+#: elementor/core/widgets/cms_process.php:73
+#: elementor/core/widgets/cms_progress.php:70
+#: elementor/core/widgets/cms_quickcontact.php:92
+#: elementor/core/widgets/cms_slider.php:77
+#: elementor/core/widgets/cms_tabs.php:67
+#: elementor/core/widgets/cms_teams.php:78
+#: elementor/core/widgets/cms_testimonials.php:77
+#: elementor/core/widgets/cms_text_scroll.php:66 inc/theme-functions.php:1265
+msgid "Layout 2"
+msgstr ""
+
+#: elementor/core/widgets/cms_accordion.php:73
+#: elementor/core/widgets/cms_heading.php:73
+#: elementor/core/widgets/cms_quickcontact.php:96
+msgid "Layout 2 (Black)"
+msgstr ""
+
+#: elementor/core/widgets/cms_accordion.php:85
+#: elementor/core/widgets/cms_blog.php:69
+msgid "Heading Settings"
+msgstr ""
+
+#: elementor/core/widgets/cms_accordion.php:95
+#: elementor/core/widgets/cms_clients.php:91
+#: elementor/core/widgets/cms_heading.php:156
+#: elementor/core/widgets/cms_process.php:116
+#: elementor/core/widgets/cms_tabs.php:111
+#: elementor/core/widgets/cms_testimonials.php:181
+#: elementor/core/widgets/cms_video_player.php:198
+msgid "Small Heading"
+msgstr ""
+
+#: elementor/core/widgets/cms_accordion.php:98
+#: elementor/core/widgets/cms_accordion.php:119
+#: elementor/core/widgets/cms_accordion.php:139
+#: elementor/core/widgets/cms_blog.php:80
+#: elementor/core/widgets/cms_clients.php:94
+#: elementor/core/widgets/cms_counter.php:197
+#: elementor/core/widgets/cms_cta.php:143
+#: elementor/core/widgets/cms_google_map.php:297
+#: elementor/core/widgets/cms_heading.php:159
+#: elementor/core/widgets/cms_heading.php:183
+#: elementor/core/widgets/cms_heading.php:201
+#: elementor/core/widgets/cms_heading.php:227
+#: elementor/core/widgets/cms_newsletter.php:115
+#: elementor/core/widgets/cms_newsletter.php:188
+#: elementor/core/widgets/cms_page_title.php:175
+#: elementor/core/widgets/cms_posts_carousel.php:82
+#: elementor/core/widgets/cms_process.php:119
+#: elementor/core/widgets/cms_process.php:140
+#: elementor/core/widgets/cms_progress.php:146
+#: elementor/core/widgets/cms_slider.php:270
+#: elementor/core/widgets/cms_slider.php:281
+#: elementor/core/widgets/cms_tabs.php:114
+#: elementor/core/widgets/cms_tabs.php:135
+#: elementor/core/widgets/cms_tabs.php:157
+#: elementor/core/widgets/cms_tabs.php:179
+#: elementor/core/widgets/cms_testimonials.php:184
+#: elementor/core/widgets/cms_video_player.php:201
+#: elementor/core/widgets/cms_video_player.php:222
+#: elementor/core/widgets/cms_video_player.php:243
+#: elementor/core/widgets/cms_video_player.php:276
+msgid "Enter your text"
+msgstr ""
+
+#: elementor/core/widgets/cms_accordion.php:116
+#: elementor/core/widgets/cms_blog.php:77
+#: elementor/core/widgets/cms_heading.php:180
+#: elementor/core/widgets/cms_newsletter.php:174
+#: elementor/core/widgets/cms_posts_carousel.php:79
+#: elementor/core/widgets/cms_pricing.php:106
+#: elementor/core/widgets/cms_process.php:137
+#: elementor/core/widgets/cms_tabs.php:132
+#: elementor/core/widgets/cms_video_player.php:219
+#: inc/theme-options/theme-options.php:146
+msgid "Heading"
+msgstr ""
+
+#: elementor/core/widgets/cms_accordion.php:136
+#: elementor/core/widgets/cms_banner.php:166
+#: elementor/core/widgets/cms_contact_form.php:292
+#: elementor/core/widgets/cms_counter.php:193
+#: elementor/core/widgets/cms_cta.php:140
+#: elementor/core/widgets/cms_fancy_box.php:133
+#: elementor/core/widgets/cms_fancy_box.php:206
+#: elementor/core/widgets/cms_heading.php:330
+#: elementor/core/widgets/cms_newsletter.php:205
+#: elementor/core/widgets/cms_newsletter.php:207
+#: elementor/core/widgets/cms_page_title.php:172
+#: elementor/core/widgets/cms_pricing.php:116
+#: elementor/core/widgets/cms_process.php:209
+#: elementor/core/widgets/cms_progress.php:143
+#: elementor/core/widgets/cms_slider.php:174
+#: elementor/core/widgets/cms_slider.php:563
+#: elementor/core/widgets/cms_tabs.php:223
+#: elementor/core/widgets/cms_tabs.php:373
+#: elementor/core/widgets/cms_teams.php:130
+#: elementor/core/widgets/cms_testimonials.php:125
+#: elementor/core/widgets/cms_video_player.php:240 inc/template-tags.php:6124
+#: woocommerce/single-product/tabs/description.php:22
+msgid "Description"
+msgstr ""
+
+#: elementor/core/widgets/cms_accordion.php:157
+msgid "Accordion Settings"
+msgstr ""
+
+#: elementor/core/widgets/cms_accordion.php:164
+#: elementor/core/widgets/cms_google_map.php:182
+msgid "Active section"
+msgstr ""
+
+#: elementor/core/widgets/cms_accordion.php:179
+#: elementor/core/widgets/cms_fancy_box.php:126
+#: elementor/core/widgets/cms_fancy_box.php:199
+#: elementor/core/widgets/cms_google_map.php:171
+#: elementor/core/widgets/cms_google_map.php:202
+#: elementor/core/widgets/cms_google_map.php:250
+#: elementor/core/widgets/cms_navigation_menu.php:130
+#: elementor/core/widgets/cms_page_title.php:125
+#: elementor/core/widgets/cms_page_title.php:150
+#: elementor/core/widgets/cms_pricing.php:109
+#: elementor/core/widgets/cms_progress.php:123
+#: elementor/core/widgets/cms_progress.php:178
+#: elementor/core/widgets/cms_slider.php:167
+msgid "Enter your title"
+msgstr ""
+
+#: elementor/core/widgets/cms_accordion.php:186
+#: elementor/core/widgets/cms_cta.php:108
+#: elementor/core/widgets/cms_google_map.php:209
+#: inc/post-type-options/args-page/content.php:4
+#: inc/post-type-options/page-options.php:84
+#: inc/theme-options/args/404-page.php:12
+#: inc/theme-options/args/content.php:4
+msgid "Content"
+msgstr ""
+
+#: elementor/core/widgets/cms_accordion.php:189
+#: elementor/core/widgets/cms_google_map.php:212
+msgid "Enter your content"
+msgstr ""
+
+#: elementor/core/widgets/cms_accordion.php:197
+msgid "Document"
+msgstr ""
+
+#: elementor/core/widgets/cms_accordion.php:206
+msgid "Upload Document"
+msgstr ""
+
+#: elementor/core/widgets/cms_accordion.php:222
+#: elementor/core/widgets/cms_progress.php:222
+msgid "List"
+msgstr ""
+
+#: elementor/core/widgets/cms_accordion.php:243
+#: elementor/core/widgets/cms_clients.php:239
+#: elementor/core/widgets/cms_contact_form.php:371
+#: elementor/core/widgets/cms_counter.php:287
+#: elementor/core/widgets/cms_cta.php:203
+#: elementor/core/widgets/cms_language_switcher.php:138
+#: elementor/core/widgets/cms_quickcontact.php:579
+#: elementor/core/widgets/cms_tabs.php:511
+#: elementor/core/widgets/cms_testimonials.php:221
+#: elementor/core/widgets/cms_video_player.php:468
+msgid "Style Settings"
+msgstr ""
+
+#: elementor/core/widgets/cms_accordion.php:249
+#: elementor/core/widgets/cms_counter.php:367
+#: elementor/core/widgets/cms_process.php:459
+#: elementor/core/widgets/cms_quickcontact.php:593
+#: elementor/core/widgets/cms_tabs.php:613
+msgid "Border Color"
+msgstr ""
+
+#: elementor/core/widgets/cms_accordion.php:256
+#: elementor/core/widgets/cms_counter.php:339
+#: elementor/core/widgets/cms_cta.php:127
+#: elementor/core/widgets/cms_download.php:117
+#: elementor/core/widgets/cms_fancy_box.php:295
+#: elementor/core/widgets/cms_process.php:365
+#: elementor/core/widgets/cms_progress.php:317
+#: elementor/core/widgets/cms_quickcontact.php:185
+#: elementor/core/widgets/cms_quickcontact.php:267
+#: elementor/core/widgets/cms_teams.php:279
+msgid "Title Color"
+msgstr ""
+
+#: elementor/core/widgets/cms_accordion.php:263
+msgid "Title Active Color"
+msgstr ""
+
+#: elementor/core/widgets/cms_accordion.php:270
+msgid "Content Color"
+msgstr ""
+
+#: elementor/core/widgets/cms_accordion.php:277
+msgid "Explain Icon Color"
+msgstr ""
+
+#: elementor/core/widgets/cms_accordion.php:284
+msgid "Explain Icon Active Color"
+msgstr ""
+
+#: elementor/core/widgets/cms_accordion.php:291
+msgid "Explain Icon Background Color"
+msgstr ""
+
+#: elementor/core/widgets/cms_accordion.php:298
+msgid "Explain Icon Active Background Color"
+msgstr ""
+
+#: elementor/core/widgets/cms_banner.php:27
+msgid "CMS Banner"
+msgstr ""
+
+#: elementor/core/widgets/cms_banner.php:73
+#: elementor/core/widgets/cms_button.php:65
+#: elementor/core/widgets/cms_contact_form.php:87
+#: elementor/core/widgets/cms_counter.php:90
+#: elementor/core/widgets/cms_cta.php:71
+#: elementor/core/widgets/cms_fancy_box.php:90
+#: elementor/core/widgets/cms_google_map.php:67
+#: elementor/core/widgets/cms_heading.php:77
+#: elementor/core/widgets/cms_navigation_menu.php:78
+#: elementor/core/widgets/cms_newsletter.php:82
+#: elementor/core/widgets/cms_page_title.php:87
+#: elementor/core/widgets/cms_progress.php:74
+#: elementor/core/widgets/cms_quickcontact.php:100
+#: elementor/core/widgets/cms_slider.php:81
+#: elementor/core/widgets/cms_tabs.php:71
+#: elementor/core/widgets/cms_teams.php:82
+#: elementor/core/widgets/cms_text_scroll.php:70 inc/theme-functions.php:1269
+msgid "Layout 3"
+msgstr ""
+
+#: elementor/core/widgets/cms_banner.php:77
+#: elementor/core/widgets/cms_counter.php:94
+#: elementor/core/widgets/cms_cta.php:75
+#: elementor/core/widgets/cms_fancy_box.php:94
+#: elementor/core/widgets/cms_heading.php:81
+#: elementor/core/widgets/cms_navigation_menu.php:86
+#: elementor/core/widgets/cms_newsletter.php:86
+#: elementor/core/widgets/cms_page_title.php:91
+#: elementor/core/widgets/cms_progress.php:78
+#: elementor/core/widgets/cms_quickcontact.php:104
+#: elementor/core/widgets/cms_tabs.php:75 inc/theme-functions.php:1273
+msgid "Layout 4"
+msgstr ""
+
+#: elementor/core/widgets/cms_banner.php:81
+#: elementor/core/widgets/cms_cta.php:79
+#: elementor/core/widgets/cms_heading.php:85
+#: elementor/core/widgets/cms_navigation_menu.php:94
+#: elementor/core/widgets/cms_quickcontact.php:108
+#: elementor/core/widgets/cms_tabs.php:79 inc/theme-functions.php:1277
+msgid "Layout 5"
+msgstr ""
+
+#: elementor/core/widgets/cms_banner.php:85
+#: elementor/core/widgets/cms_cta.php:83
+#: elementor/core/widgets/cms_heading.php:89
+#: elementor/core/widgets/cms_navigation_menu.php:98
+#: elementor/core/widgets/cms_tabs.php:83 inc/theme-functions.php:1281
+msgid "Layout 6"
+msgstr ""
+
+#: elementor/core/widgets/cms_banner.php:89
+#: elementor/core/widgets/cms_heading.php:133
+msgid "Layout Service"
+msgstr ""
+
+#: elementor/core/widgets/cms_banner.php:101
+#: elementor/core/widgets/cms_text_scroll.php:90
+msgid "Banner Image"
+msgstr ""
+
+#: elementor/core/widgets/cms_banner.php:108
+#: elementor/core/widgets/cms_contact_form.php:260
+#: elementor/core/widgets/cms_cta.php:220
+#: elementor/core/widgets/cms_process.php:174
+#: elementor/core/widgets/cms_tabs.php:231
+msgid "Banner"
+msgstr ""
+
+#: elementor/core/widgets/cms_banner.php:121
+#: elementor/core/widgets/cms_gallery.php:87
+#: elementor/core/widgets/cms_tabs.php:450
+msgid "Image Size"
+msgstr ""
+
+#: elementor/core/widgets/cms_banner.php:134
+#: elementor/core/widgets/cms_google_map.php:161
+#: elementor/core/widgets/cms_post_feature.php:73
+#: elementor/core/widgets/cms_progress.php:90
+#: elementor/core/widgets/cms_social_icons.php:165
+#: elementor/core/widgets/cms_video_player.php:178
+msgid "Content Settings"
+msgstr ""
+
+#: elementor/core/widgets/cms_banner.php:146
+#: elementor/core/widgets/cms_counter.php:187
+#: elementor/core/widgets/cms_cta.php:119
+msgid "Enter your Title"
+msgstr ""
+
+#: elementor/core/widgets/cms_banner.php:170
+#: elementor/core/widgets/cms_fancy_box.php:136
+#: elementor/core/widgets/cms_fancy_box.php:209
+#: elementor/core/widgets/cms_pricing.php:119
+#: elementor/core/widgets/cms_slider.php:177
+msgid "Enter your description"
+msgstr ""
+
+#: elementor/core/widgets/cms_banner.php:190
+msgid "Link Title"
+msgstr ""
+
+#: elementor/core/widgets/cms_banner.php:203
+msgid "Link URL"
+msgstr ""
+
+#: elementor/core/widgets/cms_banner.php:219
+msgid "Email Icon"
+msgstr ""
+
+#: elementor/core/widgets/cms_banner.php:237
+#: elementor/core/widgets/cms_contact_form.php:311
+#: elementor/core/widgets/cms_quickcontact.php:149 inc/template-tags.php:6136
+msgid "Email"
+msgstr ""
+
+#: elementor/core/widgets/cms_banner.php:241
+msgid "Enter email"
+msgstr ""
+
+#: elementor/core/widgets/cms_banner.php:262
+#: elementor/core/widgets/cms_quickcontact.php:237
+msgid "Phone Icon"
+msgstr ""
+
+#: elementor/core/widgets/cms_banner.php:280
+#: inc/theme-options/theme-options.php:512
+msgid "Phone"
+msgstr ""
+
+#: elementor/core/widgets/cms_banner.php:284
+msgid "Enter number"
+msgstr ""
+
+#: elementor/core/widgets/cms_banner.php:338
+#: elementor/core/widgets/cms_quickcontact.php:532
+msgid "Social Icons"
+msgstr ""
+
+#: elementor/core/widgets/cms_banner.php:388
+#: elementor/core/widgets/cms_contact_form.php:250
+#: elementor/core/widgets/cms_tabs.php:437
+msgid "Banner Settings"
+msgstr ""
+
+#: elementor/core/widgets/cms_banner.php:395
+msgid "Image Cover?"
+msgstr ""
+
+#: elementor/core/widgets/cms_banner.php:404
+msgid "As Background"
+msgstr ""
+
+#: elementor/core/widgets/cms_banner.php:405
+msgid "Make your banner show as background"
+msgstr ""
+
+#: elementor/core/widgets/cms_banner.php:418
+msgid "Background Position"
+msgstr ""
+
+#: elementor/core/widgets/cms_banner.php:423
+msgid "Top Center"
+msgstr ""
+
+#: elementor/core/widgets/cms_banner.php:434
+msgid "Max Height"
+msgstr ""
+
+#: elementor/core/widgets/cms_banner.php:435
+msgid "Add image max-height"
+msgstr ""
+
+#: elementor/core/widgets/cms_banner.php:446
+#: elementor/core/widgets/cms_fancy_box.php:386
+msgid "CSS Classes"
+msgstr ""
+
+#: elementor/core/widgets/cms_banner.php:449
+#: elementor/core/widgets/cms_fancy_box.php:395
+msgid "Add your custom class WITHOUT the dot. e.g: my-class"
+msgstr ""
+
+#: elementor/core/widgets/cms_blog.php:24
+msgid "CMS Blog"
+msgstr ""
+
+#: elementor/core/widgets/cms_blog.php:118
+#: elementor/core/widgets/cms_products.php:77
+msgid "Select Categories"
+msgstr ""
+
+#: elementor/core/widgets/cms_button.php:24
+msgid "CMS Button"
+msgstr ""
+
+#: elementor/core/widgets/cms_button.php:77
+#: elementor/core/widgets/cms_cta.php:173
+#: elementor/core/widgets/cms_cta.php:184
+#: elementor/core/widgets/cms_heading.php:251
+#: elementor/core/widgets/cms_pricing.php:130
+#: elementor/core/widgets/cms_tabs.php:475
+#: elementor/core/widgets/cms_video_player.php:263
+#: inc/theme-options/theme-options.php:416
+msgid "Button Settings"
+msgstr ""
+
+#: elementor/core/widgets/cms_button.php:85
+#: elementor/core/widgets/cms_page_title.php:199
+#: elementor/core/widgets/cms_page_title.php:210
+#: elementor/core/widgets/cms_pricing.php:131
+#: elementor/core/widgets/cms_tabs.php:488
+#: elementor/core/widgets/cms_tabs.php:496
+#: elementor/core/widgets/cms_video_player.php:264
+#: inc/theme-options/theme-options.php:417
+msgid "Button"
+msgstr ""
+
+#: elementor/core/widgets/cms_button.php:109
+#: elementor/core/widgets/cms_copyright.php:125
+#: elementor/core/widgets/cms_quickcontact.php:70
+#: elementor/core/widgets/cms_social_icons.php:189
+msgid "Justified"
+msgstr ""
+
+#: elementor/core/widgets/cms_button.php:119
+msgid "Size"
+msgstr ""
+
+#: elementor/core/widgets/cms_button.php:122
+msgid "Extra Small"
+msgstr ""
+
+#: elementor/core/widgets/cms_button.php:123
+msgid "Small"
+msgstr ""
+
+#: elementor/core/widgets/cms_button.php:124
+msgid "Small Medium"
+msgstr ""
+
+#: elementor/core/widgets/cms_button.php:126
+msgid "Medium"
+msgstr ""
+
+#: elementor/core/widgets/cms_button.php:127
+msgid "Large"
+msgstr ""
+
+#: elementor/core/widgets/cms_button.php:128
+msgid "Extra Large"
+msgstr ""
+
+#: elementor/core/widgets/cms_button.php:129
+msgid "Extra Large #2"
+msgstr ""
+
+#: elementor/core/widgets/cms_button.php:162
+msgid "Icon Position"
+msgstr ""
+
+#: elementor/core/widgets/cms_button.php:167
+msgid "Before"
+msgstr ""
+
+#: elementor/core/widgets/cms_button.php:168
+msgid "After"
+msgstr ""
+
+#: elementor/core/widgets/cms_button.php:178
+msgid "Icon Font Size"
+msgstr ""
+
+#: elementor/core/widgets/cms_button.php:200
+msgid "Button Width"
+msgstr ""
+
+#: elementor/core/widgets/cms_button.php:205
+#: elementor/core/widgets/cms_language_switcher.php:111
+msgid "Full"
+msgstr ""
+
+#: elementor/core/widgets/cms_clients.php:35
+msgid "CMS Clients"
+msgstr ""
+
+#: elementor/core/widgets/cms_clients.php:81
+#: elementor/core/widgets/cms_heading.php:149
+#: elementor/core/widgets/cms_process.php:105
+#: elementor/core/widgets/cms_testimonials.php:171
+msgid "Heading Content"
+msgstr ""
+
+#: elementor/core/widgets/cms_clients.php:110
+msgid "Clients List"
+msgstr ""
+
+#: elementor/core/widgets/cms_clients.php:131
+#: elementor/core/widgets/cms_clients.php:157
+#: elementor/core/widgets/cms_clients.php:168
+#: elementor/core/widgets/cms_clients.php:179
+#: elementor/core/widgets/cms_clients.php:190
+#: elementor/core/widgets/cms_clients.php:201
+#: elementor/core/widgets/cms_clients.php:212
+msgid "Client Name"
+msgstr ""
+
+#: elementor/core/widgets/cms_clients.php:149
+msgid "Clients"
+msgstr ""
+
+#: elementor/core/widgets/cms_clients.php:246
+msgid "Opacity"
+msgstr ""
+
+#: elementor/core/widgets/cms_contact_form.php:34
+msgid "CMS Contact Form"
+msgstr ""
+
+#: elementor/core/widgets/cms_contact_form.php:61
+msgid "No contact forms found"
+msgstr ""
+
+#: elementor/core/widgets/cms_contact_form.php:91
+#: elementor/core/widgets/cms_newsletter.php:58
+msgid "Popup"
+msgstr ""
+
+#: elementor/core/widgets/cms_contact_form.php:95
+msgid "Popup Black"
+msgstr ""
+
+#: elementor/core/widgets/cms_contact_form.php:109
+#: elementor/core/widgets/cms_newsletter.php:226
+#: elementor/core/widgets/cms_newsletter.php:397
+msgid "Form Settings"
+msgstr ""
+
+#: elementor/core/widgets/cms_contact_form.php:116
+msgid "Popup Field Title"
+msgstr ""
+
+#: elementor/core/widgets/cms_contact_form.php:127
+msgid "Pupup Title Color"
+msgstr ""
+
+#: elementor/core/widgets/cms_contact_form.php:137
+msgid "Pupup Title Color Hover"
+msgstr ""
+
+#: elementor/core/widgets/cms_contact_form.php:148
+msgid "Pupup Cursor Color"
+msgstr ""
+
+#: elementor/core/widgets/cms_contact_form.php:163
+msgid "Select Form"
+msgstr ""
+
+#: elementor/core/widgets/cms_contact_form.php:179
+msgid "Form Small Title"
+msgstr ""
+
+#: elementor/core/widgets/cms_contact_form.php:196
+msgid "Form Title"
+msgstr ""
+
+#: elementor/core/widgets/cms_contact_form.php:213
+msgid "Form Description"
+msgstr ""
+
+#: elementor/core/widgets/cms_contact_form.php:230
+msgid "Form Note"
+msgstr ""
+
+#: elementor/core/widgets/cms_contact_form.php:231
+msgid "Add your note after Submit button"
+msgstr ""
+
+#: elementor/core/widgets/cms_contact_form.php:340
+#: inc/theme-options/theme-options.php:531
+msgid "Phone Number"
+msgstr ""
+
+#: elementor/core/widgets/cms_contact_form.php:377
+#: elementor/core/widgets/cms_cta.php:209
+#: elementor/core/widgets/cms_download.php:172
+#: elementor/core/widgets/cms_fancy_box.php:374
+#: elementor/core/widgets/cms_newsletter.php:445
+#: elementor/core/widgets/cms_video_player.php:509
+#: inc/post-type-options/args-page/header.php:39
+#: inc/post-type-options/args-page/header.php:122
+#: inc/theme-options/args/header.php:25 inc/theme-options/args/header.php:118
+msgid "Background Color"
+msgstr ""
+
+#: elementor/core/widgets/cms_copyright.php:33
+msgid "CMS Copyright"
+msgstr ""
+
+#: elementor/core/widgets/cms_copyright.php:54
+msgid "Copyright"
+msgstr ""
+
+#: elementor/core/widgets/cms_copyright.php:88
+msgid "Copyright Text"
+msgstr ""
+
+#: elementor/core/widgets/cms_copyright.php:90
+msgid ""
+"Use [[year]] variable to insert current year, [[name]] variable to insert "
+"site name."
+msgstr ""
+
+#: elementor/core/widgets/cms_copyright.php:101
+#: elementor/core/widgets/cms_fancy_box.php:280
+#: elementor/core/widgets/cms_text_scroll.php:152
+msgid "Style"
+msgstr ""
+
+#: elementor/core/widgets/cms_copyright.php:140
+#: elementor/core/widgets/cms_counter.php:353
+#: inc/post-type-options/page-options.php:63
+#: inc/theme-options/args/general.php:33
+msgid "Link Color"
+msgstr ""
+
+#: elementor/core/widgets/cms_copyright.php:147
+#: elementor/core/widgets/cms_counter.php:360
+msgid "Link Color Hover"
+msgstr ""
+
+#: elementor/core/widgets/cms_counter.php:36
+msgid "CMS Counter"
+msgstr ""
+
+#: elementor/core/widgets/cms_counter.php:65
+#: elementor/core/widgets/cms_fancy_box.php:57
+#: elementor/core/widgets/cms_newsletter.php:53
+#: elementor/core/widgets/cms_teams.php:58
+#: elementor/core/widgets/cms_testimonials.php:56
+msgid "Layout Mode"
+msgstr ""
+
+#: elementor/core/widgets/cms_counter.php:68
+#: elementor/core/widgets/cms_fancy_box.php:60
+#: elementor/core/widgets/cms_teams.php:62
+#: elementor/core/widgets/cms_testimonials.php:59
+msgid "Grid"
+msgstr ""
+
+#: elementor/core/widgets/cms_counter.php:69
+#: elementor/core/widgets/cms_fancy_box.php:61
+#: elementor/core/widgets/cms_teams.php:61
+#: elementor/core/widgets/cms_testimonials.php:60
+msgid "Carousel"
+msgstr ""
+
+#: elementor/core/widgets/cms_counter.php:106
+msgid "Counters Settings"
+msgstr ""
+
+#: elementor/core/widgets/cms_counter.php:114
+msgid "Starting Number"
+msgstr ""
+
+#: elementor/core/widgets/cms_counter.php:122
+msgid "Ending Number"
+msgstr ""
+
+#: elementor/core/widgets/cms_counter.php:130
+msgid "Number Prefix"
+msgstr ""
+
+#: elementor/core/widgets/cms_counter.php:139
+msgid "Number Suffix"
+msgstr ""
+
+#: elementor/core/widgets/cms_counter.php:148
+msgid "Animation Duration"
+msgstr ""
+
+#: elementor/core/widgets/cms_counter.php:158
+msgid "Separator"
+msgstr ""
+
+#: elementor/core/widgets/cms_counter.php:222
+msgid "Counters List"
+msgstr ""
+
+#: elementor/core/widgets/cms_counter.php:259
+msgid "Buttons Settings"
+msgstr ""
+
+#: elementor/core/widgets/cms_counter.php:271
+#: elementor/core/widgets/cms_cta.php:172
+msgid "Button Here"
+msgstr ""
+
+#: elementor/core/widgets/cms_counter.php:272
+#: elementor/core/widgets/cms_process.php:239
+msgid "Button #1"
+msgstr ""
+
+#: elementor/core/widgets/cms_counter.php:279
+#: elementor/core/widgets/cms_cta.php:183
+msgid "Button Here #2"
+msgstr ""
+
+#: elementor/core/widgets/cms_counter.php:280
+#: elementor/core/widgets/cms_process.php:247
+#: inc/post-type-options/args-page/header.php:270
+msgid "Button #2"
+msgstr ""
+
+#: elementor/core/widgets/cms_counter.php:294
+msgid "Text Alignment"
+msgstr ""
+
+#: elementor/core/widgets/cms_counter.php:318
+#: elementor/core/widgets/cms_progress.php:324
+msgid "Number Color"
+msgstr ""
+
+#: elementor/core/widgets/cms_counter.php:325
+#: elementor/core/widgets/cms_fancy_box.php:287
+#: elementor/core/widgets/cms_quickcontact.php:585
+#: elementor/core/widgets/cms_tabs.php:531
+msgid "Icon Color"
+msgstr ""
+
+#: elementor/core/widgets/cms_counter.php:332
+msgid "Icon Color Hover"
+msgstr ""
+
+#: elementor/core/widgets/cms_counter.php:346
+#: elementor/core/widgets/cms_cta.php:148
+#: elementor/core/widgets/cms_fancy_box.php:303
+#: elementor/core/widgets/cms_teams.php:300
+#: elementor/core/widgets/cms_video_player.php:252
+msgid "Description Color"
+msgstr ""
+
+#: elementor/core/widgets/cms_cta.php:24
+msgid "CMS CTA"
+msgstr ""
+
+#: elementor/core/widgets/cms_cta.php:87
+#: elementor/core/widgets/cms_heading.php:93 inc/theme-functions.php:1285
+msgid "Layout 7"
+msgstr ""
+
+#: elementor/core/widgets/cms_cta.php:91
+#: elementor/core/widgets/cms_heading.php:97
+msgid "Layout 7 (Black)"
+msgstr ""
+
+#: elementor/core/widgets/cms_cta.php:95
+#: elementor/core/widgets/cms_heading.php:101 inc/theme-functions.php:1289
+msgid "Layout 8"
+msgstr ""
+
+#: elementor/core/widgets/cms_cta.php:194
+msgid "Email Settings"
+msgstr ""
+
+#: elementor/core/widgets/cms_download.php:26
+msgid "CMS Download"
+msgstr ""
+
+#: elementor/core/widgets/cms_download.php:71
+msgid "Download List"
+msgstr ""
+
+#: elementor/core/widgets/cms_download.php:129
+msgid "Title #2"
+msgstr ""
+
+#: elementor/core/widgets/cms_download.php:136
+msgid "Title #2 Color"
+msgstr ""
+
+#: elementor/core/widgets/cms_download.php:147
+msgid "Title Hover Color"
+msgstr ""
+
+#: elementor/core/widgets/cms_download.php:160
+msgid "File URL"
+msgstr ""
+
+#: elementor/core/widgets/cms_download.php:167
+msgid ""
+"Go to Dashboard -> Media -> Add New Media File -> Upload file -> Copy URL"
+msgstr ""
+
+#: elementor/core/widgets/cms_download.php:180
+msgid "Background Hover Color"
+msgstr ""
+
+#: elementor/core/widgets/cms_download.php:188
+#: elementor/core/widgets/cms_navigation_menu.php:237
+msgid "Divider Color"
+msgstr ""
+
+#: elementor/core/widgets/cms_download.php:197
+msgid "Download Lists"
+msgstr ""
+
+#: elementor/core/widgets/cms_fancy_box.php:27
+msgid "CMS Fancy Box"
+msgstr ""
+
+#: elementor/core/widgets/cms_fancy_box.php:78
+msgid "Layout 1 (No Gap)"
+msgstr ""
+
+#: elementor/core/widgets/cms_fancy_box.php:86
+msgid "Layout 2 (Border Left)"
+msgstr ""
+
+#: elementor/core/widgets/cms_fancy_box.php:98
+#: elementor/core/widgets/cms_fancy_box.php:110
+#: elementor/core/widgets/cms_fancy_box.php:243
+msgid "Career"
+msgstr ""
+
+#: elementor/core/widgets/cms_fancy_box.php:151
+#: elementor/core/widgets/cms_slider.php:288
+msgid "Features List"
+msgstr ""
+
+#: elementor/core/widgets/cms_fancy_box.php:155
+#: elementor/core/widgets/cms_pricing.php:143
+#: elementor/core/widgets/cms_process.php:221
+#: elementor/core/widgets/cms_slider.php:292
+#: elementor/core/widgets/cms_tabs.php:267
+#: elementor/core/widgets/cms_tabs.php:393
+msgid "Add Feature"
+msgstr ""
+
+#: elementor/core/widgets/cms_fancy_box.php:159
+#: elementor/core/widgets/cms_pricing.php:158
+#: elementor/core/widgets/cms_process.php:225
+#: elementor/core/widgets/cms_slider.php:296
+#: elementor/core/widgets/cms_tabs.php:271
+#: elementor/core/widgets/cms_tabs.php:397
+msgid "Feature Text"
+msgstr ""
+
+#: elementor/core/widgets/cms_fancy_box.php:171
+msgid "Fancy Box"
+msgstr ""
+
+#: elementor/core/widgets/cms_fancy_box.php:185
+msgid "Add Fancy Item"
+msgstr ""
+
+#: elementor/core/widgets/cms_fancy_box.php:217 inc/theme-functions.php:2009
+msgid "Job Type"
+msgstr ""
+
+#: elementor/core/widgets/cms_fancy_box.php:226 inc/theme-functions.php:2013
+msgid "Job Address"
+msgstr ""
+
+#: elementor/core/widgets/cms_fancy_box.php:267
+msgid "Add career"
+msgstr ""
+
+#: elementor/core/widgets/cms_fancy_box.php:311
+#: elementor/core/widgets/cms_process.php:381
+msgid "Feature Color"
+msgstr ""
+
+#: elementor/core/widgets/cms_fancy_box.php:326
+#: elementor/core/widgets/cms_newsletter.php:150
+msgid "Button Text Color"
+msgstr ""
+
+#: elementor/core/widgets/cms_fancy_box.php:340
+msgid "Button Text Color Hover"
+msgstr ""
+
+#: elementor/core/widgets/cms_fancy_box.php:348
+msgid "Item Border Color"
+msgstr ""
+
+#: elementor/core/widgets/cms_fancy_box.php:360
+#: elementor/core/widgets/cms_page_title.php:227
+#: elementor/core/widgets/cms_progress.php:344 inc/template-tags.php:6140
+msgid "Background Image"
+msgstr ""
+
+#: elementor/core/widgets/cms_gallery.php:25
+msgid "CMS Gallery"
+msgstr ""
+
+#: elementor/core/widgets/cms_gallery.php:72
+msgid "Gallery Image"
+msgstr ""
+
+#: elementor/core/widgets/cms_gallery.php:79
+msgid "Add Images"
+msgstr ""
+
+#: elementor/core/widgets/cms_gallery.php:136
+msgid "Number of item to show"
+msgstr ""
+
+#: elementor/core/widgets/cms_gallery.php:144
+msgid "Number of item to show on load more"
+msgstr ""
+
+#: elementor/core/widgets/cms_gallery.php:152
+msgid "Load More Text"
+msgstr ""
+
+#: elementor/core/widgets/cms_gallery.php:160
+msgid "Open Lightbox"
+msgstr ""
+
+#: elementor/core/widgets/cms_gallery.php:169
+msgid "Show Caption"
+msgstr ""
+
+#: elementor/core/widgets/cms_google_map.php:25
+msgid "CMS Google Map"
+msgstr ""
+
+#: elementor/core/widgets/cms_google_map.php:78
+msgid "Map Settings"
+msgstr ""
+
+#: elementor/core/widgets/cms_google_map.php:82
+msgid ""
+"The Great Kings Building Management 2307 Beverley Road, Brooklyn, NY 145784"
+msgstr ""
+
+#: elementor/core/widgets/cms_google_map.php:86
+msgid "Address"
+msgstr ""
+
+#: elementor/core/widgets/cms_google_map.php:99
+msgid "Address title"
+msgstr ""
+
+#: elementor/core/widgets/cms_google_map.php:113
+msgid "Zoom"
+msgstr ""
+
+#: elementor/core/widgets/cms_google_map.php:130 inc/template-tags.php:5713
+msgid "Height"
+msgstr ""
+
+#: elementor/core/widgets/cms_google_map.php:151
+msgid "View"
+msgstr ""
+
+#: elementor/core/widgets/cms_google_map.php:187
+msgid "Locations Settings"
+msgstr ""
+
+#: elementor/core/widgets/cms_google_map.php:219
+msgid "Locations List"
+msgstr ""
+
+#: elementor/core/widgets/cms_google_map.php:257
+#: elementor/core/widgets/cms_progress.php:186
+msgid "Value"
+msgstr ""
+
+#: elementor/core/widgets/cms_google_map.php:260
+msgid "Enter your value"
+msgstr ""
+
+#: elementor/core/widgets/cms_google_map.php:267
+msgid "Timetable List"
+msgstr ""
+
+#: elementor/core/widgets/cms_google_map.php:294
+msgid "Get Directions"
+msgstr ""
+
+#: elementor/core/widgets/cms_heading.php:26
+msgid "CMS Heading"
+msgstr ""
+
+#: elementor/core/widgets/cms_heading.php:69
+msgid "Layout 2 (Small)"
+msgstr ""
+
+#: elementor/core/widgets/cms_heading.php:105 inc/theme-functions.php:1293
+msgid "Layout 9"
+msgstr ""
+
+#: elementor/core/widgets/cms_heading.php:109
+msgid "Layout 10"
+msgstr ""
+
+#: elementor/core/widgets/cms_heading.php:113
+msgid "Layout 11"
+msgstr ""
+
+#: elementor/core/widgets/cms_heading.php:117
+msgid "Layout 12"
+msgstr ""
+
+#: elementor/core/widgets/cms_heading.php:121
+msgid "Layout 13"
+msgstr ""
+
+#: elementor/core/widgets/cms_heading.php:125
+msgid "Layout 14"
+msgstr ""
+
+#: elementor/core/widgets/cms_heading.php:129
+msgid "Layout Practice"
+msgstr ""
+
+#: elementor/core/widgets/cms_heading.php:137
+msgid "Layout Case"
+msgstr ""
+
+#: elementor/core/widgets/cms_heading.php:198
+#: elementor/core/widgets/cms_tabs.php:154
+msgid "Description #1"
+msgstr ""
+
+#: elementor/core/widgets/cms_heading.php:224
+#: elementor/core/widgets/cms_tabs.php:176
+#: elementor/core/widgets/cms_tabs.php:381
+msgid "Description #2"
+msgstr ""
+
+#: elementor/core/widgets/cms_heading.php:250
+#: elementor/core/widgets/cms_heading.php:276
+msgid "Button Title"
+msgstr ""
+
+#: elementor/core/widgets/cms_heading.php:263
+#: elementor/core/widgets/cms_heading.php:289
+#: elementor/core/widgets/cms_slider.php:195
+#: elementor/core/widgets/cms_slider.php:222 inc/template-tags.php:6132
+msgid "Button Link"
+msgstr ""
+
+#: elementor/core/widgets/cms_heading.php:277
+#: inc/theme-options/args/header.php:190
+msgid "Button Settings #2"
+msgstr ""
+
+#: elementor/core/widgets/cms_heading.php:352
+#: elementor/core/widgets/cms_pricing.php:139
+#: elementor/core/widgets/cms_process.php:217
+#: elementor/core/widgets/cms_slider.php:267
+#: elementor/core/widgets/cms_slider.php:702
+#: elementor/core/widgets/cms_tabs.php:263
+#: elementor/core/widgets/cms_tabs.php:389 inc/theme-functions.php:1953
+msgid "Features"
+msgstr ""
+
+#: elementor/core/widgets/cms_language_switcher.php:24
+msgid "CMS Language Switcher"
+msgstr ""
+
+#: elementor/core/widgets/cms_language_switcher.php:81
+msgid "Show Flag"
+msgstr ""
+
+#: elementor/core/widgets/cms_language_switcher.php:94
+msgid "Show Name"
+msgstr ""
+
+#: elementor/core/widgets/cms_language_switcher.php:107
+msgid "Name As"
+msgstr ""
+
+#: elementor/core/widgets/cms_language_switcher.php:112
+msgid "Short"
+msgstr ""
+
+#: elementor/core/widgets/cms_language_switcher.php:123
+msgid "Dropdown Position"
+msgstr ""
+
+#: elementor/core/widgets/cms_language_switcher.php:153
+msgid "Color Hover & Active"
+msgstr ""
+
+#: elementor/core/widgets/cms_navigation_menu.php:24
+msgid "CMS Navigation Menu"
+msgstr ""
+
+#: elementor/core/widgets/cms_navigation_menu.php:82
+msgid "Layout 3 (Black)"
+msgstr ""
+
+#: elementor/core/widgets/cms_navigation_menu.php:90
+msgid "Layout 4 (Black)"
+msgstr ""
+
+#: elementor/core/widgets/cms_navigation_menu.php:102
+msgid "Mega Menu"
+msgstr ""
+
+#: elementor/core/widgets/cms_navigation_menu.php:106
+msgid "Side Navigation"
+msgstr ""
+
+#: elementor/core/widgets/cms_navigation_menu.php:121
+msgid "Navigation Menu"
+msgstr ""
+
+#: elementor/core/widgets/cms_navigation_menu.php:140
+msgid "Title Link"
+msgstr ""
+
+#: elementor/core/widgets/cms_navigation_menu.php:155
+msgid "Select Menu"
+msgstr ""
+
+#: elementor/core/widgets/cms_navigation_menu.php:165
+msgid "Select Menu #2"
+msgstr ""
+
+#: elementor/core/widgets/cms_navigation_menu.php:174
+msgid "Menu Alignment"
+msgstr ""
+
+#: elementor/core/widgets/cms_newsletter.php:25
+msgid "CMS Newsletter"
+msgstr ""
+
+#: elementor/core/widgets/cms_newsletter.php:57
+msgid "Plain"
+msgstr ""
+
+#: elementor/core/widgets/cms_newsletter.php:90
+msgid "HTML Forms"
+msgstr ""
+
+#: elementor/core/widgets/cms_newsletter.php:102
+msgid "Popup Settings"
+msgstr ""
+
+#: elementor/core/widgets/cms_newsletter.php:112
+msgid "Popup Title"
+msgstr ""
+
+#: elementor/core/widgets/cms_newsletter.php:121
+msgid "Popup Title Color"
+msgstr ""
+
+#: elementor/core/widgets/cms_newsletter.php:133
+msgid "Popup Button Text"
+msgstr ""
+
+#: elementor/core/widgets/cms_newsletter.php:136
+#: elementor/templates/widgets/cms_newsletter/layout1-black.php:131
+#: elementor/templates/widgets/cms_newsletter/layout1.php:121
+#: elementor/templates/widgets/cms_newsletter/layout2.php:140
+#: elementor/templates/widgets/cms_newsletter/layout3.php:148
+#: elementor/templates/widgets/cms_newsletter/layout4.php:131
+msgid "Subscribe"
+msgstr ""
+
+#: elementor/core/widgets/cms_newsletter.php:157
+msgid "Button Hover Color"
+msgstr ""
+
+#: elementor/core/widgets/cms_newsletter.php:164
+msgid "Button Hover Text Color"
+msgstr ""
+
+#: elementor/core/widgets/cms_newsletter.php:236
+msgid "Newsletter Form Layout"
+msgstr ""
+
+#: elementor/core/widgets/cms_newsletter.php:247
+#: elementor/core/widgets/cms_newsletter.php:407
+msgid "Choose Form ID"
+msgstr ""
+
+#: elementor/core/widgets/cms_newsletter.php:266
+#: elementor/core/widgets/cms_newsletter.php:423
+#, php-format
+msgid ""
+"%sClick Here%s to add your custom form. More about its, please read %s "
+"Document here%s"
+msgstr ""
+
+#: elementor/core/widgets/cms_newsletter.php:277
+msgid "Show Field Name"
+msgstr ""
+
+#: elementor/core/widgets/cms_newsletter.php:292
+msgid "Name Text"
+msgstr ""
+
+#: elementor/core/widgets/cms_newsletter.php:294
+#: elementor/core/widgets/cms_newsletter.php:318
+msgid "Enter placeholder text"
+msgstr ""
+
+#: elementor/core/widgets/cms_newsletter.php:316
+msgid "Email Text"
+msgstr ""
+
+#: elementor/core/widgets/cms_newsletter.php:328
+#: elementor/core/widgets/cms_slider.php:184
+#: elementor/core/widgets/cms_slider.php:211 inc/template-tags.php:6128
+#: inc/theme-options/args/404-page.php:16
+msgid "Button Text"
+msgstr ""
+
+#: elementor/core/widgets/cms_newsletter.php:330
+msgid "Enter button text"
+msgstr ""
+
+#: elementor/core/widgets/cms_newsletter.php:341
+msgid "Privacy Policy Page"
+msgstr ""
+
+#: elementor/core/widgets/cms_newsletter.php:350
+msgid "Privacy Policy Description"
+msgstr ""
+
+#: elementor/core/widgets/cms_newsletter.php:352
+msgid "By subscribing, you accept the"
+msgstr ""
+
+#: elementor/core/widgets/cms_newsletter.php:361
+msgid "Privacy Policy Description Color"
+msgstr ""
+
+#: elementor/core/widgets/cms_newsletter.php:373
+msgid "Privacy Policy Text"
+msgstr ""
+
+#: elementor/core/widgets/cms_newsletter.php:375
+msgid "Default is title of page"
+msgstr ""
+
+#: elementor/core/widgets/cms_newsletter.php:376
+#: elementor/templates/widgets/cms_newsletter/layout1-black.php:192
+#: elementor/templates/widgets/cms_newsletter/layout1.php:182
+#: elementor/templates/widgets/cms_newsletter/layout2.php:198
+#: elementor/templates/widgets/cms_newsletter/layout3.php:210
+#: elementor/templates/widgets/cms_newsletter/layout4.php:192
+msgid "Privacy Policy"
+msgstr ""
+
+#: elementor/core/widgets/cms_newsletter.php:384
+msgid "Privacy Policy Link Color"
+msgstr ""
+
+#: elementor/core/widgets/cms_newsletter.php:436
+#: elementor/core/widgets/cms_page_title.php:220
+#: elementor/core/widgets/cms_progress.php:334
+#: inc/post-type-options/args-page/page-title.php:34
+#: inc/theme-options/args/page-title.php:10
+msgid "Background Settings"
+msgstr ""
+
+#: elementor/core/widgets/cms_newsletter.php:452
+msgid "Boder Color"
+msgstr ""
+
+#: elementor/core/widgets/cms_page_title.php:25
+msgid "CMS Page Title"
+msgstr ""
+
+#: elementor/core/widgets/cms_page_title.php:95
+msgid "Breadcrumb"
+msgstr ""
+
+#: elementor/core/widgets/cms_page_title.php:99 inc/template-tags.php:1471
+msgid "Blog"
+msgstr ""
+
+#: elementor/core/widgets/cms_page_title.php:111
+msgid "Content Setting"
+msgstr ""
+
+#: elementor/core/widgets/cms_page_title.php:122
+#: elementor/core/widgets/cms_progress.php:97
+msgid "Small Title"
+msgstr ""
+
+#: elementor/core/widgets/cms_page_title.php:198
+#: elementor/core/widgets/cms_tabs.php:487
+msgid "Button #1 Settings"
+msgstr ""
+
+#: elementor/core/widgets/cms_page_title.php:209
+#: elementor/core/widgets/cms_tabs.php:495
+msgid "Button #2 Settings"
+msgstr ""
+
+#: elementor/core/widgets/cms_page_title.php:237
+#: elementor/core/widgets/cms_progress.php:354
+msgid "Gradient Overlay"
+msgstr ""
+
+#: elementor/core/widgets/cms_post_feature.php:27
+msgid "CMS Post Feature"
+msgstr ""
+
+#: elementor/core/widgets/cms_post_feature.php:81
+msgid "Replace Feature Image?"
+msgstr ""
+
+#: elementor/core/widgets/cms_post_feature.php:91
+msgid "Video"
+msgstr ""
+
+#: elementor/core/widgets/cms_post_feature.php:92
+msgid "Video url from YouTube/Vimeo"
+msgstr ""
+
+#: elementor/core/widgets/cms_posts_carousel.php:26
+msgid "CMS Posts Carousel"
+msgstr ""
+
+#: elementor/core/widgets/cms_posts_carousel.php:69
+#: elementor/core/widgets/cms_quickcontact.php:119
+#: elementor/core/widgets/cms_tabs.php:94
+msgid "Element Heading"
+msgstr ""
+
+#: elementor/core/widgets/cms_posts_carousel.php:101
+#: elementor/core/widgets/cms_posts_grid.php:70
+msgid "Content Display"
+msgstr ""
+
+#: elementor/core/widgets/cms_posts_carousel.php:117
+#: elementor/core/widgets/cms_posts_grid.php:87
+msgid "Excerpt Length"
+msgstr ""
+
+#: elementor/core/widgets/cms_posts_carousel.php:118
+#: elementor/core/widgets/cms_posts_grid.php:88
+msgid "Enter number of line you want to show, max is 10"
+msgstr ""
+
+#: elementor/core/widgets/cms_posts_carousel.php:136
+#: elementor/core/widgets/cms_posts_grid.php:106
+msgid "Readmore Text"
+msgstr ""
+
+#: elementor/core/widgets/cms_posts_carousel.php:138
+#: elementor/core/widgets/cms_posts_grid.php:108
+#: elementor/templates/widgets/cms_posts_carousel/layout-career.php:70
+#: elementor/templates/widgets/cms_posts_carousel/layout3.php:83
+msgid "Read More"
+msgstr ""
+
+#: elementor/core/widgets/cms_posts_carousel.php:146
+msgid "Filter"
+msgstr ""
+
+#: elementor/core/widgets/cms_posts_grid.php:26
+msgid "CMS Posts Grid"
+msgstr ""
+
+#: elementor/core/widgets/cms_posts_grid.php:152
+msgid "Pagination Type"
+msgstr ""
+
+#: elementor/core/widgets/cms_posts_grid.php:155
+msgid "Pagination"
+msgstr ""
+
+#: elementor/core/widgets/cms_posts_grid.php:156
+msgid "Loadmore"
+msgstr ""
+
+#: elementor/core/widgets/cms_posts_grid.php:157
+msgid "Disable"
+msgstr ""
+
+#: elementor/core/widgets/cms_pricing.php:25
+msgid "CMS Pricing"
+msgstr ""
+
+#: elementor/core/widgets/cms_pricing.php:72
+msgid "Pricing Settings"
+msgstr ""
+
+#: elementor/core/widgets/cms_pricing.php:80
+msgid "Featured?"
+msgstr ""
+
+#: elementor/core/widgets/cms_pricing.php:87
+msgid "Badge Text"
+msgstr ""
+
+#: elementor/core/widgets/cms_pricing.php:97
+msgid "Price"
+msgstr ""
+
+#: elementor/core/widgets/cms_pricing.php:108
+msgid "Starter Plan"
+msgstr ""
+
+#: elementor/core/widgets/cms_pricing.php:147
+msgid "Available?"
+msgstr ""
+
+#: elementor/core/widgets/cms_pricing.php:170
+msgid "Pricing Lists"
+msgstr ""
+
+#: elementor/core/widgets/cms_pricing.php:198
+msgid "Add Pricing"
+msgstr ""
+
+#: elementor/core/widgets/cms_pricing.php:213
+msgid "Currency"
+msgstr ""
+
+#: elementor/core/widgets/cms_pricing.php:223
+msgid "Price Pack"
+msgstr ""
+
+#: elementor/core/widgets/cms_pricing.php:233
+msgid "Show Sale Off Calculator"
+msgstr ""
+
+#: elementor/core/widgets/cms_pricing.php:242
+msgid "Sale Off"
+msgstr ""
+
+#: elementor/core/widgets/cms_pricing.php:258
+#: elementor/core/widgets/cms_progress.php:259
+#: elementor/core/widgets/cms_teams.php:273
+msgid "Color Settings"
+msgstr ""
+
+#: elementor/core/widgets/cms_pricing.php:266
+msgid "Switcher Text"
+msgstr ""
+
+#: elementor/core/widgets/cms_pricing.php:273
+msgid "Switched Text"
+msgstr ""
+
+#: elementor/core/widgets/cms_pricing.php:280
+msgid "Switcher"
+msgstr ""
+
+#: elementor/core/widgets/cms_pricing.php:287
+msgid "Switcher Background"
+msgstr ""
+
+#: elementor/core/widgets/cms_pricing.php:294
+msgid "Switched Background"
+msgstr ""
+
+#: elementor/core/widgets/cms_process.php:26
+msgid "CMS Process"
+msgstr ""
+
+#: elementor/core/widgets/cms_process.php:77
+msgid "Layout Carousel"
+msgstr ""
+
+#: elementor/core/widgets/cms_process.php:81
+msgid "Layout Sticky"
+msgstr ""
+
+#: elementor/core/widgets/cms_process.php:85
+msgid "Layout Sticky (Black)"
+msgstr ""
+
+#: elementor/core/widgets/cms_process.php:89
+msgid "Layout Sticky #2"
+msgstr ""
+
+#: elementor/core/widgets/cms_process.php:93
+msgid "Layout Sticky #2 (Black)"
+msgstr ""
+
+#: elementor/core/widgets/cms_process.php:159
+msgid "Process Content"
+msgstr ""
+
+#: elementor/core/widgets/cms_process.php:189
+#: elementor/core/widgets/cms_process.php:190
+#: elementor/core/widgets/cms_process.php:311
+#: elementor/core/widgets/cms_process.php:312
+msgid "Process Title"
+msgstr ""
+
+#: elementor/core/widgets/cms_process.php:198
+msgid "Content Title"
+msgstr ""
+
+#: elementor/core/widgets/cms_process.php:200
+#: elementor/core/widgets/cms_process.php:201
+msgid "Conntent Process Title"
+msgstr ""
+
+#: elementor/core/widgets/cms_process.php:254
+#: elementor/core/widgets/cms_process.php:319
+msgid "Process List"
+msgstr ""
+
+#: elementor/core/widgets/cms_process.php:300
+msgid "Year"
+msgstr ""
+
+#: elementor/core/widgets/cms_process.php:357
+msgid "Icon Start Color"
+msgstr ""
+
+#: elementor/core/widgets/cms_process.php:374
+msgid "Desc Color"
+msgstr ""
+
+#: elementor/core/widgets/cms_process.php:389
+msgid "Button #1 Color"
+msgstr ""
+
+#: elementor/core/widgets/cms_process.php:399
+msgid "Link/Button #1 Text Color"
+msgstr ""
+
+#: elementor/core/widgets/cms_process.php:407
+msgid "Button #1 Color Hover"
+msgstr ""
+
+#: elementor/core/widgets/cms_process.php:416
+msgid "Link/Button #1 Text Color Hover"
+msgstr ""
+
+#: elementor/core/widgets/cms_process.php:424
+msgid "Button #2 Color"
+msgstr ""
+
+#: elementor/core/widgets/cms_process.php:434
+msgid "Link/Button #2 Text Color"
+msgstr ""
+
+#: elementor/core/widgets/cms_process.php:442
+msgid "Button #2 Color Hover"
+msgstr ""
+
+#: elementor/core/widgets/cms_process.php:451
+msgid "Link/Button #2 Text Color Hover"
+msgstr ""
+
+#: elementor/core/widgets/cms_products.php:25
+msgid "CMS Products"
+msgstr ""
+
+#: elementor/core/widgets/cms_products.php:70
+msgid "Products Settings"
+msgstr ""
+
+#: elementor/core/widgets/cms_products.php:86
+msgid "Choose products"
+msgstr ""
+
+#: elementor/core/widgets/cms_products.php:98
+msgid "Products to show"
+msgstr ""
+
+#: elementor/core/widgets/cms_products.php:106
+msgid "Order"
+msgstr ""
+
+#: elementor/core/widgets/cms_products.php:118
+msgid "Orderby"
+msgstr ""
+
+#: elementor/core/widgets/cms_products.php:124
+msgid "Menu Order"
+msgstr ""
+
+#: elementor/core/widgets/cms_products.php:125
+msgid "Popularity"
+msgstr ""
+
+#: elementor/core/widgets/cms_products.php:127
+msgid "Rating"
+msgstr ""
+
+#: elementor/core/widgets/cms_products.php:129
+msgid "Total Sales"
+msgstr ""
+
+#: elementor/core/widgets/cms_products.php:136
+msgid "Only Featured?"
+msgstr ""
+
+#: elementor/core/widgets/cms_products.php:144
+msgid "On Sale"
+msgstr ""
+
+#: elementor/core/widgets/cms_products.php:152
+msgid "Best Selling"
+msgstr ""
+
+#: elementor/core/widgets/cms_products.php:160
+msgid "Top Rated"
+msgstr ""
+
+#: elementor/core/widgets/cms_products.php:168
+msgid "Paginate"
+msgstr ""
+
+#: elementor/core/widgets/cms_progress.php:27
+msgid "CMS Progress"
+msgstr ""
+
+#: elementor/core/widgets/cms_progress.php:100
+msgid "Enter your small title"
+msgstr ""
+
+#: elementor/core/widgets/cms_progress.php:168
+msgid "Progressbar Content"
+msgstr ""
+
+#: elementor/core/widgets/cms_progress.php:197
+msgid "Prefix"
+msgstr ""
+
+#: elementor/core/widgets/cms_progress.php:206
+msgid "Suffix"
+msgstr ""
+
+#: elementor/core/widgets/cms_progress.php:266
+msgid "Progress wrap Width"
+msgstr ""
+
+#: elementor/core/widgets/cms_progress.php:283
+msgid "Progress wrap Height"
+msgstr ""
+
+#: elementor/core/widgets/cms_progress.php:300
+msgid "Progress bar Width/Height"
+msgstr ""
+
+#: elementor/core/widgets/cms_progress.php:309
+msgid "Progress bar Color"
+msgstr ""
+
+#: elementor/core/widgets/cms_quickcontact.php:25
+msgid "CMS Quick Contact"
+msgstr ""
+
+#: elementor/core/widgets/cms_quickcontact.php:131
+msgid "Your Title"
+msgstr ""
+
+#: elementor/core/widgets/cms_quickcontact.php:230
+msgid "Phone Settings"
+msgstr ""
+
+#: elementor/core/widgets/cms_quickcontact.php:279
+#: elementor/core/widgets/cms_slider.php:1001
+msgid "Number"
+msgstr ""
+
+#: elementor/core/widgets/cms_quickcontact.php:313
+msgid "Address Settings"
+msgstr ""
+
+#: elementor/core/widgets/cms_quickcontact.php:367
+msgid "Enter your address"
+msgstr ""
+
+#: elementor/core/widgets/cms_quickcontact.php:395
+msgid "Time Settings"
+msgstr ""
+
+#: elementor/core/widgets/cms_quickcontact.php:445
+msgid "Time"
+msgstr ""
+
+#: elementor/core/widgets/cms_quickcontact.php:454
+msgid "Exclude Time"
+msgstr ""
+
+#: elementor/core/widgets/cms_quickcontact.php:488
+msgid "Socials"
+msgstr ""
+
+#: elementor/core/widgets/cms_slider.php:27
+msgid "CMS Slider"
+msgstr ""
+
+#: elementor/core/widgets/cms_slider.php:60
+#: inc/post-type-options/args-page/header.php:87
+#: inc/theme-options/args/header.php:97 inc/theme-options/args/header.php:100
+msgid "Header Transparent"
+msgstr ""
+
+#: elementor/core/widgets/cms_slider.php:64
+msgid "Make arrows alignment middle when have Header Transparent"
+msgstr ""
+
+#: elementor/core/widgets/cms_slider.php:68
+msgid "Choose Layout"
+msgstr ""
+
+#: elementor/core/widgets/cms_slider.php:91
+msgid "Slider List"
+msgstr ""
+
+#: elementor/core/widgets/cms_slider.php:98
+msgid "Slider Type"
+msgstr ""
+
+#: elementor/core/widgets/cms_slider.php:103
+#: elementor/core/widgets/cms_slider.php:125
+msgid "Youtube Video"
+msgstr ""
+
+#: elementor/core/widgets/cms_slider.php:111
+msgid "Main Image"
+msgstr ""
+
+#: elementor/core/widgets/cms_slider.php:126
+#: elementor/core/widgets/cms_text_scroll.php:102
+msgid "Just enter Youtube video URL"
+msgstr ""
+
+#: elementor/core/widgets/cms_slider.php:140
+msgid "Overlay Video"
+msgstr ""
+
+#: elementor/core/widgets/cms_slider.php:154
+msgid "Sub Title"
+msgstr ""
+
+#: elementor/core/widgets/cms_slider.php:156
+msgid "This is the subtitle"
+msgstr ""
+
+#: elementor/core/widgets/cms_slider.php:157
+msgid "Enter your subtitle"
+msgstr ""
+
+#: elementor/core/widgets/cms_slider.php:166
+msgid "This is the title"
+msgstr ""
+
+#: elementor/core/widgets/cms_slider.php:176
+msgid "This is the description"
+msgstr ""
+
+#: elementor/core/widgets/cms_slider.php:185
+#: elementor/core/widgets/cms_slider.php:187
+#: elementor/core/widgets/cms_slider.php:610
+msgid "Button Primary"
+msgstr ""
+
+#: elementor/core/widgets/cms_slider.php:204
+#: elementor/core/widgets/cms_slider.php:231
+msgid "Type text to find Post/Page name or just enter your custom URL"
+msgstr ""
+
+#: elementor/core/widgets/cms_slider.php:212
+#: elementor/core/widgets/cms_slider.php:214
+#: elementor/core/widgets/cms_slider.php:640
+msgid "Button Secondary"
+msgstr ""
+
+#: elementor/core/widgets/cms_slider.php:238
+#: elementor/core/widgets/cms_slider.php:670
+msgid "Button Video"
+msgstr ""
+
+#: elementor/core/widgets/cms_slider.php:239
+msgid "Video url from  YouTube/Vimeo/Dailymotion."
+msgstr ""
+
+#: elementor/core/widgets/cms_slider.php:253
+msgid "Text beside play icon"
+msgstr ""
+
+#: elementor/core/widgets/cms_slider.php:266
+msgid "Feature Title"
+msgstr ""
+
+#: elementor/core/widgets/cms_slider.php:278
+msgid "Feature Description"
+msgstr ""
+
+#: elementor/core/widgets/cms_slider.php:303
+msgid "Feature Link"
+msgstr ""
+
+#: elementor/core/widgets/cms_slider.php:307
+msgid "add your link here"
+msgstr ""
+
+#: elementor/core/widgets/cms_slider.php:317
+msgid "Slides"
+msgstr ""
+
+#: elementor/core/widgets/cms_slider.php:339
+msgid "Add Slide"
+msgstr ""
+
+#: elementor/core/widgets/cms_slider.php:347
+msgid "Static Layer"
+msgstr ""
+
+#: elementor/core/widgets/cms_slider.php:372
+msgid "Static Icons"
+msgstr ""
+
+#: elementor/core/widgets/cms_slider.php:387
+msgid "Add Static Item"
+msgstr ""
+
+#: elementor/core/widgets/cms_slider.php:393
+msgid "Static Color"
+msgstr ""
+
+#: elementor/core/widgets/cms_slider.php:403
+#: elementor/core/widgets/cms_slider.php:510
+#: elementor/core/widgets/cms_slider.php:540
+#: elementor/core/widgets/cms_slider.php:587
+#: elementor/core/widgets/cms_slider.php:617
+#: elementor/core/widgets/cms_slider.php:647
+#: elementor/core/widgets/cms_slider.php:678
+#: elementor/core/widgets/cms_slider.php:710
+msgid "Animation"
+msgstr ""
+
+#: elementor/core/widgets/cms_slider.php:412
+#: elementor/core/widgets/cms_slider.php:519
+#: elementor/core/widgets/cms_slider.php:549
+#: elementor/core/widgets/cms_slider.php:596
+#: elementor/core/widgets/cms_slider.php:626
+#: elementor/core/widgets/cms_slider.php:656
+#: elementor/core/widgets/cms_slider.php:688
+#: elementor/core/widgets/cms_slider.php:720
+msgid "Animation Delay"
+msgstr ""
+
+#: elementor/core/widgets/cms_slider.php:426
+#: inc/post-type-options/args-page/content.php:7
+#: inc/post-type-options/page-options.php:17
+#: inc/post-type-options/product-options.php:7 inc/theme-functions.php:2005
+#: inc/theme-options/args/content.php:7 inc/theme-options/args/general.php:4
+#: inc/theme-options/args/header.php:7 inc/theme-options/args/shop.php:7
+#: inc/theme-options/args/sidebar.php:7
+msgid "General"
+msgstr ""
+
+#: elementor/core/widgets/cms_slider.php:431
+msgid "Overlay Style"
+msgstr ""
+
+#: elementor/core/widgets/cms_slider.php:439
+msgid "Overlay Shadow"
+msgstr ""
+
+#: elementor/core/widgets/cms_slider.php:480
+msgid "Content Move Top"
+msgstr ""
+
+#: elementor/core/widgets/cms_slider.php:503
+msgid "Subtitle"
+msgstr ""
+
+#: elementor/core/widgets/cms_slider.php:570 inc/template-tags.php:5708
+msgid "Width"
+msgstr ""
+
+#: elementor/core/widgets/cms_slider.php:741
+msgid "Slider Height"
+msgstr ""
+
+#: elementor/core/widgets/cms_slider.php:995
+msgid "Dots Type"
+msgstr ""
+
+#: elementor/core/widgets/cms_slider.php:998
+msgid "Progressbar"
+msgstr ""
+
+#: elementor/core/widgets/cms_slider.php:999
+msgid "Dots"
+msgstr ""
+
+#: elementor/core/widgets/cms_slider.php:1000
+msgid "Dots Circle"
+msgstr ""
+
+#: elementor/core/widgets/cms_slider.php:1002
+msgid "Fraction (Current/Total)"
+msgstr ""
+
+#: elementor/core/widgets/cms_slider.php:1003
+msgid "Current of Total"
+msgstr ""
+
+#: elementor/core/widgets/cms_social_icons.php:27
+msgid "CMS Social Icons"
+msgstr ""
+
+#: elementor/core/widgets/cms_social_icons.php:76
+#: elementor/core/widgets/cms_social_icons.php:117
+#: elementor/core/widgets/cms_social_icons.php:209
+msgid "Icons"
+msgstr ""
+
+#: elementor/core/widgets/cms_social_icons.php:239
+msgid "Show Title"
+msgstr ""
+
+#: elementor/core/widgets/cms_tabs.php:28
+msgid "CMS Tabs"
+msgstr ""
+
+#: elementor/core/widgets/cms_tabs.php:199
+msgid "Tabs Settings"
+msgstr ""
+
+#: elementor/core/widgets/cms_tabs.php:207
+#: elementor/core/widgets/cms_tabs.php:365
+msgid "Tab Title"
+msgstr ""
+
+#: elementor/core/widgets/cms_tabs.php:255
+msgid "Icon Title"
+msgstr ""
+
+#: elementor/core/widgets/cms_tabs.php:296
+#: elementor/core/widgets/cms_tabs.php:409
+msgid "Tabs Content"
+msgstr ""
+
+#: elementor/core/widgets/cms_tabs.php:461
+msgid "Banner CSS Class"
+msgstr ""
+
+#: elementor/core/widgets/cms_tabs.php:517
+msgid "Count Color"
+msgstr ""
+
+#: elementor/core/widgets/cms_tabs.php:524
+msgid "Total Count Color"
+msgstr ""
+
+#: elementor/core/widgets/cms_tabs.php:538
+msgid "Tab Title Color"
+msgstr ""
+
+#: elementor/core/widgets/cms_tabs.php:545
+msgid "Tab Title Active Color"
+msgstr ""
+
+#: elementor/core/widgets/cms_tabs.php:552
+msgid "Tab Title Border Color"
+msgstr ""
+
+#: elementor/core/widgets/cms_tabs.php:559
+msgid "Tab Title Border Active Color"
+msgstr ""
+
+#: elementor/core/widgets/cms_tabs.php:566
+msgid "Mobile Tab Title Color"
+msgstr ""
+
+#: elementor/core/widgets/cms_tabs.php:575
+msgid "Mobile Tab Title Active Color"
+msgstr ""
+
+#: elementor/core/widgets/cms_tabs.php:582
+msgid "Tab Content Title Color"
+msgstr ""
+
+#: elementor/core/widgets/cms_tabs.php:589
+msgid "Tab Content Description Color"
+msgstr ""
+
+#: elementor/core/widgets/cms_tabs.php:596
+msgid "Tab Content Description #2 Color"
+msgstr ""
+
+#: elementor/core/widgets/cms_tabs.php:604
+msgid "Tab Content Feature Color"
+msgstr ""
+
+#: elementor/core/widgets/cms_teams.php:28
+msgid "CMS Teams"
+msgstr ""
+
+#: elementor/core/widgets/cms_teams.php:96
+msgid "Teams Settings"
+msgstr ""
+
+#: elementor/core/widgets/cms_teams.php:146
+msgid "Social Icon"
+msgstr ""
+
+#: elementor/core/widgets/cms_teams.php:152
+msgid "Social Link"
+msgstr ""
+
+#: elementor/core/widgets/cms_teams.php:212
+msgid "Add member"
+msgstr ""
+
+#: elementor/core/widgets/cms_teams.php:262
+msgid "Avatar Size"
+msgstr ""
+
+#: elementor/core/widgets/cms_teams.php:286
+msgid "Title Color Hover"
+msgstr ""
+
+#: elementor/core/widgets/cms_teams.php:293
+#: elementor/core/widgets/cms_testimonials.php:241
+msgid "Position Color"
+msgstr ""
+
+#: elementor/core/widgets/cms_testimonials.php:26
+msgid "CMS Testimonials"
+msgstr ""
+
+#: elementor/core/widgets/cms_testimonials.php:89
+#: elementor/core/widgets/cms_testimonials.php:133
+msgid "Testimonials"
+msgstr ""
+
+#: elementor/core/widgets/cms_testimonials.php:98
+msgid "Avatar"
+msgstr ""
+
+#: elementor/core/widgets/cms_testimonials.php:111
+msgid "Author Name"
+msgstr ""
+
+#: elementor/core/widgets/cms_testimonials.php:127
+msgid "Testimonial Description"
+msgstr ""
+
+#: elementor/core/widgets/cms_testimonials.php:141
+msgid "Testimonial Name"
+msgstr ""
+
+#: elementor/core/widgets/cms_testimonials.php:142
+msgid "Testimonial Position"
+msgstr ""
+
+#: elementor/core/widgets/cms_testimonials.php:143
+msgid ""
+"#1 Testimonial Description. It is a long established fact that a reader "
+"will be distracted by the readable content of a page when looking at its "
+"layout."
+msgstr ""
+
+#: elementor/core/widgets/cms_testimonials.php:149
+msgid "Testimonial Name #2"
+msgstr ""
+
+#: elementor/core/widgets/cms_testimonials.php:150
+msgid "Testimonial Position #2"
+msgstr ""
+
+#: elementor/core/widgets/cms_testimonials.php:151
+msgid ""
+"#2 Testimonial Description. It is a long established fact that a reader "
+"will be distracted by the readable content of a page when looking at its "
+"layout."
+msgstr ""
+
+#: elementor/core/widgets/cms_testimonials.php:157
+msgid "Testimonial Name #3"
+msgstr ""
+
+#: elementor/core/widgets/cms_testimonials.php:158
+msgid "Testimonial Position #3"
+msgstr ""
+
+#: elementor/core/widgets/cms_testimonials.php:159
+msgid ""
+"#3 Testimonial Description. It is a long established fact that a reader "
+"will be distracted by the readable content of a page when looking at its "
+"layout."
+msgstr ""
+
+#: elementor/core/widgets/cms_testimonials.php:227
+msgid "Testimonial Color"
+msgstr ""
+
+#: elementor/core/widgets/cms_testimonials.php:234
+msgid "Author Color"
+msgstr ""
+
+#: elementor/core/widgets/cms_text_scroll.php:27
+msgid "CMS Text Scroll"
+msgstr ""
+
+#: elementor/core/widgets/cms_text_scroll.php:81
+msgid "Text Settings"
+msgstr ""
+
+#: elementor/core/widgets/cms_text_scroll.php:101
+msgid "Banner Video"
+msgstr ""
+
+#: elementor/core/widgets/cms_text_scroll.php:121
+#: elementor/core/widgets/cms_video_player.php:305
+msgid "Scoll Texts"
+msgstr ""
+
+#: elementor/core/widgets/cms_text_scroll.php:169
+msgid "Speed"
+msgstr ""
+
+#: elementor/core/widgets/cms_text_scroll.php:177
+msgid "Direction"
+msgstr ""
+
+#: elementor/core/widgets/cms_text_scroll.php:194
+msgid "Text Color On Hover"
+msgstr ""
+
+#: elementor/core/widgets/cms_video_player.php:27
+msgid "CMS Video Player"
+msgstr ""
+
+#: elementor/core/widgets/cms_video_player.php:66
+msgid "Single Practice"
+msgstr ""
+
+#: elementor/core/widgets/cms_video_player.php:70
+msgid "Background Video"
+msgstr ""
+
+#: elementor/core/widgets/cms_video_player.php:82
+msgid "Video Content"
+msgstr ""
+
+#: elementor/core/widgets/cms_video_player.php:89
+msgid "Video URL"
+msgstr ""
+
+#: elementor/core/widgets/cms_video_player.php:90
+msgid "Video url from  YouTube/Vimeo/Dailymotion"
+msgstr ""
+
+#: elementor/core/widgets/cms_video_player.php:100
+msgid "Video Icon"
+msgstr ""
+
+#: elementor/core/widgets/cms_video_player.php:117
+msgid "Video Shape"
+msgstr ""
+
+#: elementor/core/widgets/cms_video_player.php:132
+msgid "Video Text"
+msgstr ""
+
+#: elementor/core/widgets/cms_video_player.php:146
+msgid "Video Banner"
+msgstr ""
+
+#: elementor/core/widgets/cms_video_player.php:164
+msgid "Banner Size"
+msgstr ""
+
+#: elementor/core/widgets/cms_video_player.php:193
+msgid "Small Heading Icon"
+msgstr ""
+
+#: elementor/core/widgets/cms_video_player.php:273
+msgid "Shape Text"
+msgstr ""
+
+#: elementor/core/widgets/cms_video_player.php:337
+msgid "Video Settings"
+msgstr ""
+
+#: elementor/core/widgets/cms_video_player.php:347
+msgid "Lightbox"
+msgstr ""
+
+#: elementor/core/widgets/cms_video_player.php:357
+msgid "Video Height"
+msgstr ""
+
+#: elementor/core/widgets/cms_video_player.php:398
+msgid "Loop"
+msgstr ""
+
+#: elementor/core/widgets/cms_video_player.php:410
+msgid "Mute"
+msgstr ""
+
+#: elementor/core/widgets/cms_video_player.php:422
+msgid "Player Controls"
+msgstr ""
+
+#: elementor/core/widgets/cms_video_player.php:434
+msgid "Video Fit?"
+msgstr ""
+
+#: elementor/core/widgets/cms_video_player.php:446
+msgid "Video Scale?"
+msgstr ""
+
+#: elementor/core/widgets/cms_video_player.php:474
+msgid "Stroke Color"
+msgstr ""
+
+#: elementor/core/widgets/cms_video_player.php:483
+msgid "Stroke Color Hover"
+msgstr ""
+
+#: elementor/core/widgets/cms_video_player.php:493
+msgid "Video Background Color"
+msgstr ""
+
+#: elementor/core/widgets/cms_video_player.php:498
+msgid "Video Icon Color"
+msgstr ""
+
+#: elementor/core/widgets/cms_video_player.php:503
+msgid "Video Text Color"
+msgstr ""
+
+#: elementor/templates/widgets/cms_newsletter/layout1-black.php:133
+#: elementor/templates/widgets/cms_newsletter/layout1.php:123
+#: elementor/templates/widgets/cms_newsletter/layout2.php:142
+#: elementor/templates/widgets/cms_newsletter/layout3.php:150
+#: elementor/templates/widgets/cms_newsletter/layout4.php:133
+#: inc/template-tags.php:2943
+msgid "Your Name"
+msgstr ""
+
+#: elementor/templates/widgets/cms_newsletter/layout1-black.php:135
+#: elementor/templates/widgets/cms_newsletter/layout1.php:125
+#: elementor/templates/widgets/cms_newsletter/layout2.php:144
+#: elementor/templates/widgets/cms_newsletter/layout3.php:152
+#: elementor/templates/widgets/cms_newsletter/layout4.php:135
+msgid "Your Email Address"
+msgstr ""
+
+#: elementor/templates/widgets/cms_posts_carousel/layout1.php:84
+#: elementor/templates/widgets/cms_posts_carousel/layout2.php:79
+#: elementor/templates/widgets/cms_posts_carousel/layout4.php:85
+#: elementor/templates/widgets/cms_posts_carousel/layout5.php:81
+#: elementor/templates/widgets/cms_posts_carousel/layout6.php:73
+#: elementor/templates/widgets/cms_posts_carousel/layout7.php:72
+#: elementor/templates/widgets/cms_posts_carousel/layout8.php:71
+#: elementor/templates/widgets/cms_posts_carousel/layout9.php:71
+#: elementor/templates/widgets/cms_posts_grid/layout-all.php:45
+#: elementor/templates/widgets/cms_posts_grid/layout-career.php:25
+#: elementor/templates/widgets/cms_posts_grid/layout1.php:45
+#: elementor/templates/widgets/cms_posts_grid/layout2.php:45
+#: elementor/templates/widgets/cms_posts_grid/layout3.php:47
+#: elementor/templates/widgets/cms_posts_grid/layout4.php:46
+#: elementor/templates/widgets/cms_posts_grid/layout5.php:45
+#: elementor/templates/widgets/cms_posts_grid/layout6.php:46
+#: elementor/templates/widgets/cms_posts_grid/layout7.php:46
+#: elementor/templates/widgets/cms_posts_grid/layout8.php:47
+#: elementor/templates/widgets/cms_posts_grid/layout9.php:47
+#: inc/template-tags.php:2097
+msgid "Explore More"
+msgstr ""
+
+#: elementor/templates/widgets/cms_posts_grid/layout-all.php:92
+#: elementor/templates/widgets/cms_posts_grid/layout-career.php:94
+#: elementor/templates/widgets/cms_posts_grid/layout1.php:92
+#: elementor/templates/widgets/cms_posts_grid/layout2.php:93
+#: elementor/templates/widgets/cms_posts_grid/layout3.php:96
+#: elementor/templates/widgets/cms_posts_grid/layout4.php:94
+#: elementor/templates/widgets/cms_posts_grid/layout5.php:98
+#: elementor/templates/widgets/cms_posts_grid/layout6.php:94
+#: elementor/templates/widgets/cms_posts_grid/layout7.php:97
+#: elementor/templates/widgets/cms_posts_grid/layout8.php:97
+#: elementor/templates/widgets/cms_posts_grid/layout9.php:96
+msgid "Load More"
+msgstr ""
+
+#: elementor/templates/widgets/cms_pricing/layout1.php:59
+msgid "Monthly"
+msgstr ""
+
+#: elementor/templates/widgets/cms_pricing/layout1.php:62
+msgid "Yearly"
+msgstr ""
+
+#: elementor/templates/widgets/cms_pricing/layout1.php:67
+msgid "Save"
+msgstr ""
+
+#: footer.php:40
+msgid "Drag"
+msgstr ""
+
+#: footer.php:56
+msgid "Scroll"
+msgstr ""
+
+#: header.php:32
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: inc/classes/class-breadcrumb.php:53
+msgid "Home"
+msgstr ""
+
+#: inc/classes/class-breadcrumb.php:56
+msgid "Not Found"
+msgstr ""
+
+#: inc/classes/class-breadcrumb.php:57
+msgid "Search Results"
+msgstr ""
+
+#: inc/classes/class-breadcrumb.php:303
+#: woocommerce/single-product/meta.php:41
+msgid "Tag:"
+msgid_plural "Tags:"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/classes/class-breadcrumb.php:318 inc/template-tags.php:1491
+msgid "Author:"
+msgstr ""
+
+#: inc/extensions/cf7.php:39
+msgid "Send"
+msgstr ""
+
+#: inc/extensions/cf7.php:326 inc/extensions/cf7.php:334
+msgid "CMS Time"
+msgstr ""
+
+#: inc/extensions/cf7.php:332
+#, php-format
+msgid "Generate a form-tag for a CMS Time. For more details, see %s."
+msgstr ""
+
+#: inc/extensions/cf7.php:334
+msgid "https://contactform7.com/date-field/"
+msgstr ""
+
+#: inc/extensions/cf7.php:344 inc/extensions/cf7.php:347
+msgid "Field type"
+msgstr ""
+
+#: inc/extensions/cf7.php:348
+msgid "Required field"
+msgstr ""
+
+#: inc/extensions/cf7.php:359
+msgid "Default value"
+msgstr ""
+
+#: inc/extensions/cf7.php:361
+msgid "Use this text as the placeholder of the field"
+msgstr ""
+
+#: inc/extensions/cf7.php:366
+msgid "Id attribute"
+msgstr ""
+
+#: inc/extensions/cf7.php:371
+msgid "Class attribute"
+msgstr ""
+
+#: inc/extensions/cf7.php:384
+msgid "Insert Tag"
+msgstr ""
+
+#: inc/extensions/cf7.php:389
+#, php-format
+msgid ""
+"To use the value input through this field in a mail field, you need to "
+"insert the corresponding mail-tag (%s) into the field on the Mail tab."
+msgstr ""
+
+#: inc/get-started.php:11
+msgid "About"
+msgstr ""
+
+#: inc/get-started.php:28
+msgid "Welcome to"
+msgstr ""
+
+#: inc/get-started.php:36 inc/get-started.php:113
+msgid "In order to continue, please install and activate"
+msgstr ""
+
+#: inc/get-started.php:45 inc/get-started.php:121
+msgid "Activate"
+msgstr ""
+
+#: inc/get-started.php:48 inc/get-started.php:124
+msgid "Install"
+msgstr ""
+
+#: inc/get-started.php:55 inc/get-started.php:130
+msgid ""
+"CMS Portal Plugin will allow you to update theme, install required plugins"
+msgstr ""
+
+#: inc/get-started.php:102
+msgid "By"
+msgstr ""
+
+#: inc/get-started.php:147
+msgid "Invalid nonce!"
+msgstr ""
+
+#: inc/get-started.php:152
+msgid "You are not allowed to do this!"
+msgstr ""
+
+#: inc/get-started.php:162
+msgid "Fail to get plugin link!"
+msgstr ""
+
+#: inc/get-started.php:166
+msgid "Not found plugin link!"
+msgstr ""
+
+#: inc/get-started.php:168
+msgid "Invalid plugin source!"
+msgstr ""
+
+#: inc/get-started.php:179
+msgid "Fail to install plugin!"
+msgstr ""
+
+#: inc/get-started.php:182
+msgid "Fail to activate plugin!"
+msgstr ""
+
+#: inc/get-started.php:191
+msgid "Successfully!"
+msgstr ""
+
+#: inc/post-type-options/args-page/footer.php:4 inc/theme-functions.php:2335
+#: inc/theme-options/theme-options.php:972
+msgid "Footer"
+msgstr ""
+
+#: inc/post-type-options/args-page/footer.php:8
+msgid "Custom Layout"
+msgstr ""
+
+#: inc/post-type-options/args-page/footer.php:13
+#, php-format
+msgid ""
+"To use this Option please %sClick Here%s to add your custom footer layout "
+"first."
+msgstr ""
+
+#: inc/post-type-options/args-page/header.php:4
+#: inc/theme-options/args/header.php:4
+msgid "Header"
+msgstr ""
+
+#: inc/post-type-options/args-page/header.php:8
+msgid "Custom Header"
+msgstr ""
+
+#: inc/post-type-options/args-page/header.php:23
+#: inc/theme-options/args/header.php:15
+msgid "Main Navigation"
+msgstr ""
+
+#: inc/post-type-options/args-page/header.php:34
+#: inc/post-type-options/args-page/header.php:110
+#: inc/theme-options/args/header.php:21 inc/theme-options/args/header.php:114
+msgid "Menu Color"
+msgstr ""
+
+#: inc/post-type-options/args-page/header.php:46
+#: inc/theme-options/args/header.php:29
+msgid "Header Width / Height"
+msgstr ""
+
+#: inc/post-type-options/args-page/header.php:47
+#: inc/theme-options/args/header.php:30
+msgid "Set width / height for your Header"
+msgstr ""
+
+#: inc/post-type-options/args-page/header.php:55
+#: inc/theme-options/args/header.php:35
+msgid "Extra Settings"
+msgstr ""
+
+#: inc/post-type-options/args-page/header.php:63
+#: inc/theme-options/args/header.php:38
+msgid "Header Sticky"
+msgstr ""
+
+#: inc/post-type-options/args-page/header.php:64
+#: inc/theme-options/args/header.php:39
+msgid "Header will be sticked when applicable."
+msgstr ""
+
+#: inc/post-type-options/args-page/header.php:74
+#: inc/theme-options/args/header.php:42
+msgid "Header Sticky Mode"
+msgstr ""
+
+#: inc/post-type-options/args-page/header.php:75
+#: inc/theme-options/args/header.php:43
+msgid "Header will when:"
+msgstr ""
+
+#: inc/post-type-options/args-page/header.php:77
+#: inc/theme-options/args/header.php:45
+msgid "Scroll UP"
+msgstr ""
+
+#: inc/post-type-options/args-page/header.php:78
+#: inc/theme-options/args/header.php:46
+msgid "Always"
+msgstr ""
+
+#: inc/post-type-options/args-page/header.php:88
+#: inc/theme-options/args/header.php:101
+msgid "Header transparent use with background."
+msgstr ""
+
+#: inc/post-type-options/args-page/header.php:98
+msgid "Header Transparent Mobile"
+msgstr ""
+
+#: inc/post-type-options/args-page/header.php:99
+msgid "Header transparent on Mobile Screen?"
+msgstr ""
+
+#: inc/post-type-options/args-page/header.php:111
+msgid "Header Transparent Menu Color"
+msgstr ""
+
+#: inc/post-type-options/args-page/header.php:116
+msgid "Menu Mobile Color"
+msgstr ""
+
+#: inc/post-type-options/args-page/header.php:117
+msgid "Header Transparent Menu Color on Mobile"
+msgstr ""
+
+#: inc/post-type-options/args-page/header.php:123
+msgid "Header Transparent Background Color"
+msgstr ""
+
+#: inc/post-type-options/args-page/header.php:127
+#: inc/theme-options/args/header.php:54
+msgid "Header Boxed"
+msgstr ""
+
+#: inc/post-type-options/args-page/header.php:128
+#: inc/theme-options/args/header.php:55
+msgid "Make header boxed"
+msgstr ""
+
+#: inc/post-type-options/args-page/header.php:134
+#: inc/theme-options/args/header.php:60
+msgid "Header Shadow"
+msgstr ""
+
+#: inc/post-type-options/args-page/header.php:135
+#: inc/theme-options/args/header.php:61
+msgid "Add shadow at bottom of header"
+msgstr ""
+
+#: inc/post-type-options/args-page/header.php:141 inc/template-tags.php:3107
+#: inc/theme-options/args/header.php:66
+msgid "Divider"
+msgstr ""
+
+#: inc/post-type-options/args-page/header.php:142
+#: inc/theme-options/args/header.php:67
+msgid "Add divider at bottom of header"
+msgstr ""
+
+#: inc/post-type-options/args-page/header.php:149
+msgid "Logo Settings"
+msgstr ""
+
+#: inc/post-type-options/args-page/header.php:158
+#: inc/theme-options/args/header.php:74 inc/theme-options/args/header.php:78
+#: inc/theme-options/args/header.php:106
+msgid "Logo"
+msgstr ""
+
+#: inc/post-type-options/args-page/header.php:167
+#: inc/theme-options/args/header.php:82
+msgid "Logo Dimensions"
+msgstr ""
+
+#: inc/post-type-options/args-page/header.php:168
+#: inc/post-type-options/args-page/header.php:187
+#: inc/theme-options/args/header.php:83 inc/theme-options/args/header.php:92
+#: inc/theme-options/theme-options.php:1137
+msgid "Enter number."
+msgstr ""
+
+#: inc/post-type-options/args-page/header.php:177
+#: inc/theme-options/args/header.php:87 inc/theme-options/args/header.php:110
+msgid "Logo Tablet & Mobile"
+msgstr ""
+
+#: inc/post-type-options/args-page/header.php:186
+#: inc/theme-options/args/header.php:91
+msgid "Logo Tablet & Mobile Dimensions"
+msgstr ""
+
+#: inc/post-type-options/args-page/header.php:197
+msgid "Logo - Header Transparent"
+msgstr ""
+
+#: inc/post-type-options/args-page/header.php:206
+msgid "Logo Tablet & Mobile - Header Transparent"
+msgstr ""
+
+#: inc/post-type-options/args-page/header.php:215
+msgid "Attributes Settings"
+msgstr ""
+
+#: inc/post-type-options/args-page/header.php:223
+#: inc/theme-options/args/header.php:127
+msgid "Search Icon"
+msgstr ""
+
+#: inc/post-type-options/args-page/header.php:233
+#: inc/theme-options/args/header.php:152
+msgid "Cart Icon"
+msgstr ""
+
+#: inc/post-type-options/args-page/header.php:243
+msgid "Show/Hide Email"
+msgstr ""
+
+#: inc/post-type-options/args-page/header.php:253
+#: inc/theme-options/theme-options.php:517
+msgid "Show/Hide Phone"
+msgstr ""
+
+#: inc/post-type-options/args-page/header.php:278
+#: inc/theme-options/theme-options.php:805
+msgid "Show/Hide Social"
+msgstr ""
+
+#: inc/post-type-options/args-page/page-title.php:5
+msgid "Page Title"
+msgstr ""
+
+#: inc/post-type-options/args-page/page-title.php:15
+msgid "Custom Title"
+msgstr ""
+
+#: inc/post-type-options/args-page/page-title.php:43
+#: inc/theme-options/args/page-title.php:14
+msgid "Background"
+msgstr ""
+
+#: inc/post-type-options/args-page/page-title.php:44
+#: inc/theme-options/args/page-title.php:15
+msgid "Choose Background color and image"
+msgstr ""
+
+#: inc/post-type-options/args-page/page-title.php:57
+#: inc/theme-options/args/page-title.php:23
+msgid "Overlay Background Color"
+msgstr ""
+
+#: inc/post-type-options/args-page/page-title.php:69
+#: inc/theme-options/args/page-title.php:30
+msgid "Custom Page Title"
+msgstr ""
+
+#: inc/post-type-options/args-page/page-title.php:76
+#: inc/theme-options/args/page-title.php:37
+msgid "Page Tile"
+msgstr ""
+
+#: inc/post-type-options/page-options.php:20
+#: inc/theme-options/args/general.php:7
+msgid "Colors"
+msgstr ""
+
+#: inc/post-type-options/page-options.php:23
+msgid "Custom Color"
+msgstr ""
+
+#: inc/post-type-options/page-options.php:29
+#: inc/theme-options/args/general.php:11
+msgid "Accent Color"
+msgstr ""
+
+#: inc/post-type-options/page-options.php:37
+#: inc/theme-options/args/general.php:16
+msgid "Primary Color"
+msgstr ""
+
+#: inc/post-type-options/page-options.php:45
+#: inc/theme-options/args/general.php:21
+msgid "Heading Color"
+msgstr ""
+
+#: inc/post-type-options/page-options.php:53
+#: inc/theme-options/args/general.php:26
+msgid "Body Color"
+msgstr ""
+
+#: inc/post-type-options/page-options.php:70
+#: inc/theme-options/args/general.php:38
+msgid "Other Color"
+msgstr ""
+
+#: inc/template-tags.php:365 inc/template-tags.php:1208
+#: inc/template-tags.php:1817 inc/template-tags.php:1818
+msgid "Close"
+msgstr ""
+
+#: inc/template-tags.php:367
+msgid "Type your search"
+msgstr ""
+
+#: inc/template-tags.php:369 inc/template-tags.php:374
+#: inc/template-tags.php:490 inc/template-tags.php:491
+#: inc/template-tags.php:4401
+msgid "Search"
+msgstr ""
+
+#: inc/template-tags.php:581 inc/template-tags.php:595
+#: inc/template-tags.php:602 inc/template-tags.php:614
+#: inc/template-tags.php:643
+#, php-format
+msgid "%d"
+msgid_plural "%d"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/template-tags.php:668
+msgid "Shopping Cart"
+msgstr ""
+
+#: inc/template-tags.php:1073 inc/template-tags.php:1074
+#: inc/theme-options/theme-options.php:665
+msgid "Login"
+msgstr ""
+
+#: inc/template-tags.php:1481
+msgid "404"
+msgstr ""
+
+#: inc/template-tags.php:1483
+msgid "Search results"
+msgstr ""
+
+#: inc/template-tags.php:1499
+msgid "Our Shop"
+msgstr ""
+
+#: inc/template-tags.php:1732
+#, php-format
+msgid "&copy;%s %s, All Rights Reserved. With Love by %s "
+msgstr ""
+
+#: inc/template-tags.php:1840
+msgid "Disable This Pop-up"
+msgstr ""
+
+#: inc/template-tags.php:2039
+msgid "Post password required."
+msgstr ""
+
+#: inc/template-tags.php:2247
+#, php-format
+msgid "Posts by %s"
+msgstr ""
+
+#: inc/template-tags.php:2268
+msgid "Comment"
+msgstr ""
+
+#: inc/template-tags.php:2381 inc/template-tags.php:2383
+#: woocommerce/wc-function-hooks.php:445
+#: woocommerce/wc-function-hooks.php:447
+msgid "Facebook"
+msgstr ""
+
+#: inc/template-tags.php:2389 inc/template-tags.php:2391
+#: woocommerce/wc-function-hooks.php:455
+#: woocommerce/wc-function-hooks.php:457
+msgid "Twitter"
+msgstr ""
+
+#: inc/template-tags.php:2397 inc/template-tags.php:2399
+#: woocommerce/wc-function-hooks.php:465
+#: woocommerce/wc-function-hooks.php:467
+msgid "LinkedIn"
+msgstr ""
+
+#: inc/template-tags.php:2412
+msgid "Pinterest"
+msgstr ""
+
+#: inc/template-tags.php:2598 inc/template-tags.php:2643
+msgid "Something went wrong while requesting. Please try again!"
+msgstr ""
+
+#: inc/template-tags.php:2622 inc/template-tags.php:2660
+msgid "Load Successfully!"
+msgstr ""
+
+#: inc/template-tags.php:2796 inc/template-tags.php:2802
+msgid "Prev Post"
+msgstr ""
+
+#: inc/template-tags.php:2809 inc/template-tags.php:2810
+msgid "Next Post"
+msgstr ""
+
+#: inc/template-tags.php:2859
+msgid "Reply"
+msgstr ""
+
+#: inc/template-tags.php:2916
+msgid "Your email address will not be published."
+msgstr ""
+
+#: inc/template-tags.php:2926
+msgid "Add A Review"
+msgstr ""
+
+#: inc/template-tags.php:2926
+msgid "Leave A Reply"
+msgstr ""
+
+#: inc/template-tags.php:2927
+msgid "Leave A Review To"
+msgstr ""
+
+#: inc/template-tags.php:2927
+msgid "Leave A Reply To"
+msgstr ""
+
+#: inc/template-tags.php:2928
+msgid "Cancel Review"
+msgstr ""
+
+#: inc/template-tags.php:2928
+msgid "Cancel Reply"
+msgstr ""
+
+#: inc/template-tags.php:2931
+msgid "Submit Review"
+msgstr ""
+
+#: inc/template-tags.php:2931
+msgid "Submit Comment"
+msgstr ""
+
+#: inc/template-tags.php:2953
+msgid "Email Address"
+msgstr ""
+
+#: inc/template-tags.php:2962
+msgid "Website"
+msgstr ""
+
+#: inc/template-tags.php:2973
+msgid "Your review"
+msgstr ""
+
+#: inc/template-tags.php:2973
+msgid "Your comment"
+msgstr ""
+
+#: inc/template-tags.php:3095
+msgid "Menu"
+msgstr ""
+
+#: inc/template-tags.php:3099
+msgid "Sub Text"
+msgstr ""
+
+#: inc/template-tags.php:3103
+msgid "Desc Text Color On Dark"
+msgstr ""
+
+#: inc/template-tags.php:3111
+msgid "Divider Dark"
+msgstr ""
+
+#: inc/template-tags.php:3115
+msgid "Tag Stroke"
+msgstr ""
+
+#: inc/template-tags.php:3119
+msgid "Form Stroke"
+msgstr ""
+
+#: inc/template-tags.php:3123
+msgid "Background Light"
+msgstr ""
+
+#: inc/template-tags.php:3127
+msgid "Background Light Secondary"
+msgstr ""
+
+#: inc/template-tags.php:3131
+msgid "Background Dark"
+msgstr ""
+
+#: inc/template-tags.php:3359
+msgid "Transparent"
+msgstr ""
+
+#: inc/template-tags.php:3373
+msgid "Menu - 60%"
+msgstr ""
+
+#: inc/template-tags.php:3377
+msgid "Menu - 80%"
+msgstr ""
+
+#: inc/template-tags.php:3381
+msgid "White - 50%"
+msgstr ""
+
+#: inc/template-tags.php:3385
+msgid "White - 60%"
+msgstr ""
+
+#: inc/template-tags.php:3389
+msgid "White - 70%"
+msgstr ""
+
+#: inc/template-tags.php:3393
+msgid "Divider/ Light Divider 30"
+msgstr ""
+
+#: inc/template-tags.php:3397
+msgid "Divider/ Light Divider 50"
+msgstr ""
+
+#: inc/template-tags.php:3401
+msgid "Stroke/ White Stroke"
+msgstr ""
+
+#: inc/template-tags.php:3890
+msgid "Genzia Primary Menu"
+msgstr ""
+
+#: inc/template-tags.php:4201
+#, php-format
+msgid "%s item"
+msgid_plural "%s items"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/template-tags.php:4312
+msgid "*CMS Search"
+msgstr ""
+
+#: inc/template-tags.php:4314
+msgid "Shows search form."
+msgstr ""
+
+#: inc/template-tags.php:4331 inc/template-tags.php:4402
+#: inc/template-tags.php:4406
+msgid "Search..."
+msgstr ""
+
+#: inc/template-tags.php:4409 inc/template-tags.php:4570
+#: inc/template-tags.php:4783 inc/template-tags.php:5696
+#: inc/template-tags.php:5981
+msgid "Title:"
+msgstr ""
+
+#: inc/template-tags.php:4413
+msgid "Placeholder:"
+msgstr ""
+
+#: inc/template-tags.php:4439
+msgid "*CMS Recent Posts"
+msgstr ""
+
+#: inc/template-tags.php:4441
+msgid "Shows your most recent posts."
+msgstr ""
+
+#: inc/template-tags.php:4554 inc/template-tags.php:4561
+msgid "Recent Posts"
+msgstr ""
+
+#: inc/template-tags.php:4585
+msgid "Post in"
+msgstr ""
+
+#: inc/template-tags.php:4587
+msgid "Recent"
+msgstr ""
+
+#: inc/template-tags.php:4588
+msgid "Featured"
+msgstr ""
+
+#: inc/template-tags.php:4597
+msgid "Number of posts to show:"
+msgstr ""
+
+#: inc/template-tags.php:4616
+msgid "Add a navigation menu to your sidebar."
+msgstr ""
+
+#: inc/template-tags.php:4622
+msgid "*CMS Menu"
+msgstr ""
+
+#: inc/template-tags.php:4633
+msgid "CMS Menu"
+msgstr ""
+
+#: inc/template-tags.php:4775
+#, php-format
+msgid "No menus have been created yet. <a href=\"%s\">Create some</a>."
+msgstr ""
+
+#: inc/template-tags.php:4789
+msgid "Blog Categories"
+msgstr ""
+
+#: inc/template-tags.php:4790
+msgid "Product Categories"
+msgstr ""
+
+#: inc/template-tags.php:4794
+msgid "Select Menu:"
+msgstr ""
+
+#: inc/template-tags.php:4796
+msgid "&mdash; Select &mdash;"
+msgstr ""
+
+#: inc/template-tags.php:4805
+msgid "Show taxonomy items count?"
+msgstr ""
+
+#: inc/template-tags.php:4808
+msgid "Number with ()"
+msgstr ""
+
+#: inc/template-tags.php:4809
+msgid "Number with Text"
+msgstr ""
+
+#: inc/template-tags.php:4810
+msgid "Number Circle"
+msgstr ""
+
+#: inc/template-tags.php:4814
+msgid "Link CSS class:"
+msgstr ""
+
+#: inc/template-tags.php:4819
+msgid "Edit Menu"
+msgstr ""
+
+#: inc/template-tags.php:4840
+msgid "*CMS Categories"
+msgstr ""
+
+#: inc/template-tags.php:4842
+msgid "A list or dropdown of categories."
+msgstr ""
+
+#: inc/template-tags.php:4852 inc/theme-options/args/content.php:39
+#: inc/theme-options/args/content.php:78
+msgid "Categories"
+msgstr ""
+
+#: inc/template-tags.php:4884
+msgid "Select Category"
+msgstr ""
+
+#: inc/template-tags.php:4964
+msgid "Display as dropdown"
+msgstr ""
+
+#: inc/template-tags.php:4968
+msgid "Show post counts"
+msgstr ""
+
+#: inc/template-tags.php:4972
+msgid "Show hierarchy"
+msgstr ""
+
+#: inc/template-tags.php:4975
+msgid "Included Categories"
+msgstr ""
+
+#: inc/template-tags.php:5185 inc/template-tags.php:5368
+#, php-format
+msgid "Feed for all posts filed under %s"
+msgstr ""
+
+#: inc/template-tags.php:5502
+msgid "*CMS Gallery"
+msgstr ""
+
+#: inc/template-tags.php:5504
+msgid "Displays an image gallery."
+msgstr ""
+
+#: inc/template-tags.php:5512
+msgid "No images selected"
+msgstr ""
+
+#: inc/template-tags.php:5513
+msgctxt ""
+"label for button in the gallery widget; should not be longer than ~13 "
+"characters long"
+msgid "Add Images"
+msgstr ""
+
+#: inc/template-tags.php:5515
+msgctxt ""
+"label for button in the gallery widget; should not be longer than ~13 "
+"characters long"
+msgid "Edit Gallery"
+msgstr ""
+
+#: inc/template-tags.php:5536
+msgid "Title for the widget"
+msgstr ""
+
+#: inc/template-tags.php:5543 inc/template-tags.php:5700
+msgid "Custom URL"
+msgstr ""
+
+#: inc/template-tags.php:5550
+msgid "Image Size Width"
+msgstr ""
+
+#: inc/template-tags.php:5557
+msgid "Image Size Height"
+msgstr ""
+
+#: inc/template-tags.php:5704
+msgid "Image Size (Number Only!)"
+msgstr ""
+
+#: inc/template-tags.php:5765
+#, php-format
+msgid "The current image has no alternative text. The file name is: %s"
+msgstr ""
+
+#: inc/template-tags.php:5779
+#, php-format
+msgid "Additional images added to this gallery: %s"
+msgstr ""
+
+#: inc/template-tags.php:5832
+msgid "*CMS Follow Us"
+msgstr ""
+
+#: inc/template-tags.php:5834
+msgid "Shows your social networks."
+msgstr ""
+
+#: inc/template-tags.php:5965
+msgid "CMS Follow Us"
+msgstr ""
+
+#: inc/template-tags.php:5986
+msgid "Network"
+msgstr ""
+
+#: inc/template-tags.php:5989
+msgid "Url"
+msgstr ""
+
+#: inc/template-tags.php:6027
+msgid "*CMS CTA"
+msgstr ""
+
+#: inc/template-tags.php:6029
+msgid "CMS Call to Action."
+msgstr ""
+
+#: inc/template-tags.php:6143
+msgid "Choose your background"
+msgstr ""
+
+#: inc/template-tags.php:6147
+msgid "Change Background"
+msgstr ""
+
+#: inc/template-tags.php:6147
+msgid "Upload Background"
+msgstr ""
+
+#: inc/theme-functions.php:28
+msgid "Your Rating"
+msgstr ""
+
+#: inc/theme-functions.php:58
+msgid "Your rating"
+msgstr ""
+
+#: inc/theme-functions.php:61
+msgid "Rate&hellip;"
+msgstr ""
+
+#: inc/theme-functions.php:62
+msgid "Perfect"
+msgstr ""
+
+#: inc/theme-functions.php:63
+msgid "Good"
+msgstr ""
+
+#: inc/theme-functions.php:64
+msgid "Average"
+msgstr ""
+
+#: inc/theme-functions.php:65
+msgid "Not that bad"
+msgstr ""
+
+#: inc/theme-functions.php:66
+msgid "Very poor"
+msgstr ""
+
+#: inc/theme-functions.php:118
+msgid ""
+"Error: You did not add a rating. Hit the Back button on your Web browser "
+"and resubmit your comment with a rating."
+msgstr ""
+
+#: inc/theme-functions.php:240
+msgid "positive feedback"
+msgstr ""
+
+#: inc/theme-functions.php:241
+msgid "negative feedback"
+msgstr ""
+
+#: inc/theme-functions.php:297
+msgid "Gradient #1"
+msgstr ""
+
+#: inc/theme-functions.php:298
+msgid "Gradient #2"
+msgstr ""
+
+#: inc/theme-functions.php:299
+msgid "Gradient #3"
+msgstr ""
+
+#: inc/theme-functions.php:300
+msgid "Gradient #4"
+msgstr ""
+
+#: inc/theme-functions.php:301
+msgid "Gradient #5"
+msgstr ""
+
+#: inc/theme-functions.php:302
+msgid "Gradient #6"
+msgstr ""
+
+#: inc/theme-functions.php:303
+msgid "Gradient #7"
+msgstr ""
+
+#: inc/theme-functions.php:320
+msgid "Genzia Custom"
+msgstr ""
+
+#: inc/theme-functions.php:327
+msgid "Container Width"
+msgstr ""
+
+#: inc/theme-functions.php:331
+msgid "Boxed"
+msgstr ""
+
+#: inc/theme-functions.php:332
+msgid "Boxed Full Left"
+msgstr ""
+
+#: inc/theme-functions.php:333
+msgid "Boxed Full Right"
+msgstr ""
+
+#: inc/theme-functions.php:343
+msgid "Container Space"
+msgstr ""
+
+#: inc/theme-functions.php:347
+msgid "No Space"
+msgstr ""
+
+#: inc/theme-functions.php:348 inc/theme-functions.php:2321
+#: inc/theme-options/theme-options.php:873
+msgid "Header Top"
+msgstr ""
+
+#: inc/theme-functions.php:359
+msgid "Container Gradient"
+msgstr ""
+
+#: inc/theme-functions.php:371
+msgid "Content Width (Full)"
+msgstr ""
+
+#: inc/theme-functions.php:375
+msgid "Boxed Wide"
+msgstr ""
+
+#: inc/theme-functions.php:376
+msgid "Full Width - Space Start"
+msgstr ""
+
+#: inc/theme-functions.php:377
+msgid "Full Width - Space End"
+msgstr ""
+
+#: inc/theme-functions.php:378
+msgid "Full Width - Header Left"
+msgstr ""
+
+#: inc/theme-functions.php:398
+msgid "Container background attachment fixed?"
+msgstr ""
+
+#: inc/theme-functions.php:466
+msgid "CMS Shape Top"
+msgstr ""
+
+#: inc/theme-functions.php:475
+msgid "CMS Shape Bottom"
+msgstr ""
+
+#: inc/theme-functions.php:484
+msgid "CMS Shape Top #2"
+msgstr ""
+
+#: inc/theme-functions.php:493
+msgid "CMS Shape Bottom #2"
+msgstr ""
+
+#: inc/theme-functions.php:502
+msgid "CMS Shape Top #3"
+msgstr ""
+
+#: inc/theme-functions.php:511
+msgid "CMS Shape Bottom #3"
+msgstr ""
+
+#: inc/theme-functions.php:520
+msgid "CMS Shape Top #4"
+msgstr ""
+
+#: inc/theme-functions.php:529
+msgid "CMS Shape Bottom #4"
+msgstr ""
+
+#: inc/theme-functions.php:1297
+msgid "Layout Career"
+msgstr ""
+
+#: inc/theme-functions.php:1854
+msgid "YouTube Link"
+msgstr ""
+
+#: inc/theme-functions.php:1957
+msgid "Add your feature"
+msgstr ""
+
+#: inc/theme-functions.php:1961
+msgid "Your feature"
+msgstr ""
+
+#: inc/theme-functions.php:2017
+msgid "Job Salary"
+msgstr ""
+
+#: inc/theme-functions.php:2287
+msgid "Portfolio"
+msgstr ""
+
+#: inc/theme-functions.php:2307
+msgid "Side Nav"
+msgstr ""
+
+#: inc/theme-functions.php:2308
+msgid "Side Navs"
+msgstr ""
+
+#: inc/theme-functions.php:2322
+msgid "Headers Top"
+msgstr ""
+
+#: inc/theme-functions.php:2336
+msgid "Footers"
+msgstr ""
+
+#: inc/theme-functions.php:2349 inc/theme-options/theme-options.php:1146
+msgid "Pop Up"
+msgstr ""
+
+#: inc/theme-functions.php:2350
+msgid "Pop Ups"
+msgstr ""
+
+#: inc/theme-functions.php:2370
+msgid "Portfolio Category"
+msgstr ""
+
+#: inc/theme-functions.php:2371
+msgid "Portfolio Categories"
+msgstr ""
+
+#: inc/theme-functions.php:2379
+msgid "Practice Category"
+msgstr ""
+
+#: inc/theme-functions.php:2380
+msgid "Practice Categories"
+msgstr ""
+
+#: inc/theme-functions.php:2387
+msgid "Practice Tag"
+msgstr ""
+
+#: inc/theme-functions.php:2388
+msgid "Practice Tags"
+msgstr ""
+
+#: inc/theme-functions.php:2397
+msgid "Service Category"
+msgstr ""
+
+#: inc/theme-functions.php:2398
+msgid "Service Categories"
+msgstr ""
+
+#: inc/theme-functions.php:2405
+msgid "Service Tag"
+msgstr ""
+
+#: inc/theme-functions.php:2406
+msgid "Service Tags"
+msgstr ""
+
+#: inc/theme-functions.php:2415
+msgid "Case Category"
+msgstr ""
+
+#: inc/theme-functions.php:2416
+msgid "Case Categories"
+msgstr ""
+
+#: inc/theme-functions.php:2423
+msgid "Case Tag"
+msgstr ""
+
+#: inc/theme-functions.php:2424
+msgid "Case Tags"
+msgstr ""
+
+#: inc/theme-functions.php:2433
+msgid "Career Category"
+msgstr ""
+
+#: inc/theme-functions.php:2434
+msgid "Career Categories"
+msgstr ""
+
+#: inc/theme-functions.php:2441
+msgid "Career Tag"
+msgstr ""
+
+#: inc/theme-functions.php:2442
+msgid "Career Tags"
+msgstr ""
+
+#: inc/theme-options/args/404-page.php:4
+msgid "404 Page"
+msgstr ""
+
+#: inc/theme-options/args/404-page.php:17
+msgid "Default: Take me go back home"
+msgstr ""
+
+#: inc/theme-options/args/api.php:4
+msgid "Api"
+msgstr ""
+
+#: inc/theme-options/args/api.php:8
+msgid "Google Maps API Key"
+msgstr ""
+
+#: inc/theme-options/args/api.php:9
+msgid "Register a Google Maps Api key then put it in here."
+msgstr ""
+
+#: inc/theme-options/args/api.php:15
+msgid "Open AI API Key"
+msgstr ""
+
+#: inc/theme-options/args/api.php:16
+msgid "Make a Open AI Api key then put it in here."
+msgstr ""
+
+#: inc/theme-options/args/content.php:12
+msgid "Search Form - Text Placeholder"
+msgstr ""
+
+#: inc/theme-options/args/content.php:13
+msgid "Default: Search Keywords..."
+msgstr ""
+
+#: inc/theme-options/args/content.php:18
+msgid "Archive"
+msgstr ""
+
+#: inc/theme-options/args/content.php:23
+msgid "Archive Meta"
+msgstr ""
+
+#: inc/theme-options/args/content.php:28
+msgid "Show author name on each post."
+msgstr ""
+
+#: inc/theme-options/args/content.php:34
+msgid "Show date posted on each post."
+msgstr ""
+
+#: inc/theme-options/args/content.php:40
+msgid "Show category names on each post."
+msgstr ""
+
+#: inc/theme-options/args/content.php:46
+msgid "Show comments count on each post."
+msgstr ""
+
+#: inc/theme-options/args/content.php:52
+msgid "Single Post"
+msgstr ""
+
+#: inc/theme-options/args/content.php:57
+msgid "Post Meta"
+msgstr ""
+
+#: inc/theme-options/args/content.php:62
+msgid "Show author name on single post."
+msgstr ""
+
+#: inc/theme-options/args/content.php:67
+msgid "Author Info"
+msgstr ""
+
+#: inc/theme-options/args/content.php:68
+msgid "Show author info on single post."
+msgstr ""
+
+#: inc/theme-options/args/content.php:73
+msgid "Show date on single post."
+msgstr ""
+
+#: inc/theme-options/args/content.php:79
+msgid "Show category names on single post."
+msgstr ""
+
+#: inc/theme-options/args/content.php:85
+msgid "Show tag names on single post."
+msgstr ""
+
+#: inc/theme-options/args/content.php:91
+msgid "Show comments count on single post."
+msgstr ""
+
+#: inc/theme-options/args/content.php:96
+msgid "Social Share"
+msgstr ""
+
+#: inc/theme-options/args/content.php:97
+msgid "Show social share on single post."
+msgstr ""
+
+#: inc/theme-options/args/content.php:101
+msgid "Navigation"
+msgstr ""
+
+#: inc/theme-options/args/content.php:102
+msgid "Show navigation on single post."
+msgstr ""
+
+#: inc/theme-options/args/content.php:107
+msgid "Comments Form"
+msgstr ""
+
+#: inc/theme-options/args/content.php:108
+msgid "Show comments form on single post."
+msgstr ""
+
+#: inc/theme-options/args/general.php:46
+msgid "Tools"
+msgstr ""
+
+#: inc/theme-options/args/general.php:50
+msgid "Enable Page Loading"
+msgstr ""
+
+#: inc/theme-options/args/general.php:51
+msgid "Enable page loading effect when you load site."
+msgstr ""
+
+#: inc/theme-options/args/general.php:55
+msgid "Back to Top Button"
+msgstr ""
+
+#: inc/theme-options/args/general.php:56
+msgid "Show back to top button when scrolled down."
+msgstr ""
+
+#: inc/theme-options/args/general.php:61
+msgid "Dev Mode (not recommended)"
+msgstr ""
+
+#: inc/theme-options/args/general.php:62
+msgid "no minimize , generate css over time..."
+msgstr ""
+
+#: inc/theme-options/args/header.php:123
+msgid "Attributes"
+msgstr ""
+
+#: inc/theme-options/args/header.php:133
+msgid "Search Content As"
+msgstr ""
+
+#: inc/theme-options/args/header.php:139
+#, php-format
+msgid "%sClick Here%s to add your custom content."
+msgstr ""
+
+#: inc/theme-options/args/header.php:144
+#: inc/theme-options/args/header.php:145
+msgid "Choose custom search content"
+msgstr ""
+
+#: inc/theme-options/args/shop.php:4
+msgid "Shop"
+msgstr ""
+
+#: inc/theme-options/args/shop.php:12
+msgid "Shop Thumbnail Dimension"
+msgstr ""
+
+#: inc/theme-options/args/shop.php:15
+msgid "Custom Dimension by Theme"
+msgstr ""
+
+#: inc/theme-options/args/shop.php:18
+msgid ""
+"When this option is ON, you can not change shop thumbnail dimension via "
+"Appearance/Customize/WooCommerce/Product Images"
+msgstr ""
+
+#: inc/theme-options/args/sidebar.php:4
+msgid "Sidebar"
+msgstr ""
+
+#: inc/theme-options/args/sidebar.php:10
+msgid "Show Sidebar"
+msgstr ""
+
+#: inc/theme-options/args/sidebar.php:11
+msgid "Show/Hide sidebar on single post & archive page"
+msgstr ""
+
+#: inc/theme-options/args/sidebar.php:15
+msgid "Sidebar Position"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:75
+#: inc/theme-options/theme-options.php:77
+msgid "Default:"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:109
+msgid "Body Font"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:118
+msgid "Body Custom Font"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:119
+msgid "This will be the default font of your website."
+msgstr ""
+
+#: inc/theme-options/theme-options.php:137
+msgid "Heading Default Font"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:147
+msgid "This will be the default font for all Heading tags of your website."
+msgstr ""
+
+#: inc/theme-options/theme-options.php:165
+msgid "Special Default Font"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:174
+msgid "Special"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:175
+msgid "This will be the default font for all Special of your website."
+msgstr ""
+
+#: inc/theme-options/theme-options.php:193
+msgid "Typographys"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:206
+msgid "Body Class"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:210
+msgid "Custom Space"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:217
+msgid "Body Top Space"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:223
+msgid "Advanced"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:236
+msgid "On/Off"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:269
+#: inc/theme-options/theme-options.php:431
+msgid "Show/Hide"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:305
+msgid "Options #1"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:306
+msgid "Options #2"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:314
+msgid "Theme Default"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:345
+msgid "Container"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:346
+msgid "Container Wide"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:347
+msgid "Container Full"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:377
+msgid "Content Alignment"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:458
+msgid "Page Link"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:483
+msgid "Target"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:485
+msgid "Self"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:486
+msgid "Blank"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:521
+msgid "Phone Text"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:555
+msgid "Mail"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:560
+msgid "Show/Hide Mail"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:564
+msgid "Your Email"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:588
+msgid "Currency Switcher"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:594
+msgid "Show/Hide Currency Switcher"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:613
+msgid "Wishlist"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:619
+msgid "Show/Hide Wishlist"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:638
+msgid "Compare"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:644
+msgid "Show/Hide Compare"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:671
+msgid "Show/Hide Login"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:692
+msgid "Language Switcher"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:698
+msgid "Show/Hide Language Switcher"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:733
+msgid "Select a layout for header."
+msgstr ""
+
+#: inc/theme-options/theme-options.php:759
+msgid "Hidden Side Navigation Settings"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:763
+msgid "Hidden Side Navigation"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:770
+msgid "Hidden Side Navigation Layout"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:771
+msgid "Select a layout for upper side nav area."
+msgstr ""
+
+#: inc/theme-options/theme-options.php:772
+#, php-format
+msgid "%sClick Here%s to add your custom side nav layout."
+msgstr ""
+
+#: inc/theme-options/theme-options.php:801
+msgid "Header Socials"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:812
+msgid "Add your Header Social"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:821
+msgid "Social URL"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:825
+msgid "Social Text"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:851
+msgid "Custom Header Top"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:859
+msgid "Select a layout for upper header top area."
+msgstr ""
+
+#: inc/theme-options/theme-options.php:860
+#, php-format
+msgid "%sClick Here%s to add your custom header top layout."
+msgstr ""
+
+#: inc/theme-options/theme-options.php:903
+msgid "Select a layout for page title."
+msgstr ""
+
+#: inc/theme-options/theme-options.php:927
+msgid "Custom Footer"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:937
+msgid "Copyright Settings"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:938
+msgid "Add your copyright text"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:939
+msgid "Use [[copy]] for &copy;, [[year]] for current year"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:949
+msgid "Select a layout for upper footer area."
+msgstr ""
+
+#: inc/theme-options/theme-options.php:950
+#, php-format
+msgid "%sClick Here%s to add your custom footer layout."
+msgstr ""
+
+#: inc/theme-options/theme-options.php:961
+msgid "Footer Fixed"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:962
+msgid "Make footer fixed at bottom?"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:993
+msgid "Custom Product"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:1014
+msgid "Single Products"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:1021
+msgid "Layout & Content"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:1026
+msgid "Choose layout for single product"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:1030
+msgid "WooCommerce Default"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:1036
+msgid "Gallery Layout"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:1037
+msgid "Choose layout for single product Gallery"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:1041
+msgid "Slider"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:1047
+#: template-parts/content-single/content.php:65
+msgid "Share"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:1078
+msgid "Custom Pop Up"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:1086
+msgid "Select a layout for upper Pop-Up area."
+msgstr ""
+
+#: inc/theme-options/theme-options.php:1087
+#, php-format
+msgid "%sClick Here%s to add your custom popup layout."
+msgstr ""
+
+#: inc/theme-options/theme-options.php:1098
+msgid "Show Hide popup option"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:1105
+msgid "Animation Style"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:1109
+msgid "Fade In Up"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:1110
+msgid "Fade In Left"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:1111
+msgid "Fade In Right"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:1122
+msgid "Top - Start"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:1123
+msgid "Top - End"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:1124
+msgid "Center - Start"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:1125
+msgid "Center - Center"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:1126
+msgid "Center - End"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:1127
+msgid "Bottom - Start"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:1128
+msgid "Bottom - End"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:1136
+msgid "Popup Width"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:1163
+msgid "Select Template"
+msgstr ""
+
+#: template-parts/content-none.php:9
+msgid "Nothing Found"
+msgstr ""
+
+#: template-parts/content-none.php:11
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: template-parts/content-none.php:17
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: template-parts/header/header-layout-2.php:117
+msgid "Phone:"
+msgstr ""
+
+#: template-parts/header/header-menu.php:29
+msgid "Create New Menu"
+msgstr ""
+
+#: woocommerce/cart/mini-cart.php:76
+#, php-format
+msgid "Remove %s from cart"
+msgstr ""
+
+#: woocommerce/cart/mini-cart.php:81
+#, php-format
+msgid "&ldquo;%s&rdquo; has been removed from your cart"
+msgstr ""
+
+#: woocommerce/cart/mini-cart.php:114
+msgid "No products in the cart."
+msgstr ""
+
+#: woocommerce/cart/proceed-to-checkout-button.php:26
+msgid "Proceed to checkout"
+msgstr ""
+
+#: woocommerce/content-widget-reviews.php:36
+#, php-format
+msgid "by %s"
+msgstr ""
+
+#: woocommerce/product-searchform.php:38
+msgid "Search products&hellip;"
+msgstr ""
+
+#: woocommerce/product-searchform.php:39
+msgctxt "submit button"
+msgid "Search"
+msgstr ""
+
+#: woocommerce/single-product/add-to-cart/grouped.php:71
+#, php-format
+msgid "Buy one of %1$s on sale for %2$s, original price was %3$s"
+msgstr ""
+
+#: woocommerce/single-product/add-to-cart/grouped.php:79
+#, php-format
+msgid "Buy one of %1$s for %2$s"
+msgstr ""
+
+#: woocommerce/single-product/meta.php:33
+msgid "SKU:"
+msgstr ""
+
+#: woocommerce/single-product/meta.php:34
+msgid "N/A"
+msgstr ""
+
+#: woocommerce/single-product/meta.php:39
+msgid "Category:"
+msgid_plural "Categories:"
+msgstr[0] ""
+msgstr[1] ""
+
+#: woocommerce/single-product/tabs/additional-information.php:22
+msgid "Additional information"
+msgstr ""
+
+#: woocommerce/wc-function-hooks.php:93
+#, php-format
+msgid "Rated %1$s out of 5 based on %2$s customer rating"
+msgid_plural "Rated %1$s out of 5 based on %2$s customer ratings"
+msgstr[0] ""
+msgstr[1] ""
+
+#: woocommerce/wc-function-hooks.php:96
+#, php-format
+msgid "Rated %s out of 5"
+msgstr ""
+
+#: woocommerce/wc-function-hooks.php:311
+#: woocommerce/wc-function-hooks.php:316
+#: woocommerce/wc-function-hooks.php:322
+msgid "View Cart"
+msgstr ""
+
+#: woocommerce/wc-function-hooks.php:404
+#, php-format
+msgid "%s Review"
+msgid_plural "%s Reviews"
+msgstr[0] ""
+msgstr[1] ""
+
+#: woocommerce/wc-function-hooks.php:404
+msgid "Add review"
+msgstr ""
+
+#: woocommerce/wc-function-hooks.php:545
+#, php-format
+msgctxt "Item name in quotes"
+msgid "&ldquo;%s&rdquo;"
+msgstr ""
+
+#: woocommerce/wc-function-hooks.php:551
+#, php-format
+msgid "%s has been added to your cart."
+msgid_plural "%s have been added to your cart."
+msgstr[0] ""
+msgstr[1] ""
+
+#: woocommerce/wc-function-hooks.php:561
+msgid "Continue shopping"
+msgstr ""
+
+#: woocommerce/wc-function-hooks.php:569
+#: woocommerce/wc-function-hooks.php:645
+msgid "View cart"
+msgstr ""
+
+#: woocommerce/wc-function-hooks.php:614
+msgid "Place order"
+msgstr ""
+
+#: woocommerce/wc-function-hooks.php:659
+msgid "Proceed To Checkout"
+msgstr ""
+
+#: woocommerce/wc-function-hooks.php:675
+msgid "Total:"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Genzia"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "https://7oroofthemes.com/genzia/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Genzia - WordPress Theme"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "7oroof"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://themeforest.net/user/7oroof"
+msgstr ""

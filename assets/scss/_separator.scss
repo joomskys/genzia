@@ -1,0 +1,7 @@
+[class*="separator-"]{
+	background-color: var(--cms-separator-color, var(--cms-divider));
+}
+.separator-1{
+	width: 8px;
+	height: 2px;
+}

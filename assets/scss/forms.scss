@@ -1,0 +1,346 @@
+input,
+select,
+textarea{
+    max-width: 100%;
+    @include transition();
+    font-family: var(--cms-body-family);
+    font-size: 14px;
+}
+
+input:not([type='checkbox']):not([type = 'radio']):not([type='submit']):not([type='button']):not([readonly]):not(.qty):not(.select2-search__field):not([class^="wc-block-"]),
+.wpcf7-form-control-wrap.cms-date-time,
+textarea,
+select,
+.select2-container.select2-container--default .select2-selection{
+	border-style: var(--cms-form-field-border-style, solid);
+    border-color: var(--cms-form-field-border-color, var(--cms-primary));
+    border-width: var(--cms-form-field-border-width, 1px);
+    border-radius: var(--cms-form-field-radius, $form_field_radius);
+	//box-shadow: var(--cms-form-field-border, $form_field_border);
+	padding:var(--cms-form-field-padding-top, 0) var(--cms-form-field-padding-end, 20px) var(--cms-form-field-padding-bottom, 0) var(--cms-form-field-padding-start, 20px);
+	width: 100%;
+	min-width: var(--cms-form-field-min-width, 100%);
+    max-width: var(--cms-form-field-width, 100%);
+	font-size: 15px;
+	color: var(--cms-form-field-color, $form_field_color);
+	font-family: var(--cms-body-family);
+    font-weight: 700;
+    background-color: var(--cms-form-field-bg-color, $form_field_bg_color);
+    &:hover,
+    &:focus,
+    &:active{
+        //box-shadow: var(--cms-form-field-border-hover, $form_field_border_hover);
+        background-color: var(--cms-form-field-bg-hover-color, var(--cms-form-field-bg-color, $form_field_bg_color));
+        // Border
+        border-style: var(--cms-form-field-border-style-hover, var(--cms-form-field-border-style));
+        border-width: var(--cms-form-field-border-width-hover, var(--cms-form-field-border-width));
+        border-color: var(--cms-form-field-border-color-hover, var(--cms-form-field-border-color));
+    }
+}
+@media #{$max-smobile}{
+    input:not([type='checkbox']):not([type = 'radio']):not([type='submit']):not([type='button']):not([readonly]):not(.qty):not(.select2-search__field):not([class^="wc-block-"]),
+    .wpcf7-form-control-wrap.cms-date-time,
+    textarea,
+    select,
+    .select2-container.select2-container--default .select2-selection{
+        min-width: var(--cms-form-input-min-width, 100%);
+        max-width: var(--cms-form-input-max-width, 100%);
+    }
+}
+.cms-esearch-btn,
+input:not([type='checkbox']):not([type = 'radio']):not([type='submit']):not([type='button']):not([readonly]):not(.qty):not(.select2-search__field):not([class^="wc-block-"]),
+select,
+.wpcf7-form-control-wrap.cms-date-time,
+.select2-container.select2-container--default .select2-selection{
+	height: $form_field_height;
+	line-height: $form_field_height;
+	padding-top: 0;
+	padding-bottom: 0;
+    display: block;
+}
+input[readonly]{
+    box-shadow: none;
+    border: none;
+}
+select{
+    padding-inline-end: calc(var(--cms-form-field-padding-end, 20px)*2);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: var(--cms-form-select-arrow, url(../images/select-arrow.png));
+    background-repeat: no-repeat;
+    background-position: calc(100% - var(--cms-form-select-padding-end,var(--cms-form-field-padding-end, 20px))) 50%;
+    font-weight: 400;
+    height: var(--cms-form-select-height, var(--cms-form-field-height, var(--cms-default-form-field-height)));
+    line-height: var(--cms-form-select-height, var(--cms-form-field-height, var(--cms-default-form-field-height)));
+    //box-shadow: var(--cms-form-select-border, var(--cms-form-field-border));
+    border-radius: var(--cms-form-select-radius, var(--cms-form-field-radius));
+    padding: var(--cms-form-select-padding-top, var(--cms-form-field-padding-top, 0)) var(--cms-form-select-padding-end, var(--cms-form-field-padding-end, 20px)) var(--cms-form-select-padding-bottom, var(--cms-form-field-padding-bottom, 0)) var(--cms-form-select-padding-start, var(--cms-form-field-padding-start, 20px));
+    option {
+        background-color: $_white;
+        color: #000;
+    }
+    [dir="rtl"] &{
+        background-position: 20px 50%;
+    }
+}
+
+textarea{
+    vertical-align: top;
+    padding-top: var(--cms-form-field-textarea-padding-top, 20px);
+    padding-bottom: var(--cms-form-field-textarea-padding-bot, 20px);
+    border-width: var(--cms-form-field-textarea-border-width, var(--cms-form-field-border-width));
+    border-radius: var(--cms-form-textarea-radius, var(--cms-form-field-radius));
+    height: var(--cms-form-textarea-height, auto);
+    max-height: var(--cms-form-textarea-max-height, auto);
+}
+/**
+ * Place holder
+ *
+*/
+::placeholder{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: var(--cms-placeholder-color, $placeholder_color);
+    font-weight: 400;
+    font-size: 14px;
+}
+::-webkit-input-placeholder{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--cms-placeholder-color, $placeholder_color);
+    font-weight: 400;
+    font-size: 14px;
+}
+::-moz-input-placeholder{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--cms-placeholder-color, $placeholder_color);
+    font-weight: 400;
+    font-size: 14px;
+}
+/**
+ * Auto Fill
+ * 
+ * */
+input:is(:-webkit-autofill, :autofill) {
+    //-webkit-text-fill-color: var(--cms-form-field-color, var(--cms-menu))!important;
+    //-webkit-box-shadow: 0 0 0 1000px var(--cms-form-field-bg-hover-color, var(--cms-form-field-bg-color)) inset!important;
+    background-color: var(--cms-form-field-bg-hover-color, var(--cms-form-field-bg-color))!important;
+    color: var(--cms-form-field-color, var(--cms-menu))!important;
+}
+input:-internal-autofill-selected {
+    background-color: var(--cms-form-field-bg-hover-color, var(--cms-form-field-bg-color))!important;
+    color: var(--cms-form-field-color, var(--cms-menu))!important;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+@mixin calendar_picker_indicator(){
+    opacity: 0;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: 2;
+    text-align: start;
+    padding: 0;
+    margin: 0;
+    background-image: none;
+}
+input.wpcf7-form-control::-moz-calendar-picker-indicator{
+    @include calendar_picker_indicator();
+}
+input.wpcf7-form-control::-webkit-calendar-picker-indicator{
+    @include calendar_picker_indicator();
+}
+input.wpcf7-form-control::calendar-picker-indicator{
+    @include calendar_picker_indicator();
+}
+
+input.wpcf7-form-control::-moz-datetime-edit,
+input.wpcf7-form-control::-webkit-datetime-edit,
+input.wpcf7-form-control::datetime-edit{
+    text-align: start;
+    width: 100%;
+}
+input[type="search" i]::-mox-search-cancel-button,
+input[type="search" i]::-webkit-search-cancel-button,
+input[type="search" i]::search-cancel-button {
+    opacity: 0;
+}
+
+.cms-placeholder{
+    + .wpcf7-form-control{
+        opacity: 0;
+        position: relative;
+        &:hover{
+            opacity: 1;
+        }
+    }
+    &:hover,
+    &.active{
+        opacity: 0;
+        + .wpcf7-form-control{
+            opacity: 1;
+            z-index: 5;
+        }
+    }
+}
+.cms-date-time input[type="text"]::placeholder{
+    display: none!important;
+    opacity: 0;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance:none;
+}
+// Check box
+.cms-checkbox{
+    position: relative;
+    padding-inline-start: 30px;
+    &:before,
+    &:after{
+        position: absolute;
+        left: 0;
+        top: 2px;
+        width: 18px;
+        height: 18px;
+        line-height: 18px;
+        text-align: center;
+        display: block;
+        [dir="rtl"] &{
+            right: 0;
+            left: auto;
+        }
+    }
+    &:before{
+        content: '';
+        border: 1px solid var(--cms-menu);
+    }
+    &:after{
+        content: url('../svgs/core/check.svg');
+        width: 18px;
+        padding: 0 4px;
+        opacity: 0;
+        visibility: hidden;
+    }
+    &.checked:after{
+        visibility: visible;
+        opacity: 1;
+    }
+    > input[type="checkbox"]{
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+input[type="checkbox"]{
+    width: 18px;
+    height: 18px;
+    border: 1px solid var(--cms-menu);
+    box-shadow: none;
+}
+/**
+ * Show Hide pasword
+ * Password input
+ * 
+ * */
+.password-input{
+    position: relative;
+    .show-password-input{
+        position: absolute!important;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        background:transparent!important;
+        padding: 0 var(--cms-form-field-padding-end, 20px) 0 var(--cms-form-field-padding-start, 20px)!important;
+        [dir="rtl"] &{
+            right: auto;
+            left: 0;
+        }
+        &:before{
+            display: block;
+            width: 20px;
+            content: url('../svgs/core/eye-slash.svg');
+        }
+        &.display-password:before{
+            content: url('../svgs/core/eye.svg');
+        }
+    }
+}
+.form-row-last{
+    margin-bottom: 0;
+}
+// Contact Form 7
+form{
+    label{
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 10px;
+    }
+    button:not(.cms-btn),
+    input[type="submit"],
+    input[type="button"]{
+        &:not(:hover){
+            color:var(--cms-form-btn-color, $form_btn_color);
+            background: var(--cms-form-btn-bg, $form_btn_bg_color);
+            border-color: var(--cms-form-btn-bg, $form_btn_bg_color)!important;
+            min-height: var(--cms-form-btn-height, $form_field_height);
+        }
+        &:hover{
+            color: var(--cms-form-btn-color-hover, $form_btn_color_hover);
+            background: var(--cms-form-btn-bg-hover, $form_btn_bg_hover_color);
+            border-color: var(--cms-form-btn-bg-hover, $form_btn_bg_hover_color)!important;
+        }
+    }
+}
+// Stroke Glow
+@include keyframes(cms-outline-glow-1) {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+.cms-outline-glow {
+    --cms-outline-glow-color: var(--cms-white, #fff);
+    --cms-outline-glow-color-2: transparent;
+
+    inset: calc(var(--cms-outline-glow-w, 1px)* -1);
+    padding: var(--cms-outline-glow-w, 1px);
+    background: var(--cms-outline-glow-color-2, transparent);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -1;
+}
+.cms-outline-glow-effect-1 .cms-outline-glow-inner {
+    background: conic-gradient(from 290deg, var(--cms-outline-glow-color-secondary, transparent) 0%, var(--cms-outline-glow-color, #fff) 10%, var(--cms-outline-glow-color-secondary, transparent) 20%);
+    animation: cms-outline-glow-1 var(--cms-outline-glow-duration, 3s) linear infinite;
+    aspect-ratio: 1/1;
+    min-width: 100%;
+    min-height: 100%;;
+}

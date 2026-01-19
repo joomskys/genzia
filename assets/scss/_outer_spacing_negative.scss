@@ -1,0 +1,272 @@
+// Negative
+$negative_spacing:(1);
+$negative_spacing_top:(
+	1, 2, 3, 4, 5, 6, 7, 10,
+	16, 20, 25
+);
+$negative_spacing_bot:(
+	1, 2, 3, 4, 5, 6, 7,
+	16, 40, 80
+);
+$negative_spacing_tb:(
+	1, 2, 3, 4, 5, 6, 7, 10
+);
+$negative_spacing_left:(8, 12, 16, 40);
+$negative_spacing_right:(12, 20);
+$negative_spacing_lr:();
+//
+@each $space in $negative_spacing{
+	.m-n#{$space}{
+		margin: #{$space*-1}px;
+	}
+}
+@each $space in $negative_spacing_top{
+	.mt-n#{$space}{
+		margin-top: #{$space*-1}px;
+	}
+}
+@each $space in $negative_spacing_bot{
+	.mb-n#{$space}{
+		margin-bottom: #{$space*-1}px;
+	}
+}
+@each $space in $negative_spacing_left{
+	.ml-n#{$space}{
+		margin-inline-start: #{$space*-1}px;
+	}
+}
+@each $space in $negative_spacing_right{
+	.mr-n#{$space}{
+		margin-inline-end: #{$space*-1}px;
+	}
+}
+@each $space in $negative_spacing_tb{
+	.m-tb-n#{$space}{
+		margin-block-start: #{$space*-1}px;
+		margin-block-end: #{$space*-1}px;
+	}
+}
+@each $space in $negative_spacing_lr{
+	.m-lr-n#{$space}{
+		margin-inline-end: #{$space*-1}px;
+		margin-inline-start: #{$space*-1}px;
+	}
+}
+// Laptop
+$laptop_negative_spacing_top:();
+$laptop_negative_spacing_r:();
+$laptop_negative_spacing_bot:();
+$laptop_negative_spacing_l:();
+@media #{$max-laptop}{
+	@each $space in $laptop_negative_spacing_top{
+		.mt-laptop-n#{$space}{
+			@if($space > 0){
+				margin-top: #{$space*-1}px;
+			} @else {
+				margin-top: #{$space}px;
+			}
+		}
+	}
+	@each $space in $laptop_negative_spacing_r{
+		.mr-laptop-n#{$space}{
+			@if($space > 0){
+				margin-inline-end: #{$space*-1}px;
+			} @else {
+				margin-inline-end: #{$space}px;
+			}
+		}
+	}
+	@each $space in $laptop_negative_spacing_bot{
+		.mb-laptop-n#{$space}{
+			@if($space > 0){
+				margin-bottom: #{$space*-1}px;
+			} @else {
+				margin-bottom: #{$space}px;
+			}
+		}
+	}
+	@each $space in $laptop_negative_spacing_l{
+		.ml-laptop-n#{$space}{
+			@if($space > 0){
+				margin-inline-start: #{$space*-1}px;
+			} @else {
+				margin-inline-start: #{$space}px;
+			}
+		}
+	}
+}
+// Tablet Extra
+$tablet_extra_negative_spacing_top:();
+$tablet_extra_negative_spacing_r:();
+$tablet_extra_negative_spacing_bot:();
+$tablet_extra_negative_spacing_l:(0);
+@media #{$max-tablet-extra}{
+	@each $space in $tablet_extra_negative_spacing_top{
+		.mt-tablet-extra-n#{$space}{
+			@if($space > 0){
+				margin-top: #{$space*-1}px;
+			} @else {
+				margin-top: #{$space}px;
+			}
+		}
+	}
+	@each $space in $tablet_extra_negative_spacing_r{
+		.mr-tablet-extra-n#{$space}{
+			@if($space > 0){
+				margin-inline-end: #{$space*-1}px;
+			} @else {
+				margin-inline-end: #{$space}px;
+			}
+		}
+	}
+	@each $space in $tablet_extra_negative_spacing_bot{
+		.mb-tablet-extra-n#{$space}{
+			@if($space > 0){
+				margin-bottom: #{$space*-1}px;
+			} @else {
+				margin-bottom: #{$space}px;
+			}
+		}
+	}
+	@each $space in $tablet_extra_negative_spacing_l{
+		.ml-tablet-extra-n#{$space}{
+			@if($space > 0){
+				margin-inline-start: #{$space*-1}px;
+			} @else {
+				margin-inline-start: #{$space}px;
+			}
+		}
+	}
+}
+// Tablet
+$tablet_negative_spacing_top:();
+$tablet_negative_spacing_bot:(0);
+$tablet_negative_spacing_tb:();
+$tablet_negative_spacing_left:(0, 20);
+$tablet_negative_spacing_right:();
+$tablet_negative_spacing_lr:();
+@media #{$max-tablet}{
+	@each $space in $tablet_negative_spacing_top{
+		.mt-tablet-n#{$space}{
+			margin-top: #{$space*-1}px;
+		}
+	}
+	@each $space in $tablet_negative_spacing_bot{
+		.mb-tablet-n#{$space}{
+			margin-bottom: #{$space*-1}px;
+		}
+	}
+	@each $space in $tablet_negative_spacing_tb{
+		.m-tb-tablet-n#{$space}{
+			margin-top: #{$space*-1}px;
+			margin-bottom: #{$space*-1}px;
+		}
+	}
+	@each $space in $tablet_negative_spacing_right{
+		.mr-tablet-n#{$space}{
+			margin-inline-end: #{$space*-1}px;
+		}
+	}
+	@each $space in $tablet_negative_spacing_left{
+		.ml-tablet-n#{$space}{
+			margin-inline-start: #{$space*-1}px;
+		}
+	}
+	@each $space in $tablet_negative_spacing_lr{
+		.m-lr-tablet-n#{$space}{
+			margin-inline-start: #{$space*-1}px;
+			margin-inline-end: #{$space*-1}px;
+		}
+	}
+}
+// Mobile extra 
+$mobile_extra_negative_spacing_top:();
+$mobile_extra_negative_spacing_bot:();
+$mobile_extra_negative_spacing_right:();
+$mobile_extra_negative_spacing_left:();
+@media #{$max-mobile-extra}{
+	@each $space in $mobile_extra_negative_spacing_top{
+		.mt-mobile-extra-n#{$space}{
+			margin-top: #{$space*-1}px;
+		}
+	}
+	@each $space in $mobile_extra_negative_spacing_top{
+		.mb-mobile-extra-n#{$space}{
+			margin-bottom: #{$space*-1}px;
+		}
+	}
+	@each $space in $mobile_extra_negative_spacing_right{
+		.mr-mobile-extra-n#{$space}{
+			margin-inline-end: #{$space*-1}px;
+		}
+	}
+	@each $space in $mobile_extra_negative_spacing_left{
+		.ml-mobile-extra-n#{$space}{
+			margin-inline-start: #{$space*-1}px;
+		}
+	}
+}
+// Mobile
+$mobile_negative_spacing_top:(20, 40);
+$mobile_negative_spacing_bot:();
+$mobile_negative_spacing_tb:();
+$mobile_negative_spacing_left:(0);
+$mobile_negative_spacing_right:();
+@media #{$max-mobile}{
+	@each $space in $mobile_negative_spacing_top{
+		.mt-mobile-n#{$space}{
+			margin-top: #{$space*-1}px;
+		}
+	}
+	@each $space in $mobile_negative_spacing_tb{
+		.mb-mobile-n#{$space}{
+			margin-top: #{$space*-1}px;
+			margin-bottom: #{$space*-1}px;
+		}
+	}
+	@each $space in $mobile_negative_spacing_top{
+		.mt-mobile-n#{$space}{
+			margin-top: #{$space*-1}px;
+		}
+	}
+	@each $space in $mobile_negative_spacing_left{
+		.ml-mobile-n#{$space}{
+			margin-inline-start: #{$space*-1}px;
+		}
+	}
+	@each $space in $mobile_negative_spacing_right{
+		.mr-mobile-n#{$space}{
+			margin-inline-end: #{$space*-1}px;
+		}
+	}
+}
+// Small Mobile
+$smobile_negative_spacing_top:();
+$smobile_negative_spacing_bot:();
+$smobile_negative_spacing_left:(20, 40);
+$smobile_negative_spacing_right:(40);
+@media #{$max-smobile}{
+	@each $space in $smobile_negative_spacing_top{
+		.mt-smobile-n#{$space}{
+			margin-top: #{$space*-1}px;
+		}
+	}
+	@each $space in $smobile_negative_spacing_bot{
+		.mb-smobile-n#{$space}{
+			margin-bottom: #{$space*-1}px;
+		}
+	}
+	@each $space in $smobile_negative_spacing_left{
+		.ml-smobile-n#{$space}{
+			margin-inline-start: #{$space*-1}px;
+		}
+	}
+	@each $space in $smobile_negative_spacing_right{
+		.mr-smobile-n#{$space}{
+			margin-inline-end: #{$space*-1}px;
+		}
+	}
+}
+/**
+ * End Negative
+*/

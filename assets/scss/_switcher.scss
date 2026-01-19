@@ -1,0 +1,36 @@
+.cms-toggle-switcher {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 24px;
+  cursor: pointer;
+  background-color: var(--cms-switch-color,var(--cms-accent));
+  -webkit-transition: .4s;
+  transition: .4s;
+  &:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 2px;
+    bottom: 2px;
+    background-color: var(--cms-switch-circle-color,white);
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  &.cms-swiched{
+    background-color: var(--cms-switched-color, var(--cms-primary));
+    &:before {
+      -webkit-transform: translateX(24px);
+      -ms-transform: translateX(24px);
+      transform: translateX(24px);
+    }
+  }
+  //
+  &.round {
+    border-radius: 24px;
+    &:before {
+      border-radius: 50%;
+    }
+  }
+}

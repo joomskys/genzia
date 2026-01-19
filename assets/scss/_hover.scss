@@ -1,0 +1,563 @@
+// Hover Animate Icon
+.cms-anim-icon{
+	.cms-icon{
+		@include transition();
+	}
+	&:hover{
+		.cms-icon{
+			@include scale(1.1);
+		}
+	}
+}
+.cms-hover-zoomout:hover{
+	@include scale(1.1);
+}
+// Hover zoom image
+.hover-image-zoom-out{
+	img{
+		//@include transition(transform .6s cubic-bezier(.11,.21,.58,1));
+	}
+	&:hover {
+		img,
+		.hover-bg{
+			@include scale(1.1);
+		}
+	}
+}
+
+// Hover underline 
+.cms-hover-underline,
+.cms-hover-underline2,
+.cms-underline,
+.cms-on-hover-underline{
+	position: relative;
+	//display: inline-flex;
+	background-repeat: no-repeat;
+    background-image: linear-gradient(90deg,currentColor 0,currentColor 100%);
+    transition: background-size .5s cubic-bezier(.25,.46,.35,.94), color .2s ease-out, background-color .2s ease-out, border-color .2s ease-out;
+    //
+    --cms-hover-underline-position-y: calc(100% - 0px);
+    --cms-hover-underline-height: 1px;
+    background-position: 0 var(--cms-hover-underline-position-y);
+    background-size: 0 var(--cms-hover-underline-height);
+    &.title{
+    	display: inline;
+    }
+    // RTL
+    [dir="rtl"] &{
+    	background-position: 100% var(--cms-hover-underline-position-y);
+    }
+}
+.cms-hover-underline {
+    &:hover,
+    &.current,
+    &.active{
+        background-size: 100% var(--cms-hover-underline-height);
+    }
+}
+.cms-hover-change:hover,
+.current-menu-item > .cms-hover-change{
+	> .cms-on-hover-underline {
+	    background-size: 100% var(--cms-hover-underline-height);
+	}
+	.mb-hover{
+		margin-bottom: var(--cms-on-hover-mb,0);
+	}
+}
+//
+.cms-hover-underline2 {
+    --cms-hover-underline2-position-y: calc(100% - 9px);
+    --cms-hover-underline2-height: 1px;
+    background-position: 0 var(--cms-hover-underline2-position-y);
+    background-size: 0 var(--cms-hover-underline2-height);
+    &:hover,
+    &.current,
+    &.active{
+        background-size: 100% var(--cms-hover-underline2-height);
+    }
+}
+// Underline
+.cms-underline {
+    --cms-underline-position-y: calc(100% - 1px);
+    --cms-underline-height: 1px;
+    background-position: 0 var(--cms-underline-position-y);
+    background-size: 100% var(--cms-underline-height);
+    padding-bottom: 0;
+    &:hover,
+    &.current,
+    &.active{
+        animation: cms-underline-forward .5s cubic-bezier(.29,.15,.34,.88) 1 forwards;
+    }
+}
+// underline
+@keyframes cms-underline-forward{
+    0% {
+        background-position: 100% var(--cms-underline-position-y);
+        background-size: 100% var(--cms-underline-height);
+    }
+    35% {
+        background-position: 100% var(--cms-underline-position-y);
+        background-size: 0 var(--cms-underline-height);
+    }
+    36% {
+        background-position: 0 var(--cms-underline-position-y);
+        background-size: 0 var(--cms-underline-height);
+    }
+    100% {
+        background-position: 0 var(--cms-underline-position-y);
+        background-size: 100% var(--cms-underline-height);
+    }
+}
+// Hover Change
+.cms-show-on-hover{
+	visibility: hidden;
+	opacity: 0;
+}
+@media #{$min-tablet-extra}{
+	.cms-hover-show,
+	.cms-show-on-hover{
+		visibility: hidden;
+		opacity: 0;
+		&.move-up{
+			@include transform(translateY(100%));
+		}
+		&.move-up2{
+			@include transform(translate(-100%, 100%));
+		}
+		&.move-down{
+			@include transform(translateY(-100%));
+		}
+		&.move-left{
+			@include transform(translateX(-100%));
+		}
+		&.move-right{
+			@include transform(translateX(100%));
+		}
+		&.zoom-in{
+			@include scale(1.5);
+		}
+		&.zoom-out{
+			@include scale(0);
+		}
+	}
+}
+.cms-hover-change:hover,
+.cms-hover-change.active {
+	.cms-show-on-hover{
+		visibility: visible;
+		opacity: 1;
+	}
+	.cms-hide-on-hover{
+		display: none;
+	}
+	.cms-hover-show,
+	.cms-show-on-hover{
+		visibility: visible;
+		opacity: 1;
+		&.move-up,
+		&.move-down{
+			@include transform(translateY(0));
+		}
+		&.move-left,
+		&.move-right{
+			@include transform(translateX(0));
+		}
+		&.move-up2{
+			@include transform(translate(0,0));
+		}
+		&.zoom-in,
+		&.zoom-out{
+			@include scale(1);
+		}
+	}
+	@media #{$min-tablet-extra}{
+		.cms-hover-hide{
+			visibility: hidden;
+			opacity: 0;
+			&.move-up{
+				@include transform(translateY(-100%));
+			}
+			&.move-down{
+				@include transform(translateY(100%));
+			}
+			&.move-left{
+				@include transform(translateX(-100%));
+			}
+			&.move-right{
+				@include transform(translateX(100%));
+			}
+			&.zoom-out{
+				@include scale(1.5);
+			}
+			&.zoom-in{
+				@include scale(0);
+			}
+		}
+	}
+	// Display
+	.w-on-hover-auto{
+		width: auto;
+	}
+	// Min Width
+	.mw-on-hover-90{
+		min-width: 90px;
+	}
+}
+.active{
+	.cms-show-on-active{
+		visibility: visible;
+		opacity: 1;
+		&.move-up,
+		&.move-down{
+			@include transform(translateY(0));
+		}
+		&.move-left,
+		&.move-right{
+			@include transform(translateX(0));
+		}
+		&.move-up2{
+			@include transform(translate(0,0));
+		}
+		&.zoom-in,
+		&.zoom-out{
+			@include scale(1);
+		}
+	}
+}
+.swiper-slide-active{
+	.cms-active-show{
+		visibility: visible;
+		opacity: 1;
+	}
+}
+// Hover move icon alternate
+[class*="cms-hover-icon-alternate"]{
+	--cms-svg-path-length: 140px;
+	path{
+		stroke-dashoffset: 0;
+	    stroke-dasharray: var(--cms-svg-path-length);
+	    transition: stroke-dashoffset 1s cubic-bezier(0,0,.44,.98);
+	}
+	&:hover{
+		path{
+			stroke-dashoffset: calc(2 * var(--cms-svg-path-length));
+		}
+	}
+}
+// Hover icon move
+[class*="cms-hover-move-icon-"]{
+	path{
+		transition: transform .3s cubic-bezier(.46,.03,.52,.96);
+    	will-change: transform;
+	}
+	path:first-child{
+	    transform: translate(0,0);
+	    transition-delay: .1s;
+	}
+	path:last-child{
+    	transition-delay: 0s;
+	}
+	// Loading
+	.loading{
+		path:last-child{
+	    	transform: translate(0,0)!important;
+		}
+	}
+}
+// Hover icon move right
+.cms-hover-move-icon-right{
+	path:last-child{
+	    transform: translate(-100%,0);
+	}
+	&:hover {
+		path:first-child{
+			transform: translate(100%,0);
+		}
+		path:last-child{
+	        transform: translate(0,0);
+		}
+	}
+}
+// Hover icon move left
+.cms-hover-move-icon-left{
+	path:last-child{
+	    transform: translate(100%,0);
+	}
+	&:hover {
+		path:first-child{
+			transform: translate(-100%,0);
+		}
+		path:last-child{
+	        transform: translate(0,0);
+		}
+	}
+}
+// Hover icon move up
+.cms-hover-move-icon-up{
+	path:last-child{
+    	transform: translate(0,100%);
+    }
+	&:hover {
+		path:first-child{
+			transform: translate(0,-100%);
+		}
+		path:last-child{
+	        transform: translate(0,0);
+		}
+	}
+}
+// Hover icon move down
+.cms-hover-move-icon-down{
+	path:last-child{
+    	transform: translate(0,-100%);
+    }
+	&:hover {
+		path:first-child{
+			transform: translate(0,100%);
+		}
+		path:last-child{
+	        transform: translate(0,0);
+		}
+	}
+}
+// Hover icon move up right
+.cms-hover-move-icon-up-right{
+	path:last-child{
+    	transform: translate(-100%,100%);
+    }	
+	&:hover { 
+		path:first-child{
+			transform: translate(100%,-100%);
+		}
+		path:last-child{
+	        transform: translate(0,0);
+		}
+	}
+}
+// Hover icon move up left
+.cms-hover-move-icon-up-left{
+	path:last-child{
+    	transform: translate(100%,100%);
+    }
+	&:hover {
+		path:first-child{
+			transform: translate(-100%,-100%);
+		}
+		path:last-child{
+	        transform: translate(0,0);
+		}
+	}
+}
+// Hover Show Icon Up Right
+.cms-hover-show-icon-up-right{
+	position: relative;
+	.cms-hover-show-icon{
+		@include transform(translateX(-32px));
+		@include transition();
+	}
+	.cms-hover-show--icon{
+		@include transform(translate(-100%, 100%));
+		@include transition();
+		visibility: hidden;
+		opacity: 0;
+	}
+	&:hover{
+		z-index: 2;
+		.cms-hover-show-icon{
+			@include transform(translateX(0));
+		}
+		.cms-hover-show--icon{
+			@include transform(translate(0,0));
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+}
+// Hover Show Icon Zoom Out
+.cms-hover-show-icon-zoom-out{
+	&-label{
+		transform: translateX(0);
+    	transition: transform .65s cubic-bezier(.785,.135,.15,.86);
+	}
+	&-icon{
+		clip-path: circle(0 at 50% 50%);
+    	transition: clip-path .65s cubic-bezier(.785,.135,.15,.86);
+	}
+	&:hover{
+		.cms-hover-show-icon-zoom-out-label{
+			transform: translateX(-18px);
+		}
+		.cms-hover-show-icon-zoom-out-icon{
+			clip-path: circle(50% at 50% 50%);
+		}
+	}
+}
+// Hover Cursor Image
+.cms-cursor-pointer{
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: auto;
+    opacity: 0;
+    transition: opacity .3s ease-out;
+    pointer-events: none;
+    z-index: 2;
+}
+.cms-cursor--pointer{
+	position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: auto;
+    transform: translate3d(-50%,-100px,0);
+    overflow: visible;
+    img{
+    	position: relative;
+	    display: block;
+	    width: auto;
+	    //top: 25%;
+	    //transform: translateY(-25%);
+    }
+}
+.cms-img-cursor:hover{
+	position: relative;
+	.cms-cursor-pointer{
+		opacity: 1;
+	}
+}
+.cms-hover-ztop:hover{
+	z-index: 5;
+}
+/**
+ * Translate X Y
+*/
+$cms_transform_XY:();
+@each $size in $cms_transform_XY{
+	.cms-translate-#{$size}{
+		@include transform(translate(#{$size}px, #{$size}px));
+	}
+}
+.cms-translate{
+	@include transform(translate(var(--cms-translate)));
+}
+/**
+ * Translate X
+*/
+$cms_transform_X:();
+@each $size in $cms_transform_X{
+	.cms-translateX-#{$size}{
+		@include transform(translateX(#{$size}px));
+		[dir="rtl"] &{
+			@include transform(translateX(#{$size*-1}px));
+		}
+	}
+}
+.cms-translateX{
+	@include transform(translateX(var(--cms-translateX)));
+}
+/**
+ * Translate Y
+*/
+$cms_transform_Y:(-40);
+@each $size in $cms_transform_Y{
+	.cms-translateY-#{$size}{
+		@include transform(translateY(#{$size}px));
+	}
+}
+.cms-translateY{
+	@include transform(translateY(var(--cms-translateY)));
+}
+/**
+ * Transform
+ * 
+*/
+.cms-transform{
+	@include transform(var(--cms-transform));
+}
+// On Hover
+.cms-hover-change:hover,
+.cms-hover-change.hover{
+	@each $size in $cms_transform_XY{
+		.cms-on-hover-translate-#{$size}{
+			@include transform(translate(#{$size}px, #{$size}px));
+			[dir="rtl"] &{
+				@include transform(translate(#{$size*-1}px, #{$size*-1}px));
+			}
+		}
+	}
+	@each $size in $cms_transform_X{
+		.cms-on-hover-translateX-#{$size}{
+			@include transform(translateX(#{$size}px));
+			[dir="rtl"] &{
+				@include transform(translateX(#{$size*-1}px));
+			}
+		}
+	}
+	@each $size in $cms_transform_Y{
+		.cms-on-hover-translateY-#{$size}{
+			@include transform(translateY(#{$size}px));
+		}
+	}
+	.cms-on-hover-translateX{
+		@include transform(translateX(var(--cms-on-hover-translateX)));
+	}
+	.cms-on-hover-translateY{
+		@include transform(translateY(var(--cms-on-hover-translateY)));
+	}
+	.cms-on-hover-zoomout{
+		@include scale(1.1);
+	}
+}
+// Plus Minus
+.plus-minus{
+	path.minus{
+		visibility: hidden;
+		opacity: 0;
+	}
+	&.active{
+		path.plus{
+			visibility: hidden;
+			opacity: 0;
+		}
+		path.minus{
+			visibility: visible;
+			opacity: 1;
+			&.cms-minus{
+				transform: translateY(5px);
+			}
+		}
+	}
+}
+// Show on loading
+.show-on-loading{
+	display: none;
+}
+.loading,
+.cms-loading{
+	>.show-on-loading{
+		display: flex;
+	}
+	>.hide-on-loading{
+		display: none;
+	}
+}
+// Stroke Dash Array
+.cms-hover-stroke-dasharray{
+	.cms-stroke-dasharray svg{
+		overflow: visible;
+	    opacity: 0;
+		stroke: currentColor;
+	    stroke-width: var(--cms-stroke-width, 2);
+	    stroke-dashoffset: var(--cms-stroke-dash-length, 650px);
+	    stroke-dasharray: var(--cms-stroke-dash-length, 650px);
+	    transition: opacity .4s .3s, stroke-dashoffset .7s, color .2s ease-out;
+	}
+	&:hover{
+		.cms-stroke-dasharray svg{
+			stroke-dashoffset: 0;
+		    opacity: 1;
+		    transition-duration: .2s, 1.3s, .2s;
+		    transition-delay: 0s, 0s, 0s;
+		    transition-timing-function: ease, cubic-bezier(.39, .06, .31, .95), ease-out;
+		}
+	}
+}

@@ -1,0 +1,71 @@
+// All 
+$cms_border: (1,2,8);
+$cms_border_t: (1);
+$cms_border_b:(1, 2, 10);
+$cms_border_l:(1);
+$cms_border_r:(1,12);
+@each $border in $cms_border{
+	.bdr-#{$border}{
+		border: #{$border}px solid;
+	}
+}
+//Top
+@each $border in $cms_border_t{
+	.bdr-t-#{$border}{
+		border-top: #{$border}px solid;
+	}
+}
+// Bottom
+@each $border in $cms_border_b{
+	.bdr-b-#{$border}{
+		border-bottom: #{$border}px solid;
+	}
+}
+// Left
+@each $border in $cms_border_l{
+	.bdr-l-#{$border}{
+		border-left: #{$border}px solid;
+		[dir="rtl"] &{
+			border-left: 0;
+			border-right-width: #{$border}px;
+			border-right-style: solid;
+		}
+	}
+}
+// Right
+@each $border in $cms_border_r{
+	.bdr-r-#{$border}{
+		border-right: #{$border}px solid;
+		[dir="rtl"] &{
+			border-right: 0;
+			border-left-width: #{$border}px;
+			border-left-style: solid;
+		}
+	}
+}
+// Hover
+$cms_border_hover:(2);
+@each $border in $cms_border_hover{
+	.bdr-hover-#{$border}:hover{
+		border-width: #{$border}px;
+	}
+}
+// Border Style
+.bdr-dotted{
+	border-style: dotted;
+}
+.bdr-dashed{
+	border-style: dashed;
+}
+.bdr-t-dashed{
+	border-top-style: dashed;
+}
+// Custom Color
+.bdr-divider-30{
+	border-color: var(--cms-divider-30);
+}
+.bdr-divider-50,
+.bdr-divider-light,
+.cms-hover-change:hover .bdr-on-hover-divider-light{
+	border-color: var(--cms-divider-50);
+}

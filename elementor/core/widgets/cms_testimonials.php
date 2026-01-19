@@ -1,0 +1,257 @@
+<?php
+namespace Genzia\Elementor\Widgets;
+
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly.
+}
+
+use Genzia\Elementor\Widget_Base;
+use Elementor\Controls_Manager;
+use Elementor\Utils;
+use Elementor\Repeater;
+
+/**
+ * Testimonials Widget.
+ *
+ * Testimonials widget that displays process steps or workflow with features and descriptions
+ * in various layout configurations including sticky layouts.
+ *
+ * @since 1.0.0
+ */
+class Widget_Testimonials extends Widget_Base
+{
+    public function __construct($data = [], $args = null)
+    {
+        $this->set_name('cms_testimonials');
+        $this->set_title(esc_html__('CMS Testimonials', 'genzia'));
+        $this->set_icon('eicon-testimonial');
+        $this->set_keywords(['testimonials', 'carousel', 'cms', 'genzia']);
+        $this->set_script_depends(['cms-post-carousel-widget-js']);
+        $this->set_style_depends(['swiper','e-animation-fadeInUp','e-animation-fadeInLeft','e-animation-fadeInRight','e-animation-rotateInUpRight']);
+
+        parent::__construct($data, $args);
+    }
+
+    /**
+     * Register Testimonials widget controls.
+     *
+     * Add input fields to allow the user to customize the widget settings.
+     *
+     * @since 1.0.0
+     * @access protected
+     */
+    protected function register_controls(): void
+    {
+        // Layout Tab Start
+        $this->start_controls_section(
+            'layout_section',
+            [
+                'label' => esc_html__('Layout', 'genzia'),
+                'tab'   => Controls_Manager::TAB_LAYOUT,
+            ]
+        );
+        $this->add_control(
+            'layout_mode',
+            [
+                'label'   => esc_html__('Layout Mode', 'genzia'),
+                'type'    => Controls_Manager::SELECT,
+                'options' => [
+                    'grid'     => esc_html__('Grid', 'genzia'),
+                    'carousel' => esc_html__('Carousel', 'genzia')
+                ],
+                'default' => 'carousel',
+                'condition' => [
+                    'layout!' => ['-sticky-scroll']
+                ]
+            ]
+        );
+        $this->add_control(
+            'layout',
+            [
+                'label'   => esc_html__('Templates', 'genzia'),
+                'type'    => Controls_Manager::VISUAL_CHOICE,
+                'default' => '1',
+                'options' => [
+                    '1' => [
+                        'title' => esc_html__('Layout 1', 'genzia'),
+                        'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_testimonials/layout/1.webp'
+                    ],
+                    '2' => [
+                        'title' => esc_html__('Layout 2', 'genzia'),
+                        'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_testimonials/layout/2.webp'
+                    ],
+                    '-sticky-scroll' => [
+                        'title' => esc_html__('Scroll Sticky', 'genzia'),
+                        'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_testimonials/layout/sticky-scroll.webp'
+                    ]
+                ],
+                'label_block' => true
+            ]
+        );
+        $this->end_controls_section();
+        // List
+        $this->start_controls_section(
+            'list_section',
+            [
+                'label' => esc_html__('Testimonials', 'genzia'),
+                'tab'   => Controls_Manager::TAB_CONTENT,
+            ]
+        );
+            // Testimonials
+            $repeater = new Repeater();
+            $repeater->add_control(
+                'image',
+                [
+                    'label'   => esc_html__('Avatar', 'genzia'),
+                    'type'    => Controls_Manager::MEDIA,
+                    'default' => [
+                        'url' => Utils::get_placeholder_image_src(),
+                    ],
+                    'label_block' => false
+                ]
+            );
+            $repeater->add_control(
+                'name',
+                [
+                    'label'   => esc_html__('Name', 'genzia'),
+                    'type'    => Controls_Manager::TEXT,
+                    'default' => esc_html__('Author Name', 'genzia'),
+                ]
+            );
+            $repeater->add_control(
+                'position',
+                [
+                    'label'   => esc_html__('Position', 'genzia'),
+                    'type'    => Controls_Manager::TEXT,
+                    'default' => esc_html__('Position', 'genzia'),
+                ]
+            );
+            $repeater->add_control(
+                'description',
+                [
+                    'label'   => esc_html__('Description', 'genzia'),
+                    'type'    => Controls_Manager::TEXTAREA,
+                    'default' => esc_html__('Testimonial Description', 'genzia'),
+                ]
+            );
+            $this->add_control(
+                'testimonials',
+                [
+                    'label'   => esc_html__('Testimonials', 'genzia'),
+                    'type'    => Controls_Manager::REPEATER,
+                    'fields'  => $repeater->get_controls(),
+                    'default' => [
+                        [
+                            'image' => [
+                                'url' => Utils::get_placeholder_image_src(),
+                            ],
+                            'name'        => esc_html__('Testimonial Name', 'genzia'),
+                            'position'    => esc_html__('Testimonial Position', 'genzia'),
+                            'description' => esc_html__('#1 Testimonial Description. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.', 'genzia'),
+                        ],
+                        [
+                            'image' => [
+                                'url' => Utils::get_placeholder_image_src(),
+                            ],
+                            'name'        => esc_html__('Testimonial Name #2', 'genzia'),
+                            'position'    => esc_html__('Testimonial Position #2', 'genzia'),
+                            'description' => esc_html__('#2 Testimonial Description. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.', 'genzia'),
+                        ],
+                        [
+                            'image' => [
+                                'url' => Utils::get_placeholder_image_src(),
+                            ],
+                            'name'        => esc_html__('Testimonial Name #3', 'genzia'),
+                            'position'    => esc_html__('Testimonial Position #3', 'genzia'),
+                            'description' => esc_html__('#3 Testimonial Description. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.', 'genzia'),
+                        ],
+                    ],
+                    'title_field' => '{{{ name }}}',
+                    'label_block' => true
+                ]
+            );
+        $this->end_controls_section();
+        // Heading Content
+        $this->start_controls_section(
+            'section_heading',
+            [
+                'label'     => esc_html__('Heading Content', 'genzia'),
+                'tab'       => Controls_Manager::TAB_CONTENT,
+                'condition' => [
+                    'layout' => ['1','-sticky-scroll']
+                ]
+            ]
+        );
+            $this->add_control(
+                'smallheading_text',
+                [
+                    'label'       => esc_html__('Small Heading', 'genzia'),
+                    'type'        => Controls_Manager::TEXTAREA,
+                    'default'     => 'This is Small Heading',
+                    'placeholder' => esc_html__('Enter your text', 'genzia'),
+                    'label_block' => true,
+                ]
+            );
+            genzia_elementor_colors_opts($this, [
+                'name'      => 'smallheading_color',
+                'label'     => esc_html__('Color', 'genzia'),
+                'selectors' => [
+                    '{{WRAPPER}} .cms-small' => 'color:{{VALUE}};'
+                ],
+                'condition' => [
+                    'smallheading_text!' => ''
+                ]
+            ]);
+        $this->end_controls_section();
+        
+        // Carousel Settings
+        genzia_elementor_carousel_settings($this, [
+            'condition' => [
+                'layout_mode' => 'carousel',
+                'layout!'     => '-sticky-scroll'
+            ],
+            'slides_to_show'   => 1,
+            'slides_to_scroll' => 1
+        ]);
+        // Grid Settings
+        genzia_elementor_grid_columns_settings($this, [
+            'condition' => [
+                'layout_mode' => ['grid'],
+                'layout!'     => '-sticky-scroll'
+            ],
+            'divider' => false,
+            'gap'     => true
+        ]);
+
+        // Style
+        $this->start_controls_section(
+            'style_section',
+            [
+                'label' => esc_html__('Style Settings', 'genzia'),
+                'tab'   => Controls_Manager::TAB_STYLE
+            ]
+        );
+            genzia_elementor_colors_opts($this, [
+                'name'  => 'desc_color',
+                'label' => esc_html__('Testimonial Color', 'genzia'),
+                'selectors' => [
+                    '{{WRAPPER}} .cms-ttmn-desc' => 'color:{{VALUE}};'
+                ]
+            ]);
+            genzia_elementor_colors_opts($this, [
+                'name'  => 'author_color',
+                'label' => esc_html__('Author Color', 'genzia'),
+                'selectors' => [
+                    '{{WRAPPER}} .cms-ttmn--name' => 'color:{{VALUE}};'
+                ]
+            ]);
+            genzia_elementor_colors_opts($this, [
+                'name'  => 'author_pos_color',
+                'label' => esc_html__('Position Color', 'genzia'),
+                'selectors' => [
+                    '{{WRAPPER}} .cms-ttmn--pos' => 'color:{{VALUE}};'
+                ]
+            ]);
+        $this->end_controls_section();
+    }
+}

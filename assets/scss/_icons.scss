@@ -1,0 +1,6 @@
+// Hover
+.hover-icon-bounce:hover{
+	.cms-eicon:not(.remove-parent){
+		animation: icon-bounce 1s infinite linear;
+	}
+}

@@ -1,0 +1,70 @@
+html {
+  line-height: var(--cms-body-line-height); /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+  scroll-behavior: smooth;
+  overflow-x:hidden; // fix chrome mobile mode
+  box-sizing: border-box;
+  -ms-overflow-style: scrollbar;
+  //
+  &.cms-modal-opened{
+  	overflow:hidden;
+  }
+}
+
+*, html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, label, fieldset, input, p, blockquote, th, td { margin:0; padding:0 }
+table { border-collapse:collapse; border-spacing:0 }
+address, caption, cite, code, dfn, em, strong, th, var { font-style:normal; font-weight:normal }
+ol, ul, li { list-style-position: inside; 
+	&.unstyled{
+		list-style: none;
+	}
+}
+caption, th { text-align:left }
+h1, h2, h3, h4, h5, h6 { font-size:100%; font-weight:normal }
+blockquote, q { quotes: none }
+blockquote:before, blockquote:after, q:before, q:after { content:''; content: none}
+abbr, acronym { border:0; font-variant:normal }
+table { border-collapse: collapse; border-spacing: 0 }
+img, object, embed, iframe {
+	max-width: 100%;
+  height: auto;
+  vertical-align: top;
+  border: none;
+} /* Responsive images and other embedded objects */
+strong, b, .strong , .b, .font-700{ font-weight: bold; } 
+em, i, .em, .i { 
+	font-style: italic;
+  font-smoothing: initial;
+  -webkit-font-smoothing: initial;
+  -moz-osx-font-smoothing: initial;
+}
+*, *:before, *:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	outline: none;
+}
+mark {
+  background-color: transparent;
+  color: inherit;
+}
+ul[class*=" menu"]{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+fieldset{
+	padding: 20px;
+	border: 2px solid #d9e0e9;
+}
+// clearfix
+.clearfix {
+	clear: both;
+	&:after{
+		content: '';
+		display: block;
+		clear: both;
+	}
+}

@@ -1,0 +1,30 @@
+<?php
+// Small Heading
+$this->add_inline_editing_attributes( 'smallheading_text' );
+$this->add_render_attribute( 'smallheading_text', [
+	'class' => [
+		'cms-small',
+		'elementor-invisible',
+		'cms-smallheading cms-nl2br',
+		'text-sm',
+		'text-'.$this->get_setting('smallheading_color','sub-text'),
+		'empty-none',
+		'm-tb-nsm',
+		'd-flex gap-8 flex-nowrap'
+	],
+	'data-settings' => wp_json_encode([
+		'animation' => 'fadeInUp',
+		'animation_delay' => 100
+	])
+]);
+$small_icon_classes = genzia_nice_class([
+	'cms-small-icon pt-7',
+	'text-'.$this->get_setting('smallheading_icon_color', 'accent-regular')
+]);
+?>
+<div <?php ctc_print_html( $this->get_render_attribute_string( 'smallheading_text' ) ); ?>><?php 
+	// Icon
+	genzia_elementor_icon_render( $settings['smallheading_icon'], [], [ 'aria-hidden' => 'true', 'class' => $small_icon_classes, 'icon_size' => 12 ] );
+	// Text
+	echo nl2br( $settings['smallheading_text'] ); 
+?></div>

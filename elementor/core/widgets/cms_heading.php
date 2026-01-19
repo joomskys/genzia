@@ -1,0 +1,202 @@
+<?php
+namespace Genzia\Elementor\Widgets;
+
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly.
+}
+
+use Genzia\Elementor\Widget_Base;
+use Elementor\Controls_Manager;
+use Elementor\Utils;
+use Elementor\Repeater;
+
+/**
+ * Heading Widget.
+ *
+ * Displays headings with customizable features like small heading, description,
+ * buttons, features list and banner image.
+ *
+ * @since 1.0.0
+ */
+class Widget_Heading extends Widget_Base
+{
+    public function __construct($data = [], $args = null)
+    {
+        $this->set_name('cms_heading');
+        $this->set_title(esc_html__('CMS Heading', 'genzia'));
+        $this->set_icon('eicon-heading');
+        $this->set_keywords(['heading', 'title', 'text', 'cms', 'genzia']);
+        $this->set_script_depends(['cms-elementor-custom']);
+        $this->set_style_depends(['e-animation-fadeInUp','e-animation-fadeInRight','e-animation-fadeLeft']);
+
+        parent::__construct($data, $args);
+    }
+
+    /**
+     * Register Heading widget controls.
+     *
+     * Add input fields to allow the user to customize the widget settings.
+     *
+     * @since 1.0.0
+     * @access protected
+     */
+    protected function register_controls(): void
+    {
+        // Layout
+        $this->start_controls_section(
+            'layout_section',
+            [
+                'label' => esc_html__('Layout', 'genzia'),
+                'tab' => Controls_Manager::TAB_LAYOUT,
+            ]
+        );
+        $this->add_control(
+            'layout',
+            [
+                'label'   => esc_html__('Templates', 'genzia'),
+                'type'    => Controls_Manager::VISUAL_CHOICE,
+                'default' => '1',
+                'options' => [
+                    '1' => [
+                        'title' => esc_html__('Layout 1', 'genzia'),
+                        'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_heading/layout/1.webp'
+                    ],
+                    '2' => [
+                        'title' => esc_html__('Layout 2', 'genzia'),
+                        'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_heading/layout/2.webp'
+                    ],
+                    '3' => [
+                        'title' => esc_html__('Layout 3', 'genzia'),
+                        'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_heading/layout/3.webp'
+                    ],
+                    '4' => [
+                        'title' => esc_html__('Layout 4', 'genzia'),
+                        'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_heading/layout/4.webp'
+                    ],
+                    '5' => [
+                        'title' => esc_html__('Layout 5', 'genzia'),
+                        'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_heading/layout/5.webp'
+                    ],
+                    '6' => [
+                        'title' => esc_html__('Layout 6', 'genzia'),
+                        'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_heading/layout/6.webp'
+                    ]
+                ],
+                'label_block' => true
+            ]
+        );
+        $this->end_controls_section();
+        // Heading Content
+        $this->start_controls_section(
+            'section_heading',
+            [
+                'label' => esc_html__('Heading Content', 'genzia'),
+                'tab' => Controls_Manager::TAB_CONTENT,
+            ]
+        );
+            $this->add_control(
+                'smallheading_icon',
+                [
+                    'label'   => esc_html__('Icon', 'genzia'),
+                    'type'    => Controls_Manager::ICONS,
+                    'default' => [
+                        'value'   => 'fas fa-star',
+                        'library' => 'fa-solid'
+                    ],
+                    'skin'        => 'inline',
+                    'label_block' => false,
+                    'condition' => [
+                        'layout' => ['2','3','5','6'],
+                        'smallheading_text!' => ''
+                    ]
+                ]
+            );
+            genzia_elementor_colors_opts($this, [
+                'name'      => 'smallheading_icon_color',
+                'label'     => esc_html__('Icon Color', 'genzia'),
+                'selectors' => [
+                    '{{WRAPPER}} .cms-small-icon' => '--text-custom-color: {{VALUE}};'
+                ],
+                'condition' => [
+                    'layout'                    => ['2','3','5','6'],
+                    'smallheading_text!'        => '',
+                    'smallheading_icon[value]!' => ''
+                ]
+            ]);
+            $this->add_control(
+                'smallheading_text',
+                [
+                    'label'       => esc_html__('Small Heading', 'genzia'),
+                    'type'        => Controls_Manager::TEXTAREA,
+                    'default'     => 'This is Small Heading',
+                    'placeholder' => esc_html__('Enter your text', 'genzia'),
+                    'label_block' => true,
+                    'condition'   => [
+                        'layout' => ['2','3','5','6']
+                    ]
+                ]
+            );
+            genzia_elementor_colors_opts($this, [
+                'name'      => 'smallheading_color',
+                'label'     => esc_html__('Color', 'genzia'),
+                'selectors' => [
+                    '{{WRAPPER}} .cms-small' => '--text-custom-color: {{VALUE}};'
+                ],
+                'condition' => [
+                    'layout' => ['2','3','5','6'],
+                    'smallheading_text!' => ''
+                ]
+            ]);
+            $this->add_control(
+                'heading_text',
+                [
+                    'label'       => esc_html__('Heading', 'genzia'),
+                    'type'        => Controls_Manager::TEXTAREA,
+                    'default'     => 'This is the heading',
+                    'placeholder' => esc_html__('Enter your text', 'genzia'),
+                    'label_block' => true,
+                    'condition'   => [
+                        'layout!' => ['6']
+                    ]
+                ]
+            );
+            genzia_elementor_colors_opts($this, [
+                'name'      => 'heading_color',
+                'label'     => esc_html__('Color', 'genzia'),
+                'selectors' => [
+                    '{{WRAPPER}} .cms-title' => '--text-custom-color: {{VALUE}};'
+                ],
+                'condition'   => [
+                    'layout!'       => ['6'],
+                    'heading_text!' => ''
+                ]
+            ]);
+            // Description #1
+            $this->add_control(
+                'desc',
+                [
+                    'label'       => esc_html__('Description #1', 'genzia'),
+                    'type'        => Controls_Manager::TEXTAREA,
+                    'default'     => 'Lorem Ipsum is simply dummy text of the printing and typesetting story. Lorem Ipsum has been the story standard dummy text ever since',
+                    'placeholder' => esc_html__('Enter your text', 'genzia'),
+                    'rows'        => 10,
+                    'show_label'  => true,
+                    'condition'   => [
+                        'layout' => ['4']
+                    ]
+                ]
+            );
+            genzia_elementor_colors_opts($this, [
+                'name'      => 'desc_color',
+                'label'     => esc_html__('Color', 'genzia'),
+                'selectors' => [
+                    '{{WRAPPER}} .cms-desc' => '--text-custom-color: {{VALUE}};'
+                ],
+                'condition'   => [
+                    'desc!'  => '',
+                    'layout' => ['4']
+                ]
+            ]);
+        $this->end_controls_section();
+    }
+}

@@ -1,0 +1,35 @@
+$cms_clip_path:();
+@each $clip, $path in $cms_clip_path{
+  .cms-clip-path-#{$clip},
+  .cms-hover-clip-path-#{$clip}:hover,
+  .cms-hover-change:hover .cms-on-hover-clip-path-#{$clip}{
+    clip-path: #{$path};
+  }
+}
+// Responsive Tablet Extra
+$cms_clip_path_tablet_extra:();
+@media #{$max-tablet-extra}{
+  @each $clip, $path in $cms_clip_path_tablet_extra{
+    .cms-clip-path-#{$clip}{
+      clip-path: #{$path};
+    }
+  }
+}
+// Responsive Tablet
+$cms_clip_path_tablet:();
+@media #{$max-tablet}{
+  @each $clip, $path in $cms_clip_path_tablet{
+    .cms-clip-path-#{$clip}{
+      clip-path: #{$path};
+    }
+  }
+}
+// Responsive Mobile
+$cms_clip_path_mobile:();
+@media #{$max-mobile}{
+  @each $clip, $path in $cms_clip_path_mobile{
+    .cms-clip-path-#{$clip}{
+      clip-path: #{$path};
+    }
+  }
+}

@@ -1,0 +1,66 @@
+.cms-ripple{
+	position: relative;
+	&.hover-show{
+		.cms--ripple{
+			opacity: 0;
+			visibility: hidden;
+		}
+		&:hover{
+			.cms--ripple{
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+	}
+}
+.cms--ripple{
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	border-radius: inherit;
+	@include transition();
+	&:before,
+	&:after,
+	.cms---ripple{
+		position: absolute;
+		content: "";
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		border: solid var(--cms-ripple-width, 1px) var(--cms-ripple-color, currentColor);
+		border-radius: inherit;
+	}
+	&:before{
+		animation: ripple 3s linear infinite;
+	}
+	&:after{
+		animation: ripple 3s 1s linear infinite;
+	}
+	.cms---ripple{
+		animation: ripple 3s 2s linear infinite;
+	}
+	// Large
+	&.large{
+		&:before{
+			animation: ripple-large 3s linear infinite;
+		}
+		&:after{
+			animation: ripple-large 3s 1s linear infinite;
+		}
+		.cms---ripple{
+			animation: ripple-large 3s 2s linear infinite;
+		}
+	}
+	// Show on active
+	&.active-show{
+		opacity: 0;
+		visibility: hidden;
+		.active &{
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+}

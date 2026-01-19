@@ -1,0 +1,45 @@
+.cms-carousel-mousewheel{
+    .swiper-content,
+    .swiper-img{
+        border-color: transparent;
+    }
+    .swiper-content{
+        visibility: hidden;
+        opacity: 0;
+        border-top: 0;
+        @include transition();
+    }
+    .swiper-img{
+        border-bottom: 0;
+    }
+    .swiper-slide{
+        width: 420px;
+        max-width: 100%;
+        display: flex;
+        align-items: end;
+        .swiper-img{
+           max-height: 385px; 
+        }
+    }
+    .swiper-slide-prev,
+    .swiper-slide-next{
+        .swiper-img{
+            max-height: 485px;
+        }
+    }
+    .swiper-slide-active{
+        width: 540px;
+        .swiper-content,
+        .swiper-img{
+            border-color:var(--swiper-content-border);
+        }
+        .swiper-content{
+            visibility: visible;
+            opacity: 1;
+        }
+        .swiper-img{
+            max-height: 620px;
+        }
+    }
+
+}

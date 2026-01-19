@@ -1,0 +1,22 @@
+$cms-opacity:(
+	'0' : '0',
+	'01' : '0.1',
+	'02' : '0.2',
+	'05' : '0.5',
+	'15' : '0.15',
+	'85' : '0.85',
+	'1' : '1'
+);
+@each $name, $value in $cms-opacity{
+	.cms-opacity-#{$name},
+	.cms-hover-opacity-#{$name}:hover,
+	.cms-active-opacity-#{$name}.active{
+		@include opacity(#{$value});
+	}
+}
+
+@media #{$max-tablet}{
+	.opacity-tablet-02{
+		opacity: 0.2;
+	}
+}

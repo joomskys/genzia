@@ -1,0 +1,79 @@
+.cms-gradient-render{
+	position: relative;
+	&:before,
+	&:after{
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		border-radius: inherit;
+		@include transition();
+		z-index: 1;
+	}
+	&.cms-gradient-render-height{
+		height: var(--cms-gradient-height, 100%);
+	}
+	> div:not(.cms-evideo-bg){
+		position: relative;
+		z-index: 2;
+	}
+}
+
+.cms-gradient-1{
+	&:before{
+		background: linear-gradient(0deg, rgba($custom_color_bg-dark, 0.25), rgba($custom_color_bg-dark, 0.25)); //#161616
+	}
+}
+.cms-gradient-2{
+	&:before{
+		top: 43%;
+		background: linear-gradient(179.71deg, $accent_color_regular 0.25%, rgba(23, 23, 23, 0.55) 99.75%);
+		transform: matrix(1, 0, 0, -1, 0, 0);
+	}
+}
+.cms-gradient-3{
+	&:before{
+		background: linear-gradient(#fff0 0%,#fff 20.4638% 100%);
+	}
+}
+.cms-gradient-4{
+	&:before{
+		background: linear-gradient(180deg, rgba(255, 255, 255, 0) 3.8%, #FFFFFF 46.98%);
+		opacity: 0.99;
+		min-height: 468px;
+	}
+}
+
+/**
+ * Linear Gradient
+ * 
+ * */
+$linear_gradient:();
+:root{
+	@each $value, $gradient in $linear_gradient{
+		--cms-gradient-#{$value} : #{$gradient};
+	}
+}
+@each $value, $gradient in $linear_gradient{
+}
+/**
+ * Text Gradient
+ * 
+ * */
+[class*="text-gradient-"]:not(:hover),
+[class*="text-hover-gradient-"]:hover{
+	leading-trim: both;
+	text-edge: cap;
+	background-clip: text!important;
+	text-fill-color: transparent!important;
+	-webkit-background-clip: text!important;
+    -webkit-text-fill-color: transparent!important;
+}
+@each $value, $gradient in $linear_gradient{
+	.text-gradient-#{$value}:not(:hover),
+	.text-hover-gradient-#{$value}:hover{
+	    background: #{$gradient};
+	}
+}

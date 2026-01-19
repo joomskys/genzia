@@ -1,0 +1,85 @@
+// Triangle
+[class*=" cms-triangle-"]{
+	position: relative;
+	&:before{
+		content: '';
+		position: absolute;
+		width: 0;
+		height: 0;
+		border-style: solid;
+	}
+}
+[class*=" cms-triangle-top-"]{
+	&:before{
+		top: 0;
+	}
+}
+[class*=" cms-triangle-bottom-"]{
+	&:before{
+		bottom: 0;
+	}
+}
+.cms-triangle-top-left{
+	&.cms-triangle-9x12:before{
+		left: -9px;
+		border-width: 0 9px 12px 0;
+   		border-color: transparent var(--cms-triangle-color) transparent transparent;
+   		[dir="rtl"] &{
+   			left: auto;
+   			right: -9px;
+   			border-width: 12px 9px 0 0;
+   			border-color: var(--cms-triangle-color) transparent transparent transparent;
+   		}
+	}
+	&.cms-triangle-20x15:before{
+		left: -20px;
+		border-width: 0 20px 15px 0;
+   		border-color: transparent var(--cms-triangle-color) transparent transparent;
+   		[dir="rtl"] &{
+   			left: auto;
+   			right: -20px;
+   			border-width: 15px 20px 0 0;
+   			border-color: var(--cms-triangle-color) transparent transparent transparent;
+   		}
+	}
+}
+.cms-triangle-top-right{
+	&.cms-triangle-9x12:before{
+		right: -9px;
+		border-width: 12px 9px 0 0;
+		border-color: var(--cms-triangle-color) transparent transparent transparent;
+   		[dir="rtl"] &{
+   			right: auto;
+   			left: -9px;
+   			border-width: 0 9px 12px 0;
+   			border-color: transparent var(--cms-triangle-color) transparent transparent;
+   		}
+	}
+}
+.cms-triangle-bottom-left{
+	&:before{
+		left: 40px;
+		[dir="rtl"] &{
+			left: auto;
+			right: 40px;
+		}
+	}
+	&.cms-triangle-bottom-left-1{
+		&:before{
+			left: 0;
+			[dir="rtl"] &{
+				left: auto;
+				right: 0;
+			}
+		}
+	}
+	&.cms-triangle-28:before{
+		bottom: -20px;
+		border-width: 28px 28px 0px 0px;
+   		border-color: var(--cms-triangle-color) transparent transparent transparent;
+   		[dir="rtl"] &{
+   			border-width: 0px 28px 28px 0px;
+   			border-color: transparent var(--cms-triangle-color) transparent transparent;
+   		}
+	}
+}

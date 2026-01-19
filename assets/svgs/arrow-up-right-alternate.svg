@@ -1,0 +1,7 @@
+<svg class="rtl-flip" fill="currentColor" fill-hover="currentColor" xmlns="http://www.w3.org/2000/svg" width="101.7" height="101.7" viewBox="0 0 101.7 101.7">
+    <g fill="none" stroke="currentColor" stroke-width="6">
+        <path d="m.7 101 100-100"></path>
+        <path d="M.7 1h100" stroke-width="9">
+        </path><path d="M100.7 1v100" stroke-width="9"></path>
+    </g>
+</svg>

@@ -1,0 +1,273 @@
+#elementor-panel-categories {
+	display: flex;
+	flex-wrap: wrap;
+}
+#elementor-panel-categories > div {
+	flex: 0 0 100%;
+	width: 100%;
+}
+#elementor-panel-category-genzia-widgets {
+	order: -10;
+}
+#elementor-panel-category-egrid-category{
+	order: -9;
+}
+
+.etc-group .icons-selector .selector-popup{
+	max-width: 240px;
+}
+.etc-group .icons-selector .selector-popup input,
+.etc-group .icons-selector .selector-popup select {
+	background: inherit;
+}
+
+.cms-form .cms-form-group .custom-image-select .custom-control-label img{
+	max-width: 100%;
+}
+
+.elementor-control.elementor-control-type-heading .elementor-control-title{
+	font-size: 18px;
+}
+.radio-image-item,
+.egrid-layout-item{
+	position: relative;
+	box-shadow: 0px 0px 5px 2px rgba(255,255,255,0.75);
+}
+.radio-image-item.selected,
+.egrid-layout-item.selected{
+	background-color: rgba(211,12,92,0.75);
+}
+.radio-image-item label[for*="layout-"]:before,
+.egrid-layout-item label[for*="layout-"]:before{
+	content: attr(data-title);
+	text-transform: capitalize;
+	font-size: 18px;
+	z-index: 1;
+	color: var(--e-a-color-txt);
+	padding: 10px;
+	display: block;
+}
+/**
+ * Row Structure
+ * */
+ .elementor-control-type-structure .elementor-control-structure-presets input:checked+.elementor-control-structure-preset svg {
+    border: 2px solid red;
+}
+/**
+ *  URL 
+ * 
+ * */
+.elementor-control-type-url .elementor-control-url-more{
+	/* display: none!important; */
+}
+/**
+ * Text / Textarea
+ * 
+ * */
+.elementor-control-type-text.elementor-label-block .elementor-control-title,
+.elementor-control-type-textarea.elementor-label-block .elementor-control-title,
+.elementor-control-type-switcher.elementor-label-block .elementor-control-title,
+.elementor-control-type-select.elementor-label-block .elementor-control-title,
+.elementor-control-type-repeater.elementor-label-block > .elementor-control-content > label > .elementor-control-title,
+.elementor-control-type-gallery.elementor-label-block .elementor-control-title,
+.elementor-control-type-cms_posts.elementor-label-block .elementor-control-title,
+.elementor-control-type-cms_repeater.elementor-label-block .elementor-control-title{
+ 	font-size: 16px;
+ 	font-style: normal;
+ 	font-weight: 500;
+ 	display: block;
+ 	border-left: 3px solid var(--e-a-color-warning);
+	background: var(--e-a-bg-warning);
+	padding: 15px;
+	position: relative;
+	line-height: 1.5;
+	border-radius: 0 3px 3px 0;
+	flex: 0 0 100%;
+ }
+ .elementor-control-title:empty{
+ 	display: none!important;
+ }
+ .elementor-control-type-switcher.elementor-label-block .elementor-control-field{
+ 	position: relative;
+ }
+ .elementor-control-type-switcher.elementor-label-block .elementor-control-input-wrapper{
+ 	position: absolute;
+ }
+ /**
+  * Custom Elementor
+  * */
+.elementor-panel-navigation{
+  	position: sticky;
+  	top: 0;
+  	z-index: 99;
+  	background-color: var(--e-a-bg-default);
+}
+.elementor-control-media{
+	flex-wrap: wrap;
+}
+.elementor-control-field-description{
+	flex: 0 0 100%;
+	width: 100%;
+}
+.elementor-control-type-heading .elementor-control-title{
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 500;
+	display: block;
+	border-left: 3px solid var(--e-a-color-warning);
+	background: var(--e-a-bg-warning);
+	padding: 15px;
+	position: relative;
+	line-height: 1.5;
+	text-align: start;
+	border-radius: 0 3px 3px 0;
+	flex: 0 0 100%;
+}
+.cms-reapeater-condition-warning{
+	border:1px solid var(--e-a-color-warning);
+	box-shadow: 0 0 5px 0 var(--e-a-color-warning);
+	margin: 10px;
+	padding: 10px!important;
+	border-radius: 5px;
+}
+.elementor-panel .cms-reapeater-condition-warning .elementor-control-field-description{
+	color: var(--e-a-color-warning);
+}
+.elementor-panel .cms-reapeater-condition-desc-warning .elementor-control-field-description{
+	color: var(--e-a-color-warning);
+	order: -1;
+   font-size: 14px;
+   padding-block-end: 10px;
+}
+
+.elementor-control.cms-eseparator.elementor-control-separator-before:before,
+.elementor-control.cms-eseparator.elementor-control-separator-after:after {
+   height: 1px;
+   background-color: var(--e-a-color-warning);
+}
+.elementor-control-type-repeater .elementor-repeater-row-tools > button{
+	gap: 10px;
+}
+.elementor-control-type-repeater .elementor-repeater-row-tools > button img{
+	background-color: white;
+}
+/* Elementor Preview */
+.elementor-edit-area{
+	width: 100%;
+}
+.elementor-edit-area-active .elementor-inline-editing.btn{
+	min-height: 48px;
+}
+.elementor-edit-area-active .elementor-inline-editing.btn-lg{
+	min-height: 68px;
+}
+/* Custom Message  */
+.cms-desc-important{
+	padding: 10px!important;
+	border: 1px solid red;
+	margin: 0 10px 10px;
+}
+.cms-desc-important .elementor-control-field-description{
+	padding: 20px 10px;
+	background: red;
+	color: var(--e-a-color-txt)!important;
+}
+/* Description as Label */
+.elementor-panel .cms-description-as-label .elementor-control-field-description{
+	font-size: 16px;
+   font-style: normal;
+   font-weight: 500;
+   color: var(--e-a-color-txt);
+   order:-1;
+   margin-block-start: 0;
+   margin-block-end: 10px;
+   border-left: 3px solid var(--e-a-color-warning);
+	background: var(--e-a-bg-warning);
+	padding: 15px;
+	position: relative;
+	line-height: 1.5;
+	border-radius: 0 3px 3px 0;
+	flex: 0 0 100%;
+}
+.cms-description-as-label.elementor-control-type-text.elementor-label-block .elementor-control-title,
+.cms-description-as-label.elementor-control-type-textarea.elementor-label-block .elementor-control-title,
+.cms-description-as-label.elementor-control-type-switcher.elementor-label-block .elementor-control-title,
+.cms-description-as-label.elementor-control-type-select.elementor-label-block .elementor-control-title,
+.cms-description-as-label.elementor-control-type-repeater.elementor-label-block > .elementor-control-content > label > .elementor-control-title,
+.cms-description-as-label.elementor-control-type-gallery.elementor-label-block .elementor-control-title{
+	border-left: none;
+	background: none;
+	padding: 0;
+	position: relative;
+	font-size: 12px;
+	font-weight: 300;
+	font-style: italic;
+	line-height: 1.5;
+	text-align: left;
+	border-radius: 0 3px 3px 0;
+	flex: 0 0 auto;
+}
+.elementor-label-inline > .elementor-control-content > .elementor-control-field > .elementor-control-input-wrapper{
+	min-width: 40%;
+	display: flex;
+	justify-content: end;
+}
+.elementor-control-type-media.elementor-label-inline > .elementor-control-content > .elementor-control-field > .elementor-control-input-wrapper{
+	display: block;
+}
+.cms-title-full .elementor-control-field{
+	flex-wrap: wrap;
+}
+.cms-title-full .elementor-control-input-wrapper{
+	max-width: 100%;
+	min-width: 100%!important;
+	flex: 0 0 100%;
+}
+.cms-title-full .elementor-control-title{
+	font-weight: 600;
+	padding-bottom: 10px;
+	max-width: 100%!important;
+	width: 100%;
+}
+.cms-title-label .elementor-control-title{
+	font-size: 20px!important;
+	font-weight: 600;
+	padding-bottom: 20px;
+}
+/* CMS REPEATER_CONTROL */
+.etc-group-item{
+	padding-top: 30px!important;
+}
+.etc-group-actions{
+	width: 100%;
+	flex: 0 0 100%;
+}
+.etc-group-delete{
+	color: red;
+	font-size: 15px;
+}
+.elementor-control-type-cms_repeater .elementor-control-input-wrapper{
+	flex-wrap: wrap;
+}
+.elementor-control-type-cms_repeater .elementor-control-tag-area{
+	min-height: 100px;
+}
+.elementor-control-type-cms_repeater.elementor-label-block .etc-group-item .elementor-control-title{
+	border-left: 0;
+	padding: 0;
+	background: none;
+}
+/* Inline Edit */
+.pen-placeholder{
+	min-width: 300px;
+	position: relative;
+}
+.pen-placeholder:before{
+	left: 0;
+	white-space: nowrap;
+	color: currentColor;
+}
+/* Egrid */
+.elementor-control-type-egrid-layout-control .elementor-control-input-wrapper{
+	flex-wrap: wrap;
+}

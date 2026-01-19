@@ -1,0 +1,86 @@
+[class*="cms-box-"]{
+	display: flex; //inline-flex;
+	justify-content: center;
+    align-items: center;
+    flex: 0 0 auto;
+}
+// Box Square
+$box_sizes:(
+	4,
+	8, // Blog post meta
+	20, // Toggle Menu
+	40, // Carousel Next/Prev
+	20, // cart remove
+	22, // Single Comment reply
+	24, // Element feature icon
+	26, // Element Accordion
+	32, // Header Side Nav
+	36, // Used for CMS Social
+	42, // Used for CMS Process
+	44, // Used for CMS Social
+	48, // Used for Popup Close
+	56, // Used for Slider Static layer
+	58, // Used for Carousel Arrow
+	60, // Single Next/Prev Post
+	78, // Used for Blog Standard
+	123, // Used for CMS Post Scroll Grow
+	
+);
+@each $size in $box_sizes{
+	.cms-box-#{$size}{
+		width: #{$size}px;
+		height: #{$size}px;
+	}
+}
+.cms-box-header-height{
+	width: var(--cms-header-height);
+	height: var(--cms-header-height);
+	@media #{$max-mobile}{
+		width: 48px;
+		height: 48px;
+	}
+}
+// Box Dimensions
+//'32':'40',
+$box_sizes_xy:(
+	'70' : '58'
+);
+@each $width, $height in $box_sizes_xy{
+	.cms-box-#{$width}x#{$height}{
+		width: #{$width}px;
+		height: #{$height}px;
+	}
+}
+/**
+* Responsive
+*
+*/
+$box_mobile_menu_sizes:();
+@media (max-width: $mobile-menu-screen - 1px){
+	@each $size in $box_mobile_menu_sizes{
+		.cms-box-mobile-menu-#{$size}{
+			width: #{$size}px;
+			height: #{$size}px;
+		}
+	}
+}
+// Mobile
+$box_mobile_sizes:(28, 80);
+@media #{$max-smobile}{
+	@each $size in $box_mobile_sizes{
+		.cms-box-mobile-#{$size}{
+			width: #{$size}px;
+			height: #{$size}px;
+		}
+	}
+}
+// Small Mobile
+$box_smobile_sizes:();
+@media #{$max-smobile}{
+	@each $size in $box_smobile_sizes{
+		.cms-box-smobile-#{$size}{
+			width: #{$size}px;
+			height: #{$size}px;
+		}
+	}
+}

@@ -1,0 +1,17 @@
+.cms-carousel-dots-custom{
+    .cms-swiper-pagination-bullet-custom:not(.active){
+        //display: none;
+        position: absolute;
+        visibility: hidden;
+        opacity: 0;
+        @include transition();
+    }
+}
+
+.cms-carousel-dots-current-of-total{
+    .cms-swiper-pagination-bullet{
+        &:not(.active){
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,2 @@
+# genzia
+Genzia WordPress Theme
