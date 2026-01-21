@@ -528,6 +528,9 @@ $cms_gutterY_tablet_extra:();
 	}
 }
 @media #{$max-tablet}{
+	.d-tablet-flex{
+		display: flex;
+	}
 	// Gutter
 	.gutter-tablet-40{
 		margin: -20px;

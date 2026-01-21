@@ -252,6 +252,15 @@ $this->add_render_attribute('statics',[
                             'fit'      => false 
                         ]);
                     }
+                    // Title image
+                    $title_img = genzia_elementor_image_render($cms_slide, [
+                        'name'        => 'title_img',
+                        'size'        => 'custom',
+                        'custom_size' => ['width' => 224, 'height' => 86],
+                        'img_class'   => 'cms-radius-rounded vertical-baseline',
+                        'echo'        => false
+                    ]);
+                    $cms_slide['title'] = str_replace('{{title_img}}', $title_img, $cms_slide['title']);
                 ?>
                 <div <?php ctc_print_html($this->get_render_attribute_string('cms-slider-content')); ?>>
                     <div <?php ctc_print_html($this->get_render_attribute_string('container')); ?>>

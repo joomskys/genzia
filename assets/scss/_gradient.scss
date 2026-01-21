@@ -45,6 +45,28 @@
 		min-height: 468px;
 	}
 }
+.cms-gradient-5{
+	&:before{
+		background: linear-gradient(0deg, rgba(27, 26, 26, 0.1), rgba(27, 26, 26, 0.1));
+	}
+}
+.cms-gradient-6{
+	&:before{
+		background: linear-gradient(179.71deg, $accent_color_regular 0.25%, rgba(23, 23, 23, 0) 99.75%);
+		opacity: 0.5;
+		transform: matrix(1, 0, 0, -1, 0, 0);
+		top: 40%;
+	}
+}
+.cms-gradient-7,
+.cms-hover-gradient-7:hover{
+	&:before{
+		background: linear-gradient(179.71deg, $accent_color_regular 0.25%, rgba(23, 23, 23, 0) 99.75%);
+		opacity: 0.8;
+		transform: matrix(1, 0, 0, -1, 0, 0);
+		top: 40%;
+	}
+}
 
 /**
  * Linear Gradient

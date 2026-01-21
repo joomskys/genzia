@@ -1908,12 +1908,16 @@ function genzia_elementor_link_settings($widget, $args = [])
         'color_label' => esc_html__('Text', 'genzia'),
         // Icon
         'icon_settings' => [
-            'enable' => false,
+            'enable'   => false,
             'selector' => '.cms-btn-icon'
         ],
         //
         'tab'       => Controls_Manager::TAB_CONTENT,
         'condition' => []
+    ]);
+    $args['icon_settings'] = wp_parse_args($args['icon_settings'], [
+        'enable'   => false,
+        'selector' => '.cms-btn-icon'
     ]);
     $label_classes = $args['group'] ? '' : 'cms-description-as-label';
     $description = $args['group'] ? '' : $args['label'];
@@ -3201,18 +3205,18 @@ function genzia_elementor_form_style_render($widget = [], $settings = [], $args 
         'field-height'             => 58,
         'field-width'              => '',
         'field-min-width'          => '',
-        'field-color'              => 'body',
-        'field-bg-color'           => 'transparent',
-        'field-bg-hover-color'     => 'transparent',
+        'field-color'              => 'sub-text',
+        'field-bg-color'           => 'bg-light',
+        'field-bg-hover-color'     => 'bg-light',
         'field-border-style'       => 'solid',
-        'field-border-width'       => '0 0 2px 0',
-        'field-border-width-hover' => '0 0 2px 0',
-        'field-border'             => 'form-stroke',
-        'field-border-hover'       => 'accent',
-        'field-radius'             => 0,
-        'field-padding-start'      => 0,
-        'field-padding-end'        => 0,
-        'placeholder-color'        => 'body',
+        'field-border-width'       => '1px',
+        'field-border-width-hover' => '1px',
+        'field-border'             => 'bg-light',
+        'field-border-hover'       => 'sub-text',
+        'field-radius'             => 10,
+        'field-padding-start'      => '24px',
+        'field-padding-end'        => '24px',
+        'placeholder-color'        => 'sub-text',
         'select-arrow'             => 'url('.get_template_directory_uri().'/assets/images/select-arrow-black.png)',
         'textarea-height'          => 108,
         // Button
@@ -3222,8 +3226,8 @@ function genzia_elementor_form_style_render($widget = [], $settings = [], $args 
         'btn-color-hover'   => 'white',
         'btn-bg'            => 'menu',
         'btn-bg-hover'      => 'accent',
-        'btn-radius'        => 0,
-        'btn-padding'       => '0 32px'
+        'btn-radius'        => 10,
+        'btn-padding'       => '0 24px 0 6px'
     ]);
     // Form
     $label_color              = $widget->get_setting('label_color', 'heading');

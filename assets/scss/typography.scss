@@ -442,12 +442,13 @@ $text_sizes_m:(
     'md'  : '0.31', // 16px/24px/5px
     'lg'  : '0.38888889', // 7px
     'xl'  : '0.333', // 6px
-    '2xl' : '7.111', // 128px
+    '2xl' : '1', // 128px
     'btn' : '0.778', // 14px
     //
     'h2' : '0.63', // 72px/72px/10px
+    'h3' : '0.667', // 48px/60px/6px
     'h4' : '0.444',// 36px/44px/8px,
-    'h6' : '0.38', // 24px/32px/4px
+    'h6' : '0.222', // 24px/32px/4px
 
 );
 @each $name, $size in $text_sizes_m {
@@ -559,7 +560,7 @@ $text_sizes_mobile:();
     }
     //
     .text-2xl{
-        font-size: 6rem;
+        font-size: 4rem;
     }
     .text-mobile-h3{
         font-size: 48px;

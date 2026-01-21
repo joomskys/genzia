@@ -63,6 +63,7 @@ input[type="button"] {
     //
     &:not(:has(>.cms-eicon)){
         padding-inline-start: 24px;
+        padding-inline-end: 24px;
     }
     // Icon position
     &:has(>.cms-eicon.order-first){

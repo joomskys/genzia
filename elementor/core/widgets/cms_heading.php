@@ -80,6 +80,10 @@ class Widget_Heading extends Widget_Base
                     '6' => [
                         'title' => esc_html__('Layout 6', 'genzia'),
                         'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_heading/layout/6.webp'
+                    ],
+                    '7' => [
+                        'title' => esc_html__('Layout 7', 'genzia'),
+                        'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_heading/layout/7.webp'
                     ]
                 ],
                 'label_block' => true
@@ -182,7 +186,7 @@ class Widget_Heading extends Widget_Base
                     'rows'        => 10,
                     'show_label'  => true,
                     'condition'   => [
-                        'layout' => ['4']
+                        'layout' => ['4','7']
                     ]
                 ]
             );
@@ -194,7 +198,21 @@ class Widget_Heading extends Widget_Base
                 ],
                 'condition'   => [
                     'desc!'  => '',
-                    'layout' => ['4']
+                    'layout' => ['4','7']
+                ]
+            ]);
+            // Button
+            genzia_elementor_link_settings($this, [
+                'mode'          => 'btn',
+                'group'         => false,
+                'color_label'   => esc_html__('Button', 'genzia'),
+                'text'          => 'Click Here',
+                'icon_settings' => [
+                    'enable'   => true,
+                    'selector' => '.cms-btn-icon'
+                ],
+                'condition' => [
+                    'layout' => ['7']
                 ]
             ]);
         $this->end_controls_section();

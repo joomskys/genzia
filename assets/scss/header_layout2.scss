@@ -1,0 +1,7 @@
+.header-layout-2{
+    @media (max-width: $mobile-menu-screen - 1px) {
+        .site-navigation-dropdown {
+            left: auto;
+        }
+    }
+}

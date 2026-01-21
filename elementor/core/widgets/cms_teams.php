@@ -77,6 +77,10 @@ class Widget_Teams extends Widget_Base
                             'title' => esc_html__('Layout 1', 'genzia'),
                             'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_teams/layout/1.webp'
                         ],
+                        '2' => [
+                            'title' => esc_html__('Layout 2', 'genzia'),
+                            'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_teams/layout/2.webp'
+                        ],
                         '-sticky-scroll' => [
                             'title' => esc_html__('Sticky Scroll', 'genzia'),
                             'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_teams/layout/sticky-scroll.webp'
@@ -92,10 +96,7 @@ class Widget_Teams extends Widget_Base
             'heading_section',
             [
                 'label' => esc_html__('Element Heading', 'genzia'),
-                'tab'   => Controls_Manager::TAB_CONTENT,
-                'condition' => [
-                    'layout' => '-sticky-scroll'
-                ]
+                'tab'   => Controls_Manager::TAB_CONTENT
             ]
         );
             $this->add_control(

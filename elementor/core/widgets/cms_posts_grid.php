@@ -53,10 +53,47 @@ class Widget_Posts_Grid extends Widget_Base
                     'label'       => esc_html__('Templates', 'genzia'),
                     'type'        => Controls_Manager::VISUAL_CHOICE,
                     'default'     => '1',
-                    'options'     => genzia_elementor_post_layouts(),
+                    'options'     => genzia_elementor_post_layouts([],[
+                        '-project' => [
+                            'title' => esc_html__( 'Project Scroll', 'genzia' ),
+                            'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_posts_grid/layout/project.webp'
+                        ]
+                    ]),
                     'label_block' => true
                 ]
             );
+        $this->end_controls_section();
+        // Heading Content
+        $this->start_controls_section(
+            'section_heading',
+            [
+                'label'     => esc_html__('Heading Content', 'genzia'),
+                'tab'       => Controls_Manager::TAB_CONTENT,
+                'condition' => [
+                    'layout' => ['-project']
+                ]
+            ]
+        );
+            $this->add_control(
+                'heading_text',
+                [
+                    'label'       => esc_html__('Heading', 'genzia'),
+                    'type'        => Controls_Manager::TEXTAREA,
+                    'default'     => 'This is Heading',
+                    'placeholder' => esc_html__('Enter your text', 'genzia'),
+                    'label_block' => true,
+                ]
+            );
+            genzia_elementor_colors_opts($this, [
+                'name'      => 'heading_color',
+                'label'     => esc_html__('Color', 'genzia'),
+                'selectors' => [
+                    '{{WRAPPER}} .cms-etitle' => '--cms-custom-color:{{VALUE}};'
+                ],
+                'condition' => [
+                    'heading_text!' => ''
+                ]
+            ]);
         $this->end_controls_section();
         // Source Settings
         genzia_elementor_post_source_settings($this);
@@ -109,16 +146,19 @@ class Widget_Posts_Grid extends Widget_Base
         $this->start_controls_section(
             'grid_section',
             [
-                'label' => esc_html__('Grid Settings', 'genzia'),
-                'tab' => Controls_Manager::TAB_SETTINGS,
+                'label'     => esc_html__('Grid Settings', 'genzia'),
+                'tab'       => Controls_Manager::TAB_SETTINGS,
+                'condition' => [
+                    'layout!' => ['-project']
+                ]
             ]
         );
             $this->add_responsive_control(
                 'col',
                 [
-                    'label' => esc_html__('Columns', 'genzia'),
-                    'type' => Controls_Manager::SELECT,
-                    'default' => '',
+                    'label'        => esc_html__('Columns', 'genzia'),
+                    'type'         => Controls_Manager::SELECT,
+                    'default'      => '',
                     'default_args' => [
                         'tablet' => '',
                         'mobile' => ''

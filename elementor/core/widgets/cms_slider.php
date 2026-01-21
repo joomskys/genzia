@@ -169,6 +169,21 @@ class Widget_Sliders extends Widget_Base
                 ]
             );
             $repeater->add_control(
+                'title_img',
+                [
+                    'label'       => esc_html__('Title Image', 'genzia'),
+                    'type'        => Controls_Manager::MEDIA,
+                    'default'     => [],
+                    'placeholder' => [],
+                    'label_block' => false,
+                    'skin'        => 'inline',
+                    'condition'   => [
+                        'title!' => ''
+                    ],
+                    'description' => esc_html__('Use {{title_img}} to insert image where you want','genzia')
+                ]
+            );
+            $repeater->add_control(
                 'description',
                 [
                     'label'       => esc_html__('Description', 'genzia'),
@@ -347,7 +362,7 @@ class Widget_Sliders extends Widget_Base
                 'label' => esc_html__('Static Layer', 'genzia'),
                 'tab' => Controls_Manager::TAB_CONTENT,
                 'condition' => [
-                    'layout' => ['1']
+                    'layout' => ['1','2']
                 ]
             ]
         );

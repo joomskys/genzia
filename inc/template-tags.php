@@ -828,7 +828,7 @@ if(!function_exists('genzia_header_phone_render2')){
             ],
             'text_wrap_class' => '',
             'text_class'      => 'text-md',
-            'phone_class'     => 'text-btn font-700'
+            'phone_class'     => 'text-md font-700'
         ]);
         $phone_text = genzia_get_opt('h_phone'.$args['name'].'_text', '');
         $phone_number = genzia_get_opt('h_phone'.$args['name'].'_number', '');
@@ -3238,7 +3238,7 @@ function genzia_post_taxonomy_category($taxo = 'category'){
     switch (get_post_type()) {
         case 'cms-service':
             return 'service-'.$taxo;
-        case 'cms-porfolio':
+        case 'porfolio':
             return 'portfolio-'.$taxo;
         case 'post':
             return $post_taxo;
@@ -3263,7 +3263,7 @@ function genzia_taxonomy_by_post_type($post_type = 'post', $taxo = 'category'){
     switch ($post_type) {
         case 'cms-service':
             return 'service-'.$taxo;
-        case 'cms-porfolio':
+        case 'portfolio':
             return 'portfolio-'.$taxo;
         case 'post':
             return $post_taxo;
@@ -3338,6 +3338,10 @@ if (!function_exists('genzia_configs')) {
             'bg-dark'       => [
                 'title' => esc_html__('Background Dark','genzia'),
                 'value' => '#1B1A1A'
+            ],
+            'bg-image'       => [
+                'title' => esc_html__('Background Image Container','genzia'),
+                'value' => '#C0C0C0'
             ]
         ]);
         
@@ -3587,11 +3591,16 @@ if(!function_exists('genzia_theme_custom_colors')){
             'divider-light' => [
                 'title' => esc_html__('Diviver/ Divider Light','genzia'),
                 'value' => 'rgba(234,234,234, 0.5)'
+            ],
+            'gradient-1' => [
+                'title' => esc_html__('Mixed Gradient #1', 'genzia'),
+                'value' => 'linear-gradient(69.88deg, var(--cms-accent-regular) 2.47%, var(--cms-warning) 98.44%)'
             ]
         ];
         return apply_filters('genzia_theme_custom_colors', $color);
     }
 }
+
 add_filter('genzia_elementor_theme_custom_colors', 'genzia_elementor_theme_custom_colors');
 if(!function_exists('genzia_elementor_theme_custom_colors')){
     function genzia_elementor_theme_custom_colors(){

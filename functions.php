@@ -831,8 +831,8 @@ if (class_exists('Elementor\Plugin')) {
 		require_once get_template_directory() . '/elementor/core/widgets/cms_accordion.php';
 		$widgets_manager->register(new \Genzia\Elementor\Widgets\Widget_Accordion());
 		// 02 Banner
-		//require_once get_template_directory() . '/elementor/core/widgets/cms_banner.php';
-		//$widgets_manager->register(new \Genzia\Elementor\Widgets\Widget_Banner());
+		require_once get_template_directory() . '/elementor/core/widgets/cms_banner.php';
+		$widgets_manager->register(new \Genzia\Elementor\Widgets\Widget_Banner());
 		// 03 Blog
 		//require_once get_template_directory() . '/elementor/core/widgets/cms_blog.php';
 		//$widgets_manager->register(new \Genzia\Elementor\Widgets\Widget_Blog());
@@ -885,8 +885,8 @@ if (class_exists('Elementor\Plugin')) {
 		//require_once get_template_directory() . '/elementor/core/widgets/cms_pricing.php';
 		//$widgets_manager->register(new \Genzia\Elementor\Widgets\Widget_Pricing());
 		// 20 Process
-		//require_once get_template_directory() . '/elementor/core/widgets/cms_process.php';
-		//$widgets_manager->register(new \Genzia\Elementor\Widgets\Widget_Process());
+		require_once get_template_directory() . '/elementor/core/widgets/cms_process.php';
+		$widgets_manager->register(new \Genzia\Elementor\Widgets\Widget_Process());
 		// 21 Progress
 		//require_once get_template_directory() . '/elementor/core/widgets/cms_progress.php';
 		//$widgets_manager->register(new \Genzia\Elementor\Widgets\Widget_Progress());

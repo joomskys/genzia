@@ -12,7 +12,7 @@ $negative_spacing_tb:(
 	1, 2, 3, 4, 5, 6, 7, 10
 );
 $negative_spacing_left:(8, 12, 16, 40);
-$negative_spacing_right:(12, 20);
+$negative_spacing_right:(12, 20, 30);
 $negative_spacing_lr:();
 //
 @each $space in $negative_spacing{
@@ -143,7 +143,7 @@ $tablet_negative_spacing_top:();
 $tablet_negative_spacing_bot:(0);
 $tablet_negative_spacing_tb:();
 $tablet_negative_spacing_left:(0, 20);
-$tablet_negative_spacing_right:();
+$tablet_negative_spacing_right:(0);
 $tablet_negative_spacing_lr:();
 @media #{$max-tablet}{
 	@each $space in $tablet_negative_spacing_top{
@@ -211,7 +211,7 @@ $mobile_negative_spacing_top:(20, 40);
 $mobile_negative_spacing_bot:();
 $mobile_negative_spacing_tb:();
 $mobile_negative_spacing_left:(0);
-$mobile_negative_spacing_right:();
+$mobile_negative_spacing_right:(0);
 @media #{$max-mobile}{
 	@each $space in $mobile_negative_spacing_top{
 		.mt-mobile-n#{$space}{

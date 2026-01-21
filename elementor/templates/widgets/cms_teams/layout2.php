@@ -115,8 +115,8 @@ $team_item_classes = [
     ($settings['layout_mode'] === 'carousel') ? 'cms-swiper-item swiper-slide' : ''
 ];
 // Team Item
-$title_color = $this->get_setting('title_color', 'heading-regular');
-$title_color_hover = $this->get_setting('title_color_hover', 'accent-regular');
+$title_color = $this->get_setting('title_color', 'white');
+$title_color_hover = $this->get_setting('title_color_hover', 'white');
 $this->add_render_attribute('team-name',[
     'class' => [
         'team-heading m-tb-nxl',
@@ -128,14 +128,14 @@ $this->add_render_attribute('team-name',[
 $this->add_render_attribute('team-pos',[
     'class' => [
         'team-position text-md empty-none m-tb-nmd pt-10',
-        'text-'.$this->get_setting('pos_color','body')
+        'text-'.$this->get_setting('pos_color','on-dark')
     ]
 ]);
 $this->add_render_attribute('team-desc',[
     'class' => [
         'team-desc empty-none',
         'text-sm m-tb-nsm',
-        'text-'.$this->get_setting('desc_color','body'),
+        'text-'.$this->get_setting('desc_color','on-dark'),
         'pt-15'
     ]
 ]);
@@ -259,14 +259,15 @@ $this->add_render_attribute('heading-wrap',[
             'class'      => [
                 'team-name',
                 'text-'.$title_color,
-                'text-hover-'.$title_color_hover
+                'text-hover-'.$title_color_hover,
+                'cms-hover-underline'
             ],
-            'href' => genzia_elementor_link_url_render($this, $team, ['name' => 'link', 'echo' => false, 'suffix' => false]),
+            'href'       => genzia_elementor_link_url_render($this, $team, ['name' => 'link', 'echo' => false, 'suffix' => false]),
             'aria-label' => $team['name']
         ]);
         ob_start();
         ?>
-            <div class="cms-team-socials cms-hover-show move-left bg-backdrop cms-radius-16 d-flex flex-column justify-content-center gap-16 cms-transition absolute top left mt-10 ml-10 p-16"><?php
+            <div class="cms-team-socials cms-hover-show move-left d-flex gap-16 cms-transition pb-33"><?php
                 for ($i = 1; $i <= 4; $i++) {
                     $social_icon = isset($team["social_icon_{$i}"]) ? $team["social_icon_{$i}"] : null;
                     $social_link = isset($team["social_link_{$i}"]) ? $team["social_link_{$i}"] : null;
@@ -274,7 +275,7 @@ $this->add_render_attribute('heading-wrap',[
                         if ( ! empty( $social_link['url'] ) ) {
                             $social_link_key = $this->get_repeater_setting_key( "social_link_{$i}", 'cms_team', $key );
                             $this->add_link_attributes( $social_link_key, $social_link );
-                            $this->add_render_attribute( $social_link_key, 'class', 'team-social text-white text-hover-accent-regular lh-0' );
+                            $this->add_render_attribute( $social_link_key, 'class', 'team-social text-white text-hover-white cms-hover-zoomout lh-0' );
                             ?>
                                 <a <?php ctc_print_html($this->get_render_attribute_string( $social_link_key )); ?>><?php 
                                     echo '<span class="screen-reader-text">'.esc_html($team['name']).'</span>';
@@ -291,16 +292,9 @@ $this->add_render_attribute('heading-wrap',[
             ?></div>
         <?php
         $socials_html = ob_get_clean();
-        // Shape Icon
-        $shape_icon = genzia_svgs_icon([
-            'icon'       => 'team-shape',
-            'icon_class' => 'cms-stroke-dasharray absolute center text-accent-regular',
-            'icon_size'  => 232,
-            'echo'       => false
-        ]);
         ?>
         <div <?php ctc_print_html($this->get_render_attribute_string( $item_key )); ?>>
-            <div class="cms-team--item cms-hover-change hover-image-zoom-out cms-transition relative overflow-hidden">
+            <div class="cms-team--item cms-hover-change hover-image-zoom-out cms-transition relative overflow-hidden cms-radius-16">
                 <?php
                     $team['image_size'] = $this->get_setting('image_size');
                     $team['image_custom_dimension'] = $thumbnail_custom_dimension;
@@ -310,21 +304,26 @@ $this->add_render_attribute('heading-wrap',[
                         'img_class'      => 'cms-radius-16',
                         'custom_size'    => $thumbnail_custom_dimension,
                         'max_height'     => true,
-                        'before'         => '<div class="relative overflow-hidden cms-radius-16 mb-30">',
-                        'after'          => $socials_html.$shape_icon.'</div>'
+                        'before'         => '',
+                        'after'          => ''
                     ]);
                 ?>
-                <div <?php ctc_print_html($this->get_render_attribute_string('team-name')) ?>>
-                    <a <?php ctc_print_html($this->get_render_attribute_string( $link_key2 )); ?>>
-                        <?php echo esc_html($team['name']); ?>
-                    </a>
+                <div class="cms-overlay cms-gradient-render cms-gradient-6 cms-hover-gradient-7 d-flex align-items-end">
+                    <div class="cms-team-info p-32 p-lr-smobile-20">
+                        <?php printf('%s',$socials_html); ?>
+                        <div <?php ctc_print_html($this->get_render_attribute_string('team-name')) ?>>
+                            <a <?php ctc_print_html($this->get_render_attribute_string( $link_key2 )); ?>>
+                                <?php echo esc_html($team['name']); ?>
+                            </a>
+                        </div>
+                        <div <?php ctc_print_html($this->get_render_attribute_string('team-pos')) ?>><?php 
+                            ctc_print_html($team['position']); 
+                        ?></div>
+                        <div <?php ctc_print_html($this->get_render_attribute_string('team-desc')) ?>><?php 
+                            ctc_print_html($team['description']); 
+                        ?></div>
+                    </div>
                 </div>
-                <div <?php ctc_print_html($this->get_render_attribute_string('team-pos')) ?>><?php 
-                    ctc_print_html($team['position']); 
-                ?></div>
-                <div <?php ctc_print_html($this->get_render_attribute_string('team-desc')) ?>><?php 
-                    ctc_print_html($team['description']); 
-                ?></div>
             </div>
         </div>
         <?php

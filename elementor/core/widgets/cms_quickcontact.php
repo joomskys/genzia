@@ -111,7 +111,7 @@ class Widget_Quick_Contact extends Widget_Base
                 'label'     => esc_html__('Element Heading', 'genzia'),
                 'tab'       => Controls_Manager::TAB_CONTENT,
                 'condition' => [
-                    'layout' => ['2','3']
+                    'layout' => ['2']
                 ]
             ]
         );

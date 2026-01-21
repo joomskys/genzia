@@ -6,7 +6,10 @@ $this->add_render_attribute('wrap', [
 		'cms-ecf7',
 		'cms-ecf7-' . $settings['layout'],
 		'cms-form',
-		'bg-white'
+		'bg-white',
+		'p-48 p-lr-smobile-20',
+		'cms-radius-16',
+		'cms-shadow-1'
 	],
 	'style' => genzia_elementor_form_style_render($this, $settings, [])
 ]);
@@ -30,8 +33,9 @@ $this->add_inline_editing_attributes('ctf7_title');
 $this->add_render_attribute('ctf7_title', [
 	'class' => [
 		'cms-title cms-nl2br cms-heading empty-none',
+		'font-500',
 		'text-'.$this->get_setting('title_color','heading-regular'),
-		'm-tb-n5',
+		'm-tb-nh6',
 		'elementor-invisible',
 		'relative'
 	],
@@ -46,7 +50,7 @@ $this->add_render_attribute('ctf7_description', [
 		'cms-desc empty-none',
 		'text-'.$this->get_setting('desc_color','body'),
 		'text-lg',
-		'm-tb-n5 pt-20',
+		'm-tb-nlg pt-20',
 		'elementor-invisible',
 		'relative'
 	],

@@ -6,30 +6,30 @@
 }
 // Box Square
 $box_sizes:(
-	4,
-	8, // Blog post meta
-	20, // Toggle Menu
-	40, // Carousel Next/Prev
-	20, // cart remove
-	22, // Single Comment reply
-	24, // Element feature icon
-	26, // Element Accordion
-	32, // Header Side Nav
-	36, // Used for CMS Social
-	42, // Used for CMS Process
-	44, // Used for CMS Social
-	48, // Used for Popup Close
-	56, // Used for Slider Static layer
-	58, // Used for Carousel Arrow
-	60, // Single Next/Prev Post
-	78, // Used for Blog Standard
-	123, // Used for CMS Post Scroll Grow
+	4:4px,
+	8:8px, // Blog post meta
+	20:20px, // Toggle Menu / cart remove
+	40:40px, // Carousel Next/Prev
+	22:22px, // Single Comment reply
+	24:24px, // Element feature icon
+	26:26px, // Element Accordion
+	30:30px, // Element Banner
+	32:32px, // Header Side Nav
+	36:36px, // Used for CMS Social
+	42:42px, // Used for CMS Process
+	44:44px, // Used for CMS Social
+	48 :2.667rem, // Used for Popup Close
+	56:56px, // Used for Slider Static layer
+	58:58px, // Used for Carousel Arrow
+	60:60px, // Single Next/Prev Post
+	78:78px, // Used for Blog Standard
+	123:123px, // Used for CMS Post Scroll Grow
 	
 );
-@each $size in $box_sizes{
-	.cms-box-#{$size}{
-		width: #{$size}px;
-		height: #{$size}px;
+@each $name, $size in $box_sizes{
+	.cms-box-#{$name}{
+		width: #{$size};
+		height: #{$size};
 	}
 }
 .cms-box-header-height{

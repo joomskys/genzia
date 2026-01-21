@@ -29,6 +29,7 @@ class Widget_Banner extends Widget_Base
         $this->set_script_depends(['cms-slider-video']);
         $this->set_style_depends([
             'e-animation-fadeInUp',
+            'e-animation-fadeInLeft',
             'e-animation-zoomIn'
         ]);
 
@@ -63,6 +64,10 @@ class Widget_Banner extends Widget_Base
                     '1' => [
                         'title' => esc_html__('Layout 1', 'genzia'),
                         'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_banner/layout/1.webp'
+                    ],
+                    '2' => [
+                        'title' => esc_html__('Layout 2', 'genzia'),
+                        'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_banner/layout/2.webp'
                     ]
                 ],
                 'label_block' => true
@@ -92,15 +97,105 @@ class Widget_Banner extends Widget_Base
             $this->add_group_control(
                 Group_Control_Image_Size::get_type(),
                 [
-                    'name' => 'banner',
-                    'label' => esc_html__('Image Size', 'genzia'),
-                    'default' => 'medium',
+                    'name'      => 'banner',
+                    'label'     => esc_html__('Image Size', 'genzia'),
+                    'default'   => 'medium',
                     'condition' => [
                         'banner[url]!' => ''
                     ],
                     'label_block' => false
                 ]
             );
+            $this->add_control(
+                'banner_small',
+                [
+                    'label'   => esc_html__('Banner Small', 'genzia'),
+                    'type'    => Controls_Manager::MEDIA,
+                    'default' => [
+                        'url' => Utils::get_placeholder_image_src()
+                    ],
+                    'label_block' => false,
+                    'skin'        => 'inline',
+                    'condition'   => [
+                        'layout' => ['2']
+                    ],
+                    'separator' => 'before',
+                    'classes'   => 'cms-eseparator'
+                ]
+            );
+        $this->end_controls_section();
+        // Heading Content
+        $this->start_controls_section(
+            'section_heading',
+            [
+                'label'     => esc_html__('Heading Content', 'genzia'),
+                'tab'       => Controls_Manager::TAB_CONTENT,
+                'condition' => [
+                    'layout' => ['2']
+                ]
+            ]
+        );
+            $this->add_control(
+                'heading_text',
+                [
+                    'label'       => esc_html__('Heading', 'genzia'),
+                    'type'        => Controls_Manager::TEXTAREA,
+                    'default'     => 'This is the heading',
+                    'placeholder' => esc_html__('Enter your text', 'genzia'),
+                    'label_block' => true,
+                    'condition'   => [
+                        'layout' => ['2']
+                    ]
+                ]
+            );
+            genzia_elementor_colors_opts($this, [
+                'name'      => 'heading_color',
+                'label'     => esc_html__('Color', 'genzia'),
+                'selectors' => [
+                    '{{WRAPPER}} .cms-title' => '--text-custom-color: {{VALUE}};'
+                ],
+                'condition'   => [
+                    'layout'        => ['2'],
+                    'heading_text!' => ''
+                ]
+            ]);
+            // Description #1
+            $this->add_control(
+                'desc',
+                [
+                    'label'       => esc_html__('Description #1', 'genzia'),
+                    'type'        => Controls_Manager::TEXTAREA,
+                    'default'     => 'Lorem Ipsum is simply dummy text of the printing and typesetting story. Lorem Ipsum has been the story standard dummy text ever since',
+                    'placeholder' => esc_html__('Enter your text', 'genzia'),
+                    'rows'        => 10,
+                    'show_label'  => true,
+                    'condition'   => [
+                        'layout' => ['2']
+                    ]
+                ]
+            );
+            genzia_elementor_colors_opts($this, [
+                'name'      => 'desc_color',
+                'label'     => esc_html__('Color', 'genzia'),
+                'selectors' => [
+                    '{{WRAPPER}} .cms-desc' => '--text-custom-color: {{VALUE}};'
+                ],
+                'condition'   => [
+                    'desc!'  => '',
+                    'layout' => ['2']
+                ]
+            ]);
+            // Button
+            genzia_elementor_link_settings($this, [
+                'mode'          => 'btn',
+                'group'         => false,
+                'color_label'   => esc_html__('Button', 'genzia'),
+                'text'          => 'Click Here',
+                'icon_settings' => [
+                    'enable'   => true,
+                    'selector' => '.cms-btn-icon'
+                ]
+            ]);
         $this->end_controls_section();
         // Banner Settings
         $this->start_controls_section(

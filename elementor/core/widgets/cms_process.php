@@ -69,10 +69,6 @@ class Widget_Process extends Widget_Base
                             'title' => esc_html__('Layout 2', 'genzia'),
                             'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_process/layout/1.webp'
                         ],
-                        '2' => [
-                            'title' => esc_html__('Layout 2', 'genzia'),
-                            'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_process/layout/2.webp'
-                        ],
                         '-carousel' => [
                             'title' => esc_html__('Layout Carousel', 'genzia'),
                             'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_process/layout/carousel.webp'
@@ -81,17 +77,9 @@ class Widget_Process extends Widget_Base
                             'title' => esc_html__('Layout Sticky', 'genzia'),
                             'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_process/layout/sticky.webp'
                         ],
-                        '-sticky-black' => [
-                            'title' => esc_html__('Layout Sticky (Black)', 'genzia'),
-                            'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_process/layout/sticky-black.webp'
-                        ],
                         '-sticky2' => [
                             'title' => esc_html__('Layout Sticky #2', 'genzia'),
                             'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_process/layout/sticky2.webp'
-                        ],
-                        '-sticky2-black' => [
-                            'title' => esc_html__('Layout Sticky #2 (Black)', 'genzia'),
-                            'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_process/layout/sticky2-black.webp'
                         ]
                     ],
                     'label_block' => true
@@ -105,11 +93,38 @@ class Widget_Process extends Widget_Base
                 'label'     => esc_html__('Heading Content', 'genzia'),
                 'tab'       => Controls_Manager::TAB_CONTENT,
                 'condition' => [
-                    'layout' => '-carousel'
+                    'layout' => ['-carousel','-sticky']
                 ]
             ]
         );
             // Small Heading
+            $this->add_control(
+                'smallheading_icon',
+                [
+                    'label'   => esc_html__('Icon', 'genzia'),
+                    'type'    => Controls_Manager::ICONS,
+                    'default' => [
+                        'value'   => 'fas fa-star',
+                        'library' => 'fa-solid'
+                    ],
+                    'skin'        => 'inline',
+                    'label_block' => false,
+                    'condition' => [
+                        'smallheading_text!' => ''
+                    ]
+                ]
+            );
+            genzia_elementor_colors_opts($this, [
+                'name'      => 'smallheading_icon_color',
+                'label'     => esc_html__('Icon Color', 'genzia'),
+                'selectors' => [
+                    '{{WRAPPER}} .cms-small-icon' => '--text-custom-color: {{VALUE}};'
+                ],
+                'condition' => [
+                    'smallheading_text!'        => '',
+                    'smallheading_icon[value]!' => ''
+                ]
+            ]);
             $this->add_control(
                 'smallheading_text',
                 [
@@ -151,6 +166,45 @@ class Widget_Process extends Widget_Base
                     'heading_text!' => ''
                 ]
             ]);
+            // Description
+            $this->add_control(
+                'desc',
+                [
+                    'label'       => esc_html__( 'Description', 'genzia' ),
+                    'type'        => Controls_Manager::TEXTAREA,
+                    'default'     => 'This is the Description',
+                    'placeholder' => esc_html__( 'Enter your text', 'genzia' ),
+                    'label_block' => true,
+                    'condition'   => [
+                        'layout' => ['-sticky']
+                    ]
+                ]
+            );
+            genzia_elementor_colors_opts($this,[
+                'name'      => 'desc_color',
+                'label'     => esc_html__( 'Color', 'genzia' ),
+                'selectors' => [
+                    '{{WRAPPER}} .cms-desc' => 'color: {{VALUE}};',
+                ],
+                'condition' => [
+                    'desc!' => '',
+                    'layout' => ['-sticky']
+                ]
+            ]);
+            // Button
+            genzia_elementor_link_settings($this, [
+                'mode'          => 'btn',
+                'group'         => false,
+                'color_label'   => esc_html__('Button', 'genzia'),
+                'text'          => 'Click Here',
+                'icon_settings' => [
+                    'enable' => true,
+                    'selector' => '.cms-heading-btn-icon'
+                ],
+                'condition' => [
+                    'layout' => ['-sticky']
+                ]
+            ]);
         $this->end_controls_section();
         // Process Section
         $this->start_controls_section(
@@ -161,92 +215,121 @@ class Widget_Process extends Widget_Base
             ]
         );
             $process = new Repeater();
-            // Icon
-            genzia_elementor_icon_image_settings($process, [
-                'group'        => false,
-                'color'        => false,
-                'icon_default' => []
-            ]);
-            // Banner
-            $process->add_control(
-                'banner',
-                [
-                    'label'   => esc_html__('Banner', 'genzia'),
-                    'type'    => Controls_Manager::MEDIA,
-                    'default' => [
-                        'url' => Utils::get_placeholder_image_src()
-                    ],
-                    'label_block' => false,
-                    'skin'        => 'inline'
-                ]
-            );
-            // Title
-            $process->add_control(
-                'title',
-                [
-                    'label'       => esc_html__('Title', 'genzia'),
-                    'type'        => Controls_Manager::TEXTAREA,
-                    'placeholder' => esc_html__('Process Title', 'genzia'),
-                    'default'     => esc_html__('Process Title', 'genzia'),
-                    'label_block' => true,
-                ]
-            );
-            // Content Title
-            $process->add_control(
-                'c_title',
-                [
-                    'label'       => esc_html__('Content Title', 'genzia'),
-                    'type'        => Controls_Manager::TEXTAREA,
-                    'placeholder' => esc_html__('Conntent Process Title', 'genzia'),
-                    'default'     => esc_html__('Conntent Process Title', 'genzia'),
-                    'label_block' => true,
-                ]
-            );
-            // Description
-            $process->add_control(
-                'desc',
-                [
-                    'label' => esc_html__('Description', 'genzia'),
-                    'type' => Controls_Manager::TEXTAREA
-                ]
-            );
-            // Feature
-            $process->add_control(
-                'features',
-                [
-                    'label'       => esc_html__('Features', 'genzia'),
-                    'type'        => CSH_Theme_Core::REPEATER_CONTROL,
-                    'label_block' => true,
-                    'separator'   => 'before',
-                    'button_text' => esc_html__('Add Feature', 'genzia'),
-                    'controls'    => array(
-                        array(
-                            'name'        => 'ftitle',
-                            'label'       => esc_html__('Feature Text', 'genzia'),
-                            'type'        => Controls_Manager::TEXTAREA,
-                            'default'     => 'Your feature text',
-                            'label_block' => false
-                        )
-                    ),
-                    'classes' => 'cms-title-full'
-                ]
-            );
-            // Link #1
-            genzia_elementor_link_settings($process, [
-                'name' => 'link1_',
-                'mode' => 'btn',
-                'group' => false,
-                'label' => esc_html__('Button #1', 'genzia'),
-                'color' => false
-            ]);
-            // Link #2
-            genzia_elementor_link_settings($process, [
-                'name' => 'link2_',
-                'mode' => 'btn',
-                'group' => false,
-                'label' => esc_html__('Button #2', 'genzia'),
-                'color' => false
-            ]);
+                // Icon
+                genzia_elementor_icon_image_settings($process, [
+                    'group'        => false,
+                    'color'        => false,
+                    'icon_default' => []
+                ]);
+                // Banner
+                $process->add_control(
+                    'banner',
+                    [
+                        'label'   => esc_html__('Banner', 'genzia'),
+                        'type'    => Controls_Manager::MEDIA,
+                        'default' => [
+                            'url' => Utils::get_placeholder_image_src()
+                        ],
+                        'label_block' => false,
+                        'skin'        => 'inline'
+                    ]
+                );
+                // Title
+                $process->add_control(
+                    'title',
+                    [
+                        'label'       => esc_html__('Title', 'genzia'),
+                        'type'        => Controls_Manager::TEXTAREA,
+                        'placeholder' => esc_html__('Process Title', 'genzia'),
+                        'default'     => esc_html__('Process Title', 'genzia'),
+                        'label_block' => true,
+                    ]
+                );
+                // Content Title
+                $process->add_control(
+                    'c_title',
+                    [
+                        'label'       => esc_html__('Content Title', 'genzia'),
+                        'type'        => Controls_Manager::TEXTAREA,
+                        'placeholder' => esc_html__('Conntent Process Title', 'genzia'),
+                        'default'     => esc_html__('Conntent Process Title', 'genzia'),
+                        'label_block' => true,
+                    ]
+                );
+                // Description
+                $process->add_control(
+                    'desc',
+                    [
+                        'label' => esc_html__('Description', 'genzia'),
+                        'type' => Controls_Manager::TEXTAREA
+                    ]
+                );
+                // Feature
+                $process->add_control(
+                    'features',
+                    [
+                        'label'       => esc_html__('Features', 'genzia'),
+                        'type'        => CSH_Theme_Core::REPEATER_CONTROL,
+                        'label_block' => true,
+                        'separator'   => 'before',
+                        'button_text' => esc_html__('Add Feature', 'genzia'),
+                        'controls'    => array(
+                            array(
+                                'name'        => 'ftitle',
+                                'label'       => esc_html__('Feature Text', 'genzia'),
+                                'type'        => Controls_Manager::TEXTAREA,
+                                'default'     => 'Your feature text',
+                                'label_block' => false
+                            )
+                        ),
+                        'classes' => 'cms-title-full'
+                    ]
+                );
+                // Link #1
+                genzia_elementor_link_settings($process, [
+                    'name' => 'link1_',
+                    'mode' => 'btn',
+                    'group' => false,
+                    'label' => esc_html__('Button #1', 'genzia'),
+                    'color' => false
+                ]);
+                // Link #2
+                genzia_elementor_link_settings($process, [
+                    'name' => 'link2_',
+                    'mode' => 'btn',
+                    'group' => false,
+                    'label' => esc_html__('Button #2', 'genzia'),
+                    'color' => false
+                ]);
+                // Custom Color
+                genzia_elementor_colors_opts($process, [
+                    'name'      => 'icon_start_color',
+                    'label'     => esc_html__('Icon Start Color', 'genzia'),
+                    'separator' => 'before',
+                    'classes'   => 'cms-eseparator',
+                    'custom'    => false    
+                ]);
+                genzia_elementor_colors_opts($process, [
+                    'name'      => 'ptitle_color',
+                    'label'     => esc_html__('Title Color', 'genzia'),
+                    'custom'    => false
+                ]);
+                genzia_elementor_colors_opts($process, [
+                    'name'   => 'pdesc_color',
+                    'label'  => esc_html__('Desc Color', 'genzia'),
+                    'custom' => false
+                ]);
+                genzia_elementor_colors_opts($process, [
+                    'name'   => 'feature_color',
+                    'label'  => esc_html__('Feature Color', 'genzia'),
+                    'custom' => false
+                ]);
+                genzia_elementor_colors_opts($process, [
+                    'name'      => 'bg_color',
+                    'label'     => esc_html__('Background Color', 'genzia'),
+                    'custom'    => false
+                ]);
+
             // Lists
             $this->add_control(
                 'process_list',
@@ -285,70 +368,7 @@ class Widget_Process extends Widget_Base
                             'desc'          => 'Cras rutrum varius accumsan. Aenean ut ligula at libero viverra sodales. Vestibulum nec viverra metus'
                         ],
                     ],
-                    'title_field' => '{{{ title }}}',
-                    'condition'   => [
-                        'layout!' => ['2']
-                    ]
-                ]
-            );
-            // Process #2
-            $process2 = new Repeater();
-                // Year
-                $process2->add_control(
-                    'year',
-                    [
-                        'label'       => esc_html__('Year', 'genzia'),
-                        'type'        => Controls_Manager::TEXT,
-                        'label_block' => true,
-                    ]
-                );
-                // Title
-                $process2->add_control(
-                    'title',
-                    [
-                        'label'       => esc_html__('Title', 'genzia'),
-                        'type'        => Controls_Manager::TEXTAREA,
-                        'placeholder' => esc_html__('Process Title', 'genzia'),
-                        'default'     => esc_html__('Process Title', 'genzia'),
-                        'label_block' => true,
-                    ]
-                );
-            $this->add_control(
-                'process_list2',
-                [
-                    'label'   => esc_html__('Process List', 'genzia'),
-                    'type'    => Controls_Manager::REPEATER,
-                    'fields'  => $process2->get_controls(),
-                    'default' => [
-                        [
-                            'year'    => '2020',
-                            'title'   => 'Process title #1'
-                        ],
-                        [
-                            'year'    => '2021',
-                            'title'   => 'Process title #2'
-                        ],
-                        [
-                            'year'    => '2022',
-                            'title'   => 'Process title #3'
-                        ],
-                        [
-                            'year'    => '2023',
-                            'title'   => 'Process title #4'
-                        ],
-                        [
-                            'year'    => '2024',
-                            'title'   => 'Process title #5'
-                        ],
-                        [
-                            'year'    => '2025',
-                            'title'   => 'Process title #6'
-                        ],
-                    ],
-                    'title_field' => '{{{ title }}}',
-                    'condition'   => [
-                        'layout' => ['2']
-                    ]
+                    'title_field' => '{{{ title }}}'
                 ]
             );
             //
@@ -460,16 +480,16 @@ class Widget_Process extends Widget_Base
                 'separator' => 'before',
                 'classes'   => 'cms-eseparator',
                 'selectors' => [
-                    '{{WRAPPER}} .cms-border' => 'border-color:{{VALUE}};'
+                    '{{WRAPPER}} .cms-border' => '--cms-bdr-custom:{{VALUE}};'
                 ]
             ]);
-            /*genzia_elementor_colors_opts($this, [
+            genzia_elementor_colors_opts($this, [
                 'name'      => 'bg_color',
                 'label'     => esc_html__('Background Color', 'genzia'),
                 'selectors' => [
-                    '{{WRAPPER}} .cms-process' => 'background-color:{{VALUE}};'
+                    '{{WRAPPER}} .cms-process' => '--cms-bg-custom:{{VALUE}};'
                 ]
-            ]);*/
+            ]);
         $this->end_controls_section();
         // Grid Settings
         genzia_elementor_grid_columns_settings($this, [

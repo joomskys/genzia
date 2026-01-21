@@ -80,15 +80,14 @@ $widget->add_render_attribute('description',[
        'cms-ttmn-desc',
        'heading text-xl',
        'text-'.$widget->get_setting('desc_color','heading-regular'),
-       'mt-n5',
-       'swiper-nav-vert'
+       'mt-nxl'
     ]
 ]);
 // Author Name
 $widget->add_render_attribute('ttmn-author',[
     'class' => [
         'cms-ttmn--name empty-none',
-        'heading text-xl',
+        'text-md font-700',
         'text-'.$widget->get_setting('author_color', 'heading-regular')
     ]
 ]);
@@ -110,12 +109,15 @@ $this->add_render_attribute('ttmn-item',[
 $widget->add_render_attribute('ttmn--item',[
     'class' => [
         'cms-ttmn--item',
-        'p-40 p-lr-smobile-20',
+        'p-40',
         'bdr-1 bdr-divider',
-        'cms-shadow-1 cms-hover-shadow-2',
+        'cms-shadow-2 cms-hover-shadow-1',
         'cms-transition',
-        'relative'
-    ]
+        'relative',
+        'cms-radius-16',
+        'd-flex flex-column justify-content-between'
+    ],
+    'style' => 'min-height:512px;'
 ]);
 ?>
 <div <?php ctc_print_html($this->get_render_attribute_string('wrap')); ?>>
@@ -141,48 +143,41 @@ $widget->add_render_attribute('ttmn--item',[
         ?>
             <div <?php ctc_print_html($this->get_render_attribute_string('ttmn-item')); ?>>
                 <div <?php ctc_print_html($widget->get_render_attribute_string('ttmn--item')); ?>>
-                    <?php 
-                        // qoute
-                        genzia_svgs_icon([
-                            'icon'      => 'quote',
-                            'icon_size' => 48,
-                            'class'     => 'absolute top right mt-24 mr-24 text-divider',
-                        ]);
-                        // Star
-                    ?>
-                    <div class="d-flex gap-6 text-warning pb-23"><?php 
-                        genzia_svgs_icon([
-                            'icon'      => 'core/star',
-                            'icon_size' => 20
-                        ]);
-                        genzia_svgs_icon([
-                            'icon'      => 'core/star',
-                            'icon_size' => 20
-                        ]);
-                        genzia_svgs_icon([
-                            'icon'      => 'core/star',
-                            'icon_size' => 20
-                        ]);
-                        genzia_svgs_icon([
-                            'icon'      => 'core/star',
-                            'icon_size' => 20
-                        ]);
-                        genzia_svgs_icon([
-                            'icon'      => 'core/star',
-                            'icon_size' => 20
-                        ]);
-                    ?></div>
-                    <div <?php ctc_print_html($widget->get_render_attribute_string('description')); ?>><?php 
-                        echo nl2br($testimonial['description']); 
-                    ?></div>
-                    <div class="cms-ttmn-info pt-50 d-flex flex-nowrap gap-20 align-items-center">
+                    <div class="align-self-start w-100">
+                        <div class="d-flex gap-6 text-warning pb-23"><?php 
+                            genzia_svgs_icon([
+                                'icon'      => 'core/star',
+                                'icon_size' => 18
+                            ]);
+                            genzia_svgs_icon([
+                                'icon'      => 'core/star',
+                                'icon_size' => 18
+                            ]);
+                            genzia_svgs_icon([
+                                'icon'      => 'core/star',
+                                'icon_size' => 18
+                            ]);
+                            genzia_svgs_icon([
+                                'icon'      => 'core/star',
+                                'icon_size' => 18
+                            ]);
+                            genzia_svgs_icon([
+                                'icon'      => 'core/star',
+                                'icon_size' => 18
+                            ]);
+                        ?></div>
+                        <div <?php ctc_print_html($widget->get_render_attribute_string('description')); ?>><?php 
+                            echo nl2br($testimonial['description']); 
+                        ?></div>
+                    </div>
+                    <div class="cms-ttmn-info align-self-end pt-33 bdr-t-1 bdr-divider w-100 d-flex flex-nowrap gap-16 align-items-center">
                         <?php
                             genzia_elementor_image_render($testimonial,[
                                 'name'           => 'image',
                                 'image_size_key' => 'image',
                                 'img_class'      => 'cms-ttmn--img circle',
                                 'size'           => 'custom',
-                                'custom_size'    => ['width' => 72, 'height' => 72],
+                                'custom_size'    => ['width' => 48, 'height' => 48],
                                 'attrs'          => [],
                                 'before'         => ''
                             ]);

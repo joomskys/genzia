@@ -296,6 +296,9 @@ if(!function_exists('genzia_elementor_gradient_opts')){
             ''     => esc_html__('Default', 'genzia' ),
             '1'    => esc_html__('Gradient #1', 'genzia' ),
             '2'    => esc_html__('Gradient #2', 'genzia' ),
+            '3'    => esc_html__('Gradient #3', 'genzia' ),
+            '4'    => esc_html__('Gradient #4', 'genzia' ),
+            '5'    => esc_html__('Gradient #5', 'genzia' ),
             'none' => esc_html__('None','genzia')
         );
     }
@@ -1260,7 +1263,7 @@ if(!function_exists('genzia_elementor_post_thumbnail_render')){
  * cms_practice_grid, cms_practice_carousel, ...
  * 
  * */
-function genzia_elementor_post_layouts($unset = []){
+function genzia_elementor_post_layouts($unset = [], $extra = []){
     $layout = [
         '1' => [
             'title' => esc_html__( 'Layout 1', 'genzia' ),
@@ -1297,10 +1300,6 @@ function genzia_elementor_post_layouts($unset = []){
         '9' => [
             'title' => esc_html__( 'Layout 9', 'genzia' ),
             'image' => get_template_directory_uri() . '/elementor/templates/layout/9.webp'
-        ],
-        '-career' => [
-            'title' => esc_html__( 'Layout Career', 'genzia' ),
-            'image' => get_template_directory_uri() . '/elementor/templates/layout/career.webp'
         ]
     ];
     //
@@ -1308,7 +1307,7 @@ function genzia_elementor_post_layouts($unset = []){
         unset($layout[$value]);
     }
     //
-    return $layout;
+    return $layout+$extra;
 }
 // Elementor Build Post Layout 
 if(!function_exists('genzia_get_post_grid')){

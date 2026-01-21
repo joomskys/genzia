@@ -12,7 +12,7 @@ $this->add_render_attribute('wrap',[
 		'p-40',
 		'd-flex flex-column justify-content-between',
 		'relative',
-		'cms-shadow-2'
+		'cms-shadow-2 cms-hover-shadow-1'
 	],
 	'style' => 'min-height:512px;'
 ]);

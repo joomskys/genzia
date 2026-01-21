@@ -247,7 +247,7 @@ $align:(
 	}
 	// Gap
 	.gap{
-		gap:var(--cms-gap-tablet-extra, var(--cms-gap-laptop, var(--cms-gap)));
+		gap:var(--cms-gap-tablet-extra, var(--cms-gap-mobile-menu, var(--cms-gap-laptop, var(--cms-gap))));
 	}
 	//
 	.cms-hidden-tablet-extra,
@@ -364,7 +364,7 @@ $cms_gutter_tablet:(
 	}
 	// Gap
 	.gap{
-		gap:var(--cms-gap-tablet, var(--cms-gap-tablet-extra, var(--cms-gap-laptop, var(--cms-gap))));
+		gap:var(--cms-gap-tablet, var(--cms-gap-tablet-extra, var(--cms-gap-mobile-menu,var(--cms-gap-laptop, var(--cms-gap)))));
 	}
 	@each $gap in $cms_gap_tablet{
 		.gap-tablet-#{$gap}{
