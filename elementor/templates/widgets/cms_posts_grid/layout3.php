@@ -19,10 +19,10 @@ extract(ctc_get_posts_of_grid($post_type, [
 ], [genzia_taxonomy_by_post_type($post_type, 'category')]));
 $thumbnail_size             = $this->get_setting('thumbnail_size','large');
 $thumbnail_custom_dimension = [
-    'width'  => !empty($settings['thumbnail_custom_dimension']['width']) ? $settings['thumbnail_custom_dimension']['width'] : 384,
-    'height' => !empty($settings['thumbnail_custom_dimension']['height']) ? $settings['thumbnail_custom_dimension']['height'] : 524
+    'width'  => !empty($settings['thumbnail_custom_dimension']['width']) ? $settings['thumbnail_custom_dimension']['width'] : 352,
+    'height' => !empty($settings['thumbnail_custom_dimension']['height']) ? $settings['thumbnail_custom_dimension']['height'] : 352
 ];
-$numn_line = !empty($this->get_setting('num_line')['size']) ? $this->get_setting('num_line')['size'] : 5;
+$numn_line = !empty($this->get_setting('num_line')['size']) ? $this->get_setting('num_line')['size'] : 4;
 $pagination_type = $this->get_setting('pagination_type', 'pagination');
 // Posts Data
 $posts_data = array(

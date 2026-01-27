@@ -66,8 +66,12 @@ class Widget_Process extends Widget_Base
                     'default' => '1',
                     'options' => [
                         '1' => [
-                            'title' => esc_html__('Layout 2', 'genzia'),
+                            'title' => esc_html__('Layout 1', 'genzia'),
                             'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_process/layout/1.webp'
+                        ],
+                        '2' => [
+                            'title' => esc_html__('Layout 2', 'genzia'),
+                            'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_process/layout/2.webp'
                         ],
                         '-carousel' => [
                             'title' => esc_html__('Layout Carousel', 'genzia'),
@@ -85,126 +89,6 @@ class Widget_Process extends Widget_Base
                     'label_block' => true
                 ]
             );
-        $this->end_controls_section();
-        // Heading Section Start
-        $this->start_controls_section(
-            'section_heading',
-            [
-                'label'     => esc_html__('Heading Content', 'genzia'),
-                'tab'       => Controls_Manager::TAB_CONTENT,
-                'condition' => [
-                    'layout' => ['-carousel','-sticky']
-                ]
-            ]
-        );
-            // Small Heading
-            $this->add_control(
-                'smallheading_icon',
-                [
-                    'label'   => esc_html__('Icon', 'genzia'),
-                    'type'    => Controls_Manager::ICONS,
-                    'default' => [
-                        'value'   => 'fas fa-star',
-                        'library' => 'fa-solid'
-                    ],
-                    'skin'        => 'inline',
-                    'label_block' => false,
-                    'condition' => [
-                        'smallheading_text!' => ''
-                    ]
-                ]
-            );
-            genzia_elementor_colors_opts($this, [
-                'name'      => 'smallheading_icon_color',
-                'label'     => esc_html__('Icon Color', 'genzia'),
-                'selectors' => [
-                    '{{WRAPPER}} .cms-small-icon' => '--text-custom-color: {{VALUE}};'
-                ],
-                'condition' => [
-                    'smallheading_text!'        => '',
-                    'smallheading_icon[value]!' => ''
-                ]
-            ]);
-            $this->add_control(
-                'smallheading_text',
-                [
-                    'label'       => esc_html__( 'Small Heading', 'genzia' ),
-                    'type'        => Controls_Manager::TEXTAREA,
-                    'default'     => 'This is small heading',
-                    'placeholder' => esc_html__( 'Enter your text', 'genzia' ),
-                    'label_block' => true
-                ]
-            );
-            genzia_elementor_colors_opts($this,[
-                'name'      => 'smallheading_color',
-                'label'     => esc_html__( 'Color', 'genzia' ),
-                'selectors' => [
-                    '{{WRAPPER}} .cms-small' => 'color: {{VALUE}};',
-                ],
-                'condition' => [
-                    'smallheading_text!' => ''
-                ]
-            ]);
-            // Heading
-            $this->add_control(
-                'heading_text',
-                [
-                    'label'       => esc_html__( 'Heading', 'genzia' ),
-                    'type'        => Controls_Manager::TEXTAREA,
-                    'default'     => 'This is the heading',
-                    'placeholder' => esc_html__( 'Enter your text', 'genzia' ),
-                    'label_block' => true
-                ]
-            );
-            genzia_elementor_colors_opts($this,[
-                'name'      => 'heading_color',
-                'label'     => esc_html__( 'Color', 'genzia' ),
-                'selectors' => [
-                    '{{WRAPPER}} .cms-title' => 'color: {{VALUE}};',
-                ],
-                'condition' => [
-                    'heading_text!' => ''
-                ]
-            ]);
-            // Description
-            $this->add_control(
-                'desc',
-                [
-                    'label'       => esc_html__( 'Description', 'genzia' ),
-                    'type'        => Controls_Manager::TEXTAREA,
-                    'default'     => 'This is the Description',
-                    'placeholder' => esc_html__( 'Enter your text', 'genzia' ),
-                    'label_block' => true,
-                    'condition'   => [
-                        'layout' => ['-sticky']
-                    ]
-                ]
-            );
-            genzia_elementor_colors_opts($this,[
-                'name'      => 'desc_color',
-                'label'     => esc_html__( 'Color', 'genzia' ),
-                'selectors' => [
-                    '{{WRAPPER}} .cms-desc' => 'color: {{VALUE}};',
-                ],
-                'condition' => [
-                    'desc!' => '',
-                    'layout' => ['-sticky']
-                ]
-            ]);
-            // Button
-            genzia_elementor_link_settings($this, [
-                'mode'          => 'btn',
-                'group'         => false,
-                'color_label'   => esc_html__('Button', 'genzia'),
-                'text'          => 'Click Here',
-                'icon_settings' => [
-                    'enable' => true,
-                    'selector' => '.cms-heading-btn-icon'
-                ],
-                'condition' => [
-                    'layout' => ['-sticky']
-                ]
-            ]);
         $this->end_controls_section();
         // Process Section
         $this->start_controls_section(
@@ -304,7 +188,7 @@ class Widget_Process extends Widget_Base
                 // Custom Color
                 genzia_elementor_colors_opts($process, [
                     'name'      => 'icon_start_color',
-                    'label'     => esc_html__('Icon Start Color', 'genzia'),
+                    'label'     => esc_html__('Icon Color', 'genzia'),
                     'separator' => 'before',
                     'classes'   => 'cms-eseparator',
                     'custom'    => false    
@@ -312,6 +196,16 @@ class Widget_Process extends Widget_Base
                 genzia_elementor_colors_opts($process, [
                     'name'      => 'ptitle_color',
                     'label'     => esc_html__('Title Color', 'genzia'),
+                    'custom'    => false
+                ]);
+                genzia_elementor_colors_opts($process, [
+                    'name'      => 'ptitle_color_hover',
+                    'label'     => esc_html__('Title Color Hover', 'genzia'),
+                    'custom'    => false
+                ]);
+                genzia_elementor_colors_opts($process, [
+                    'name'      => 'ptitle_content_color',
+                    'label'     => esc_html__('Content Title Color', 'genzia'),
                     'custom'    => false
                 ]);
                 genzia_elementor_colors_opts($process, [
@@ -371,13 +265,149 @@ class Widget_Process extends Widget_Base
                     'title_field' => '{{{ title }}}'
                 ]
             );
+        $this->end_controls_section();
+        // Heading Section Start
+        $this->start_controls_section(
+            'section_heading',
+            [
+                'label'     => esc_html__('Heading Content', 'genzia'),
+                'tab'       => Controls_Manager::TAB_CONTENT
+            ]
+        );
+            // Small Heading
+            $this->add_control(
+                'smallheading_icon',
+                [
+                    'label'   => esc_html__('Icon', 'genzia'),
+                    'type'    => Controls_Manager::ICONS,
+                    'default' => [
+                        'value'   => 'fas fa-star',
+                        'library' => 'fa-solid'
+                    ],
+                    'skin'        => 'inline',
+                    'label_block' => false,
+                    'condition' => [
+                        'layout'             => ['-carousel','-sticky'],
+                        'smallheading_text!' => ''
+                    ]
+                ]
+            );
+            genzia_elementor_colors_opts($this, [
+                'name'      => 'smallheading_icon_color',
+                'label'     => esc_html__('Icon Color', 'genzia'),
+                'selectors' => [
+                    '{{WRAPPER}} .cms-small-icon' => '--text-custom-color: {{VALUE}};'
+                ],
+                'condition' => [
+                    'layout'                    => ['-carousel','-sticky'],
+                    'smallheading_text!'        => '',
+                    'smallheading_icon[value]!' => ''
+                ]
+            ]);
+            $this->add_control(
+                'smallheading_text',
+                [
+                    'label'       => esc_html__( 'Small Heading', 'genzia' ),
+                    'type'        => Controls_Manager::TEXTAREA,
+                    'default'     => 'This is small heading',
+                    'placeholder' => esc_html__( 'Enter your text', 'genzia' ),
+                    'label_block' => true,
+                    'condition' => [
+                        'layout' => ['-carousel','-sticky'],
+                    ]
+                ]
+            );
+            genzia_elementor_colors_opts($this,[
+                'name'      => 'smallheading_color',
+                'label'     => esc_html__( 'Color', 'genzia' ),
+                'selectors' => [
+                    '{{WRAPPER}} .cms-small' => 'color: {{VALUE}};',
+                ],
+                'condition' => [
+                    'layout' => ['-carousel','-sticky'],
+                    'smallheading_text!' => ''
+                ]
+            ]);
+            // Heading
+            $this->add_control(
+                'heading_text',
+                [
+                    'label'       => esc_html__( 'Heading', 'genzia' ),
+                    'type'        => Controls_Manager::TEXTAREA,
+                    'default'     => 'This is the heading',
+                    'placeholder' => esc_html__( 'Enter your text', 'genzia' ),
+                    'label_block' => true,
+                    'condition'   => [
+                        'layout' => ['2','-carousel','-sticky'],
+                    ]
+                ]
+            );
+            genzia_elementor_colors_opts($this,[
+                'name'      => 'heading_color',
+                'label'     => esc_html__( 'Color', 'genzia' ),
+                'selectors' => [
+                    '{{WRAPPER}} .cms-title' => 'color: {{VALUE}};',
+                ],
+                'condition' => [
+                    'layout' => ['2','-carousel','-sticky'],
+                    'heading_text!' => ''
+                ]
+            ]);
+            // Description
+            $this->add_control(
+                'desc',
+                [
+                    'label'       => esc_html__( 'Description', 'genzia' ),
+                    'type'        => Controls_Manager::TEXTAREA,
+                    'default'     => 'This is the Description',
+                    'placeholder' => esc_html__( 'Enter your text', 'genzia' ),
+                    'label_block' => true,
+                    'condition'   => [
+                        'layout' => ['-sticky']
+                    ]
+                ]
+            );
+            genzia_elementor_colors_opts($this,[
+                'name'      => 'desc_color',
+                'label'     => esc_html__( 'Color', 'genzia' ),
+                'selectors' => [
+                    '{{WRAPPER}} .cms-desc' => 'color: {{VALUE}};',
+                ],
+                'condition' => [
+                    'desc!' => '',
+                    'layout' => ['-sticky']
+                ]
+            ]);
+            // Button
+            genzia_elementor_link_settings($this, [
+                'mode'          => 'btn',
+                'group'         => false,
+                'color_label'   => esc_html__('Button', 'genzia'),
+                'text'          => 'Click Here',
+                'icon_settings' => [
+                    'enable' => true,
+                    'selector' => '.cms-heading-btn-icon'
+                ],
+                'condition' => [
+                    'layout' => ['2','-sticky']
+                ]
+            ]);
+        $this->end_controls_section();
+        // Style Settings
+        $this->start_controls_section(
+            'style_section',
+            [
+                'label' => esc_html__('Color Settings', 'genzia'),
+                'tab'   => Controls_Manager::TAB_STYLE
+            ]
+        );
             //
             genzia_elementor_colors_opts($this, [
                 'name'      => 'icon_start_color',
-                'label'     => esc_html__('Icon Start Color', 'genzia'),
+                'label'     => esc_html__('Icon Color', 'genzia'),
                 'separator' => 'before',
                 'selectors' => [
-                    '{{WRAPPER}} .cms-picon' => 'color:{{VALUE}};'
+                    '{{WRAPPER}} .cms-picon' => '--cms-text-custom:{{VALUE}};'
                 ]
             ]);
             genzia_elementor_colors_opts($this, [
@@ -386,26 +416,42 @@ class Widget_Process extends Widget_Base
                 'separator' => 'before',
                 'classes'   => 'cms-eseparator',
                 'selectors' => [
-                    '{{WRAPPER}} .cms-pc-title' => 'color:{{VALUE}};'
+                    '{{WRAPPER}} .cms-pc-title' => '--cms-text-custom:{{VALUE}};'
+                ]
+            ]);
+            genzia_elementor_colors_opts($this, [
+                'name'      => 'ptitle_color_hover',
+                'label'     => esc_html__('Title Color Hover', 'genzia'),
+                'selectors' => [
+                    '{{WRAPPER}} .cms-pc-title' => '--cms-text-hover-custom:{{VALUE}};'
+                ]
+            ]);
+            genzia_elementor_colors_opts($this, [
+                'name'      => 'ptitle_content_color',
+                'label'     => esc_html__('Content Title Color', 'genzia'),
+                'separator' => 'before',
+                'classes'   => 'cms-eseparator',
+                'selectors' => [
+                    '{{WRAPPER}} .cms-content-title' => '--cms-text-custom:{{VALUE}};'
                 ]
             ]);
             genzia_elementor_colors_opts($this, [
                 'name'  => 'pdesc_color',
                 'label' => esc_html__('Desc Color', 'genzia'),
                 'selectors' => [
-                    '{{WRAPPER}} .cms-pdesc' => 'color:{{VALUE}};'
+                    '{{WRAPPER}} .cms-pdesc' => '--cms-text-custom:{{VALUE}};'
                 ]
             ]);
             genzia_elementor_colors_opts($this, [
                 'name'  => 'feature_color',
                 'label' => esc_html__('Feature Color', 'genzia'),
                 'selectors' => [
-                    '{{WRAPPER}} .cms-features' => 'color:{{VALUE}};'
+                    '{{WRAPPER}} .cms-features' => '--cms-text-custom:{{VALUE}};'
                 ]
             ]);
             // Link/Button #1 Color
             genzia_elementor_colors_opts($this, [
-                'name'      => 'link_btn_color',
+                'name'      => 'link_btn1_color',
                 'label'     => esc_html__('Button #1 Color', 'genzia'),
                 'separator' => 'before',
                 'classes'   => 'cms-eseparator',
@@ -415,7 +461,7 @@ class Widget_Process extends Widget_Base
             ]);
             // Link/Button #1 Text Color
             genzia_elementor_colors_opts($this, [
-                'name'      => 'link_btn_text_color',
+                'name'      => 'link_btn1_text_color',
                 'label'     => esc_html__('Link/Button #1 Text Color', 'genzia'),
                 'selectors' => [
                     '{{WRAPPER}} .cms-btn1' => '--cms-text-custom:{{VALUE}};'
@@ -423,7 +469,7 @@ class Widget_Process extends Widget_Base
             ]);
             // Link/Button #1 Color Hover
             genzia_elementor_colors_opts($this, [
-                'name'      => 'link_btn_color_hover',
+                'name'      => 'link_btn1_color_hover',
                 'label'     => esc_html__('Button #1 Color Hover', 'genzia'),
                 'separator' => 'before',
                 'selectors' => [
@@ -432,7 +478,7 @@ class Widget_Process extends Widget_Base
             ]);
             // Link/Button #1 Text Color Hover
             genzia_elementor_colors_opts($this, [
-                'name'      => 'link_btn_text_color_hover',
+                'name'      => 'link_btn1_text_color_hover',
                 'label'     => esc_html__('Link/Button #1 Text Color Hover', 'genzia'),
                 'selectors' => [
                     '{{WRAPPER}} .cms-btn1:hover' => '--cms-text-hover-custom:{{VALUE}};'

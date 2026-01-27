@@ -84,6 +84,10 @@ class Widget_Heading extends Widget_Base
                     '7' => [
                         'title' => esc_html__('Layout 7', 'genzia'),
                         'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_heading/layout/7.webp'
+                    ],
+                    '8' => [
+                        'title' => esc_html__('Layout 8', 'genzia'),
+                        'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_heading/layout/8.webp'
                     ]
                 ],
                 'label_block' => true
@@ -110,7 +114,7 @@ class Widget_Heading extends Widget_Base
                     'skin'        => 'inline',
                     'label_block' => false,
                     'condition' => [
-                        'layout' => ['2','3','5','6'],
+                        'layout' => ['2','3','5','6','8'],
                         'smallheading_text!' => ''
                     ]
                 ]
@@ -122,7 +126,7 @@ class Widget_Heading extends Widget_Base
                     '{{WRAPPER}} .cms-small-icon' => '--text-custom-color: {{VALUE}};'
                 ],
                 'condition' => [
-                    'layout'                    => ['2','3','5','6'],
+                    'layout'                    => ['2','3','5','6','8'],
                     'smallheading_text!'        => '',
                     'smallheading_icon[value]!' => ''
                 ]
@@ -136,7 +140,7 @@ class Widget_Heading extends Widget_Base
                     'placeholder' => esc_html__('Enter your text', 'genzia'),
                     'label_block' => true,
                     'condition'   => [
-                        'layout' => ['2','3','5','6']
+                        'layout' => ['2','3','5','6','8']
                     ]
                 ]
             );
@@ -147,7 +151,7 @@ class Widget_Heading extends Widget_Base
                     '{{WRAPPER}} .cms-small' => '--text-custom-color: {{VALUE}};'
                 ],
                 'condition' => [
-                    'layout' => ['2','3','5','6'],
+                    'layout' => ['2','3','5','6','8'],
                     'smallheading_text!' => ''
                 ]
             ]);
@@ -160,7 +164,7 @@ class Widget_Heading extends Widget_Base
                     'placeholder' => esc_html__('Enter your text', 'genzia'),
                     'label_block' => true,
                     'condition'   => [
-                        'layout!' => ['6']
+                        'layout!' => ['6','8']
                     ]
                 ]
             );
@@ -171,7 +175,7 @@ class Widget_Heading extends Widget_Base
                     '{{WRAPPER}} .cms-title' => '--text-custom-color: {{VALUE}};'
                 ],
                 'condition'   => [
-                    'layout!'       => ['6'],
+                    'layout!'       => ['6','8'],
                     'heading_text!' => ''
                 ]
             ]);

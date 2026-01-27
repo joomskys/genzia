@@ -183,7 +183,9 @@ $this->add_render_attribute('fdesc',[
 							]),
 							'echo' => false
 						]),
-						'before' => '<div class="clearfix"></div>'
+						'before'   => '<div class="clearfix"></div>',
+						'loop'     => true,
+						'loop_key' => $key
 					]);
 				// Feature
 				if(!empty($ac_feature_feature) || !empty($value['ac_feature_text'])){

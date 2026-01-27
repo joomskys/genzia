@@ -4,28 +4,7 @@
     visibility: hidden;
     opacity: 0;
 }*/
-/**
- * banner
- * */
-.cms-ebanner-3{
-    &:before,
-    &:after{
-        content: '';
-        position: absolute;
-        background-color: white;
-        width: 40px;
-    }
-    &:before{
-        height:60px;
-        bottom: 40px;
-        right: 40px;
-    }
-    &:after{
-        height: 40px;
-        bottom: 0;
-        right: 0;
-    }
-}
+
 /**
  * Blog Grid / Carousel
  * ====================

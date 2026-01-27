@@ -700,14 +700,12 @@ $swiper_both_2xlarge: 88px;
             margin-right: $swiper_both*-1;
         }
     }
-
     @media (min-width: 1600px) {
         .cms-carousel {
             margin-left: $swiper_both_xlarge*-1;
             margin-right: $swiper_both_xlarge*-1;
         }
     }
-
     @media (min-width: 1920px) {
         .cms-carousel {
             margin-left: $swiper_both_2xlarge*-1;

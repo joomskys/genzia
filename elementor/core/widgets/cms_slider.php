@@ -80,6 +80,10 @@ class Widget_Sliders extends Widget_Base
                     '3' => [
                         'title' => esc_html__('Layout 3', 'genzia'),
                         'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_slider/layout/3.webp',
+                    ],
+                    '4' => [
+                        'title' => esc_html__('Layout 4', 'genzia'),
+                        'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_slider/layout/4.webp',
                     ]
                 ],
                 'label_block' => true

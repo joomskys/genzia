@@ -1411,7 +1411,7 @@ if(!function_exists('genzia_header_side_nav_toggle')){
             $content = $cms_post->post_content;
         }
     ?>
-    <div id="cms-side-nav-toggle" class="cms-toggle-content absolute top right bg-white p-40 p-lr-smobile-0 cms-radius-10 cms-transition min-w" style="--min-w:510px;--min-w-smobile:280px;">
+    <div id="cms-side-nav-toggle" class="cms-toggle-content cms-shadow-3 absolute top right bg-white p-40 p-lr-smobile-0 cms-radius-10 cms-transition min-w" style="--min-w:510px;--min-w-smobile:280px;">
         <?php printf('%s', $content); ?>
         <?php genzia_svgs_icon([
             'icon'      => 'core/close',
@@ -3436,13 +3436,19 @@ if (!function_exists('genzia_configs')) {
         // Container Width
         if(class_exists('\Elementor\Plugin')){
             $elementor_settings = \Elementor\Plugin::$instance->kits_manager->get_active_kit_for_frontend();
+            // Container
             $_container_width   = $elementor_settings->get_settings_for_display( 'container_width' );
             $container_width    = isset($_container_width['size'])?$_container_width['size']:1216;
+            // Gutter
+            $_gutter_width   = $elementor_settings->get_settings_for_display( 'space_between_widgets' );
+            $gutter_width    = isset($_gutter_width['column'])?$_gutter_width['column']:16;
         } else {
             $container_width = 1216;
+            $gutter_width    = 16;
         }
         $configs = [
             'container_width' => $container_width, 
+            'gutter_width'    => $gutter_width, 
             // color
             'accent_color'    => $accent_color_cf,
             'primary_color'   => $primary_color_cf,

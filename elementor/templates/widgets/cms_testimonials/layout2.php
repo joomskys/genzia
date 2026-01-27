@@ -111,13 +111,13 @@ $widget->add_render_attribute('ttmn--item',[
         'cms-ttmn--item',
         'p-40',
         'bdr-1 bdr-divider',
+        'bg-white',
         'cms-shadow-2 cms-hover-shadow-1',
         'cms-transition',
         'relative',
         'cms-radius-16',
         'd-flex flex-column justify-content-between'
-    ],
-    'style' => 'min-height:512px;'
+    ]
 ]);
 ?>
 <div <?php ctc_print_html($this->get_render_attribute_string('wrap')); ?>>
@@ -170,7 +170,7 @@ $widget->add_render_attribute('ttmn--item',[
                             echo nl2br($testimonial['description']); 
                         ?></div>
                     </div>
-                    <div class="cms-ttmn-info align-self-end pt-33 bdr-t-1 bdr-divider w-100 d-flex flex-nowrap gap-16 align-items-center">
+                    <div class="cms-ttmn-info align-self-end mt pt-33 bdr-t-1 bdr-divider w-100 d-flex flex-nowrap gap-16 align-items-center" style="--mt:90px;--mt-tablet:40px;">
                         <?php
                             genzia_elementor_image_render($testimonial,[
                                 'name'           => 'image',

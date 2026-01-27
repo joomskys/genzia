@@ -18,10 +18,10 @@ extract(ctc_get_posts_of_grid($post_type, [
 
 $thumbnail_size             = $this->get_setting('thumbnail_size','large');
 $thumbnail_custom_dimension = [
-    'width'  => !empty($settings['thumbnail_custom_dimension']['width']) ? $settings['thumbnail_custom_dimension']['width'] : 384,
-    'height' => !empty($settings['thumbnail_custom_dimension']['height']) ? $settings['thumbnail_custom_dimension']['height'] : 484
+    'width'  => !empty($settings['thumbnail_custom_dimension']['width']) ? $settings['thumbnail_custom_dimension']['width'] : 736,
+    'height' => !empty($settings['thumbnail_custom_dimension']['height']) ? $settings['thumbnail_custom_dimension']['height'] : 516
 ];
-$numn_line = !empty($this->get_setting('num_line')['size']) ? $this->get_setting('num_line')['size'] : 4;
+$numn_line = !empty($this->get_setting('num_line')['size']) ? $this->get_setting('num_line')['size'] : 1;
 $pagination_type = $this->get_setting('pagination_type', 'pagination');
 // Posts Data
 $posts_data = array(
@@ -65,13 +65,13 @@ $this->add_render_attribute('content',[
         'cms-grid-content',
         'd-flex gutter-custom-x gutter-custom-y',
         genzia_elementor_get_grid_columns($widget, $settings, [
-            'default'    => 3,
+            'default'    => 2,
             'tablet'     => 2,
             'gap'        => '',
             'gap_prefix' => ''
         ])
     ],
-    'style' => '--gutter-x:32px;--gutter-y:48px;'
+    'style' => '--gutter-x:32px;--gutter-y:64px;'
 ]);
 ?>
 <div <?php ctc_print_html($this->get_render_attribute_string('wrap')); ?>>

@@ -178,7 +178,7 @@ $readmore_text = $this->get_setting('readmore_text', esc_html__('View project'))
                 // Taxonomy
                 genzia_the_terms($post->ID, $taxonomy_by, '', 'bg-white text-menu bdr-1 bdr-divider text-hover-white bg-hover-accent-regular bdr-hover-accent-regular cms-radius-4 p-lr-10 p-tb-5', ['before' => '<div class="d-flex gap-4 text-xs pt-30">', 'after' => '</div>']);
                 ?>
-                <a href="<?php echo esc_url(get_permalink( $post->ID )); ?>" class="cms-overlay cms-hidden-mobile drag-cursor cms-cursor-text" data-cursor-text="<?php echo esc_attr($readmore_text); ?>">
+                <a href="<?php echo esc_url(get_permalink( $post->ID )); ?>" class="cms-overlay cms-hidden-mobile cms-cursor cms-cursor-text" data-cursor-text="<?php echo esc_attr($readmore_text); ?>" data-cursor-class="bg-accent-regular text-white">
                     <span class="screen-reader-text"><?php ctc_print_html($readmore_text); ?></span>
                 </a>
             </div>

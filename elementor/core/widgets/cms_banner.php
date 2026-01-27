@@ -26,7 +26,7 @@ class Widget_Banner extends Widget_Base
         $this->set_title(esc_html__('CMS Banner', 'genzia'));
         $this->set_icon('eicon-banner');
         $this->set_keywords(['genzia', 'banner', 'image']);
-        $this->set_script_depends(['cms-slider-video']);
+        $this->set_script_depends(['jquery-numerator','jquery-parallax-scroll','cms-elementor-custom']);
         $this->set_style_depends([
             'e-animation-fadeInUp',
             'e-animation-fadeInLeft',
@@ -68,6 +68,18 @@ class Widget_Banner extends Widget_Base
                     '2' => [
                         'title' => esc_html__('Layout 2', 'genzia'),
                         'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_banner/layout/2.webp'
+                    ],
+                    '3' => [
+                        'title' => esc_html__('Layout 3', 'genzia'),
+                        'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_banner/layout/3.webp'
+                    ],
+                    '4' => [
+                        'title' => esc_html__('ZoomOut on Scroll', 'genzia'),
+                        'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_banner/layout/1.webp'
+                    ],
+                    '5' => [
+                        'title' => esc_html__('Layout 5', 'genzia'),
+                        'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_banner/layout/5.webp'
                     ]
                 ],
                 'label_block' => true
@@ -101,7 +113,8 @@ class Widget_Banner extends Widget_Base
                     'label'     => esc_html__('Image Size', 'genzia'),
                     'default'   => 'medium',
                     'condition' => [
-                        'banner[url]!' => ''
+                        'banner[url]!' => '',
+                        'layout!'      => ['4']
                     ],
                     'label_block' => false
                 ]
@@ -117,7 +130,7 @@ class Widget_Banner extends Widget_Base
                     'label_block' => false,
                     'skin'        => 'inline',
                     'condition'   => [
-                        'layout' => ['2']
+                        'layout' => ['2','3']
                     ],
                     'separator' => 'before',
                     'classes'   => 'cms-eseparator'
@@ -131,10 +144,99 @@ class Widget_Banner extends Widget_Base
                 'label'     => esc_html__('Heading Content', 'genzia'),
                 'tab'       => Controls_Manager::TAB_CONTENT,
                 'condition' => [
-                    'layout' => ['2']
+                    'layout' => ['2','3','5']
                 ]
             ]
         );
+            // Counter
+            $this->add_control(
+                'starting_number',
+                [
+                    'label'   => esc_html__( 'Starting Number', 'genzia' ),
+                    'type'    => Controls_Manager::NUMBER,
+                    'default' => 1,
+                    'condition' => [
+                        'layout' => ['3']
+                    ],
+                ]
+            );
+            $this->add_control(
+                'ending_number',
+                [
+                    'label'   => esc_html__( 'Ending Number', 'genzia' ),
+                    'type'    => Controls_Manager::NUMBER,
+                    'default' => 100,
+                    'condition' => [
+                        'layout' => ['3']
+                    ],
+                ]
+            );
+            $this->add_control(
+                'prefix',
+                [
+                    'label'       => esc_html__( 'Number Prefix', 'genzia' ),
+                    'type'        => Controls_Manager::TEXT,
+                    'default'     => '',
+                    'placeholder' => '',
+                    'condition'   => [
+                        'layout' => ['3']
+                    ],
+                ]
+            );
+            $this->add_control(
+                'suffix',
+                [
+                    'label'       => esc_html__( 'Number Suffix', 'genzia' ),
+                    'type'        => Controls_Manager::TEXT,
+                    'default'     => '+',
+                    'placeholder' => '+',
+                    'condition'   => [
+                        'layout' => ['3']
+                    ],
+                ]
+            );
+            $this->add_control(
+                'duration',
+                [
+                    'label'   => esc_html__( 'Animation Duration', 'genzia' ),
+                    'type'    => Controls_Manager::NUMBER,
+                    'default' => 3000,
+                    'min'     => 100,
+                    'step'    => 100,
+                    'condition' => [
+                        'layout' => ['3']
+                    ],
+                ]
+            );
+            $this->add_control(
+                'thousand_separator_char',
+                [
+                    'label'     => esc_html__( 'Separator', 'genzia' ),
+                    'type'      => Controls_Manager::SELECT,
+                    'options'   => [
+                        ''  => 'Default',
+                        ',' => 'Comma',
+                        '.' => 'Dot',
+                        ' ' => 'Space',
+                    ],
+                    'condition' => [
+                        'layout' => ['3']
+                    ],
+                    'default'   => '',
+                ]
+            );
+            genzia_elementor_colors_opts($this, [
+                'name'      => 'number_color',
+                'label'     => esc_html__('Number Color', 'genzia'),
+                'selectors' => [
+                    '{{WRAPPER}} .cms-counter-numbers' => '--text-custom-color: {{VALUE}};'
+                ],
+                'condition'   => [
+                    'layout'         => ['3'],
+                    'ending_number!' => ''
+                ]
+            ]);
+            // Heading
             $this->add_control(
                 'heading_text',
                 [
@@ -144,7 +246,7 @@ class Widget_Banner extends Widget_Base
                     'placeholder' => esc_html__('Enter your text', 'genzia'),
                     'label_block' => true,
                     'condition'   => [
-                        'layout' => ['2']
+                        'layout' => ['2','3','5']
                     ]
                 ]
             );
@@ -155,7 +257,7 @@ class Widget_Banner extends Widget_Base
                     '{{WRAPPER}} .cms-title' => '--text-custom-color: {{VALUE}};'
                 ],
                 'condition'   => [
-                    'layout'        => ['2'],
+                    'layout'        => ['2','3','5'],
                     'heading_text!' => ''
                 ]
             ]);
@@ -170,7 +272,7 @@ class Widget_Banner extends Widget_Base
                     'rows'        => 10,
                     'show_label'  => true,
                     'condition'   => [
-                        'layout' => ['2']
+                        'layout' => ['2','3','5']
                     ]
                 ]
             );
@@ -182,7 +284,7 @@ class Widget_Banner extends Widget_Base
                 ],
                 'condition'   => [
                     'desc!'  => '',
-                    'layout' => ['2']
+                    'layout' => ['2','3','5']
                 ]
             ]);
             // Button
@@ -194,6 +296,9 @@ class Widget_Banner extends Widget_Base
                 'icon_settings' => [
                     'enable'   => true,
                     'selector' => '.cms-btn-icon'
+                ],
+                'condition'   => [
+                    'layout' => ['2','3','5']
                 ]
             ]);
         $this->end_controls_section();
@@ -205,6 +310,50 @@ class Widget_Banner extends Widget_Base
                 'tab' => Controls_Manager::TAB_SETTINGS
             ]
         );
+            $this->add_control(
+                'img_width',
+                [
+                    'label'   => esc_html__( 'Banner Width', 'genzia' ),
+                    'type'    => Controls_Manager::NUMBER,
+                    'default' => 872,
+                    'condition' => [
+                        'layout' => ['4']
+                    ]
+                ]
+            );
+            $this->add_control(
+                'img_height',
+                [
+                    'label'   => esc_html__( 'Banner Height', 'genzia' ),
+                    'type'    => Controls_Manager::NUMBER,
+                    'default' => 611,
+                    'condition' => [
+                        'layout' => ['4']
+                    ]
+                ]
+            );
+            $this->add_control(
+                'img_scale_width',
+                [
+                    'label'   => esc_html__( 'Banner Scale Width', 'genzia' ),
+                    'type'    => Controls_Manager::NUMBER,
+                    'default' => 1885,
+                    'condition' => [
+                        'layout' => ['4']
+                    ]
+                ]
+            );
+            $this->add_control(
+                'img_scale_height',
+                [
+                    'label'   => esc_html__( 'Banner Scale Height', 'genzia' ),
+                    'type'    => Controls_Manager::NUMBER,
+                    'default' => 920,
+                    'condition' => [
+                        'layout' => ['4']
+                    ]
+                ]
+            );
             $this->add_control(
                 'img_cover',
                 [

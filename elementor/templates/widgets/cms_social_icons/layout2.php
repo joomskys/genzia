@@ -9,15 +9,16 @@ $this->add_render_attribute('wrap', [
 			'name' 		   => 'align',
 			'prefix_class' => 'justify-content-',
 			'class'		   => 'd-flex align-items-center gap-'.$this->get_setting('gap', 15)
-		])
+		]),
+		'empty-none',
+		'mt-25'
 	]
 ]);
 // Description
 $this->add_render_attribute('desc', [
 	'class' => [
 		'cms-desc empty-none',
-		'text-'.$this->get_setting('desc_color', 'body'),
-		'mb-25'
+		'text-'.$this->get_setting('desc_color', 'body')
 	]
 ]);
 // Banner
@@ -32,8 +33,7 @@ if(!empty($settings['desc'])){
 	echo nl2br($settings['desc']);
 ?></div>
 <?php } ?>
-<div <?php ctc_print_html($this->get_render_attribute_string('wrap')); ?>>
-	<?php
+<div <?php ctc_print_html($this->get_render_attribute_string('wrap')); ?>><?php
 		foreach ( $icons as $key => $value ) {
 			$_id = isset( $value['_id'] ) ? $value['_id'] : '';			
 			$link_key = $this->get_repeater_setting_key( 'link', 'icons', $key );
@@ -64,5 +64,5 @@ if(!empty($settings['desc'])){
 		<?php genzia_elementor_icon_render( $value['social_icon'], [], [ 'aria-hidden' => 'true', 'class' => 'cms-icon ', 'icon_size' => 20 ] ); ?>
 		<?php if ( 'yes' === $settings['show_title'] ) { ?><span <?php ctc_print_html($this->get_render_attribute_string( $title_key )); ?>><?php echo esc_html($value['title']); ?></span><?php } ?>
 	</a>
-	<?php } ?>
-</div>
+	<?php } 
+?></div>

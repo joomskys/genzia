@@ -54,27 +54,46 @@ $header_style = [
 ];
 // Nav Content
 ob_start();
-    // Button 01
-    genzia_header_button_render([
-        'class'      => 'cms-hover-move-icon-right cms-btn btn-primary-regular text-white btn-hover-accent-regular text-hover-white mt-25 cms-hidden-desktop-menu cms-hover-change',
-        'icon'        => 'arrow-right',
-        'icon_mobile' => '',
-        'icon_size'   => 12,
-        'icon_class'  => 'cms-box-48 cms-radius-6 order-first bg-white text-menu',
-        'text_class'  => ''
-    ]);
-    // Button 02
-    genzia_header_button_render([
-        'name'       => 'h_btn2',
-        'class'      => 'cms-hover-move-icon-right cms-btn btn-md btn-accent-regular text-white btn-hover-primary-regular text-hover-white mt-25 cms-hidden-desktop-menu',
-        'icon'        => '',
-        'icon_mobile' => '',
-        'icon_size'   => 12,
-        'icon_class'  => 'cms-box-48 cms-radius-6 order-first bg-white text-menu',
-        'text_class'  => ''
-    ]);
+    echo '<div class="d-flex justify-content-center gap-20 pt-20 cms-hidden-desktop-menu">';
+        // Button 01
+        genzia_header_button_render([
+            'class'      => 'cms-hover-move-icon-right cms-btn btn-accent-regular text-white btn-hover-primary-regular text-hover-white cms-hover-move-icon-right cms-hover-change',
+            'data'       => [
+                'default_class'     => [],
+                'transparent_class' => []
+            ],
+            'icon'        => 'arrow-right',
+            'icon_mobile' => '',
+            'icon_size'   => 10,
+            'icon_class'  => 'cms-box-48 cms-radius-6 order-first cms-header-change',
+            'icon_data'   => [
+                'default_class'     => ['bg-white', 'text-menu', 'bg-on-hover-accent-regular', 'text-on-hover-white'],
+                'transparent_class' => ['bg-white', 'text-menu', 'bg-on-hover-accent-regular', 'text-on-hover-white'],
+                'sticky_class'      => ['bg-white', 'text-menu', 'bg-on-hover-accent-regular', 'text-on-hover-white']
+            ],
+            'text_class'  => ''
+        ]);
+        // Button 02
+        genzia_header_button_render([
+            'name'       => 'h_btn2',
+            'class'      => 'cms-hover-move-icon-right cms-btn btn-primary-regular text-white btn-hover-accent-regular text-hover-white cms-hover-move-icon-right cms-hover-change',
+            'data'       => [
+                'default_class'     => [],
+                'transparent_class' => []
+            ],
+            'icon'        => 'arrow-right',
+            'icon_mobile' => '',
+            'icon_size'   => 10,
+            'icon_class'  => 'cms-box-48 cms-radius-6 order-first cms-header-change',
+            'icon_data'   => [
+                'default_class'     => ['bg-white', 'text-menu', 'bg-on-hover-primary-regular', 'text-on-hover-white'],
+                'transparent_class' => ['bg-white', 'text-menu', 'bg-on-hover-primary-regular', 'text-on-hover-white'],
+                'sticky_class'      => ['bg-white', 'text-menu', 'bg-on-hover-primary-regular', 'text-on-hover-white']
+            ],
+            'text_class'  => ''
+        ]);
+    echo '</div>';
 $nav_content = ob_get_clean();
-
 ?>
 <header id="cms-header-wrap" class="<?php echo genzia_header_wrap_classes(); ?>">
     <?php genzia_header_top(); ?>

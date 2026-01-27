@@ -186,12 +186,14 @@ class CSS_Generator
 	protected function print_single_scss_opt()
 	{
 		ob_start();
-		$accent_color = genzia_configs('accent_color');
-		$primary_color = genzia_configs('primary_color');
-		$custom_color = genzia_configs('custom_color');
+		$accent_color    = genzia_configs('accent_color');
+		$primary_color   = genzia_configs('primary_color');
+		$custom_color    = genzia_configs('custom_color');
 		$container_width = genzia_configs('container_width');
+		$gutter_width    = genzia_configs('gutter_width');
 		// Container Width
 		printf('$elementor_container_width:%1$spx;', $container_width);
+		printf('$elementor_gutter_width:%1$spx;', $gutter_width*2);
 		// color
 		foreach ($accent_color as $key => $value) {
 			printf('$accent_color_%1$s: %2$s;', str_replace(['#', ' '], [''], $key), $value);

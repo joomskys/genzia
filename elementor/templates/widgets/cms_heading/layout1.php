@@ -16,4 +16,4 @@ $this->add_render_attribute( 'heading_text', [
 	]),
 ]);
 ?>
-<h3 <?php ctc_print_html( $this->get_render_attribute_string( 'heading_text' ) ); ?>><?php echo nl2br( $settings['heading_text'] ); ?></h3>
+<h2 <?php ctc_print_html( $this->get_render_attribute_string( 'heading_text' ) ); ?>><?php echo nl2br( $settings['heading_text'] ); ?></h2>

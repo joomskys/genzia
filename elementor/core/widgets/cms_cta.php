@@ -55,6 +55,10 @@ class Widget_CTA extends Widget_Base
                         '1' => [
                             'title' => esc_html__('Layout 1', 'genzia'),
                             'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_cta/layout/1.webp'
+                        ],
+                        '2' => [
+                            'title' => esc_html__('Layout 2', 'genzia'),
+                            'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_cta/layout/2.webp'
                         ]
                     ],
                     'label_block' => true
@@ -78,6 +82,9 @@ class Widget_CTA extends Widget_Base
                     'type'        => Controls_Manager::TEXTAREA,
                     'default'     => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
                     'placeholder' => esc_html__('Enter your text', 'genzia'),
+                    'condition'   => [
+                        'layout' => ['1']
+                    ]
                 ]
             );
             genzia_elementor_colors_opts($this, [
@@ -87,7 +94,8 @@ class Widget_CTA extends Widget_Base
                     '{{WRAPPER}} .cms-desc' => 'color: {{VALUE}};'
                 ],
                 'condition' => [
-                    'text!' => ''
+                    'text!'  => '',
+                    'layout' => ['1']
                 ]
             ]);
             // Link

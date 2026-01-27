@@ -64,8 +64,8 @@ $this->add_render_attribute('arrows-dots',[
 // Thumbnail
 $thumbnail_size             = $this->get_setting('thumbnail_size', 'large');
 $thumbnail_custom_dimension = [
-    'width'  => !empty($settings['thumbnail_custom_dimension']['width']) ? $settings['thumbnail_custom_dimension']['width'] : 768,
-    'height' => !empty($settings['thumbnail_custom_dimension']['height']) ? $settings['thumbnail_custom_dimension']['height']: 534
+    'width'  => !empty($settings['thumbnail_custom_dimension']['width']) ? $settings['thumbnail_custom_dimension']['width'] : 352,
+    'height' => !empty($settings['thumbnail_custom_dimension']['height']) ? $settings['thumbnail_custom_dimension']['height']: 352
 ];
 // Posts Data
 $posts_data = array(

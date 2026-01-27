@@ -171,9 +171,10 @@ class Widget_Social_Icons extends Widget_Base
             $this->add_control(
                 'icons',
                 [
-                    'label'   => esc_html__('Icons', 'genzia'),
-                    'type'    => Controls_Manager::REPEATER,
-                    'fields'  => $repeater->get_controls(),
+                    'label'         => esc_html__('Icons', 'genzia'),
+                    'type'          => Controls_Manager::REPEATER,
+                    'fields'        => $repeater->get_controls(),
+                    'prevent_empty' => false,
                     'default' => [
                         [
                             'social_icon' => [

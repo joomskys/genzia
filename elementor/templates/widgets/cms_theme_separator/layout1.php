@@ -1,13 +1,14 @@
 <?php
 // Large Heading
 $this->add_render_attribute( 'separator', [
-	'class' => [
+	'class' => array_filter([
 		'cms-eseparate',
 		'cms-eseparate-'.$settings['layout'],
 		'relative',
 		'd-flex gap-10 flex-nowrap',
-		'align-items-center'
-	]
+		'align-items-center',
+		$this->get_setting('e_classes')
+	])
 ]);
 $separator_icon_classes = genzia_nice_class([
 	'cms-separate-icon',

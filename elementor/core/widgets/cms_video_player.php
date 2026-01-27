@@ -70,6 +70,14 @@ class Widget_Video_Player extends Widget_Base
                         'title' => esc_html__('Layout 3', 'genzia'),
                         'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_video_player/layout/3.webp'
                     ],
+                    '4' => [
+                        'title' => esc_html__('Layout 4', 'genzia'),
+                        'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_video_player/layout/4.webp'
+                    ],
+                    '5' => [
+                        'title' => esc_html__('Layout 5', 'genzia'),
+                        'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_video_player/layout/5.webp'
+                    ],
                     '-single-practice' => [
                         'title' => esc_html__('Single Practice', 'genzia'),
                         'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_video_player/layout/single-practice.webp'
@@ -148,6 +156,24 @@ class Widget_Video_Player extends Widget_Base
                     'classes' => 'cms-eseparator'
                 ]
             );
+            // Banner Background
+            $this->add_control(
+                'banner_bg',
+                [
+                    'label'   => esc_html__('Video Banner Background', 'genzia'),
+                    'type'    => Controls_Manager::MEDIA,
+                    'default' => [
+                        'url' => Utils::get_placeholder_image_src()
+                    ],
+                    'label_block' => false,
+                    'condition'   => [
+                        'video_link!' => '',
+                        'layout'      => ['5']
+                    ],
+                    'before'  => 'separator',
+                    'classes' => 'cms-eseparator'
+                ]
+            );
         $this->end_controls_section();
         // Content settings
         $this->start_controls_section(
@@ -195,7 +221,7 @@ class Widget_Video_Player extends Widget_Base
                     'placeholder' => esc_html__('Enter your text', 'genzia'),
                     'label_block' => true,
                     'condition' => [
-                        'layout' => ['2','3','-single-practice']
+                        'layout' => ['2','3','4','-single-practice']
                     ]
                 ]
             );
@@ -203,7 +229,7 @@ class Widget_Video_Player extends Widget_Base
                 'name'      => 'heading_color',
                 'label'     => esc_html__('Color', 'genzia'),
                 'condition' => [
-                    'layout'        => ['2','3','-single-practice'],
+                    'layout'        => ['2','3','4','-single-practice'],
                     'heading_text!' => ''
                 ],
                 'selectors' => [
@@ -220,7 +246,7 @@ class Widget_Video_Player extends Widget_Base
                     'placeholder' => esc_html__('Enter your text', 'genzia'),
                     'label_block' => true,
                     'condition' => [
-                        'layout' => ['3','-single-practice']
+                        'layout' => ['3','4','-single-practice']
                     ]
                 ]
             );
@@ -228,7 +254,7 @@ class Widget_Video_Player extends Widget_Base
                 'name'      => 'desc_color',
                 'label'     => esc_html__('Description Color', 'genzia'),
                 'condition' => [
-                    'layout' => ['3','-single-practice'],
+                    'layout' => ['3','4','-single-practice'],
                     'desc!'  => ''
                 ],
                 'selectors' => [
@@ -245,6 +271,9 @@ class Widget_Video_Player extends Widget_Base
                 'icon_settings' => [
                     'enable' => true,
                     'selector' => '.cms-heading-btn-icon'
+                ],
+                'condition' => [
+                    'layout' => ['3']
                 ]
             ]);
             // Gallery
@@ -254,7 +283,7 @@ class Widget_Video_Player extends Widget_Base
                     'label'     => esc_html__('Add Gallery', 'genzia'),
                     'type'      => Controls_Manager::GALLERY,
                     'condition' => [
-                        'layout' => ['3']
+                        'layout' => ['3','4']
                     ]
                 ]
             );

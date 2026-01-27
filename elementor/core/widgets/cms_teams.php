@@ -63,7 +63,7 @@ class Widget_Teams extends Widget_Base
                 ],
                 'default'   => 'carousel',
                 'condition' => [
-                    'layout!' => ['-sticky-scroll']
+                    'layout!' => ['-sticky-scroll','-sticky-scroll2']
                 ]
             ]
         );
@@ -84,6 +84,10 @@ class Widget_Teams extends Widget_Base
                         '-sticky-scroll' => [
                             'title' => esc_html__('Sticky Scroll', 'genzia'),
                             'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_teams/layout/sticky-scroll.webp'
+                        ],
+                        '-sticky-scroll2' => [
+                            'title' => esc_html__('Sticky Scroll #2', 'genzia'),
+                            'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_teams/layout/sticky-scroll2.webp'
                         ]
                     ],
                     'default' => '1',
@@ -384,26 +388,28 @@ class Widget_Teams extends Widget_Base
         // Carousel Settings
         genzia_elementor_carousel_settings($this, [
             'condition' => [
-                'layout_mode' => ['carousel']
+                'layout_mode' => ['carousel'],
+                'layout!'     => ['-sticky-scroll','-sticky-scroll2']
             ]
         ]);
         // Grid Settings
         $this->start_controls_section(
             'grid_section',
             [
-                'label' => esc_html__('Grid Settings', 'genzia'),
-                'tab' => Controls_Manager::TAB_SETTINGS,
+                'label'     => esc_html__('Grid Settings', 'genzia'),
+                'tab'       => Controls_Manager::TAB_SETTINGS,
                 'condition' => [
-                    'layout_mode' => 'grid'
+                    'layout_mode' => 'grid',
+                    'layout!'     => ['-sticky-scroll','-sticky-scroll2']
                 ]
             ]
         );
             $this->add_responsive_control(
                 'col',
                 [
-                    'label' => esc_html__('Columns', 'genzia'),
-                    'type' => Controls_Manager::SELECT,
-                    'default' => '',
+                    'label'        => esc_html__('Columns', 'genzia'),
+                    'type'         => Controls_Manager::SELECT,
+                    'default'      => '',
                     'default_args' => [
                         'tablet' => '',
                         'mobile' => ''

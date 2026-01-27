@@ -17,10 +17,10 @@ extract(ctc_get_posts_of_grid($post_type, [
 ], [genzia_taxonomy_by_post_type($post_type, 'category')]));
 $thumbnail_size             = $this->get_setting('thumbnail_size','large');
 $thumbnail_custom_dimension = [
-    'width'  => !empty($settings['thumbnail_custom_dimension']['width']) ? $settings['thumbnail_custom_dimension']['width'] : 800,
-    'height' => !empty($settings['thumbnail_custom_dimension']['height']) ? $settings['thumbnail_custom_dimension']['height'] : 532
+    'width'  => !empty($settings['thumbnail_custom_dimension']['width']) ? $settings['thumbnail_custom_dimension']['width'] : 716,
+    'height' => !empty($settings['thumbnail_custom_dimension']['height']) ? $settings['thumbnail_custom_dimension']['height'] : 502
 ];
-$numn_line = !empty($this->get_setting('num_line')['size']) ? $this->get_setting('num_line')['size'] : 4;
+$numn_line = !empty($this->get_setting('num_line')['size']) ? $this->get_setting('num_line')['size'] : 1;
 $pagination_type = $this->get_setting('pagination_type', 'pagination');
 // Posts Data
 $posts_data = array(
@@ -44,8 +44,8 @@ $posts_data = array(
     'num_line'                   => $numn_line,
     'readmore_text'              => $this->get_setting('readmore_text', esc_html__('Explore More','genzia')),
     //
-    'item_class'    => '', //elementor-invisible
-    'data-settings' => '', //wp_json_encode(['animation'=>'fadeInUp']),
+    'item_class'    => ($filter=='false')?'elementor-invisible':'',
+    'data-settings' => ($filter=='false')?wp_json_encode(['animation'=>'fadeInUp']):'',
     'element_id'    => $this->get_id()
 );
 // Wrap attributes
@@ -64,13 +64,14 @@ $this->add_render_attribute('content',[
         'cms-grid-content',
         'd-flex',
         genzia_elementor_get_grid_columns($widget, $settings, [
-            'default'    => 3,
+            'default'    => 2,
             'tablet'     => 2,
             'mobile'     => 1,
-            'gap'        => 32,
+            'gap'        => 'custom-x gutter-custom-y',
             'gap_prefix' => 'gutter-'
         ])
-    ]
+    ],
+    'style' => '--gutter-x:32px;--gutter-y:64px;'
 ]);
 ?>
 <div <?php ctc_print_html($this->get_render_attribute_string('wrap')); ?>>

@@ -33,7 +33,7 @@
 /**
  * Container Boxed
  * */
-$eboxed_w: 80px;
+$eboxed_w: 96px;
 $eboxed_w_wide: 160px;
 .cms-econ-boxed{
 	//margin-left: var(--margin-inline-start);
@@ -160,13 +160,18 @@ $eboxed_w_wide: 160px;
 		//padding-inline-start:var(--padding-inline-start);
 		//padding-inline-end:var(--padding-inline-end);
 		@media #{$min-wide}{
-			padding-inline-start: 24px;
-			padding-inline-end: 24px;
+			padding-inline-start: 48px;
+			padding-inline-end: 48px;
+			// Has chils Container
+			&:has(>.e-con){
+				padding-inline-start: calc(48px - #{$elementor_gutter_width/2});
+				padding-inline-end: calc(48px - #{$elementor_gutter_width/2});
+			}
 		}
 		&.cms-econ-nospace{
 			@media #{$min-wide}{
-				padding-inline-start: 40px;
-				padding-inline-end: 40px;
+				padding-inline-start: 48px;
+				padding-inline-end: 48px;
 			}	
 		}
 	}

@@ -22,7 +22,8 @@ $this->add_render_attribute('wrap',[
 		'cms-shadow-2',
 		'text-center',
 		'cms-bg-cover',
-		'cms-lazy'
+		'cms-lazy',
+		'overflow-hidden'
 	],
 	'style' => [
 		'min-height:512px;',

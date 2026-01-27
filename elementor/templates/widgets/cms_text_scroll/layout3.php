@@ -4,22 +4,21 @@ $this->add_render_attribute('wrap', [
 	'class' => [
 		'cms-swiper-container swiper-container',
 		'cms-text-scroll',
-		'heading text-italic',
+		'heading text-2xl',
 		'text-'.$this->get_setting('text_color', 'divider'),
-		'text-2xl m-tb'
+		'm-tb-n2xl'
 	],
 	'data-direction'            => $this->get_setting('direction', 'false'),
 	'data-speed'                => $this->get_setting('speed', 4000),
 	'data-spacebetween'         => $this->get_setting('spaceBetween', 0.001),
 	'data-hoverpause'           => 'no',
 	'data-disableoninteraction' => 'yes',
-	'data-loop'                 => 'yes',
-	'style'						=> '--m-tb:-0.9445rem;'
+	'data-loop'                 => 'yes'
 ]);
 $cms_texts = $this->get_setting('cms_texts', []);
 $thumbnail_custom_dimension = [
     'width'  => !empty($settings['banner_custom_dimension']['width']) ? $settings['banner_custom_dimension']['width'] : 176,
-    'height' => !empty($settings['banner_custom_dimension']['height']) ? $settings['banner_custom_dimension']['height'] : 173
+    'height' => !empty($settings['banner_custom_dimension']['height']) ? $settings['banner_custom_dimension']['height'] : 128
 ];
 ?>
 <div <?php ctc_print_html($this->get_render_attribute_string('wrap')); ?>>

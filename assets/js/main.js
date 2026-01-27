@@ -1402,23 +1402,31 @@ jQuery(document).on('woosc_change_count', function (event, count) {
         // Hover
         var hoverClass = function () {
             $('.button').disabled = false;
-            var items = 'a, button';
+            var items = '.cms-cursor';
             var addCSSClass = function () {
-                !cursor.hasClass('cms-hovering') && cursor.addClass('cms-hovering');
+                //!cursor.hasClass('cms-hovering') && cursor.addClass('cms-hovering');
+                var cursor_class = cursor.data('cursor-class');
+                cursor.addClass(cursor_class);
             };
             var removeCSSClass = function () {
-                cursor.hasClass('cms-hovering') && cursor.removeClass('cms-hovering');
+                //cursor.hasClass('cms-hovering') && cursor.removeClass('cms-hovering');
+                var cursor_class = cursor.data('cursor-class');
+                cursor.removeClass(cursor_class);
             };
             $(document).on('mouseenter', items, addCSSClass);
             $(document).on('mouseleave', items, removeCSSClass);
         };
         // Show Cursor
         var showCursor = function () {
-            !cursor.hasClass('cms-visible') && cursor.addClass('cms-visible');
+            //!cursor.hasClass('cms-visible') && cursor.addClass('cms-visible');
+            var cursor_class = cursor.data('cursor-class');
+            cursor.addClass(cursor_class);
         }
         // Hide Cursor
         var hideCursor = function () {
-            cursor.hasClass('cms-visible') && cursor.removeClass('cms-visible cms-hovering');
+            //cursor.hasClass('cms-visible') && cursor.removeClass('cms-visible cms-hovering');
+            var cursor_class = cursor.data('cursor-class');
+            cursor.removeClass(cursor_class);
         };
         // Override Cursor
         var overrideCursor = function () {
@@ -1547,21 +1555,22 @@ jQuery(document).on('woosc_change_count', function (event, count) {
                         css_class : ''
                     },
                 ],
-            triggers  = '',
+            triggers  = '.cms-cursor',
             css_class = '',
             hides     = 'a, video, iframe',
-            overrides = '.cms-portfolio-list.cms-item-layout--info-on-hover-boxed .cms-e';
+            overrides = '.cms-cursor-overrides';
 
-            var setCursor = function (type, css_class, text) {
+            var setCursor = function (type, css_class, text, text_class) {
                 cursor.addClass('cms-' + type);
-                cursor.addClass('cms-' + css_class);
+                cursor.addClass('cms-visible cms-' + css_class).addClass(text_class);
                 cursor.find('.cms-cursor-text').text(text);
             };
 
-            var resetCursor = function () {
+            var resetCursor = function (text_class) {
                 instances.forEach(function (instance) {
                     cursor.removeClass('cms-' + instance.type);
-                    cursor.removeClass('cms-' + instance.css_class);
+                    cursor.removeClass('cms-visible cms-' + instance.css_class);
+                    cursor.removeClass(text_class);
                     cursor.find('.cms-cursor-text').empty();
                 });
             };
@@ -1572,7 +1581,13 @@ jQuery(document).on('woosc_change_count', function (event, count) {
 
                 $(document).on('mouseenter', instance.triggers, function () {
                     var text = $(this).data('cursor-text');
-                    setCursor(instance.type, instance.css_class, text);
+                    var text_class = $(this).data('cursor-class');
+                    setCursor(instance.type, instance.css_class, text, text_class);
+                });
+
+                $(document).on('mouseleave', instance.triggers, function () {
+                    var text_class = $(this).data('cursor-class');
+                    resetCursor(text_class);
                 });
             });
 

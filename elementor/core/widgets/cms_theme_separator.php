@@ -57,7 +57,11 @@ class Widget_Genzia_Separator extends Widget_Base
                 'options' => [
                     '1' => [
                         'title' => esc_html__('Layout 1', 'genzia'),
-                        'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_heading/layout/1.webp'
+                        'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_theme_separator/layout/1.webp'
+                    ],
+                    '2' => [
+                        'title' => esc_html__('Layout 2', 'genzia'),
+                        'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_theme_separator/layout/2.webp'
                     ]
                 ],
                 'label_block' => true
@@ -102,6 +106,25 @@ class Widget_Genzia_Separator extends Widget_Base
                     '{{WRAPPER}}' => '--cms-bdr-custom: {{VALUE}};'
                 ]
             ]);
+        $this->end_controls_section();
+        // Style
+        $this->start_controls_section(
+            'style_settings',
+            [
+                'label' => esc_html__('Style Settings','genzia'),
+                'tab'   => Controls_Manager::TAB_SETTINGS
+            ]
+        );
+            $this->add_control(
+                'e_classes',
+                [
+                    'label'   => esc_html__('CSS Classes', 'genzia'),
+                    'type'    => Controls_Manager::TEXT,
+                    'default' => '',
+                    'title'   => esc_html__('Add your custom class WITHOUT the dot. e.g: my-class', 'genzia'),
+                    'classes' => 'elementor-control-direction-ltr',
+                ]
+            );
         $this->end_controls_section();
     }
 }

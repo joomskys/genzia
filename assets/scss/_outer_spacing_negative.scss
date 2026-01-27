@@ -9,11 +9,12 @@ $negative_spacing_bot:(
 	16, 40, 80
 );
 $negative_spacing_tb:(
-	1, 2, 3, 4, 5, 6, 7, 10
+	1, 2, 3, 4, 5, 6, 7, 10,
+	48, 65
 );
 $negative_spacing_left:(8, 12, 16, 40);
 $negative_spacing_right:(12, 20, 30);
-$negative_spacing_lr:();
+$negative_spacing_lr:(48);
 //
 @each $space in $negative_spacing{
 	.m-n#{$space}{

@@ -19,7 +19,7 @@ $wc_star_color: var(--cms-warning);
 $wc_star_hover_color: var(--cms-warning);
 
 // Grid
-$gutters: 32px;
+$gutters: $elementor_gutter_width;
 $gap: $gutters;
 $container-width: $elementor_container_width; //var(--container-max-width, 1280px);
 

@@ -80,6 +80,10 @@ class Widget_Testimonials extends Widget_Base
                         'title' => esc_html__('Layout 2', 'genzia'),
                         'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_testimonials/layout/2.webp'
                     ],
+                    '3' => [
+                        'title' => esc_html__('Layout 3', 'genzia'),
+                        'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_testimonials/layout/3.webp'
+                    ],
                     '-sticky-scroll' => [
                         'title' => esc_html__('Scroll Sticky', 'genzia'),
                         'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_testimonials/layout/sticky-scroll.webp'
@@ -178,10 +182,39 @@ class Widget_Testimonials extends Widget_Base
                 'label'     => esc_html__('Heading Content', 'genzia'),
                 'tab'       => Controls_Manager::TAB_CONTENT,
                 'condition' => [
-                    'layout' => ['1','-sticky-scroll']
+                    'layout' => ['1','3','-sticky-scroll']
                 ]
             ]
         );
+            $this->add_control(
+                'smallheading_icon',
+                [
+                    'label'   => esc_html__('Icon', 'genzia'),
+                    'type'    => Controls_Manager::ICONS,
+                    'default' => [
+                        'value'   => 'fas fa-star',
+                        'library' => 'fa-solid'
+                    ],
+                    'skin'        => 'inline',
+                    'label_block' => false,
+                    'condition' => [
+                        'smallheading_text!' => '',
+                        'layout'             => ['3']
+                    ]
+                ]
+            );
+            genzia_elementor_colors_opts($this, [
+                'name'      => 'smallheading_icon_color',
+                'label'     => esc_html__('Icon Color', 'genzia'),
+                'selectors' => [
+                    '{{WRAPPER}} .cms-small-icon' => '--text-custom-color: {{VALUE}};'
+                ],
+                'condition' => [
+                    'smallheading_text!'        => '',
+                    'smallheading_icon[value]!' => '',
+                    'layout'             => ['3']
+                ]
+            ]);
             $this->add_control(
                 'smallheading_text',
                 [
@@ -200,6 +233,31 @@ class Widget_Testimonials extends Widget_Base
                 ],
                 'condition' => [
                     'smallheading_text!' => ''
+                ]
+            ]);
+            //
+            $this->add_control(
+                'heading_text',
+                [
+                    'label'       => esc_html__('Heading', 'genzia'),
+                    'type'        => Controls_Manager::TEXTAREA,
+                    'default'     => 'This is the heading',
+                    'placeholder' => esc_html__('Enter your text', 'genzia'),
+                    'label_block' => true,
+                    'condition'   => [
+                        'layout' => ['3']
+                    ]
+                ]
+            );
+            genzia_elementor_colors_opts($this, [
+                'name'      => 'heading_color',
+                'label'     => esc_html__('Color', 'genzia'),
+                'selectors' => [
+                    '{{WRAPPER}} .cms-title' => '--text-custom-color: {{VALUE}};'
+                ],
+                'condition'   => [
+                    'layout'        => ['3'],
+                    'heading_text!' => ''
                 ]
             ]);
         $this->end_controls_section();

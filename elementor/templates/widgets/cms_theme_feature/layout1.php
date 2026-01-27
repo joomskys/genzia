@@ -44,7 +44,8 @@ $this->add_render_attribute( 'desc', [
 // Gallery
 $this->add_render_attribute('gallery-wrap',[
 	'class' => [
-		'd-flex gap-32 justify-content-between',
+		'd-flex gap-32',
+		'justify-content-between align-items-center',
 		'bdr-t-1 bdr-'.$bdr_color,
 		'pt-32 pl-12 mt-32',
 		'align-self-end',

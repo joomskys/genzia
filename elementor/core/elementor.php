@@ -731,7 +731,7 @@ if (!function_exists('genzia_elementor_carousel_settings')) {
                         'end-xlarge'   => esc_html__('Full to End (Extra Large)', 'genzia'),
                         //'start-2xlarge' => esc_html__('Full to Start (Extra Large #2)', 'genzia'),
                         //'end-2xlarge'   => esc_html__('Full to End (Extra Large #2)', 'genzia'),
-                        //'both'         => esc_html__('Full to Both', 'genzia'),
+                        'both'         => esc_html__('Full to Both', 'genzia'),
                         //'both2'        => esc_html__('Full to Both #2', 'genzia'),
                         //'both-small'   => esc_html__('Full to Both (Small)', 'genzia'),
                         //'both-large'   => esc_html__('Full to Both (Large)', 'genzia'),
@@ -1932,55 +1932,41 @@ function genzia_elementor_link_settings($widget, $args = [])
             ]
         );
     }
-    $widget->add_control(
-        $args['name'] . 'text',
-        [
-            'label'       => esc_html__('Link Text', 'genzia'),
-            'type'        => Controls_Manager::TEXT,
-            'description' => $description,
-            'classes'     => $label_classes,
-            'condition'   => $args['condition'],
-            'default'     => $args['text']
-        ]
-    );
-    $widget->add_control(
-        $args['name'] . 'url',
-        [
-            'label'       => esc_html__('Your Link', 'genzia'),
-            'type'        => Controls_Manager::URL,
-            'placeholder' => esc_html__('https://your-link.com', 'genzia'),
-            'default'     => [
-                'url' => '#',
-            ],
-            'condition' => array_merge(
-                [
-                    $args['name'] . 'text!' => ''
+        $widget->add_control(
+            $args['name'] . 'text',
+            [
+                'label'       => esc_html__('Link Text', 'genzia'),
+                'type'        => Controls_Manager::TEXT,
+                'description' => $description,
+                'classes'     => $label_classes,
+                'condition'   => $args['condition'],
+                'default'     => $args['text']
+            ]
+        );
+        $widget->add_control(
+            $args['name'] . 'url',
+            [
+                'label'       => esc_html__('Your Link', 'genzia'),
+                'type'        => Controls_Manager::URL,
+                'placeholder' => esc_html__('https://your-link.com', 'genzia'),
+                'default'     => [
+                    'url' => '#',
                 ],
-                $args['condition']
-            ),
-            'label_block' => false
-        ]
-    );
-    if ($args['color']) {
-        genzia_elementor_colors_opts($widget, [
-            'name'      => $args['name'] .'text_color',
-            'label'     => esc_html__('Text Color', 'genzia'),
-            'selectors' => [
-                '{{WRAPPER}} .'.$args['name'].'text' => 'color: {{VALUE}};'
-            ],
-            'condition' => array_merge(
-                [
-                    $args['name'] . 'text!' => '',
-                ],
-                $args['condition']
-            )
-        ]);
-        if ($args['mode'] == 'btn') {
+                'condition' => array_merge(
+                    [
+                        $args['name'] . 'text!' => ''
+                    ],
+                    $args['condition']
+                ),
+                'label_block' => false
+            ]
+        );
+        if ($args['color']) {
             genzia_elementor_colors_opts($widget, [
-                'name'      => $args['name'] .'btn_color',
-                'label'     => esc_html__('Button Color', 'genzia'),
+                'name'      => $args['name'] .'text_color',
+                'label'     => esc_html__('Text Color', 'genzia'),
                 'selectors' => [
-                    '{{WRAPPER}} .'.$args['name'].'bg' => 'background-color: {{VALUE}};'
+                    '{{WRAPPER}} .'.$args['name'].'text' => 'color: {{VALUE}};'
                 ],
                 'condition' => array_merge(
                     [
@@ -1989,26 +1975,26 @@ function genzia_elementor_link_settings($widget, $args = [])
                     $args['condition']
                 )
             ]);
-        }
-        genzia_elementor_colors_opts($widget, [
-            'name'      => $args['name'] .'text_color_hover',
-            'label'     => esc_html__('Text Color Hover', 'genzia'),
-            'selectors' => [
-                '{{WRAPPER}} .'.$args['name'].'text:hover' => 'color: {{VALUE}};'
-            ],
-            'condition' => array_merge(
-                [
-                    $args['name'] . 'text!' => '',
-                ],
-                $args['condition']
-            )
-        ]);
-        if ($args['mode'] == 'btn') {
+            if ($args['mode'] == 'btn') {
+                genzia_elementor_colors_opts($widget, [
+                    'name'      => $args['name'] .'btn_color',
+                    'label'     => esc_html__('Button Color', 'genzia'),
+                    'selectors' => [
+                        '{{WRAPPER}} .'.$args['name'].'bg' => 'background-color: {{VALUE}};'
+                    ],
+                    'condition' => array_merge(
+                        [
+                            $args['name'] . 'text!' => '',
+                        ],
+                        $args['condition']
+                    )
+                ]);
+            }
             genzia_elementor_colors_opts($widget, [
-                'name'      => $args['name'] .'btn_color_hover',
-                'label'     => esc_html__('Button Color Hover', 'genzia'),
+                'name'      => $args['name'] .'text_color_hover',
+                'label'     => esc_html__('Text Color Hover', 'genzia'),
                 'selectors' => [
-                    '{{WRAPPER}} .'.$args['name'].'bg:hover' => 'background-color: {{VALUE}};'
+                    '{{WRAPPER}} .'.$args['name'].'text:hover' => 'color: {{VALUE}};'
                 ],
                 'condition' => array_merge(
                     [
@@ -2017,40 +2003,78 @@ function genzia_elementor_link_settings($widget, $args = [])
                     $args['condition']
                 )
             ]);
+            if ($args['mode'] == 'btn') {
+                genzia_elementor_colors_opts($widget, [
+                    'name'      => $args['name'] .'btn_color_hover',
+                    'label'     => esc_html__('Button Color Hover', 'genzia'),
+                    'selectors' => [
+                        '{{WRAPPER}} .'.$args['name'].'bg:hover' => 'background-color: {{VALUE}};'
+                    ],
+                    'condition' => array_merge(
+                        [
+                            $args['name'] . 'text!' => '',
+                        ],
+                        $args['condition']
+                    )
+                ]);
+            }
+            if($args['icon_settings']['enable']){
+                genzia_elementor_colors_opts($widget, [
+                    'name'      => $args['name'].'_icon_bg',
+                    'label'     => esc_html__('Icon Background Color', 'genzia'),
+                    'selectors' => [
+                        '{{WRAPPER}} '.$args['icon_settings']['selector'] => '--cms-bg-custom:{{VALUE}};'
+                    ],
+                    'separator' => 'before',
+                    'classes'   => 'cms-eseparator',
+                    'condition' => array_merge(
+                        [
+                            $args['name'] . 'text!' => '',
+                        ],
+                        $args['condition']
+                    )
+                ]);
+                genzia_elementor_colors_opts($widget, [
+                    'name'      => $args['name'].'_icon_color',
+                    'label'     => esc_html__('Button Icon Color', 'genzia'),
+                    'selectors' => [
+                        '{{WRAPPER}} '.$args['icon_settings']['selector'] => '--cms-text-custom:{{VALUE}};'
+                    ],
+                    'condition' => array_merge(
+                        [
+                            $args['name'] . 'text!' => '',
+                        ],
+                        $args['condition']
+                    )
+                ]);
+                genzia_elementor_colors_opts($widget, [
+                    'name'      => $args['name'].'_icon_bg_hover',
+                    'label'     => esc_html__('Icon Background Hover Color', 'genzia'),
+                    'selectors' => [
+                        '{{WRAPPER}} '.$args['icon_settings']['selector'] => '--cms-bg-hover-custom:{{VALUE}};--cms-bg-on-hover-custom:{{VALUE}};'
+                    ],
+                    'condition' => array_merge(
+                        [
+                            $args['name'] . 'text!' => '',
+                        ],
+                        $args['condition']
+                    )
+                ]);
+                genzia_elementor_colors_opts($widget, [
+                    'name'      => $args['name'].'_icon_color_hover',
+                    'label'     => esc_html__('Icon Color Hover', 'genzia'),
+                    'selectors' => [
+                        '{{WRAPPER}} '.$args['icon_settings']['selector'] => '--cms-text-hover-custom:{{VALUE}};--cms-text-on-hover-custom:{{VALUE}};'
+                    ],
+                    'condition' => array_merge(
+                        [
+                            $args['name'] . 'text!' => '',
+                        ],
+                        $args['condition']
+                    )
+                ]);
+            }
         }
-        if($args['icon_settings']['enable']){
-            genzia_elementor_colors_opts($widget, [
-                'name'      => $args['name'].'_icon_bg',
-                'label'     => esc_html__('Icon Background Color', 'genzia'),
-                'selectors' => [
-                    '{{WRAPPER}} '.$args['icon_settings']['selector'] => '--cms-bg-custom:{{VALUE}};'
-                ],
-                'separator' => 'before',
-                'classes'   => 'cms-eseparator'
-            ]);
-            genzia_elementor_colors_opts($widget, [
-                'name'      => $args['name'].'_icon_color',
-                'label'     => esc_html__('Button Icon Color', 'genzia'),
-                'selectors' => [
-                    '{{WRAPPER}} '.$args['icon_settings']['selector'] => '--cms-text-custom:{{VALUE}};'
-                ]
-            ]);
-            genzia_elementor_colors_opts($widget, [
-                'name'      => $args['name'].'_icon_bg_hover',
-                'label'     => esc_html__('Icon Background Hover Color', 'genzia'),
-                'selectors' => [
-                    '{{WRAPPER}} '.$args['icon_settings']['selector'] => '--cms-bg-hover-custom:{{VALUE}};--cms-bg-on-hover-custom:{{VALUE}};'
-                ]
-            ]);
-            genzia_elementor_colors_opts($widget, [
-                'name'      => $args['name'].'_icon_color_hover',
-                'label'     => esc_html__('Icon Color Hover', 'genzia'),
-                'selectors' => [
-                    '{{WRAPPER}} '.$args['icon_settings']['selector'] => '--cms-text-hover-custom:{{VALUE}};--cms-text-on-hover-custom:{{VALUE}};'
-                ]
-            ]);
-        }
-    }
     if ($args['group']) {
         $widget->end_controls_section();
     }

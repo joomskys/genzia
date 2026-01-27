@@ -310,9 +310,7 @@
         };
         // Make sure you run this code under Elementor.
         elementorFrontend.hooks.addAction('frontend/element_ready/cms_text_scroll.default', CMSTextScrollHandler);
-        //elementorFrontend.hooks.addAction('frontend/element_ready/cms_gallery.default', CMSTextScrollHandler);
-        //elementorFrontend.hooks.addAction('frontend/element_ready/cms_countdown.default', CMSTextScrollHandler);
-        elementorFrontend.hooks.addAction('frontend/element_ready/cms_video_player.default', CMSTextScrollHandler);
+        elementorFrontend.hooks.addAction('frontend/element_ready/cms_accordion.default', CMSTextScrollHandler);
 
         // CMS Progress Bar
         var WidgetCMSProgressBarHandler = function ($scope, $) {

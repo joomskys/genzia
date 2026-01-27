@@ -84,6 +84,10 @@ class Widget_Genzia_Feature extends Widget_Base
                         '7' => [
                             'title' => esc_html__('Layout Awards', 'genzia'),
                             'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_theme_feature/layout/7.webp'
+                        ],
+                        '8' => [
+                            'title' => esc_html__('Layout Awards #2', 'genzia'),
+                            'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_theme_feature/layout/8.webp'
                         ]
                     ],
                     'label_block' => true
@@ -353,34 +357,34 @@ class Widget_Genzia_Feature extends Widget_Base
                     'title_field' => '{{awards_title}}',
                     'default'     => [
                         [
-                            'awards_title' => 'Awards Title #1',
-                            'chat_text'    => 'Awards Description #1',
+                            'awards_title' => 'Award Title #1',
+                            'chat_text'    => 'Award Description #1',
                             'awards_year'  => 2026 
                         ],
                         [
-                            'awards_title' => 'Awards Title #2',
-                            'chat_text'    => 'Awards Description #2',
+                            'awards_title' => 'Award Title #2',
+                            'chat_text'    => 'Award Description #2',
                             'awards_year'  => 2025
                         ],
                         [
-                            'awards_title' => 'Awards Title #3',
-                            'chat_text'    => 'Awards Description #3',
+                            'awards_title' => 'Award Title #3',
+                            'chat_text'    => 'Award Description #3',
                             'awards_year'  => 2024
                         ],
                         [
-                            'awards_title' => 'Awards Title #4',
-                            'chat_text'    => 'Awards Description #4',
+                            'awards_title' => 'Award Title #4',
+                            'chat_text'    => 'Award Description #4',
                             'awards_year'  => 2023
                         ],
                         [
-                            'awards_title' => 'Awards Title #5',
-                            'chat_text'    => 'Awards Description #5',
+                            'awards_title' => 'Award Title #5',
+                            'chat_text'    => 'Award Description #5',
                             'awards_year'  => 2022
                         ]
                     ],
-                    'button_text' => esc_html__('Add Chat', 'genzia'),
+                    'button_text' => esc_html__('Add Award', 'genzia'),
                     'condition'   => [
-                        'layout' => ['7']
+                        'layout' => ['7','8']
                     ]
                 ]
             );
@@ -398,7 +402,14 @@ class Widget_Genzia_Feature extends Widget_Base
                 'name'      => 'title_color',
                 'label'     => esc_html__('Title Color', 'genzia'),
                 'selectors' => [
-                    '{{WRAPPER}} .cms-title' => '--text-custom-color:{{VALUE}};'
+                    '{{WRAPPER}} .fitem-title,{{WRAPPER}} .fitem-year' => '--cms-text-custom:{{VALUE}};'
+                ]
+            ]);
+            genzia_elementor_colors_opts($this, [
+                'name'      => 'title_color_hover',
+                'label'     => esc_html__('Title Color Hover', 'genzia'),
+                'selectors' => [
+                    '{{WRAPPER}} .fitem-title,{{WRAPPER}} .fitem-year' => '--cms-text-hover-custom:{{VALUE}};--cms-text-on-hover-custom:{{VALUE}};'
                 ]
             ]);
             // Description
@@ -406,7 +417,14 @@ class Widget_Genzia_Feature extends Widget_Base
                 'name'      => 'description_color',
                 'label'     => esc_html__('Description Color', 'genzia'),
                 'selectors' => [
-                    '{{WRAPPER}} .cms-desc' => '--text-custom-color:{{VALUE}};'
+                    '{{WRAPPER}} .fitem-desc' => '--cms-text-custom:{{VALUE}};'
+                ]
+            ]);
+            genzia_elementor_colors_opts($this, [
+                'name'      => 'description_color_hover',
+                'label'     => esc_html__('Description Color Hover', 'genzia'),
+                'selectors' => [
+                    '{{WRAPPER}} .fitem-desc' => '--cms-text-hover-custom:{{VALUE}};--cms-text-on-hover-custom:{{VALUE}};'
                 ]
             ]);
             // Background
@@ -433,7 +451,7 @@ class Widget_Genzia_Feature extends Widget_Base
                     '{{WRAPPER}}' => '--cms-bdr-custom:{{VALUE}};'
                 ],
                 'condition' => [
-                    'layout' => ['1','3']
+                    'layout' => ['1','3','7','8']
                 ]
             ]);
         $this->end_controls_section();

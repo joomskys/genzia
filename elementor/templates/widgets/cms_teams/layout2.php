@@ -224,7 +224,8 @@ $this->add_render_attribute('heading-wrap',[
                 'cms-team-item',
                 ($settings['layout_mode'] === 'carousel') ? 'cms-swiper-item swiper-slide' : '',
                 'd-flex',
-                'justify-content-'.$aligns[$key % $default_col],
+                //'justify-content-'.$aligns[$key % $default_col],
+                (in_array($count, [3,4,7,8,11,12,15,16])) ? 'justify-content-end' : '',
                 'justify-content-tablet-extra-center',
                 'cms-hover-stroke-dasharray',
                 'cms-hover-change'

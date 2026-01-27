@@ -187,7 +187,7 @@ $this->add_render_attribute('features-item', [
 									'icon'       => 'core/check',
 									'icon_size'  => 10,
 									'icon_class' => 'cms-icon',
-									'class'      => 'cms-box-28 circle bg-accent-regular text-white'
+									'class'      => 'cms-box-30 circle bg-accent-regular text-white'
 								]);
 							?>
 							<div class="process-divider bg-accent-regular" style="width: 2px; height: calc(100% - 44px); margin-top:8px; margin-inline-start: 13px;"></div>

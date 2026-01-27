@@ -26,7 +26,7 @@ class Widget_Text_Scroll extends Widget_Base
         $this->set_name('cms_text_scroll');
         $this->set_title(esc_html__('CMS Text Scroll', 'genzia'));
         $this->set_icon('eicon-scroll');
-        $this->set_keywords(['testimonials', 'carousel', 'cms', 'genzia']);
+        $this->set_keywords(['scroll', 'text scroll', 'cms text scroll', 'genzia']);
         $this->set_script_depends(['cms-elementor-custom', 'cms-slider-video',]);
         $this->set_style_depends(['swiper', 'e-animation-fadeInRight']);
 
@@ -68,6 +68,14 @@ class Widget_Text_Scroll extends Widget_Base
                     ],
                     '3' => [
                         'label' => esc_html__('Layout 3', 'genzia'),
+                        'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_text_scroll/layout/3.webp'
+                    ],
+                    '4' => [
+                        'label' => esc_html__('Layout 4', 'genzia'),
+                        'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_text_scroll/layout/4.webp'
+                    ],
+                    '5' => [
+                        'label' => esc_html__('Layout 5', 'genzia'),
                         'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_text_scroll/layout/3.webp'
                     ]
                 ]
@@ -153,6 +161,15 @@ class Widget_Text_Scroll extends Widget_Base
                 'tab'   => Controls_Manager::TAB_STYLE
             ]
         );
+            $this->add_control(
+                'overflow',
+                [
+                    'label'        => esc_html__('Overflow Hidden?', 'genzia'),
+                    'type'         => Controls_Manager::SWITCHER,
+                    'return_value' => 'yes',
+                    'default'      => 'yes'
+                ]
+            );
             $this->add_control(
                 'spaceBetween',
                 [

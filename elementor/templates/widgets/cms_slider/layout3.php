@@ -96,7 +96,7 @@ $this->add_render_attribute('container', [
     'class' => [
         'container',
         'd-flex',
-        'justify-content-'.$default_align,
+        'justify-content-end',
         'align-items-center',
         'text-'.$default_align,
         'p-tb'
@@ -108,9 +108,9 @@ $this->add_render_attribute('container', [
 // Subtitle
 $this->add_render_attribute('subtitle', [
     'class' => [
-        'cms-slider-subtitle m-tb-n6 pb-12 empty-none',
+        'cms-slider-subtitle m-tb-nmd pb-12 empty-none',
         'text-on-dark',
-        'text-lg',
+        'text-md',
         genzia_add_hidden_device_controls_render($settings, 'subtitle_'),
         'd-flex gap-12 flex-nowrap',
         'justify-content-'.$default_align
@@ -121,11 +121,11 @@ $this->add_render_attribute('subtitle', [
 // Title 
 $this->add_render_attribute('title', [
     'class' => [
-        'cms-slider-title heading font-400',
+        'cms-slider-title heading',
         'empty-none cms-nl2br',
         'text-'.$this->get_setting('title_color','white'),
         genzia_add_hidden_device_controls_render($settings, 'title_'),
-        'mt-n7'
+        'mt-nh3'
     ],
     'data-cms-animation'       => 'title_animation',
     'data-cms-animation-delay' => 'title_animation_delay'
@@ -137,7 +137,7 @@ $this->add_render_attribute('desc', [
         'text-on-dark',
         'text-lg',
         genzia_add_hidden_device_controls_render($settings, 'desc_'),
-        'm-tb-n7 pt-25'
+        'm-tb-nlg pt-25'
     ],
     'data-cms-animation'       => 'description_animation',
     'data-cms-animation-delay' => 'description_animation_delay'
@@ -256,50 +256,62 @@ $this->add_render_attribute('features',[
                                 echo ctc_print_html($cms_slide['subtitle']); 
                             ?></div>
                             <?php } ?>
-                            <h1 <?php ctc_print_html($this->get_render_attribute_string('title')); ?>><?php 
+                            <h3 <?php ctc_print_html($this->get_render_attribute_string('title')); ?>><?php 
                                 echo nl2br($cms_slide['title']);
-                            ?></h1>
+                            ?></h3>
                             <div <?php ctc_print_html($this->get_render_attribute_string('desc')); ?>><?php echo nl2br($cms_slide['description']); ?></div>
                             <div <?php ctc_print_html($this->get_render_attribute_string('buttons')); ?>><?php
                                 // Button Primary
                                 if ( ! empty( $cms_slide['button_primary'] ) ) :
-                                    $button_primary_link = $this->get_repeater_setting_key( 'button_primary_link', 'cms_slider', $key );
-                                    $this->add_render_attribute( $button_primary_link, [
-                                        'class' => [
-                                            'cms-slider-btn',
-                                            'cms-btn btn-accent-regular text-white',
-                                            'btn-hover-white text-hover-menu',
-                                            'cms-hover-move-icon-right',
-                                            genzia_add_hidden_device_controls_render($settings, 'btn1_')
-                                        ],
-                                        'data-cms-animation' => 'button_primary_animation',
-                                        'data-cms-animation-delay' => 'button_primary_animation_delay'
-                                    ]);
-                                    $this->add_link_attributes( $button_primary_link, $cms_slide['button_primary_link'] );
-                                ?>
-                                    <a <?php ctc_print_html($this->get_render_attribute_string( $button_primary_link )); ?>>
-                                        <?php 
-                                            // text
-                                            echo ctc_print_html($cms_slide['button_primary']);
-                                            // icon
-                                            genzia_svgs_icon([
-                                                'icon'      => 'arrow-right',
-                                                'icon_size' => 10
-                                            ]);
-                                        ?>
-                                    </a>
-                                <?php endif;
+                                $button_primary_link = $this->get_repeater_setting_key( 'button_primary_link', 'cms_slider', $key );
+                                $this->add_render_attribute( $button_primary_link, [
+                                    'class' => [
+                                        'cms-slider-btn',
+                                        'cms-btn btn-white text-menu',
+                                        'btn-hover-accent-regular text-hover-white',
+                                        'cms-hover-move-icon-right',
+                                        genzia_add_hidden_device_controls_render($settings, 'btn1_'),
+                                        'cms-hover-change'
+                                    ],
+                                    'data-cms-animation' => 'button_primary_animation',
+                                    'data-cms-animation-delay' => 'button_primary_animation_delay'
+                                ]);
+                                $this->add_link_attributes( $button_primary_link, $cms_slide['button_primary_link'] );
+                            ?>
+                                <a <?php ctc_print_html($this->get_render_attribute_string( $button_primary_link )); ?>>
+                                    <?php 
+                                        // icon
+                                        genzia_svgs_icon([
+                                            'icon'      => 'arrow-right',
+                                            'icon_size' => 11,
+                                            'class'     =>  genzia_nice_class([
+                                                'cms-eicon cms-btn-icon',
+                                                'cms-box-48 cms-radius-6',
+                                                'order-first',
+                                                'bg-accent-regular',
+                                                'bg-hover-accent-regular',
+                                                'bg-on-hover-white',
+                                                'text-white',
+                                                'text-hover-menu',
+                                                'text-on-hover-menu',
+                                            ])
+                                        ]);
+                                        // text
+                                        echo ctc_print_html($cms_slide['button_primary']);
+                                    ?>
+                                </a>
+                            <?php endif;
                                 // Button Secondary
                                 if ( ! empty( $cms_slide['button_secondary'] ) ) :
                                     $button_secondary_link = $this->get_repeater_setting_key( 'button_secondary_link', 'cms_slider', $key );
                                     $this->add_render_attribute( $button_secondary_link, [
                                         'class' => [
                                             'cms-slider-btn',
-                                            'cms-btn btn-white text-menu',
-                                            'btn-hover-accent-regular text-hover-white',
+                                            'cms-btn btn-accent-regular text-white',
+                                            'btn-hover-white text-hover-menu',
                                             genzia_add_hidden_device_controls_render($settings, 'btn2_')
                                         ],
-                                        'data-cms-animation' => 'button_secondary_animation',
+                                        'data-cms-animation'       => 'button_secondary_animation',
                                         'data-cms-animation-delay' => 'button_secondary_animation_delay'
                                     ]);
                                     $this->add_link_attributes( $button_secondary_link, $cms_slide['button_secondary_link'] );
@@ -308,22 +320,6 @@ $this->add_render_attribute('features',[
                                     <?php echo ctc_print_html( $cms_slide['button_secondary'] ); ?>
                                 </a>
                             <?php endif; 
-                                // Video button
-                                genzia_elementor_button_video_render($widget, $cms_slide, [
-                                    '_id'        => $cms_slide['_id'],   
-                                    'name'       => 'video_link',
-                                    'icon_class' => 'cms-transition',
-                                    'text'       => $cms_slide['video_text'],
-                                    'layout'     => '1 cms-btn btn-outline-white text-white btn-hover-white text-hover-menu gap-10',
-                                    'class'      => genzia_add_hidden_device_controls_render($settings, 'btn_video_'),
-                                    'echo'       => true,
-                                    'loop'       => true,
-                                    'loop_key'   => $key, 
-                                    'attrs'      => [
-                                        'data-cms-animation'       => 'button_video_animation',
-                                        'data-cms-animation-delay' => 'button_video_animation_delay'
-                                    ]
-                                ]);
                             ?></div>
                             <?php // Features 
                             if(!empty($cms_slide['feature_title']) || !empty($cms_slide['feature_desc']) || !empty($features)) {

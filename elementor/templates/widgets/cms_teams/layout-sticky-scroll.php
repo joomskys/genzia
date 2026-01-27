@@ -140,7 +140,6 @@ $this->add_render_attribute('team-desc',[
                     $this->add_render_attribute( $item_key,[
                         'class' => array_filter([
                             'cms-team-item',
-                            ($settings['layout_mode'] === 'carousel') ? 'cms-swiper-item swiper-slide' : '',
                             'cms-hover-stroke-dasharray',
                             'cms-hover-change',
                             'elementor-invisible',

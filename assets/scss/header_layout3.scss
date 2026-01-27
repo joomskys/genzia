@@ -1,0 +1,7 @@
+.header-layout-3{
+	@media (max-width: $mobile-menu-screen - 1px) {
+	    .site-navigation-dropdown {
+	        margin-inline-start: 20px;
+	    }
+	}
+}

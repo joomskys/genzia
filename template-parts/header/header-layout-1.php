@@ -4,6 +4,8 @@
  */
 $header_classes = 'pt-32 pt-mobile-menu-20';
 $default_class = [
+    $header_classes,
+    'mb-16',
     'bg-white',
     (genzia_get_opts( 'header_shadow', 'on', 'header_custom') === 'on') ? 'header-shadow' : ''
 ];
@@ -25,6 +27,10 @@ $data_header_settings =[
     'ontop_class'   => $ontop_class
 ];
 //
+$header_left_classes = [
+    'flex-auto d-flex gap p-lr-24 p-lr-mobile-menu-20 bg-backdrop cms-radius-10',
+    (genzia_get_opts( 'header_transparent', 'on', 'header_custom') === 'on') ? '' : 'bg-white cms-shadow-3'
+];
 $logo_class = [
     'site-branding',
     'flex-auto',
@@ -51,33 +57,57 @@ $header_style = [
 ];
 // Nav Content
 ob_start();
-    // Button 01
-    genzia_header_button_render([
-        'class'      => 'cms-hover-move-icon-right cms-btn btn-primary-regular text-white btn-hover-accent-regular text-hover-white mt-25 cms-hidden-desktop-menu cms-hover-change',
-        'icon'        => 'arrow-right',
-        'icon_mobile' => '',
-        'icon_size'   => 12,
-        'icon_class'  => 'cms-box-48 cms-radius-6 order-first bg-white text-menu',
-        'text_class'  => ''
-    ]);
-    // Button 02
-    genzia_header_button_render([
-        'name'       => 'h_btn2',
-        'class'      => 'cms-hover-move-icon-right cms-btn btn-md btn-accent-regular text-white btn-hover-primary-regular text-hover-white mt-25 cms-hidden-desktop-menu',
-        'icon'        => '',
-        'icon_mobile' => '',
-        'icon_size'   => 12,
-        'icon_class'  => 'cms-box-48 cms-radius-6 order-first bg-white text-menu',
-        'text_class'  => ''
-    ]);
+    echo '<div class="d-flex justify-content-center gap-20 pt-20 cms-hidden-desktop-menu">';
+        // Button 01
+        genzia_header_button_render([
+            'class'      => 'cms-hover-move-icon-right cms-btn btn-accent-regular text-white btn-hover-primary-regular text-hover-white cms-hover-move-icon-right cms-hover-change',
+            'data'       => [
+                'default_class'     => [],
+                'transparent_class' => []
+            ],
+            'icon'        => 'arrow-right',
+            'icon_mobile' => '',
+            'icon_size'   => 10,
+            'icon_class'  => 'cms-box-48 cms-radius-6 order-first cms-header-change',
+            'icon_data'   => [
+                'default_class'     => ['bg-white', 'text-menu', 'bg-on-hover-accent-regular', 'text-on-hover-white'],
+                'transparent_class' => ['bg-white', 'text-menu', 'bg-on-hover-accent-regular', 'text-on-hover-white'],
+                'sticky_class'      => ['bg-white', 'text-menu', 'bg-on-hover-accent-regular', 'text-on-hover-white']
+            ],
+            'text_class'  => ''
+        ]);
+        // Button 02
+        genzia_header_button_render([
+            'name'       => 'h_btn2',
+            'class'      => 'cms-hover-move-icon-right cms-btn btn-primary-regular text-white btn-hover-accent-regular text-hover-white cms-hover-move-icon-right cms-hover-change',
+            'data'       => [
+                'default_class'     => [],
+                'transparent_class' => []
+            ],
+            'icon'        => 'arrow-right',
+            'icon_mobile' => '',
+            'icon_size'   => 10,
+            'icon_class'  => 'cms-box-48 cms-radius-6 order-first cms-header-change',
+            'icon_data'   => [
+                'default_class'     => ['bg-white', 'text-menu', 'bg-on-hover-primary-regular', 'text-on-hover-white'],
+                'transparent_class' => ['bg-white', 'text-menu', 'bg-on-hover-primary-regular', 'text-on-hover-white'],
+                'sticky_class'      => ['bg-white', 'text-menu', 'bg-on-hover-primary-regular', 'text-on-hover-white']
+            ],
+            'text_class'  => ''
+        ]);
+    echo '</div>';
 $nav_content = ob_get_clean();
-
+//
+$header_tools_classes = [
+    'flex-auto d-flex gap-20 gap-xsmobile-10 align-items-center bg-backdrop cms-radius-10 p-lr-24 p-lr-xsmobile-10 cms-header-height',
+    (genzia_get_opts( 'header_transparent', 'on', 'header_custom') === 'on') ? '' : 'bg-white cms-shadow-3'
+];
 ?>
 <header id="cms-header-wrap" class="<?php echo genzia_header_wrap_classes(); ?>">
     <?php genzia_header_top(); ?>
     <div id="cms-header" class="<?php echo genzia_header_classes(implode(' ', $default_class )); ?>" data-settings='<?php echo wp_json_encode($data_header_settings); ?>' style="<?php echo implode(';', $header_style); ?>">
         <div class="<?php echo genzia_header_container_classes('d-flex gap-32 gap-mobile-menu-10 justify-content-between align-items-start p-lr-48 p-lr-mobile-menu-20'); ?>">
-            <div class="flex-auto d-flex gap p-lr-24 p-lr-mobile-menu-20 bg-backdrop cms-radius-10" style="--cms-gap:80px;">
+            <div class="<?php echo genzia_nice_class($header_left_classes); ?>" style="--cms-gap:80px;">
                 <?php 
                 // logo
                 get_template_part('template-parts/header/header-branding', '', [
@@ -93,7 +123,7 @@ $nav_content = ob_get_clean();
                 ?>
             </div>
             <div class="<?php echo genzia_header_tools_classes(['class' => 'flex-auto d-flex gap-8 justify-content-end align-items-center']); ?>">
-                <div class="flex-auto d-flex gap-20 gap-xsmobile-10 align-items-center bg-backdrop cms-radius-10 p-lr-24 p-lr-xsmobile-10 cms-header-height">
+                <div class="<?php echo genzia_nice_class($header_tools_classes); ?>">
                     <?php
                         // Phone
                         genzia_header_phone_render2([
@@ -186,9 +216,9 @@ $nav_content = ob_get_clean();
                 <?php 
                     // Button 01
                     genzia_header_button_render([
-                        'class'      => 'h-btn1 cms-btn btn-accent-regular text-white btn-hover-primary-regular text-hover-white cms-hover-move-icon-right cms-hidden-mobile-menu cms-hover-change',
+                        'class'      => 'h-btn1 cms-shadow-3 cms-btn btn-white text-menu btn-hover-accent-regular text-hover-white cms-hover-move-icon-right cms-hidden-mobile-menu cms-hover-change',
                         'data'       => [
-                            'default_class'     => ['btn-accent-regular','text-white','btn-hover-primary-regular','text-hover-white'],
+                            'default_class'     => ['btn-white','text-menu','btn-hover-accent-regular','text-hover-white'],
                             'sticky_class'      => ['btn-accent-regular','text-white','btn-hover-primary-regular','text-hover-white'],
                             'transparent_class' => ['btn-white','text-menu','btn-hover-accent-regular','text-hover-white']
                         ],
@@ -198,7 +228,7 @@ $nav_content = ob_get_clean();
                         'icon_size'   => 12,
                         'icon_class'  => 'cms-box-48 cms-radius-6 order-first cms-header-change',
                         'icon_data'   => [
-                            'default_class'     => ['bg-white', 'text-menu', 'bg-on-hover-accent-regular', 'text-on-hover-white'],
+                            'default_class'     => ['bg-accent-regular', 'text-white', 'bg-on-hover-white', 'text-on-hover-accent-regular'],
                             'transparent_class' => ['bg-accent-regular', 'text-white', 'bg-on-hover-white', 'text-on-hover-accent-regular', 'bg-hover-white','text-hover-accent-regular'],
                             'sticky_class'      => ['bg-white', 'text-menu', 'bg-on-hover-accent-regular', 'text-on-hover-white']
                         ],

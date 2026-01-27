@@ -54,7 +54,7 @@ $this->add_render_attribute( 'desc', [
 			'custom_size' => ['width' => 384, 'height' => 576],
 			'img_class'   => $img_class,
 			'max_height'  => true,
-			'before'	  => '<div class="relative">',
+			'before'	  => '<div class="relative d-inline-block">',
 			'after'		  => genzia_svgs_icon([
 				'icon'      => 'core/plus',
 				'icon_size' => 14,

@@ -72,51 +72,19 @@ class Widget_Accordion extends Widget_Base
                         '4' => [
                             'title' => esc_html__('Layout 4', 'genzia'),
                             'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_accordion/layout/4.webp'
+                        ],
+                        '5' => [
+                            'title' => esc_html__('Layout 5', 'genzia'),
+                            'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_accordion/layout/5.webp'
+                        ],
+                        '6' => [
+                            'title' => esc_html__('Layout 6', 'genzia'),
+                            'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_accordion/layout/6.webp'
                         ]
                     ],
                     'label_block' => true
                 ]
             );
-        $this->end_controls_section();
-        // Element Heading
-        $this->start_controls_section(
-            'eheading_section',
-            [
-                'label'     => esc_html__('Element Heading'),
-                'tab'       =>  Controls_Manager::TAB_CONTENT,
-                'condition' => [
-                    'layout' => ['2','3']
-                ]
-            ]
-        );
-            $this->add_control(
-                'heading_text',
-                [
-                    'label'       => esc_html__('Heading', 'genzia'),
-                    'type'        => Controls_Manager::TEXTAREA,
-                    'default'     => 'This is the heading',
-                    'placeholder' => esc_html__('Enter your text', 'genzia'),
-                    'label_block' => true
-                ]
-            );
-            genzia_elementor_colors_opts($this, [
-                'name'      => 'heading_color',
-                'label'     => esc_html__('Color', 'genzia'),
-                'selectors' => [
-                    '{{WRAPPER}} .cms-title' => '--text-custom-color: {{VALUE}};'
-                ]
-            ]);
-            // Button
-            genzia_elementor_link_settings($this, [
-                'mode'          => 'btn',
-                'group'         => false,
-                'color_label'   => esc_html__('Button', 'genzia'),
-                'text'          => 'Click Here',
-                'icon_settings' => [
-                    'enable' => true,
-                    'selector' => '.cms-heading-btn-icon'
-                ]
-            ]);
         $this->end_controls_section();
         // accordion Section Start
         $this->start_controls_section(
@@ -138,6 +106,29 @@ class Widget_Accordion extends Widget_Base
                 ]
             );
             $repeater = new Repeater();
+            $repeater->add_control(
+                'ac_banner',
+                [
+                    'label'       => esc_html__('Banner', 'genzia'),
+                    'type'        => Controls_Manager::MEDIA,
+                    'default'     => [],
+                    'label_block' => false,
+                    'skin'        => 'inline'
+                ]
+            );
+            $repeater->add_control(
+                'ac_title_link',
+                [
+                    'label'       => esc_html__('Title Link', 'genzia'),
+                    'type'        => Controls_Manager::URL,
+                    'default'     => [],
+                    'placeholder' => esc_html__('Choose a link for title', 'genzia'),
+                    'label_block' => true,
+                    'condition'   => [
+                        'ac_title!' => ''
+                    ]
+                ]
+            );
             $repeater->add_control(
                 'ac_title',
                 [
@@ -189,6 +180,7 @@ class Widget_Accordion extends Widget_Base
                 'name'          => 'ac_link_',
                 'mode'          => 'btn',
                 'group'         => false,
+                'label'         => esc_html__('Button Settings','genzia'),    
                 'color_label'   => esc_html__('Button', 'genzia'),
                 'text'          => 'Click Here',
                 'color'         => false,
@@ -253,12 +245,206 @@ class Widget_Accordion extends Widget_Base
                     'button_text' => esc_html__('Add Accordion','genzia')
                 ]
             );
-        $this->end_controls_section(); // accordion Section End
+        $this->end_controls_section();
+        // Element Heading
+        $this->start_controls_section(
+            'eheading_section',
+            [
+                'label'     => esc_html__('Element Heading'),
+                'tab'       =>  Controls_Manager::TAB_CONTENT
+            ]
+        );
+            $this->add_control(
+                'heading_icon',
+                [
+                    'label'   => esc_html__('Icon', 'genzia'),
+                    'type'    => Controls_Manager::ICONS,
+                    'default' => [
+                        'value'   => 'fas fa-star',
+                        'library' => 'fa-solid'
+                    ],
+                    'skin'        => 'inline',
+                    'label_block' => false,
+                    'condition' => [
+                        'layout' => ['5'],
+                        'heading_text!' => ''
+                    ]
+                ]
+            );
+            genzia_elementor_colors_opts($this, [
+                'name'      => 'heading_icon_color',
+                'label'     => esc_html__('Icon Color', 'genzia'),
+                'selectors' => [
+                    '{{WRAPPER}} .cms-heading-icon' => '--text-custom-color: {{VALUE}};'
+                ],
+                'condition' => [
+                    'layout'                    => ['5'],
+                    'heading_text!'        => '',
+                    'heading_icon[value]!' => ''
+                ]
+            ]);
+            $this->add_control(
+                'heading_text',
+                [
+                    'label'       => esc_html__('Heading', 'genzia'),
+                    'type'        => Controls_Manager::TEXTAREA,
+                    'default'     => 'This is the heading',
+                    'placeholder' => esc_html__('Enter your text', 'genzia'),
+                    'label_block' => true,
+                    'condition' => [
+                        'layout' => ['2','3','5']
+                    ]
+                ]
+            );
+            genzia_elementor_colors_opts($this, [
+                'name'      => 'heading_color',
+                'label'     => esc_html__('Color', 'genzia'),
+                'selectors' => [
+                    '{{WRAPPER}} .cms-title' => '--text-custom-color: {{VALUE}};'
+                ],
+                'condition' => [
+                    'layout'        => ['2','3','5'],
+                    'heading_text!' => ''
+                ]
+            ]);
+            $this->add_control(
+                'desc',
+                [
+                    'label'       => esc_html__('Description', 'genzia'),
+                    'type'        => Controls_Manager::TEXTAREA,
+                    'default'     => 'This is the Description',
+                    'placeholder' => esc_html__('Enter your text', 'genzia'),
+                    'label_block' => true,
+                    'condition' => [
+                        'layout' => ['5']
+                    ]
+                ]
+            );
+            genzia_elementor_colors_opts($this, [
+                'name'      => 'desc_color',
+                'label'     => esc_html__('Color', 'genzia'),
+                'selectors' => [
+                    '{{WRAPPER}} .cms-desc' => '--text-custom-color: {{VALUE}};'
+                ],
+                'condition' => [
+                    'layout' => ['5']
+                ]
+            ]);
+            // Button
+            genzia_elementor_link_settings($this, [
+                'mode'          => 'btn',
+                'group'         => false,
+                'color_label'   => esc_html__('Button', 'genzia'),
+                'text'          => 'Click Here',
+                'icon_settings' => [
+                    'enable' => true,
+                    'selector' => '.cms-heading-btn-icon'
+                ],
+                'condition' => [
+                    'layout' => ['2','3']
+                ]
+            ]);
+        $this->end_controls_section();
+        // Scroll Text Settings
+        $this->start_controls_section(
+            'scroll_text_section',
+            [
+                'label'     => esc_html__('Scroll Text Settings', 'genzia'),
+                'tab'       => Controls_Manager::TAB_CONTENT,
+                'condition' => [
+                    'layout' => ['5']
+                ]
+            ]
+        );
+            //
+            $text = new Repeater();
+            $text->add_control(
+                'text',
+                [
+                    'label'   => esc_html__('Text', 'genzia'),
+                    'type'    => Controls_Manager::TEXTAREA,
+                    'default' => 'Your Text'
+                ]
+            );
+            // Start List
+            $this->add_control(
+                'cms_texts',
+                [
+                    'label'   => esc_html__('Scoll Texts', 'genzia'),
+                    'type'    => Controls_Manager::REPEATER,
+                    'fields'  => $text->get_controls(),
+                    'default' => [
+                        [
+                            'text' => 'Dummy Text #1'
+                        ],
+                        [
+                            'text' => 'Dummy Text #2'
+                        ],
+                        [
+                            'text' => 'Dummy Text #3'
+                        ]
+                    ],
+                    'title_field' => '{{{ text }}}'
+                ]
+            );
+        $this->end_controls_section();
+        // style
+        $this->start_controls_section(
+            'scroll_text_style_section',
+            [
+                'label'     => esc_html__('Scroll Text Style', 'genzia'),
+                'tab'       => Controls_Manager::TAB_STYLE,
+                'condition' => [
+                    'layout' => ['5']
+                ]
+            ]
+        );
+            $this->add_control(
+                'scroll_spaceBetween',
+                [
+                    'label'   => esc_html__('Space Between', 'genzia'),
+                    'type'    => Controls_Manager::NUMBER,
+                    'default' => '',
+                    'min'     => 0,
+                    'max'     => 200
+                ]
+            );
+            $this->add_control(
+                'scroll_speed',
+                [
+                    'label'   => esc_html__('Speed', 'genzia'),
+                    'type'    => Controls_Manager::NUMBER,
+                    'default' => 4000
+                ]
+            );
+            $this->add_control(
+                'scroll_direction',
+                [
+                    'label'   => esc_html__('Direction', 'genzia'),
+                    'type'    => Controls_Manager::SELECT,
+                    'options' => [
+                        'false' => esc_html__('Right to Left', 'genzia'),
+                        'true'  => esc_html__('Left to Right', 'genzia'),
+                    ],
+                    'default'   => 'false',
+                    'separator' => 'after',
+                    'classes'   => 'cms-eseparator'
+                ]
+            );
+            genzia_elementor_colors_opts($this, [
+                'name'  => 'scroll_text_color',
+                'label' => esc_html__('Text Color', 'genzia')
+            ]);
+            genzia_elementor_colors_opts($this, [
+                'name'  => 'scroll_text_color_hover',
+                'label' => esc_html__('Text Color On Hover', 'genzia')
+            ]);
+        $this->end_controls_section();
         //  Style tab
         $this->start_controls_section(
             'style_section',
             [
-                'label' => esc_html__('Style Settings', 'genzia'),
+                'label' => esc_html__('Color Settings', 'genzia'),
                 'tab' => Controls_Manager::TAB_STYLE
             ]
         );
@@ -266,7 +452,17 @@ class Widget_Accordion extends Widget_Base
                 'name'      => 'border_color',
                 'label'     => esc_html__('Border Color', 'genzia'),
                 'selectors' => [
-                    '{{WRAPPER}} .cms-bdr' => 'border-color:{{VALUE}};'
+                    '{{WRAPPER}} .cms-bdr' => '--cms-bdr-custom:{{VALUE}};'
+                ]
+            ]);
+            genzia_elementor_colors_opts($this, [
+                'name'      => 'bg_color',
+                'label'     => esc_html__('Background Color', 'genzia'),
+                'selectors' => [
+                    '{{WRAPPER}} .cms-accordion-item' => '--cms-bg-custom:{{VALUE}};'
+                ],
+                'condition' => [
+                    'layout' => ['5']
                 ]
             ]);
             genzia_elementor_colors_opts($this, [
