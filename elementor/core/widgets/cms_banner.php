@@ -80,6 +80,10 @@ class Widget_Banner extends Widget_Base
                     '5' => [
                         'title' => esc_html__('Layout 5', 'genzia'),
                         'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_banner/layout/5.webp'
+                    ],
+                    '6' => [
+                        'title' => esc_html__('Layout 6', 'genzia'),
+                        'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_banner/layout/6.webp'
                     ]
                 ],
                 'label_block' => true
@@ -144,7 +148,7 @@ class Widget_Banner extends Widget_Base
                 'label'     => esc_html__('Heading Content', 'genzia'),
                 'tab'       => Controls_Manager::TAB_CONTENT,
                 'condition' => [
-                    'layout' => ['2','3','5']
+                    'layout' => ['2','3','5','6']
                 ]
             ]
         );
@@ -246,7 +250,7 @@ class Widget_Banner extends Widget_Base
                     'placeholder' => esc_html__('Enter your text', 'genzia'),
                     'label_block' => true,
                     'condition'   => [
-                        'layout' => ['2','3','5']
+                        'layout' => ['2','3','5','6']
                     ]
                 ]
             );
@@ -257,7 +261,7 @@ class Widget_Banner extends Widget_Base
                     '{{WRAPPER}} .cms-title' => '--text-custom-color: {{VALUE}};'
                 ],
                 'condition'   => [
-                    'layout'        => ['2','3','5'],
+                    'layout'        => ['2','3','5','6'],
                     'heading_text!' => ''
                 ]
             ]);

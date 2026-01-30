@@ -1,5 +1,4 @@
 <?php
-
 $post_type   = $this->get_setting('post_type', 'post');
 $tax         = array();
 $taxonomy_by = $this->get_setting('taxonomy_by', 'category');
@@ -88,10 +87,10 @@ $this->add_render_attribute('content',[
         ?></div>
     <?php }
     if (!empty($next_link) && $pagination_type == 'loadmore') { ?>
-        <div class="cms-load-more text-center mt-56" data-loadmore="<?php echo esc_attr(json_encode($posts_data)); ?>" data-query="<?php echo esc_attr(json_encode($args)); ?>">
-            <span class="btn btn-outline-menu text-menu btn-hover-outline-menu text-hover-menu cms-hover-change">
-                <span class="cms-on-hover-underline"><?php echo esc_html__('Load More', 'genzia') ?></span>
-            </span>
+        <div class="cms-load-more text-center mt-32" data-loadmore="<?php echo esc_attr(json_encode($posts_data)); ?>" data-query="<?php echo esc_attr(json_encode($args)); ?>">
+            <span class="cms-btn btn-menu text-white btn-hover-accent-regular text-hover-white cms-hover-change"><?php 
+                echo esc_html__('Load More', 'genzia');
+            ?></span>
         </div>
     <?php } 
     if($filter == 'true'){ //$pagination_type == 'false'

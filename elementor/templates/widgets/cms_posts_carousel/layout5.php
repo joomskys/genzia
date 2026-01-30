@@ -77,7 +77,7 @@ $posts_data = array(
     'limit'                      => $limit,
     'thumbnail_size'             => $thumbnail_size,
     'thumbnail_custom_dimension' => $thumbnail_custom_dimension,
-    'num_line'                   => !empty($this->get_setting('num_line')['size']) ? $this->get_setting('num_line')['size'] : 4,
+    'num_line'                   => !empty($this->get_setting('num_line')['size']) ? $this->get_setting('num_line')['size'] : 1,
     'readmore_text'              => $this->get_setting('readmore_text', esc_html__('Explore More','genzia')),
     //
     'item_class'                 => 'cms-swiper-item swiper-slide',

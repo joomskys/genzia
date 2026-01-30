@@ -52,6 +52,14 @@ $this->add_render_attribute('switcher',[
 	]
 ]);
 $sale_off = $this->get_setting('sale_off', 30);
+// Feature Title
+$this->add_render_attribute('feature-title',[
+	'class' => [
+		'feature-title empty-none',
+		'text-sm font-700',
+		'pt-35'
+	]
+]);
 ?>
 <div <?php ctc_print_html($this->get_render_attribute_string('wrap')); ?>>
 	<?php if($settings['show_sale_off'] == 'yes') : ?>
@@ -95,11 +103,12 @@ $sale_off = $this->get_setting('sale_off', 30);
 				'p-40',
 				($pricing['featured'] == 'yes') ? 'cms-pricing-featured' : '',
 				'bdr-1',
-				($pricing['featured'] == 'yes') ? 'bdr-accent-regular' : 'bdr-divider',
-				($pricing['featured'] == 'yes') ? 'bg-accent-regular' : 'bg-white',
+				($pricing['featured'] == 'yes') ? 'bdr-bg-light' : 'bdr-divider',
+				($pricing['featured'] == 'yes') ? 'bg-bg-light' : 'bg-white',
 				'cms-transition',
 				'elementor-invisible',
-				($pricing['featured'] == 'yes') ? 'cms-shadow-2 cms-hover-shadow-1' : 'cms-shadow-1 cms-hover-shadow-2'
+				//($pricing['featured'] == 'yes') ? 'cms-shadow-2 cms-hover-shadow-1' : 'cms-shadow-1 cms-hover-shadow-2',
+				'cms-radius-12'
 			]),
 			'data-settings' => wp_json_encode([
 				'animation'       => 'fadeInUp',
@@ -110,11 +119,9 @@ $sale_off = $this->get_setting('sale_off', 30);
 		$item_pricing_title_key = $this->get_repeater_setting_key('pricing-title', 'cms_pricing', $key);
 		$this->add_render_attribute($item_pricing_title_key,[
 			'class' => [
-				'cms-title empty-none',
-				($pricing['featured'] == 'yes') ? 'text-white' : 'text-heading-regular',
-				'bdr-b-2',
-				($pricing['featured'] == 'yes') ? 'bdr-divider-light' : 'bdr-divider',
-				'mt-n5 pb-15'
+				'cms-title text-xl empty-none',
+				($pricing['featured'] == 'yes') ? 'text-heading-regular' : 'text-heading-regular',
+				'm-tb-nxl pb-15'
 			]
 		]);
 		// Pricing Desc
@@ -122,9 +129,9 @@ $sale_off = $this->get_setting('sale_off', 30);
 		$this->add_render_attribute($item_pricing_desc_key,[
 			'class' => [
 				'cms-desc empty-none',
-				($pricing['featured'] == 'yes') ? 'text-on-dark' : 'text-sub-text',
+				($pricing['featured'] == 'yes') ? 'text-body' : 'text-body',
 				'text-md',
-				'm-tb-n5 pt-23'
+				'm-tb-n5 pt-35'
 			]
 		]);
 		// Pricing Price
@@ -132,7 +139,7 @@ $sale_off = $this->get_setting('sale_off', 30);
 		$this->add_render_attribute($item_pricing_price_key,[
 			'class' => [
 				'cms-price cms-heading',
-				($pricing['featured'] == 'yes') ? 'text-white' : 'text-accent-regular',
+				($pricing['featured'] == 'yes') ? 'text-heading-regular' : 'text-heading-regular',
 				'lh-09'
 			]
 		]);
@@ -141,7 +148,7 @@ $sale_off = $this->get_setting('sale_off', 30);
 		$this->add_render_attribute($item_pricing_price_pack_key,[
 			'class' => [
 				'price-pack text-md lh-1',
-				($pricing['featured'] == 'yes') ? 'text-on-dark' : 'text-sub-text',
+				($pricing['featured'] == 'yes') ? 'text-sub-text' : 'text-sub-text',
 				'cms-switch',
 				'pb-5'
 			]
@@ -150,18 +157,19 @@ $sale_off = $this->get_setting('sale_off', 30);
 		$this->add_render_attribute($item_pricing_price_pack_sale_key,[
 			'class' => [
 				'price-pack text-md lh-1',
-				($pricing['featured'] == 'yes') ? 'text-on-dark' : 'text-sub-text',
+				($pricing['featured'] == 'yes') ? 'text-sub-text' : 'text-sub-text',
 				'cms-switch d-none',
 				'pb-5'
 			]
 		]);
 		// Pricing Feature
-		$this->add_render_attribute('pricing-features',[
+		$item_pricing_feature = $this->get_repeater_setting_key('pricing-features','cms_pricing', $key);
+		$this->add_render_attribute($item_pricing_feature,[
 			'class' => [
 				'cms-pricing-features empty-none',
-				($pricing['featured'] == 'yes') ? 'text-on-dark' : 'text-sub-text',
-				'text-md',
-				'mt-40'
+				($pricing['featured'] == 'yes') ? 'text-sub-text' : 'text-sub-text',
+				'text-md font-500',
+				'mt-30'
 			]
 		]);
 		// Pricing Yearly
@@ -170,12 +178,43 @@ $sale_off = $this->get_setting('sale_off', 30);
 	<div <?php ctc_print_html($this->get_render_attribute_string($item_key)); ?>>
 		<div <?php ctc_print_html($this->get_render_attribute_string($item_inner_key)); ?>>
 			<?php // Ribbon ?>
-			<div class="cms-pricing-badge bg-menu text-white text-xs text-center empty-none p-tb p-lr absolute top right mt-8 mr-8" style="--p-tb:4px;--p-lr:6px;"><?php 
+			<div class="cms-pricing-badge bg-menu text-white text-xs text-center empty-none p-tb p-lr absolute top right mt-10 mr-10 cms-radius-10" style="--p-tb:6px;--p-lr:10px;"><?php 
 				ctc_print_html($pricing['badge_text']); 
 			?></div>
 			<h6 <?php ctc_print_html($this->get_render_attribute_string($item_pricing_title_key)); ?>><?php ctc_print_html($pricing['heading_text']) ?></h6>
+			<?php if(!empty($pricing['price'])) { ?>
+				<div class="cms-pricing-price d-flex gap-5 align-items-end empty-none pt-20">
+					<h3 <?php ctc_print_html($this->get_render_attribute_string($item_pricing_price_key )); ?> data-current-value="<?php echo esc_attr($settings['currency'].$pricing['price']); ?>" data-switch-value="<?php echo esc_attr($price_yearly); ?>">
+						<span class="current cms-switch"><?php ctc_print_html($settings['currency'].$pricing['price']); ?></span>	
+						<span class="cms-price-sale sale cms-switch d-none"><?php ctc_print_html($price_yearly); ?></span>	
+					</h3>
+					<span <?php ctc_print_html($this->get_render_attribute_string($item_pricing_price_pack_key)); ?>><?php ctc_print_html($settings['price_pack']); ?></span>
+					<span <?php ctc_print_html($this->get_render_attribute_string($item_pricing_price_pack_sale_key )); ?>><?php ctc_print_html($settings['price_pack']); ?></span>
+				</div>
+			<?php } ?>
 			<div <?php ctc_print_html($this->get_render_attribute_string($item_pricing_desc_key)); ?>><?php ctc_print_html($pricing['description_text']) ?></div>
-			<div <?php ctc_print_html($this->get_render_attribute_string('pricing-features')); ?>><?php 
+			<?php 
+				genzia_elementor_link_render($widget, $pricing, [
+					'name' 		=> 'link1_',
+					'loop' 		=> true,
+					'loop_key'  => $key,
+					'mode'		=> 'btn',
+					'text_icon' => '',
+					'class' => [
+						'cms-hover-move-icon-right',
+						'w-100',
+						'mt-40'
+					],
+					'btn_color'        => ($pricing['featured'] == 'yes') ? $this->get_setting('btn_featured_color','accent-regular') : $this->get_setting('btn_color','menu'),
+					'text_color'       => ($pricing['featured'] == 'yes') ? $this->get_setting('btn_featured_text_color','white') :  $this->get_setting('btn_text_color','white'),
+					'btn_color_hover'  => ($pricing['featured'] == 'yes') ? $this->get_setting('btn_featured_color_hover','menu') : $this->get_setting('btn_color_hover','accent-regular'),
+					'text_color_hover' => ($pricing['featured'] == 'yes') ? $this->get_setting('btn_featured_text_color_hover','white') :  $this->get_setting('btn_text_color_hover','white')
+				]);
+			?>
+			<div <?php ctc_print_html($this->get_render_attribute_string('feature-title')); ?>><?php 
+				echo esc_html($settings['feature_title']);
+			?></div>
+			<div <?php ctc_print_html($this->get_render_attribute_string($item_pricing_feature)); ?>><?php 
 				$fcount = 0;
 				$features = (array)json_decode($pricing['features'], true);
 				foreach ( $features as $fkey => $cms_feature ):
@@ -185,30 +224,32 @@ $sale_off = $this->get_setting('sale_off', 30);
 					$this->add_render_attribute($fitem_key, [
 						'class' => genzia_nice_class([
 							'cms-list',
-							($cms_feature['available'] == 'no') ? '' : 'invi',
+							($cms_feature['available'] == 'no') ? 'invi' : '',
 							'd-flex gap-12',
-							($fcount > 1) ? 'mt-15 pt-15' : '',
-							($fcount > 1) ? 'bdr-t-1' : '',
-							($pricing['featured'] == 'yes') ? 'bdr-'.$this->get_setting('featured_border_color','divider-light') : 'bdr-'.$this->get_setting('feature_border_color','divider'),
+							($fcount > 1) ? 'mt-16' : '',
+							//($fcount > 1) ? 'bdr-t-1' : '',
+							//($pricing['featured'] == 'yes') ? 'bdr-'.$this->get_setting('featured_border_color','divider-light') : 'bdr-'.$this->get_setting('feature_border_color','divider'),
 						])
 					]);
 					// icons
 					$ficon_classes =  [
 						'cms--ficon',
-						($cms_feature['available'] == 'no') ? '' : 'invi',
-						'flex-auto pt-7'
+						($cms_feature['available'] == 'no') ? 'invi' : '',
+						'flex-auto',
+						'cms-box-22 circle',
+						'text-accent-regular'
 					];
 					if($pricing['featured'] == 'yes'){
-						$ficon_classes[] = ($cms_feature['available'] == 'yes' ) ? 'text-white' : 'text-divider-light';
+						$ficon_classes[] = ($cms_feature['available'] == 'yes' ) ? 'bg-white' : 'bg-divider';
 					} else {
-						$ficon_classes[] = ($cms_feature['available'] == 'yes' ) ? 'text-heading-regular' : 'text-divider';
+						$ficon_classes[] = ($cms_feature['available'] == 'yes' ) ? 'bg-bg-light' : 'bg-divider';
 					}
 					// Title
 					$ftitle_key = $this->get_repeater_setting_key( 'ftitle', 'cms_list', $fkey );
 					if($pricing['featured'] == 'yes'){
-						$ftitle_key_class = ($cms_feature['available'] == 'yes' ) ? 'text-on-dark' : 'text-divider-light';
+						$ftitle_key_class = ($cms_feature['available'] == 'yes' ) ? 'text-sub-text' : 'text-stroke-dark';
 					} else {
-						$ftitle_key_class = ($cms_feature['available'] == 'yes' ) ? 'text-sub-text' : 'text-divider';
+						$ftitle_key_class = ($cms_feature['available'] == 'yes' ) ? 'text-sub-text' : 'text-stroke-dark';
 					}
 					$this->add_render_attribute($ftitle_key, [
 						'class' => [
@@ -221,8 +262,8 @@ $sale_off = $this->get_setting('sale_off', 30);
 			        <div <?php ctc_print_html($this->get_render_attribute_string($fitem_key)); ?>>
 			            <?php 
 			            	genzia_svgs_icon([
-								'icon'      => 'core/check',
-								'icon_size' => 12,
+								'icon'      => 'dot',
+								'icon_size' => 6,
 								'class'     => genzia_nice_class(array_filter($ficon_classes))
 			            	]);
 			            ?>
@@ -230,47 +271,6 @@ $sale_off = $this->get_setting('sale_off', 30);
 			        </div>
 				<?php endforeach;
 			?></div>
-			<?php if(!empty($pricing['price'])) { ?>
-				<div class="cms-pricing-price d-flex gap-5 align-items-end empty-none pt-40">
-					<h3 <?php ctc_print_html($this->get_render_attribute_string($item_pricing_price_key )); ?> data-current-value="<?php echo esc_attr($settings['currency'].$pricing['price']); ?>" data-switch-value="<?php echo esc_attr($price_yearly); ?>">
-						<span class="current cms-switch"><?php ctc_print_html($settings['currency'].$pricing['price']); ?></span>	
-						<span class="cms-price-sale sale cms-switch d-none"><?php ctc_print_html($price_yearly); ?></span>	
-					</h3>
-					<span <?php ctc_print_html($this->get_render_attribute_string($item_pricing_price_pack_key)); ?>><?php ctc_print_html($settings['price_pack']); ?></span>
-					<span <?php ctc_print_html($this->get_render_attribute_string($item_pricing_price_pack_sale_key )); ?>><?php ctc_print_html($settings['price_pack']); ?></span>
-				</div>
-			<?php } ?>
-			<?php 
-				genzia_elementor_link_render($widget, $pricing, [
-					'name' 		=> 'link1_',
-					'loop' 		=> true,
-					'loop_key'  => $key,
-					'mode'		=> 'btn',
-					'text_icon' => genzia_svgs_icon([
-						'icon'      => 'arrow-right',
-						'icon_size' => 10,
-						'echo'      => false
-					]),
-					'class' => [
-						'justify-content-between',
-						'cms-hover-move-icon-right',
-						'elementor-invisible',
-						'w-100',
-						'mt-25'
-					],
-					'btn_color'        => ($pricing['featured'] == 'yes') ? $this->get_setting('btn_featured_color','white') : $this->get_setting('btn_color','menu'),
-					'text_color'       => ($pricing['featured'] == 'yes') ? $this->get_setting('btn_featured_text_color','menu') :  $this->get_setting('btn_text_color','white'),
-					'btn_color_hover'  => ($pricing['featured'] == 'yes') ? $this->get_setting('btn_featured_color_hover','menu') : $this->get_setting('btn_color_hover','accent-regular'),
-					'text_color_hover' => ($pricing['featured'] == 'yes') ? $this->get_setting('btn_featured_text_color_hover','white') :  $this->get_setting('btn_text_color_hover','white'),
-					'attrs'			   => [
-						'data-settings' => wp_json_encode([
-							'animation'       => 'fadeInUp',
-							'animation_delay' => 200
-						])
-					],
-					'after_text'      => ''
-				]);
-			?>
 		</div>
 	</div>
 	<?php } ?>

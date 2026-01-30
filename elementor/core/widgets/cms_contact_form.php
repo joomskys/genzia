@@ -78,6 +78,10 @@ class Widget_Contact_Form extends Widget_Base
                             'title' => esc_html__('Layout 1', 'genzia'),
                             'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_contact_form/layout/1.webp'
                         ],
+                        '2' => [
+                            'title' => esc_html__('Layout 2', 'genzia'),
+                            'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_contact_form/layout/2.webp'
+                        ],
                         '-popup' => [
                             'title' => esc_html__('Popup', 'genzia'),
                             'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_contact_form/layout/popup.webp'
@@ -105,7 +109,7 @@ class Widget_Contact_Form extends Widget_Base
                     'label_block' => true,
                     'separator'   => 'before',
                     'condition'   => [
-                        'layout' => ['-popup','-popup-black']
+                        'layout' => ['-popup']
                     ]
                 ]
             );
@@ -113,7 +117,7 @@ class Widget_Contact_Form extends Widget_Base
                 'name'      => 'ctf7_popup_title_color',
                 'label'     => esc_html__('Pupup Title Color', 'genzia'),
                 'condition' => [
-                    'layout' => ['-popup','-popup-black']
+                    'layout' => ['-popup']
                 ],
                 'selectors' => [
                     '{{WRAPPER}} .cms-popup-text' => '--cms-text-custom:{{VALUE}};'
@@ -123,7 +127,7 @@ class Widget_Contact_Form extends Widget_Base
                 'name'      => 'ctf7_popup_title_color_hover',
                 'label'     => esc_html__('Pupup Title Color Hover', 'genzia'),
                 'condition' => [
-                    'layout' => ['-popup','-popup-black']
+                    'layout' => ['-popup']
                 ],
                 'selectors' => [
                     '{{WRAPPER}} .cms-popup-text' => '--cms-text-hover-custom:{{VALUE}};'
@@ -140,7 +144,7 @@ class Widget_Contact_Form extends Widget_Base
                         '-black' => esc_html__('Black', 'genzia')
                     ],
                     'condition' => [
-                        'layout' => ['-popup','-popup-black']
+                        'layout' => ['-popup']
                     ]
                 ]
             );

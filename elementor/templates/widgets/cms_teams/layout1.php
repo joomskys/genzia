@@ -185,6 +185,7 @@ $this->add_render_attribute('heading-wrap',[
         'pb-120 pb-tablet-40'
     ]
 ]);
+if(!empty($settings['smallheading_text']) || !empty($settings['heading_text'])){
 ?>
 <div <?php ctc_print_html( $this->get_render_attribute_string( 'heading-wrap' ) ); ?>>
     <div class="col-5 col-tablet-4 col-mobile-12">
@@ -201,7 +202,9 @@ $this->add_render_attribute('heading-wrap',[
         ?></h2>
     </div>
 </div>
-<?php switch ($settings['layout_mode']) {
+<?php 
+}
+switch ($settings['layout_mode']) {
     case 'grid':
 ?>
     <div <?php ctc_print_html($this->get_render_attribute_string('grid-wrap')) ?>>

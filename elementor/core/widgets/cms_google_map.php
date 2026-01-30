@@ -67,7 +67,8 @@ class Widget_Google_Map extends Widget_Base
                             'title' => esc_html__('Layout 3', 'genzia'),
                             'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_google_map/layout/3.webp'
                         ]
-                    ]
+                    ],
+                    'label_block' => true
                 ]
             );
         $this->end_controls_section();

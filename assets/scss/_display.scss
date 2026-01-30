@@ -41,7 +41,7 @@
 }
 $cms_custom_gap:(
 	0, 2, 4, 5, 6, 8, 10, 12, 15, 16, 20, 24, 30, 40,
-	6, 32
+	6, 32, 64
 );
 @each $gap in $cms_custom_gap{
 	.gap-#{$gap}{
@@ -77,7 +77,7 @@ $cms_gap_y_tablet_extra:();
 }
 $cms_gutter:(
 	32, // $gutters
-	4, 10, 20, 24, 30, 40
+	4, 10, 16, 20, 24, 30, 40
 );
 @each $gutter in $cms_gutter{
 	.gutter-#{$gutter}{
@@ -619,6 +619,9 @@ $cms_gutterY_tablet_extra:();
 	}
 	.gap-tablet-20{
 		gap: 20px;
+	}
+	.gap-tablet-32{
+		gap: 32px;
 	}
 	// Justify content
 	.justify-content-tablet-start{

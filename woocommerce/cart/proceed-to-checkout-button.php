@@ -22,11 +22,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<a href="<?php echo esc_url( wc_get_checkout_url() ); ?>" class="checkout-button cms-btn btn-accent-regular text-white btn-hover-primary-regular text-hover-white cms-hover-move-icon-right wc-forward<?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?>">
+<a href="<?php echo esc_url( wc_get_checkout_url() ); ?>" class="checkout-button cms-btn btn-menu text-white btn-hover-accent-regular text-hover-white cms-hover-move-icon-right wc-forward<?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?>">
 	<?php esc_html_e( 'Proceed to checkout', 'genzia' ); 
 		genzia_svgs_icon([
 			'icon'      => 'arrow-right',
-			'icon_size' => 10
+			'icon_size' => 10,
+			'class'     => 'cms-box-48 cms-radius-6 bg-white text-menu'
 		]);
 	?>
 </a>

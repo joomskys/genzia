@@ -29,8 +29,8 @@
 .cms-hover-change:hover{
 	@each $color in $cms_theme_colors{
 		// Background
-		.bg-on-hover-#{$color},
-		>.bg-on--hover-#{$color}{
+		.bg-on-hover-#{$color}:not(:hover),
+		>.bg-on--hover-#{$color}:not(:hover){
 			background-color: #{'var(--cms-#{$color})'};
 		}
 		// Text
@@ -84,12 +84,12 @@ $cms_theme_custom_colors:(
 	}
 }
 // Custom 
-.bg-hover-gradient-1{
+/*.bg-hover-gradient-1{
 	&:hover,
 	&.active{
 		background: linear-gradient(180deg, var(--cms-bg-light) 0%, #FFFFFF 87.84%);
 	}
-}
+}*/
 //
 .text-custom{
 	color: var(--cms-text-custom);

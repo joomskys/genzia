@@ -105,9 +105,9 @@ $this->add_render_attribute('fdesc',[
 						'd-flex gap-24 align-items-center',
 						'cms-hover-change',
 						'text-'.$this->get_setting('title_color','menu'),
-						'text-hover-'.$this->get_setting('title_active_color','accent-regular'),
-						'text-on-hover-'.$this->get_setting('title_active_color','accent-regular'),
-						'text-active-'.$this->get_setting('title_active_color','accent-regular'),
+						'text-hover-'.$this->get_setting('title_active_color','heading-regular'),
+						'text-on-hover-'.$this->get_setting('title_active_color','heading-regular'),
+						'text-active-'.$this->get_setting('title_active_color','heading-regular'),
 						'lh-1',
 						'plus-minus'
 					],

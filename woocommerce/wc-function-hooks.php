@@ -55,8 +55,8 @@ function genzia_custom_woocommerce_args(){
 if(genzia_get_opt('shop_thumbnail_custom', 'off') == 'on'){   
     // Loop Products thumbnail 
     add_filter('woocommerce_get_image_size_thumbnail', function($size){
-        $size['width']  = 600;
-        $size['height'] = 600;
+        $size['width']  = 560;
+        $size['height'] = 640;
         $size['crop']   = ['center','center'];
         return $size;
     });
@@ -69,8 +69,8 @@ if(genzia_get_opt('shop_thumbnail_custom', 'off') == 'on'){
     } );
     // Gallery Image Thumb Sizes - Loop
     add_filter( 'woocommerce_get_image_size_gallery_thumbnail', function ( $size ) {
-        $size['width']  = 100;
-        $size['height'] = 100;
+        $size['width']  = 80;
+        $size['height'] = 80;
         $size['crop']   = ['center','center'];
         return $size;
     } );
@@ -206,7 +206,7 @@ if ( ! function_exists( 'woocommerce_template_loop_product_thumbnail' ) ) {
     function woocommerce_template_loop_product_thumbnail() {
         // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
     ?>
-        <div class="cms-products-loop-thumbs relative overflow-hidden swiper-nav-vert bg-bg-light mb-15"><?php
+        <div class="cms-products-loop-thumbs relative overflow-hidden swiper-nav-vert bg-bg-light mb-15 cms-radius-16"><?php
             do_action('genzia_woocommerce_before_loop_thumbnail');
                 echo woocommerce_get_product_thumbnail('woocommerce_thumbnail', ['class' => 'cms-hover-hide zoom-in']);
                 genzia_woocommerce_get_product_thumbnail_second();
@@ -250,12 +250,13 @@ function genzia_woocommerce_loop_add_to_cart_args($args, $product){
             array(
                 'cms-btn-addtocart',
                 'cms-btn',
-                'btn-menu text-white btn-hover-accent-regular text-hover-white cms-hover-move-icon-right',
-                'w-100',
+                'btn-white text-menu btn-hover-accent-regular text-hover-white cms-hover-move-icon-right',
+                'w-100 justify-content-between',
                 'cms-hover-show move-up',
                 'product_type_' . $product->get_type(),
                 $product->is_purchasable() && $product->is_in_stock() ? 'add_to_cart_button' : '',
-                $product->supports( 'ajax_add_to_cart' ) && $product->is_purchasable() && $product->is_in_stock() ? 'ajax_add_to_cart' : ''
+                $product->supports( 'ajax_add_to_cart' ) && $product->is_purchasable() && $product->is_in_stock() ? 'ajax_add_to_cart' : '',
+                'cms-hover-change'
             )
         )
     );
@@ -265,8 +266,20 @@ function genzia_woocommerce_loop_add_to_cart_args($args, $product){
 add_filter('woocommerce_loop_add_to_cart_link', 'genzia_woocommerce_loop_add_to_cart_link', 10, 3);
 if(!function_exists('genzia_woocommerce_loop_add_to_cart_link')){
     function genzia_woocommerce_loop_add_to_cart_link($button, $product, $args){
-        $add_to_cart_icon = genzia_svgs_icon(['icon' => 'arrow-right','icon_size' => 10, 'class' => 'cms-icon hide-on-loading', 'echo' => false]);
-        $add_to_cart_loading_icon = genzia_svgs_icon(['icon' => 'core/spinner','icon_size' => 15, 'class' => 'cms-spin show-on-loading loading', 'echo' => false]);
+        $add_to_cart_icon = genzia_svgs_icon([
+            'icon'      => 'arrow-right',
+            'icon_size' => 10,
+            'class'     => 'cms-icon hide-on-loading cms-box-48 cms-radius-6 bg-accent-regular text-white bg-on--hover-white text-on--hover-menu bg-hover-white text-hover-menu',
+            'echo'      => false
+        ]);
+        $add_to_cart_loading_icon = genzia_svgs_icon([
+            'icon'      => 'core/spinner',
+            'icon_size' => 15,
+            'class'     => 'show-on-loading loading cms-box-48 cms-radius-6 bg-accent-regular text-white bg-on--hover-white text-on--hover-menu bg-hover-white text-hover-menu',
+            'echo'      => false,
+            'before_icon' => '<span class="cms-spin">',
+            'after_icon'  => '</span>'
+        ]);
         return sprintf(
             '<div class="cms-loop-addtocart absolute bottom left right m-32"><a href="%1$s" data-quantity="%2$s" class="%3$s" %4$s>%5$s%6$s</a>%7$s</div>',
             esc_url( $product->add_to_cart_url() ),
@@ -280,12 +293,13 @@ if(!function_exists('genzia_woocommerce_loop_add_to_cart_link')){
             genzia_woocommerce_template_loop_added_to_cart([
                 'class' => genzia_nice_class([
                     'cms-btn',
-                    'btn-menu text-white btn-hover-accent-regular text-hover-white',
+                    'btn-white text-menu btn-hover-accent-regular text-hover-white',
                     'cms-hover-move-icon-right',
-                    'w-100',
-                    'cms-hover-show move-up'
+                    'w-100 justify-content-between',
+                    'cms-hover-show move-up',
+                    'cms-hover-change'
                 ]),
-                'icon_class' => ''
+                'icon_class' => 'cms-box-48 cms-radius-6 bg-accent-regular text-white bg-on--hover-white text-on--hover-menu bg-hover-white text-hover-menu'
             ])
         );
     }
@@ -314,11 +328,11 @@ if(!function_exists('genzia_woocommerce_template_loop_added_to_cart')){
             switch ($args['layout']) {
               case 'text':
                 echo esc_html__('View Cart','genzia');
-                genzia_svgs_icon(['icon' => 'arrow-right','icon_size' => 11, 'class' => $args['icon_class'], 'echo' => true]);
+                genzia_svgs_icon(['icon' => 'arrow-right','icon_size' => 10, 'class' => $args['icon_class'], 'echo' => true]);
                 break;
               default :
                 // icon
-                genzia_svgs_icon(['icon' => 'arrow-right','icon_size' => 11, 'class' => $args['icon_class'], 'echo' => true]);
+                genzia_svgs_icon(['icon' => 'arrow-right','icon_size' => 10, 'class' => $args['icon_class'], 'echo' => true]);
                 echo '<span class="screen-reader-text">'.esc_html__('View Cart','genzia').'</span>';
                 break;
             }
@@ -337,11 +351,11 @@ if(!function_exists('genzia_woocommerce_template_loop_added_to_cart')){
 remove_action('woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10);
 if(!function_exists('woocommerce_template_loop_product_title')){
     function woocommerce_template_loop_product_title(){ ?>
-    <div class="cms-product-loop-bottom">
+    <div class="cms-product-loop-bottom text-center">
         <a href="<?php echo esc_url(get_the_permalink());?>" class="cms-product-loop-title cms-heading text-xl text-menu text-hover-accent-regular"><?php 
             echo get_the_title();
         ?></a>
-        <div class="text-md text-accent-regular pt-7"><?php 
+        <div class="cms-product-loop-price text-lg text-accent-regular pt-8 d-flex justify-content-center"><?php 
             woocommerce_template_loop_price();
         ?></div>
     </div>
@@ -436,11 +450,11 @@ function genzia_social_share_product(){
     if($product_share === 'off') return;
     $product_share_class = [
         'text-white text-hover-white',
-        'cms-box-48 cms-radius-2',
+        'cms-box-44 cms-radius-6',
         'bg-primary-regular bg-hover-accent-regular'
     ];
     ?>
-    <div class="cms-product-share d-flex align-items-center gap-6 pt-32 mt-25 bdr-t-1 bdr-divider">
+    <div class="cms-product-share d-flex align-items-center gap-8 pt-32 mt-25 bdr-t-1 bdr-divider">
         <?php // Facebook ?>
         <a class="fb-social <?php echo genzia_nice_class($product_share_class); ?>" title="<?php echo esc_attr__('Facebook', 'genzia'); ?>" target="_blank"
            href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>">
@@ -551,23 +565,23 @@ if(!function_exists('genzia_wc_add_to_cart_message_html')){
         $added_text = sprintf( _n( '%s has been added to your cart.', '%s have been added to your cart.', $count, 'genzia' ), wc_format_list_of_items( $titles ) );
 
         // Output success messages.
-        $wp_button_class = 'cms-single-viewcart cms-btn btn-md btn-primary-regular text-white btn-hover-accent-regular text-hover-white order-last cms-hover-move-icon-right';
+        $wp_button_class = 'cms-single-viewcart cms-btn btn-md btn-menu text-white btn-hover-accent-regular text-hover-white order-last cms-hover-move-icon-right';
         //
         if ( 'yes' === get_option( 'woocommerce_cart_redirect_after_add' ) ) {
-            $message   = sprintf( '%s <a href="%s" tabindex="1" class="%s" style="--cms-btn-padding:0 24px;">%s%s</a>', 
+            $message   = sprintf( '%s <a href="%s" tabindex="1" class="%s" style="--cms-btn-padding:0 6px 0 24px;">%s%s</a>', 
                 esc_html( $added_text ),
                 esc_url( $return_to ), 
                 esc_attr( $wp_button_class ), 
                 esc_html__( 'Continue shopping', 'genzia' ),
-                genzia_svgs_icon(['icon' => 'arrow-right','icon_size' => 10, 'echo' => false])
+                genzia_svgs_icon(['icon' => 'arrow-right','icon_size' => 10, 'class' => 'cms-box-38 cms-radius-6 bg-white text-menu', 'echo' => false])
             );
         } else {
-            $message = sprintf( '%s <a href="%s" tabindex="1" class="%s" style="--cms-btn-padding:0 24px;">%s%s</a>', 
+            $message = sprintf( '%s <a href="%s" tabindex="1" class="%s" style="--cms-btn-padding:0 6px 0 24px;">%s%s</a>', 
                 esc_html( $added_text ),
                 esc_url( wc_get_cart_url() ), 
                 esc_attr( $wp_button_class ),
                 esc_html__( 'View cart', 'genzia' ), 
-                genzia_svgs_icon(['icon' => 'arrow-right','icon_size' => 10, 'echo' => false])
+                genzia_svgs_icon(['icon' => 'arrow-right','icon_size' => 10, 'class' => 'cms-box-38 cms-radius-6 bg-white text-menu', 'echo' => false])
             );
         }
         return $message;
@@ -656,7 +670,7 @@ if ( ! function_exists( 'woocommerce_widget_shopping_cart_proceed_to_checkout' )
      */
     function woocommerce_widget_shopping_cart_proceed_to_checkout() {
         //wc_get_checkout_url()
-        echo '<a href="' . esc_url( wc_get_cart_url() ) . '" class="btn-checkout cms-btn btn-accent-regular text-white btn-hover-primary-regular text-hover-white  cms-hover-change w-100 cms-hover-move-icon-right">'.esc_html__( 'Proceed To Checkout', 'genzia' ).genzia_svgs_icon(['icon' => 'arrow-right','icon_size' => 10, 'echo' => false]).'</a>';
+        echo '<a href="' . esc_url( wc_get_cart_url() ) . '" class="btn-checkout cms-btn btn-menu text-white btn-hover-accent-regular text-hover-white  cms-hover-change w-100 cms-hover-move-icon-right">'.esc_html__( 'Proceed To Checkout', 'genzia' ).genzia_svgs_icon(['icon' => 'arrow-right','icon_size' => 10, 'class' => 'cms-box-48 cms-radius-6 bg-white text-menu', 'echo' => false]).'</a>';
     }
 }
 /**
@@ -671,7 +685,7 @@ if ( ! function_exists( 'woocommerce_widget_shopping_cart_subtotal' ) ) {
      */
     function woocommerce_widget_shopping_cart_subtotal() {
     ?>
-        <div class="cms-mini-cart-subtotal d-flex gap-15 text-lg text-sub-text bdr-t-1 bdr-divider pt-25 mt-32">
+        <div class="cms-mini-cart-subtotal d-flex gap-15 text-lg text-sub-text font-500 bdr-t-1 bdr-divider pt-25 mt-32">
             <div class="title"><?php echo esc_html__( 'Total:', 'genzia' ) ?></div>
             <div class="total"><?php echo WC()->cart->get_cart_subtotal(); ?></div>
         </div>

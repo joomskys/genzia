@@ -133,6 +133,18 @@ class Widget_Pricing extends Widget_Base
                 'color' => false
             ]);
             // Features
+            $this->add_control(
+                'feature_title',
+                [
+                    'label'       => esc_html__('Feature Title', 'genzia'),
+                    'type'        => Controls_Manager::TEXTAREA,
+                    'default'     => 'Feature Title',
+                    'placeholder' => esc_html__('Enter your feature title', 'genzia'),
+                    'rows'        => 5,
+                    'show_label'  => true,
+                    'separator'   => 'before'
+                ]
+            );
             $pricings->add_control(
                 'features',
                 [

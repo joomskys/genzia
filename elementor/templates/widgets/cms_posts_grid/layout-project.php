@@ -1,8 +1,7 @@
 <?php
-
 $post_type   = $this->get_setting('post_type', 'post');
 $tax         = array();
-$taxonomy_by = genzia_taxonomy_by_post_type($post_type, $this->get_setting('taxonomy_by', 'category'));
+$taxonomy_by = $this->get_setting('taxonomy_by', 'category');
 $source      = $this->get_setting('source_'.$post_type);
 $orderby     = $this->get_setting('orderby', 'date');
 $order       = $this->get_setting('order', 'desc');

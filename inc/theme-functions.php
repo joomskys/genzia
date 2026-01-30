@@ -1285,7 +1285,7 @@ function genzia_elementor_post_layouts($unset = [], $extra = []){
             'title' => esc_html__( 'Layout 5', 'genzia' ),
             'image' => get_template_directory_uri() . '/elementor/templates/layout/5.webp'
         ],
-        '6' => [
+        /*'6' => [
             'title' => esc_html__( 'Layout 6', 'genzia' ),
             'image' => get_template_directory_uri() . '/elementor/templates/layout/6.webp'
         ],
@@ -1300,7 +1300,7 @@ function genzia_elementor_post_layouts($unset = [], $extra = []){
         '9' => [
             'title' => esc_html__( 'Layout 9', 'genzia' ),
             'image' => get_template_directory_uri() . '/elementor/templates/layout/9.webp'
-        ]
+        ]*/
     ];
     //
     foreach ($unset as $key => $value) {
@@ -1328,15 +1328,255 @@ if(!function_exists('genzia_get_post_grid')){
         ];
         // Item Attributes
         $items_attrs=[
-            'class'       => genzia_nice_class($items_classes)
+            'class' => genzia_nice_class($items_classes)
         ];
         // Render HTML
         foreach ($posts as $key => $post):
             $count ++;
+            $small_item = $medium_item = $large_item = false;
+            if($layout=='-masonry'){
+                // Items
+                $items_attrs['class'] .= ' '.genzia_nice_class(array_filter([
+                    'cms-item',
+                    (in_array($count, [1, 5, 7, 11]))? 'col-7' : '',
+                    (in_array($count, [2, 4, 8, 10]))? 'col-5' : '',
+                    (in_array($count, [3, 6, 9]))? 'col-8 m-lr-auto' : '',
+                    'col-mobile-12'
+                ]));
+            }
             ?>
             <div <?php echo genzia_render_attrs($items_attrs); ?> data-settings=<?php printf('%s', $posts_data['data-settings']); ?>>
                 <?php
                 switch ($layout) {
+                    case '-project-sticky':
+                    // Project Sticky
+                    $project_sticky_tax = [
+                        'class' => [
+                            'category text-xs d-flex gap-4 w-100',
+                            'elementor-invisible'
+                        ],
+                        'data-settings' => wp_json_encode([
+                            'animation' => 'fadeInUp',
+                            'animation_delay' => 200
+                        ])
+                    ];
+                    $project_sticky_title = [
+                        'class' => [
+                            'h2 text-line-3 text-white text-hover-white cms-hover-underline d-inline',
+                            'elementor-invisible'
+                        ],
+                        'href'          => get_permalink( $post->ID ),
+                        'data-settings' => wp_json_encode([
+                            'animation' => 'fadeInUp',
+                            'animation_delay' => 200
+                        ])
+                    ];
+                    $project_sticky_excerpt = [
+                        'class' => [
+                            'cms-excerpt text-lg',
+                            'text-line-'.$posts_data['num_line'],
+                            'text-on-dark pt-8',
+                            'elementor-invisible'
+                        ],
+                        'href'          => get_permalink( $post->ID ),
+                        'data-settings' => wp_json_encode([
+                            'animation' => 'fadeInUp',
+                            'animation_delay' => 200
+                        ])
+                    ];
+                ?>
+                    <div class="cms--item relative cms-radius-16 overflow-hidden cms-shadow-2 mt-80">
+                        <?php
+                            // Post Image
+                            genzia_elementor_post_thumbnail_render($settings, [
+                                'post_id'     => $post->ID,
+                                //'size'        => $this->get_setting('thumbnail_size'), 
+                                'custom_size' => $posts_data['thumbnail_custom_dimension'],
+                                'img_class'   => 'img-cover cms-radius-16', 
+                                'max_height'  => true,
+                                'before'      => '',
+                                'after'       => ''
+                            ]);          
+                        ?>
+                        <div class="cms--item cms-overlay d-flex flex-column gap-20 justify-content-between p-48 p-smobile-20">
+                            <div <?php ctc_print_html(genzia_render_attrs($project_sticky_tax)); ?>><?php 
+                                // Taxonomy
+                                genzia_the_terms($post->ID, $posts_data['taxonomy'], '', 'bg-white text-menu bg-hover-accent-regular text-hover-white cms-radius-4 p-tb-5 p-lr-10', ['before' => '', 'after' => '']);
+                            ?></div>
+                            <div class="w-100 align-self-end">
+                                <a <?php ctc_print_html(genzia_render_attrs($project_sticky_title)); ?>><?php 
+                                    echo get_the_title($post->ID); 
+                                ?></a>
+                                <div <?php ctc_print_html(genzia_render_attrs($project_sticky_excerpt)); ?>><?php 
+                                    echo wp_kses_post($post->post_excerpt);
+                                ?></div>
+                            </div>
+                        </div>
+                    </div>
+                <?php
+                    break;
+                    case '-masonry':
+                        if(in_array($count, [1, 5])){
+                            $medium_item = true;
+                        }
+                        // Items Inner
+                        $item_inner_key = [
+                            'class' => array_filter([
+                                'cms--item',
+                                'm-lr-tablet-0',
+                                (in_array($count, [1, 7, 10]))? 'mr-70' : '',
+                                (in_array($count, [5, 8, 11]))? 'ml-70' : '',
+                                //
+                                (in_array($count, [2]))? 'ml-70' : '',
+                                (in_array($count, [4]))? 'mr-70' : '',
+                                'cms-parallax-tablet-no',
+                                'relative',
+                                'cms-hover-change'
+                            ]),
+                            'data-parallax' => wp_json_encode([
+                                'scale'   => "1.2",
+                                'opacity' => "1"
+                            ])
+                        ];
+                    ?>
+                        <div <?php ctc_print_html(genzia_render_attrs( $item_inner_key )); ?>>
+                            <?php
+                                // Post Image
+                                ob_start();
+                            ?>
+                                <a href="<?php echo esc_url(get_permalink( $post->ID )); ?>" class="cms-box-123 circle bg-accent-regular text-white bg-hover-primary-regular text-hover-white text-xs font-700 p-20 text-center absolute center z-top cms-hidden-min-tablet-extra"><?php 
+                                    ctc_print_html($readmore_text); 
+                                ?></a>
+                            <?php
+                                $readmore = ob_get_clean();
+                                genzia_elementor_post_thumbnail_render($settings, [
+                                    'post_id'     => $post->ID,
+                                    'custom_size' => ['width' => 800, 'height' => 560],
+                                    'img_class'   => 'cms-radius-16', 
+                                    'max_height'  => true,
+                                    'before'      => '<div class="relative mb-33">',
+                                    'after'       => $readmore.'</div>'
+                                ]);
+                            ?>
+                            <h6><?php echo get_the_title($post->ID);?></h6>
+                            <div class="cms-excerpt text-md text-line-1 pt-5 mb-n5"><?php 
+                                echo wp_kses_post($post->post_excerpt);
+                            ?></div>
+                            <?php
+                            // Taxonomy
+                            genzia_the_terms($post->ID, $posts_data['taxonomy'], '', 'bg-white text-menu bdr-1 bdr-divider text-hover-white bg-hover-accent-regular bdr-hover-accent-regular cms-radius-4 p-lr-10 p-tb-5', ['before' => '<div class="d-flex gap-4 text-xs pt-30">', 'after' => '</div>']);
+                            ?>
+                            <a href="<?php echo esc_url(get_permalink( $post->ID )); ?>" class="cms-overlay cms-hidden-mobile cms-cursor cms-cursor-text" data-cursor-text="<?php echo esc_attr($readmore_text); ?>" data-cursor-class="bg-accent-regular text-white">
+                                <span class="screen-reader-text"><?php ctc_print_html($readmore_text); ?></span>
+                            </a>
+                        </div>
+                    <?php
+                    break;
+                    case '5':
+                    // Project Sticky
+                    $project_sticky_tax = [
+                        'class' => [
+                            'category text-xs d-flex gap-4 align-items-start w-100',
+                            'elementor-invisible'
+                        ],
+                        'data-settings' => wp_json_encode([
+                            'animation' => 'fadeInUp',
+                            'animation_delay' => 200
+                        ])
+                    ];
+                    $project_sticky_title = [
+                        'class' => [
+                            'h2 text-line-3 text-white text-hover-white cms-hover-underline d-inline',
+                            'elementor-invisible'
+                        ],
+                        'href'          => get_permalink( $post->ID ),
+                        'data-settings' => wp_json_encode([
+                            'animation' => 'fadeInUp',
+                            'animation_delay' => 200
+                        ])
+                    ];
+                    $project_sticky_excerpt = [
+                        'class' => [
+                            'cms-excerpt text-lg',
+                            'text-line-'.$posts_data['num_line'],
+                            'text-on-dark pt-8',
+                            'elementor-invisible'
+                        ],
+                        'href'          => get_permalink( $post->ID ),
+                        'data-settings' => wp_json_encode([
+                            'animation' => 'fadeInUp',
+                            'animation_delay' => 200
+                        ])
+                    ];
+                ?>
+                    <div class="cms--item relative cms-radius-16 overflow-hidden">
+                        <?php
+                            // Post Image
+                            genzia_elementor_post_thumbnail_render($settings, [
+                                'post_id'     => $post->ID,
+                                //'size'        => $this->get_setting('thumbnail_size'), 
+                                'custom_size' => $posts_data['thumbnail_custom_dimension'],
+                                'img_class'   => 'img-cover cms-radius-16', 
+                                'max_height'  => true,
+                                'before'      => '',
+                                'after'       => ''
+                            ]);          
+                        ?>
+                        <div class="cms---item cms-overlay d-flex gap-20 justify-content-between p-48 p-smobile-20">
+                            <div <?php ctc_print_html(genzia_render_attrs($project_sticky_tax)); ?>><?php 
+                                // Taxonomy
+                                genzia_the_terms($post->ID, $posts_data['taxonomy'], '', 'bg-white text-menu bg-hover-accent-regular text-hover-white cms-radius-4 p-tb-5 p-lr-10', ['before' => '', 'after' => '']);
+                            ?></div>
+                            <div class="w-100 align-self-end">
+                                <a <?php ctc_print_html(genzia_render_attrs($project_sticky_title)); ?>><?php 
+                                    echo get_the_title($post->ID); 
+                                ?></a>
+                                <div <?php ctc_print_html(genzia_render_attrs($project_sticky_excerpt)); ?>><?php 
+                                    echo wp_kses_post($post->post_excerpt);
+                                ?></div>
+                            </div>
+                        </div>
+                    </div>
+                <?php
+                    break;
+                    case '4-small':
+                    ob_start();
+                    // Readmore
+                ?>
+                    <a class="cms-overlay cms-cursor cms-cursor-text" data-cursor-text="<?php echo esc_attr($readmore_text); ?>" data-cursor-class="bg-menu text-white" href="<?php echo esc_url(get_permalink( $post->ID )); ?>"><span class="screen-reader-text"><?php ctc_print_html($readmore_text); ?></span></a>
+                <?php
+                    $thumb_content = ob_get_clean();                
+                ?>
+                <div class="cms--item hover-image-zoom-out relative cms-transition cms-hover-change">
+                    <?php
+                        // Post Image
+                        genzia_elementor_post_thumbnail_render($settings, [
+                            'post_id'     => $post->ID,
+                            'custom_size' => $posts_data['thumbnail_custom_dimension'],
+                            'img_class'   => 'img-cover swiper-nav-vert', 
+                            'max_height'  => true,
+                            'before'      => '<div class="overflow-hidden relative cms-radius-16" style="max-height:'.$posts_data['thumbnail_custom_dimension']['height'].'px;">',
+                            'after'       => $thumb_content.'</div>'
+                        ]);
+                    ?>
+                    <div class="cms---item pt-40 relative z-top">
+                        <a class="h6 mt-nh6 text-line-3 text-heading-regular text-hover-accent-regular" href="<?php echo esc_url(get_permalink( $post->ID )); ?>"><?php 
+                            echo get_the_title($post->ID); 
+                        ?></a>
+                        <div class="cms-excerpt text-md text-line-<?php echo esc_attr($posts_data['num_line']);?> pt-3 mb-nmd"><?php 
+                            echo wp_kses_post($post->post_excerpt);
+                        ?></div>
+                        <?php 
+                        // Taxonomy
+                        genzia_the_terms($post->ID, $posts_data['taxonomy'], '', 'bg-white text-menu bg-hover-accent-regular text-hover-white bdr-1 bdr-divider bdr-hover-accent-regular p-tb-5 p-lr-10 cms-radius-4', [
+                                'before' => '<div class="cms-tax d-flex gap-4 text-sm pt-25 empty-none">', 
+                                'after'  => '</div>'
+                        ]);
+                        ?>
+                    </div>
+                </div>
+                <?php
+                    break;
                     case '4':
                     ob_start();
                     // Readmore
@@ -1410,6 +1650,42 @@ if(!function_exists('genzia_get_post_grid')){
                     <div class="cms-excerpt text-md text-line-<?php echo esc_attr($posts_data['num_line']);?> pt-18 pr-40 pr-smobile-0 mb-n5"><?php 
                         echo wp_kses_post($post->post_excerpt);
                     ?></div>
+                </div>
+                <?php
+                    break;
+                    case '2-small':
+                    ob_start();
+                    // Readmore
+                ?>
+                    <a class="cms-overlay cms-cursor cms-cursor-text" data-cursor-text="<?php echo esc_attr($readmore_text); ?>" data-cursor-class="bg-white text-menu" href="<?php echo esc_url(get_permalink( $post->ID )); ?>"><span class="screen-reader-text"><?php ctc_print_html($readmore_text); ?></span></a>
+                <?php
+                    // Taxonomy
+                    genzia_the_terms($post->ID, $posts_data['taxonomy'], '', 'bg-accent-regular text-white bg-hover-menu text-hover-white p-tb-5 p-lr-10 cms-radius-4', [
+                            'before' => '<div class="cms-tax absolute bottom right mr-10 mb-10 d-flex gap-4 text-sm z-top">', 
+                            'after'  => '</div>'
+                    ]);
+                    $thumb_content = ob_get_clean();                
+                ?>
+                <div class="cms--item hover-image-zoom-out relative bg-bg-light p-10 cms-radius-16 cms-transition cms-hover-change">
+                    <?php
+                        // Post Image
+                        genzia_elementor_post_thumbnail_render($settings, [
+                            'post_id'     => $post->ID,
+                            'custom_size' => $posts_data['thumbnail_custom_dimension'],
+                            'img_class'   => 'img-cover swiper-nav-vert', 
+                            'max_height'  => true,
+                            'before'      => '<div class="overflow-hidden relative cms-radius-10" style="max-height:'.$posts_data['thumbnail_custom_dimension']['height'].'px;">',
+                            'after'       => $thumb_content.'</div>'
+                        ]);
+                    ?>
+                    <div class="cms---item mt-10 p-22 p-lr-smobile-12 relative z-top">
+                        <a class="h6 mt-nh6 text-line-3 text-heading-regular text-hover-accent-regular" href="<?php echo esc_url(get_permalink( $post->ID )); ?>"><?php 
+                            echo get_the_title($post->ID); 
+                        ?></a>
+                        <div class="cms-excerpt text-md text-line-<?php echo esc_attr($posts_data['num_line']);?> pt-3 mb-nmd"><?php 
+                            echo wp_kses_post($post->post_excerpt);
+                        ?></div>
+                    </div>
                 </div>
                 <?php
                     break;
@@ -2201,10 +2477,7 @@ if (!function_exists('genzia_elementor_cpts')) {
                 'cms-mega-menu',
                 'portfolio',
                 // theme
-                'cms-career',
-                'cms-case',
                 'cms-service',
-                'cms-practice',
                 'cms-sidenav',
                 'cms-popup',
                 // WooCommerce

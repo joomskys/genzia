@@ -77,6 +77,10 @@ class Widget_Text_Scroll extends Widget_Base
                     '5' => [
                         'label' => esc_html__('Layout 5', 'genzia'),
                         'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_text_scroll/layout/3.webp'
+                    ],
+                    '6' => [
+                        'label' => esc_html__('Layout 6', 'genzia'),
+                        'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_text_scroll/layout/6.webp'
                     ]
                 ]
             ]

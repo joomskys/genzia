@@ -16,7 +16,7 @@ $this->add_render_attribute('wrap',[
 		'cms-gradient-render cms-gradient-'.$this->get_setting('bg_overlay', 1),
 		'text-'.$default_align,
 		'text-white',
-        'cms-bg-cover',
+        'cms-bg-parallax',
 		'cms-lazy'
 	],
 	'style' => [
@@ -32,7 +32,7 @@ $this->add_render_attribute('container',[
 	]
 ]);
 // Content
-$content_width = !empty($settings['content_width']['size']) ? $settings['content_width']['size'] : 584;
+$content_width = !empty($settings['content_width']['size']) ? $settings['content_width']['size'] : 696;
 $this->add_render_attribute('cms--content',[
 	'class' => [
 		'cms--content',
@@ -41,9 +41,9 @@ $this->add_render_attribute('cms--content',[
 	],
 	'style' => [
 		'--max-w:'.$content_width.'px;',
-		'--pt:calc(121px + var(--cms-wrap-header-height, 0px));',
+		'--pt:calc(137px + var(--cms-wrap-header-height, 0px));',
 		'--pt-tablet:calc(60px + var(--cms-wrap-header-height, 0px));',
-		'--pb:124px;--pb-tablet:53px;'
+		'--pb:82px;--pb-tablet:40px;'
 	]
 ]);
 // Small Title
@@ -97,7 +97,7 @@ $this->add_render_attribute('breadcrumb',[
 		'cms-eptitle-breadcrumbs',
 		'container',
 		'elementor-invisible',
-		'pb-32'
+		'pb-35'
 	],
 	'data-settings' => wp_json_encode([
 		'animation' => 'fadeInUp'
@@ -132,11 +132,23 @@ $this->add_render_attribute('buttons', [
 					'text_icon'        => genzia_svgs_icon([
 						'icon'      => 'arrow-right',
 						'icon_size' => 10,
-						'echo'      => false
+						'echo'      => false,
+						'class'     => genzia_nice_class([
+							'cms-eicon cms-heading-btn-icon',
+							'cms-box-48 cms-radius-6',
+							'order-first',
+							'bg-'.$this->get_setting('link1__icon_bg','accent-regular'),
+							'text-'.$this->get_setting('link1__icon_color','white'),
+							'bg-hover-'.$this->get_setting('link1__icon_bg_hover','white'),
+							'bg-on-hover-'.$this->get_setting('link1__icon_bg_hover','white'),
+							'text-hover-'.$this->get_setting('link1__icon_color_hover','menu'),
+							'text-on-hover-'.$this->get_setting('link1__icon_color_hover','menu')
+						])
 					]),
 					'class'            => [
 						'cms-hover-move-icon-right',
-						'elementor-invisible'
+						'elementor-invisible',
+						'cms-hover-change'
 					],
 					//'btn_prefix'       => 'btn-outline-',
 					//'btn_hover_prefix' => 'btn-hover-',

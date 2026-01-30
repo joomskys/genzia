@@ -1,174 +1,111 @@
 <?php
-$default_align = 'center';
-// Render Background Image
-if(!empty($settings['bg_image']['id'])){
-	$background_img = 'url('.$settings['bg_image']['url'].')';
-} elseif(get_the_post_thumbnail_url('', 'full')) {
-	$background_img = 'url('.get_the_post_thumbnail_url('', 'full').')';
-} else {
-	$background_img = 'var(--cms-ptitle-bg-image)';
-}
+$settings['bg_image']['id'] = !empty($settings['bg_image']['id']) ? $settings['bg_image']['id'] : get_post_thumbnail_id();
 // Wrap
 $this->add_render_attribute('wrap',[
 	'class' => [
 		'cms-eptitle',
-		'cms-eptitle-'.$settings['layout'],
-		'cms-gradient-render cms-gradient-'.$this->get_setting('bg_overlay', 1),
-		'text-'.$default_align,
-		'text-white',
-        'cms-bg-cover',
-		'cms-lazy',
-		'pt pb'
-	],
-	'style' => [
-		'--cms-bg-lazyload:'.$background_img.';background-image:var(--cms-bg-lazyload-loaded);',
-		'--pt:calc(100px + var(--cms-wrap-header-height, 0px));',
-		'--pt-tablet:calc(50px + var(--cms-wrap-header-height, 0px));',
-		'--pb:107px;--pb-tablet:53px;'
+		'cms-eptitle-'.$settings['layout']
 	]
 ]);
 // Container
 $this->add_render_attribute('container',[
 	'class' => [
-		'cms-content container',
+		'cms-content',
 		'relative z-top2',
-		'd-flex justify-content-'.$default_align
-	]
-]);
-// Content
-$content_width = !empty($settings['content_width']['size']) ? $settings['content_width']['size'] : 584;
-$this->add_render_attribute('cms--content',[
-	'class' => [
-		'cms--content',
-		'max-w'
-	],
-	'style' => [
-		'--max-w:'.$content_width.'px;'
+		'p-lr-48 p-lr-tablet-20'
 	]
 ]);
 // Title
 $this->add_inline_editing_attributes('title');
 $this->add_render_attribute( 'title', [
 	'class' => [
-		'cms-title',
 		'cms-nl2br lh-107',
-		'text-'.$this->get_setting('title_color','white'),
+		'cms-title',
+		'text-'.$this->get_setting('title_color','heading-regular'),
 		'empty-none',
-		'elementor-invisible'
+		'elementor-invisible',
+		'pt pb'
 	],
 	'data-settings' => wp_json_encode([
 		'animation'       => 'fadeInUp',
 		'animation_delay' => 300
 	]),
+	'style' => [
+		'--max-w:'.$content_width.'px;',
+		'--pt:calc(90px + var(--cms-wrap-header-height, 0px));',
+		'--pt-tablet:calc(40px + var(--cms-wrap-header-height, 0px));',
+		'--pb:97px;--pb-tablet:42px;'
+	]
 ]);
-// Description
-$this->add_inline_editing_attributes('desc');
-$this->add_render_attribute( 'desc', [
+// Features
+$features = $this->get_setting('features', []);
+$this->add_render_attribute('features', [
 	'class' => [
-		'cms-desc',
-		'cms-nl2br',
-		'text-lg',
-		'text-'.$this->get_setting('desc_color','on-dark'),
-		'empty-none',
-		'elementor-invisible',
-		'pt-10'
+		'cms-ptitle-features',
+		'd-flex gutter-40',
+		'flex-col-4 flex-col-mobile-2 flex-col-smobile-1',
+		'pb'
+	],
+	'style' => '--pb:112px;--pb-tablet:60px;'
+]);
+$this->add_render_attribute('fitem', [
+	'class' => [
+		'cms-ptitle-feature-item'
+	]
+]);
+$this->add_render_attribute('fitem-inner', [
+	'class' => [
+		'cms-ptitle-feature--item',
+		'p-tb-25 p-lr-32 p-lr-smobile-20',
+		'bdr-t-1 bdr-b-1 bdr-divider',
+		'elementor-invisible'
 	],
 	'data-settings' => wp_json_encode([
-		'animation'       => 'fadeInUp',
-		'animation_delay' => 500
-	]),
-]);
-// Breadcrumb
-$this->add_render_attribute('breadcrumb',[
-	'class' => [
-		'cms-eptitle-breadcrumbs',
-		'container',
-		'elementor-invisible',
-		'pt-10'
-	],
-	'data-settings' => wp_json_encode([
-		'animation' => 'fadeInUp'
+		'animation' => 'fadeInRight'
 	])
 ]);
-// Buttons
-$this->add_render_attribute('buttons', [
+$this->add_render_attribute('fitem-title', [
 	'class' => [
-		'buttons pt-33 empty-none',
-		'd-flex gap-24',
-		'justify-content-'.$default_align
+		'cms-ptitle-feature-item-title',
+		'text-md',
+		'pb-3'
+	]
+]);
+$this->add_render_attribute('fitem-value', [
+	'class' => [
+		'cms-ptitle-feature-item-value',
+		'heading text-xl text-sub-text'
 	]
 ]);
 ?>
 <div <?php ctc_print_html($this->get_render_attribute_string('wrap')); ?>>
 	<div <?php ctc_print_html($this->get_render_attribute_string('container')); ?>>
-		<div <?php ctc_print_html($this->get_render_attribute_string('cms--content')); ?>>
-			<h1 <?php ctc_print_html( $this->get_render_attribute_string( 'title' ) ); ?>><?php 
-				echo nl2br( $this->get_setting('title', get_the_title()) ); 
-			?></h1>
-			<div <?php ctc_print_html( $this->get_render_attribute_string( 'desc' ) ); ?>><?php 
-				echo nl2br( $this->get_setting('desc','') ); 
-			?></div>
-			<div <?php ctc_print_html($this->get_render_attribute_string('buttons')); ?>><?php 
-				// Button
-				genzia_elementor_link_render($widget, $settings, [
-					'name'             => 'link1_',
-					'mode'             => 'btn',
-					'text_icon'        => genzia_svgs_icon([
-						'icon'      => 'arrow-right',
-						'icon_size' => 10,
-						'echo'      => false
-					]),
-					'class'            => [
-						'cms-hover-move-icon-right',
-						'elementor-invisible'
-					],
-					//'btn_prefix'       => 'btn-outline-',
-					//'btn_hover_prefix' => 'btn-hover-',
-					'btn_color'        => 'white',
-					'text_color'       => 'menu',
-					'btn_color_hover'  => 'accent-regular',
-					'text_color_hover' => 'white',
-					'before'           => '',
-					'after'            => '',
-					'attrs'			   => [
-						'data-settings' => wp_json_encode([
-							'animation'       => 'fadeInLeft',
-							'animation_delay' => 700
-						])
-					]
-				]);
-				// Button
-				genzia_elementor_link_render($widget, $settings, [
-					'name'             => 'link2_',
-					'mode'             => 'btn',
-					'text_icon'        => '',
-					'class'            => [
-						'elementor-invisible'
-					],
-					'btn_prefix'       => 'btn-outline-',
-					'btn_hover_prefix' => 'btn-hover-',
-					'btn_color'        => 'white',
-					'text_color'       => 'white',
-					'btn_color_hover'  => 'white',
-					'text_color_hover' => 'menu',
-					'before'           => '',
-					'after'            => '',
-					'attrs'			   => [
-						'data-settings' => wp_json_encode([
-							'animation'       => 'fadeInRight',
-							'animation_delay' => 700
-						])
-					]
-				]);
-			?></div>
-		</div>
+		<h1 <?php ctc_print_html( $this->get_render_attribute_string('title') ); ?>><?php 
+			echo nl2br( $this->get_setting('title', get_the_title())); 
+		?></h1>
+		<div <?php ctc_print_html($this->get_render_attribute_string('features')); ?>><?php 
+			foreach ($features as $key => $feature) {
+		?>
+			<div <?php ctc_print_html($this->get_render_attribute_string('fitem')); ?>>
+				<div <?php ctc_print_html($this->get_render_attribute_string('fitem-inner')); ?>>
+					<div <?php ctc_print_html($this->get_render_attribute_string('fitem-title')); ?>><?php echo esc_html($feature['ftitle']); ?></div>
+					<div <?php ctc_print_html($this->get_render_attribute_string('fitem-value')); ?>><?php echo esc_html($feature['fvalue']); ?></div>
+				</div>
+			</div>
+		<?php
+			}
+		?></div>
 	</div>
-	<div <?php ctc_print_html($this->get_render_attribute_string('breadcrumb')); ?>><?php 
-		genzia_breadcrumb([
-            'class'      => 'text-sm d-flex justify-content-'.$default_align, 
-            'link_class' => 'text-white text-hover-white',
-            'before'     => '',
-            'after'      => ''
-        ]);
-	?></div>
+	<?php 
+		genzia_elementor_image_render($settings,[
+			'name'          => 'bg_image',
+			'size'          => 'custom',
+			'custom_size'   => ['width' => 1600, 'height' => 900],
+			'class'         => '',
+			'img_class'     => 'img-cover',
+			'max_height'    => true,
+			'as_background' => true,
+			'as_background_class' => 'cms-bg-parallax'
+		]);
+	?>
 </div>

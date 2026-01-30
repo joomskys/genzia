@@ -8,6 +8,7 @@ if (!defined('ABSPATH')) {
 use Genzia\Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Utils;
+use Elementor\Repeater;
 
 /**
  * Page Title Widget.
@@ -25,7 +26,11 @@ class Widget_Page_Title extends Widget_Base
         $this->set_title(esc_html__('CMS Page Title', 'genzia'));
         $this->set_icon('eicon-site-title');
         $this->set_keywords(['page title', 'title', 'heading', 'breadcrumb', 'genzia']);
-        
+        $this->set_style_depends([
+            'e-animation-fadeInUp',
+            'e-animation-fadeInLeft',
+            'e-animation-fadeInRight'
+        ]);
         parent::__construct($data, $args);
     }
 
@@ -175,7 +180,7 @@ class Widget_Page_Title extends Widget_Base
                     'placeholder' => esc_html__('Enter your text', 'genzia'),
                     'label_block' => true,
                     'condition'   => [
-                        'layout' => ['1','2','3']
+                        'layout' => ['1','2']
                     ]
                 ]
             );
@@ -183,7 +188,7 @@ class Widget_Page_Title extends Widget_Base
                 'name'      => 'desc_color',
                 'label'     => esc_html__('Color', 'genzia'),
                 'condition' => [
-                    'layout' => ['1','2','3'],
+                    'layout' => ['1','2'],
                     'desc!'  => ''
                 ],
                 'selectors' => [
@@ -198,7 +203,10 @@ class Widget_Page_Title extends Widget_Base
                 'label'       => esc_html__('Button #1 Settings', 'genzia'),
                 'color_label' => esc_html__('Button', 'genzia'),
                 'condition'   => [
-                    'layout' => ['1','2','3']
+                    'layout' => ['1','2']
+                ],
+                'icon_settings' => [
+                    'enable' => true
                 ]
             ]);
             // Button #2
@@ -209,9 +217,58 @@ class Widget_Page_Title extends Widget_Base
                 'label'       => esc_html__('Button #2 Settings', 'genzia'),
                 'color_label' => esc_html__('Button', 'genzia'),
                 'condition'   => [
-                    'layout' => ['1','2','3']
+                    'layout' => ['1','2']
                 ]
             ]);
+            // Features
+            $features = new Repeater();
+                $features->add_control(
+                    'ftitle',
+                    [
+                        'label' => esc_html__('Title','genzia'),
+                        'type'  => Controls_Manager::TEXT
+                    ]
+                );
+                $features->add_control(
+                    'fvalue',
+                    [
+                        'label'       => esc_html__('Value','genzia'),
+                        'type'        => Controls_Manager::TEXTAREA,
+                        'label_block' => false
+                    ]
+                );
+            $this->add_control(
+                'features',
+                [
+                    'label'   => esc_html__('Feature Lists','genzia'),
+                    'type'    => Controls_Manager::REPEATER,
+                    'fields'  => $features->get_controls(),
+                    'default' => [
+                        [
+                            'ftitle' => 'Title #1:',
+                            'fvalue' => 'Value #1'
+                        ],
+                        [
+                            'ftitle' => 'Title #2:',
+                            'fvalue' => 'Value #2'
+                        ],
+                        [
+                            'ftitle' => 'Title #3:',
+                            'fvalue' => 'Value #3'
+                        ],
+                        [
+                            'ftitle' => 'Title #4:',
+                            'fvalue' => 'Value #4'
+                        ]
+                    ],
+                    'title_field'   => '{{ftitle}}',
+                    'prevent_empty' => false,
+                    'condition'     => [
+                        'layout' => ['4']
+                    ],
+                    'label_block' => true
+                ]
+            );
         $this->end_controls_section();
         // Background 
         $this->start_controls_section(

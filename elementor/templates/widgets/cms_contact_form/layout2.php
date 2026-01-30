@@ -1,19 +1,17 @@
 <?php
 // wrap
 $this->add_render_attribute('wrap', [
+	'id'    => 'cms-ecf7-'.$this->get_id(),
 	'class' => [
 		'cms-ecf7',
 		'cms-ecf7-' . $settings['layout'],
 		'cms-form',
-		'bg-white bdr-1 bdr-divider',
-		'relative',
-		'p-48 p-lr-smobile-16',
-		//'cms-radius-8',
-		'cms-shadow-2 cms-hover-shadow-1'
+		'bg-white',
+		'p-48 p-lr-smobile-20',
+		'cms-radius-16',
+		'bdr-1 bdr-divider'
 	],
-	/*'style' => array_merge(
-		genzia_elementor_form_style_render($this, $settings)
-	)*/
+	'style' => genzia_elementor_form_style_render($this, $settings, [])
 ]);
 // Small Title
 $this->add_inline_editing_attributes('ctf7_small_title');
@@ -35,8 +33,9 @@ $this->add_inline_editing_attributes('ctf7_title');
 $this->add_render_attribute('ctf7_title', [
 	'class' => [
 		'cms-title cms-nl2br cms-heading empty-none',
+		'font-500',
 		'text-'.$this->get_setting('title_color','heading-regular'),
-		'm-tb-n5',
+		'm-tb-nh6',
 		'elementor-invisible',
 		'relative'
 	],
@@ -51,7 +50,7 @@ $this->add_render_attribute('ctf7_description', [
 		'cms-desc empty-none',
 		'text-'.$this->get_setting('desc_color','body'),
 		'text-lg',
-		'm-tb-n5 pt-20',
+		'm-tb-nlg pt-20',
 		'elementor-invisible',
 		'relative'
 	],

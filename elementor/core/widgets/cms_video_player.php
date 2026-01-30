@@ -78,9 +78,9 @@ class Widget_Video_Player extends Widget_Base
                         'title' => esc_html__('Layout 5', 'genzia'),
                         'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_video_player/layout/5.webp'
                     ],
-                    '-single-practice' => [
-                        'title' => esc_html__('Single Practice', 'genzia'),
-                        'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_video_player/layout/single-practice.webp'
+                    '-single-service' => [
+                        'title' => esc_html__('Single Service', 'genzia'),
+                        'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_video_player/layout/single-service.webp'
                     ],
                     '-video-bg' => [
                         'title' => esc_html__('Background Video', 'genzia'),
@@ -221,7 +221,7 @@ class Widget_Video_Player extends Widget_Base
                     'placeholder' => esc_html__('Enter your text', 'genzia'),
                     'label_block' => true,
                     'condition' => [
-                        'layout' => ['2','3','4','-single-practice']
+                        'layout' => ['2','3','4','-single-service']
                     ]
                 ]
             );
@@ -229,7 +229,7 @@ class Widget_Video_Player extends Widget_Base
                 'name'      => 'heading_color',
                 'label'     => esc_html__('Color', 'genzia'),
                 'condition' => [
-                    'layout'        => ['2','3','4','-single-practice'],
+                    'layout'        => ['2','3','4','-single-service'],
                     'heading_text!' => ''
                 ],
                 'selectors' => [
@@ -246,7 +246,7 @@ class Widget_Video_Player extends Widget_Base
                     'placeholder' => esc_html__('Enter your text', 'genzia'),
                     'label_block' => true,
                     'condition' => [
-                        'layout' => ['3','4','-single-practice']
+                        'layout' => ['3','4']
                     ]
                 ]
             );
@@ -254,7 +254,7 @@ class Widget_Video_Player extends Widget_Base
                 'name'      => 'desc_color',
                 'label'     => esc_html__('Description Color', 'genzia'),
                 'condition' => [
-                    'layout' => ['3','4','-single-practice'],
+                    'layout' => ['3','4'],
                     'desc!'  => ''
                 ],
                 'selectors' => [

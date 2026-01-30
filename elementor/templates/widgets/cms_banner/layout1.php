@@ -3,7 +3,8 @@
 //$settings['banner']['id'] = !empty($settings['banner']['id']) ? $settings['banner']['id'] : get_post_thumbnail_id();
 $img_class = genzia_nice_class([
 	($settings['img_cover'] == 'yes') ? 'img-cover' : '',
-	$this->get_setting('e_classes')
+	$this->get_setting('e_classes'),
+	'cms-radius-16'
 ]);
 ?>
 <?php

@@ -2,7 +2,7 @@
 .cms-radius{
 	border-radius: var(--cms-radius, 0);
 }
-$cms_radius:(4, 6, 10, 16);
+$cms_radius:(4, 6, 10, 12, 14, 16);
 @each $size in $cms_radius{
 	.cms-radius-#{$size},
 	.elementor img.cms-radius-#{$size}{

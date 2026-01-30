@@ -79,11 +79,94 @@ class Widget_Counter extends Widget_Base
                         '1' => [
                             'title' => esc_html__( 'Layout 1', 'genzia' ),
                             'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_counter/layout/1.webp'
+                        ],
+                        '2' => [
+                            'title' => esc_html__( 'Layout 2', 'genzia' ),
+                            'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_counter/layout/2.webp'
                         ]
                     ],
                     'label_block' => true
                 ]
             );
+        $this->end_controls_section();
+        // Heading Content
+        $this->start_controls_section(
+            'section_heading',
+            [
+                'label'     => esc_html__('Heading Content', 'genzia'),
+                'tab'       => Controls_Manager::TAB_CONTENT,
+                'condition' => [
+                    'layout' => ['2']
+                ]
+            ]
+        );
+            $this->add_control(
+                'smallheading_icon',
+                [
+                    'label'   => esc_html__('Icon', 'genzia'),
+                    'type'    => Controls_Manager::ICONS,
+                    'default' => [
+                        'value'   => 'fas fa-star',
+                        'library' => 'fa-solid'
+                    ],
+                    'skin'        => 'inline',
+                    'label_block' => false,
+                    'condition' => [
+                        'smallheading_text!' => ''
+                    ]
+                ]
+            );
+            genzia_elementor_colors_opts($this, [
+                'name'      => 'smallheading_icon_color',
+                'label'     => esc_html__('Icon Color', 'genzia'),
+                'selectors' => [
+                    '{{WRAPPER}} .cms-small-icon' => '--text-custom-color: {{VALUE}};'
+                ],
+                'condition' => [
+                    'smallheading_text!'        => '',
+                    'smallheading_icon[value]!' => ''
+                ]
+            ]);
+            $this->add_control(
+                'smallheading_text',
+                [
+                    'label'       => esc_html__('Small Heading', 'genzia'),
+                    'type'        => Controls_Manager::TEXTAREA,
+                    'default'     => 'This is Small Heading',
+                    'placeholder' => esc_html__('Enter your text', 'genzia'),
+                    'label_block' => true
+                ]
+            );
+            genzia_elementor_colors_opts($this, [
+                'name'      => 'smallheading_color',
+                'label'     => esc_html__('Color', 'genzia'),
+                'selectors' => [
+                    '{{WRAPPER}} .cms-small' => '--text-custom-color: {{VALUE}};'
+                ],
+                'condition' => [
+                    'smallheading_text!' => ''
+                ]
+            ]);
+            $this->add_control(
+                'heading_text',
+                [
+                    'label'       => esc_html__('Heading', 'genzia'),
+                    'type'        => Controls_Manager::TEXTAREA,
+                    'default'     => 'This is the heading',
+                    'placeholder' => esc_html__('Enter your text', 'genzia'),
+                    'label_block' => true
+                ]
+            );
+            genzia_elementor_colors_opts($this, [
+                'name'      => 'heading_color',
+                'label'     => esc_html__('Color', 'genzia'),
+                'selectors' => [
+                    '{{WRAPPER}} .cms-title' => '--text-custom-color: {{VALUE}};'
+                ],
+                'condition'   => [
+                    'heading_text!' => ''
+                ]
+            ]);
         $this->end_controls_section();
         // Reapeater Counter
         $this->start_controls_section(

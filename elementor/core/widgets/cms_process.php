@@ -73,6 +73,10 @@ class Widget_Process extends Widget_Base
                             'title' => esc_html__('Layout 2', 'genzia'),
                             'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_process/layout/2.webp'
                         ],
+                        '3' => [
+                            'title' => esc_html__('Layout 3', 'genzia'),
+                            'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_process/layout/3.webp'
+                        ],
                         '-carousel' => [
                             'title' => esc_html__('Layout Carousel', 'genzia'),
                             'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_process/layout/carousel.webp'
@@ -338,7 +342,7 @@ class Widget_Process extends Widget_Base
                     'placeholder' => esc_html__( 'Enter your text', 'genzia' ),
                     'label_block' => true,
                     'condition'   => [
-                        'layout' => ['2','-carousel','-sticky'],
+                        'layout' => ['2','3','-carousel','-sticky'],
                     ]
                 ]
             );
@@ -349,7 +353,7 @@ class Widget_Process extends Widget_Base
                     '{{WRAPPER}} .cms-title' => 'color: {{VALUE}};',
                 ],
                 'condition' => [
-                    'layout' => ['2','-carousel','-sticky'],
+                    'layout' => ['2','3','-carousel','-sticky'],
                     'heading_text!' => ''
                 ]
             ]);
@@ -363,7 +367,7 @@ class Widget_Process extends Widget_Base
                     'placeholder' => esc_html__( 'Enter your text', 'genzia' ),
                     'label_block' => true,
                     'condition'   => [
-                        'layout' => ['-sticky']
+                        'layout' => ['3','-sticky']
                     ]
                 ]
             );
@@ -375,7 +379,7 @@ class Widget_Process extends Widget_Base
                 ],
                 'condition' => [
                     'desc!' => '',
-                    'layout' => ['-sticky']
+                    'layout' => ['3','-sticky']
                 ]
             ]);
             // Button

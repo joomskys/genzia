@@ -116,9 +116,132 @@ $widget->add_render_attribute('ttmn--item',[
         'cms-transition',
         'relative',
         'cms-radius-16',
-        'd-flex flex-column justify-content-between'
+        'd-flex flex-column justify-content-between',
+        ($layout_mode=='grid') ? 'elementor-invisible' : ''
+    ],
+    'data-settings' => wp_json_encode([
+        'animation' => 'fadeInUp'
+    ])
+]);
+// Box
+$box_galleries = $this->get_setting('gallery',[]);
+$box_bdr_color = $this->get_setting('item_bdr_color', 'divider');
+// Box Wrap
+$this->add_render_attribute('box-wrap',[
+    'class' => [
+        'cms-ttmn-box',
+        ($layout_mode=='carousel') ? 'cms-carousel-item swiper-slide' : '',   
     ]
 ]);
+// Box Inner
+$this->add_render_attribute('box-inner',[
+    'class' => [
+        'cms-ttmn--box',
+        'bg-white',
+        'bdr-1 bdr-'.$box_bdr_color,
+        'cms-radius-16',
+        'p-40',
+        'd-flex flex-column justify-content-between',
+        'relative',
+        'cms-shadow-2 cms-hover-shadow-1',
+        'h-100'
+    ]
+]);
+// Box Title
+$this->add_render_attribute( 'box-title', [
+    'class' => [
+        'cms-title heading empty-none',
+        'text-'.$this->get_setting('heading_color','heading-regular'),
+        'h6 mt-nh6',
+        'elementor-invisible'
+    ],
+    'data-settings' => wp_json_encode([
+        'animation' => 'fadeInUp'
+    ])
+]);
+// Box Description
+$this->add_render_attribute( 'box-desc', [
+    'class' => [
+        'cms-box-desc empty-none',
+        'text-'.$this->get_setting('box_desc_color','body'),
+        'text-md',
+        'pt-10',
+        'elementor-invisible'
+    ],
+    'data-settings' => wp_json_encode([
+        'animation' => 'fadeInUp'
+    ])
+]);
+// Box Gallery
+$this->add_render_attribute('box-gallery-wrap',[
+    'class' => [
+        'd-flex gap-32',
+        'justify-content-between align-items-center',
+        'bdr-t-1 bdr-'.$box_bdr_color,
+        'pt-32 pl-12 mt-32',
+        'align-self-end',
+        'relative',
+        'w-100'
+    ]
+]);
+// Box Output HTMl
+ob_start();
+?>
+<div <?php ctc_print_html($this->get_render_attribute_string('box-wrap')); ?>>
+    <div <?php ctc_print_html($this->get_render_attribute_string('box-inner')); ?>>
+    <?php 
+        // Icon
+        genzia_elementor_icon_render( $settings['smallheading_icon'], [], ['class' => 'absolute top right mt-16 mr-16', 'icon_size' => 6, 'icon_color' => 'accent-regular'] );
+        // Banner
+        genzia_elementor_image_render($settings,[
+            'name'        => 'banner',
+            'size'        => 'custom',
+            'custom_size' => ['width' => 268, 'height' => 268],
+            'img_class'   => 'absolute bottom-center mb-20'
+        ]);
+    ?>
+    <div class="align-sefl-start relative">
+        <h6 <?php ctc_print_html($this->get_render_attribute_string('box-title')); ?>><?php 
+            echo nl2br($settings['heading_text']);
+        ?></h6>
+        <div <?php ctc_print_html($this->get_render_attribute_string('box-desc')); ?>><?php 
+            echo nl2br($settings['desc_text']);
+        ?></div>
+    </div>
+    <div <?php ctc_print_html($this->get_render_attribute_string('box-gallery-wrap')); ?>>
+        <div class="cms-feature-gallery d-flex flex-auto"><?php 
+            // Gallery
+            foreach ($box_galleries as $key => $gallery) {
+                $gallery['gallery'] = $gallery;
+                genzia_elementor_image_render($gallery,[
+                    'name'        => 'gallery',
+                    'size'        => 'custom',  
+                    'img_class'   => 'circle',
+                    'custom_size' => ['width' => 36, 'height' => 36],
+                    'attrs'       => [
+                        'style' => 'border:2px solid white;margin-inline-start:-12px;'
+                    ]
+                ]);
+            }
+            // Icon
+            genzia_elementor_icon_render($settings['gallery_icon'], [], ['icon_size' => 12, 'icon_color' => 'white', 'class' => 'cms-box-36 circle bg-accent-regular bdr-2 bdr-white ml-n12']);
+        ?></div>
+        <div class="cms-feature-gallery-desc text-xs text-sub-text flex-basic text-end"><?php 
+            // Text
+            echo nl2br($settings['gallery_desc']); 
+            // Link
+            genzia_elementor_link_render($this, $settings, [
+                'name'             => 'gallery_link_',
+                'text_color'       => 'accent-regular',
+                'text_color_hover' => 'accent-regular',
+                'class'            => 'cms-hover-underline'
+            ]);
+        ?></div>
+    </div>
+</div>
+</div>
+<?php
+    $box = ob_get_clean();
 ?>
 <div <?php ctc_print_html($this->get_render_attribute_string('wrap')); ?>>
     <?php switch ($layout_mode) {
@@ -138,11 +261,22 @@ $widget->add_render_attribute('ttmn--item',[
             break;
     } ?>
         <?php 
+            // Box
+            printf('%s', $box);
+            //
             $count = 0;
             foreach ($testimonials as $key => $testimonial) {
         ?>
             <div <?php ctc_print_html($this->get_render_attribute_string('ttmn-item')); ?>>
                 <div <?php ctc_print_html($widget->get_render_attribute_string('ttmn--item')); ?>>
+                    <?php 
+                    // Quote
+                    genzia_svgs_icon([
+                        'icon'      => 'core/quote',
+                        'icon_size' => 40,
+                        'class'     => 'absolute bottom right mr-20 mb-20 text-divider'
+                    ]);
+                    ?>
                     <div class="align-self-start w-100">
                         <div class="d-flex gap-6 text-warning pb-23"><?php 
                             genzia_svgs_icon([

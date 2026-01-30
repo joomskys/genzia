@@ -1622,7 +1622,7 @@ function genzia_page_title_fixed_layout(){
 }
 function genzia_page_title_layout($args = []){
     // remove page title on some custom post type
-    if(is_404() || is_singular(['cms-header-top','cms-footer','cms-mega-menu', 'cms-practice', 'cms-service', 'cms-case', 'cms-career', 'cms-popup']) ) return;
+    if(is_404() || is_singular(['cms-header-top','cms-footer','cms-mega-menu', 'cms-popup', 'portfolio', 'cms-service'])) return;
     $header_transparent = '';
     if(genzia_get_opts('header_transparent', 'off', 'header_custom') == 'on'){
         $header_transparent = 'ptitle-header-transparent';
@@ -3127,7 +3127,7 @@ if(!function_exists('genzia_comment_form_args')){
             ),
             $required_text
         );
-        $btn_icon = genzia_svgs_icon(['class' => 'cms-box-48 cms-radius-6 bg-white text-menu', 'icon' => 'arrow-right','icon_size' => 12, 'echo' => false]);
+        $btn_icon = genzia_svgs_icon(['class' => 'cms-box-48 cms-radius-6 bg-white text-menu order-first', 'icon' => 'arrow-right','icon_size' => 12, 'echo' => false]);
         $cms_comment_fields = array(
             'id_form'              => 'commentform',
             'class_container'      => 'comment-respond', 
@@ -3825,9 +3825,13 @@ if (!function_exists('genzia_inline_styles')) {
                 printf('--cms-popup-max-width:'.genzia_get_opts('popup_max_w', ['width' => 620], 'popup_custom')['width'].'px;');
                 // Content Width
                 printf('--cms-content-width:'.genzia_content_width().'px');
+                // WooCommerce Shop
+                if(class_exists('WooCommerce') && (is_shop()) ) {
+                    printf(';--cms-form-field-bg-color:var(--cms-white);--cms-form-field-bg-color-hover:var(--cms-white)');
+                }
                 // WooCommerce Cart
                 if(class_exists('WooCommerce') && (is_cart() || is_checkout())){
-                    printf('--cms-form-btn-color:var(--cms-white);--cms-form-btn-bg:var(--cms-primary-regular);--cms-form-btn-color-hover:var(--cms-white);--cms-form-btn-bg-hover:var(--cms-accent);--cms-form-btn-height:60px;--cms-form-field-height:60px;--cms-form-field-border-width:1px;--cms-form-field-border-width-hover:1px;--cms-form-field-padding-start:24px;--cms-form-field-padding-end:24px;');
+                    printf(';--cms-form-btn-color:var(--cms-white);--cms-form-btn-bg:var(--cms-primary-regular);--cms-form-btn-color-hover:var(--cms-white);--cms-form-btn-bg-hover:var(--cms-accent);--cms-form-btn-height:60px;--cms-form-field-height:60px;--cms-form-field-border-width:1px;--cms-form-field-border-width-hover:1px;--cms-form-field-padding-start:24px;--cms-form-field-padding-end:24px;');
                 }
             echo '}';
         return ob_get_clean();
@@ -4849,7 +4853,7 @@ if(function_exists('ctc_register_wp_widget')){
                 case '2':
                     $menu_icon = genzia_svgs_icon([
                         'icon'      => 'arrow-right',
-                        'icon_size' => 13,
+                        'icon_size' => 10,
                         'echo'      => false,
                         'class'     => 'menu-icon pt-5'
                     ]);

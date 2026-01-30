@@ -80,6 +80,10 @@ class Widget_Accordion extends Widget_Base
                         '6' => [
                             'title' => esc_html__('Layout 6', 'genzia'),
                             'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_accordion/layout/6.webp'
+                        ],
+                        '7' => [
+                            'title' => esc_html__('Layout 7', 'genzia'),
+                            'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_accordion/layout/7.webp'
                         ]
                     ],
                     'label_block' => true
@@ -292,7 +296,7 @@ class Widget_Accordion extends Widget_Base
                     'placeholder' => esc_html__('Enter your text', 'genzia'),
                     'label_block' => true,
                     'condition' => [
-                        'layout' => ['2','3','5']
+                        'layout' => ['2','3','5','7']
                     ]
                 ]
             );
@@ -303,7 +307,7 @@ class Widget_Accordion extends Widget_Base
                     '{{WRAPPER}} .cms-title' => '--text-custom-color: {{VALUE}};'
                 ],
                 'condition' => [
-                    'layout'        => ['2','3','5'],
+                    'layout'        => ['2','3','5','7'],
                     'heading_text!' => ''
                 ]
             ]);
@@ -316,7 +320,7 @@ class Widget_Accordion extends Widget_Base
                     'placeholder' => esc_html__('Enter your text', 'genzia'),
                     'label_block' => true,
                     'condition' => [
-                        'layout' => ['5']
+                        'layout' => ['5','7']
                     ]
                 ]
             );
@@ -327,7 +331,7 @@ class Widget_Accordion extends Widget_Base
                     '{{WRAPPER}} .cms-desc' => '--text-custom-color: {{VALUE}};'
                 ],
                 'condition' => [
-                    'layout' => ['5']
+                    'layout' => ['5','7']
                 ]
             ]);
             // Button

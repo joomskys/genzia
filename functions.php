@@ -604,6 +604,8 @@ require get_template_directory() . '/inc/theme-options/theme-options.php';
  */
 // Page Options
 require get_template_directory() . '/inc/post-type-options/page-options.php';
+// Single Portfolio Options
+require get_template_directory() . '/inc/post-type-options/portfolio-options.php';
 // Single Product Options
 require get_template_directory() . '/inc/post-type-options/product-options.php';
 
@@ -861,8 +863,8 @@ if (class_exists('Elementor\Plugin')) {
 		//require_once get_template_directory() . '/elementor/core/widgets/cms_gallery.php';
 		//$widgets_manager->register(new \Genzia\Elementor\Widgets\Widget_Gallery());
 		// 12 Google Map
-		//require_once get_template_directory() . '/elementor/core/widgets/cms_google_map.php';
-		//$widgets_manager->register(new \Genzia\Elementor\Widgets\Widget_Google_Map());
+		require_once get_template_directory() . '/elementor/core/widgets/cms_google_map.php';
+		$widgets_manager->register(new \Genzia\Elementor\Widgets\Widget_Google_Map());
 		// 13 Heading
 		require_once get_template_directory() . '/elementor/core/widgets/cms_heading.php';
 		$widgets_manager->register(new \Genzia\Elementor\Widgets\Widget_Heading());
@@ -882,8 +884,8 @@ if (class_exists('Elementor\Plugin')) {
 		require_once get_template_directory() . '/elementor/core/widgets/cms_posts_grid.php';
 		$widgets_manager->register(new \Genzia\Elementor\Widgets\Widget_Posts_Grid());
 		// 19 Pricing
-		//require_once get_template_directory() . '/elementor/core/widgets/cms_pricing.php';
-		//$widgets_manager->register(new \Genzia\Elementor\Widgets\Widget_Pricing());
+		require_once get_template_directory() . '/elementor/core/widgets/cms_pricing.php';
+		$widgets_manager->register(new \Genzia\Elementor\Widgets\Widget_Pricing());
 		// 20 Process
 		require_once get_template_directory() . '/elementor/core/widgets/cms_process.php';
 		$widgets_manager->register(new \Genzia\Elementor\Widgets\Widget_Process());

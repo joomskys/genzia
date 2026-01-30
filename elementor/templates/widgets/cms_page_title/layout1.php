@@ -16,7 +16,7 @@ $this->add_render_attribute('wrap',[
 		'cms-gradient-render cms-gradient-'.$this->get_setting('bg_overlay', 1),
 		'text-'.$default_align,
 		'text-white',
-        'cms-bg-cover',
+        'cms-bg-parallax',
 		'cms-lazy'
 	],
 	'style' => [
@@ -84,7 +84,7 @@ $this->add_render_attribute('breadcrumb',[
 		'cms-eptitle-breadcrumbs',
 		'container',
 		'elementor-invisible',
-		'pb-32'
+		'pb-35'
 	],
 	'data-settings' => wp_json_encode([
 		'animation' => 'fadeInUp'

@@ -29,12 +29,12 @@ if ( ! is_a( $product, 'WC_Product' ) ) {
 	<?php do_action( 'woocommerce_widget_product_item_start', $args ); ?>
 
 	<a href="<?php echo esc_url( $product->get_permalink() ); ?>" class="d-flex flex-nowrap gap-20 align-items-center">
-		<div class="thumb bg-bg-light cms-radius-4 overflow-hidden"><?php 
-			printf('%s', $product->get_image()); // PHPCS:Ignore WordPress.Security.EscapeOutput.OutputNotEscaped 
+		<div class="thumb bg-bg-light cms-radius-10 overflow-hidden"><?php 
+			printf('%s', $product->get_image('woocommerce_gallery_thumbnail')); // PHPCS:Ignore WordPress.Security.EscapeOutput.OutputNotEscaped 
 		?></div>
 		<div class="flex-basic">
-			<div class="text-md font-600 text-menu text-hover-accent-regular product-title"><?php echo wp_kses_post( $product->get_name() ); ?></div>
-			<div class="price"><?php 
+			<div class="text-md font-700 text-menu text-hover-accent-regular product-title"><?php echo wp_kses_post( $product->get_name() ); ?></div>
+			<div class="price text-md"><?php 
 				printf('%s', $product->get_price_html()); // PHPCS:Ignore WordPress.Security.EscapeOutput.OutputNotEscaped 
 			?></div>
 			<?php if ( ! empty( $show_rating ) ) : ?>

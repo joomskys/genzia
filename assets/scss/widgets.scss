@@ -81,7 +81,9 @@
 }
 /* Categories */
 .cms-wg-menu-2{
-	background-color: var(--cms-bg-light);
+	background-color: var(--cms-white);
+	border: 2px solid var(--cms-divider);
+	border-radius: 12px;
 	padding: 20px 40px;
 	margin: 0!important;
 	a{
@@ -90,7 +92,7 @@
 	    position: relative;
 	    padding: 14px 0;
 	    color: var(--cms-menu);
-	    @include transform(translateX(-23px));
+	    @include transform(translateX(-20px));
 	}
 	.menu-title{
 		display: flex;
@@ -100,7 +102,7 @@
         visibility: hidden;
         opacity: 0;
         @include transition();
-        @include transform(translate(-23px, 23px));
+        @include transform(translateX(-20px));
 	}
 	.count{
 		background-color: var(--cms-menu);
@@ -114,7 +116,7 @@
 	    //
 	    &:hover ,
 	    &.current-menu-item{
-	    	border-color: var(--cms-accent-regular);
+	    	//border-color: var(--cms-accent-regular);
 	    	a{
 	    		color: var(--cms-accent-regular);
 	    		@include transform(translateX(0));

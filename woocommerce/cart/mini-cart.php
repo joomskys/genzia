@@ -49,13 +49,13 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 					<?php else : ?>
 						<a href="<?php echo esc_url( $product_permalink ); ?>" class="flex-basic d-flex flex-nowrap gap-20 align-items-center">
 					<?php endif; ?>
-						<div class="thumb bg-bg-light cms-radius-4 overflow-hidden"><?php printf('%s', $thumbnail); ?></div>
+						<div class="thumb bg-bg-light cms-radius-10 overflow-hidden"><?php printf('%s', $thumbnail); ?></div>
 						<div class="flex-basic">
-							<div class="text-md font-500 lh-1 text-menu text-hover-accent-regular product-title"><?php 
+							<div class="text-md font-700 lh-1 text-menu text-hover-accent-regular product-title"><?php 
 								echo wp_kses_post( $product_name ); 
 							?></div>
 							<div class="cms-mini-cart-item-data pt-10 empty-none"><?php echo wc_get_formatted_cart_item_data( $cart_item ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></div>
-							<?php echo apply_filters( 'woocommerce_widget_cart_item_quantity', '<div class="cms-mini-cart-quantity pt-10 text-accent-regular">' . sprintf( '%s &times; %s', $cart_item['quantity'], $product_price ) . '</div>', $cart_item, $cart_item_key ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+							<?php echo apply_filters( 'woocommerce_widget_cart_item_quantity', '<div class="cms-mini-cart-quantity pt-10 text-accent-regular text-md">' . sprintf( '%s &times; %s', $cart_item['quantity'], $product_price ) . '</div>', $cart_item, $cart_item_key ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 						</div>
 					<?php if ( empty( $product_permalink ) ) : ?>
 						</div>

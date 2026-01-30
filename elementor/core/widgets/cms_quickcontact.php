@@ -387,7 +387,7 @@ class Widget_Quick_Contact extends Widget_Base
                 'label'     => esc_html__('Time Settings', 'genzia'),
                 'tab'       => Controls_Manager::TAB_CONTENT,
                 'condition' => [
-                    'layout!' => ['5']
+                    'layout!' => ['4','5']
                 ]
             ]
         );
@@ -480,7 +480,7 @@ class Widget_Quick_Contact extends Widget_Base
                 'label' => esc_html__('Socials', 'genzia'),
                 'tab'   => Controls_Manager::TAB_CONTENT,
                 'condition' => [
-                    'layout' => ['5']
+                    'layout' => ['4','5']
                 ]
             ]
         );

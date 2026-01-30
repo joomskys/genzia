@@ -1,6 +1,7 @@
 <?php
-if(!class_exists('CSH_Theme_Core')) return;
 // Silence is Golden
+if(!class_exists('CSH_Theme_Core')) return;
+//
 add_filter('tco_page_page_options_args', 'genzia_page_options_args');
 function genzia_page_options_args(){
     $default       = true;

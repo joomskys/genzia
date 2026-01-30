@@ -31,10 +31,10 @@ $product_tabs = apply_filters( 'woocommerce_product_tabs', array() );
 if ( ! empty( $product_tabs ) ) : ?>
 
 	<div class="woocommerce-tabs wc-tabs-wrapper">
-		<ul class="tabs wc-tabs cms-hidden-mobile d-flex gap-8 cms-hidden-mobile text-btn font-500 unstyled mb-33 bdr-b-1 bdr-divider pb-16" role="tablist">
+		<ul class="tabs wc-tabs cms-hidden-mobile d-inline-flex gap-4 cms-hidden-mobile text-md font-700 unstyled mb-33 p-4 cms-radius-14 bg-bg-light" role="tablist">
 			<?php foreach ( $product_tabs as $key => $product_tab ) : ?>
 				<li role="presentation" class="<?php echo esc_attr( $key ); ?>_tab" id="tab-title-<?php echo esc_attr( $key ); ?>">
-					<a href="#tab-<?php echo esc_attr( $key ); ?>" role="tab" aria-controls="tab-<?php echo esc_attr( $key ); ?>" class="p-tb p-lr bg-white text-menu bg-hover-menu text-hover-white bg-active-menu text-active-white bdr-1 bdr-menu d-block" style="--p-tb:20px;--p-lr:56px;">
+					<a href="#tab-<?php echo esc_attr( $key ); ?>" role="tab" aria-controls="tab-<?php echo esc_attr( $key ); ?>" class="p-tb p-lr bg-white text-menu bg-hover-menu text-hover-white bg-active-menu text-active-white cms-radius-10 d-block" style="--p-tb:18px;--p-lr:56px;">
 						<?php echo wp_kses_post( apply_filters( 'woocommerce_product_' . $key . '_tab_title', $product_tab['title'], $key ) ); ?>
 					</a>
 				</li>

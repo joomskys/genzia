@@ -259,8 +259,9 @@ ul.products:not(.elementor-grid){ // Fixed if client use Elementor Pro
 .woocommerce-product-gallery{
 	.flex-viewport,
 	.woocommerce-product-gallery__image{
-		border-radius: 12px;
+		border-radius: 16px;
 		background-color: var(--cms-bg-light);
+		overflow: hidden;
 	}
 	.flex-control-thumbs{
 		display: flex;
@@ -351,7 +352,7 @@ ul.products:not(.elementor-grid){ // Fixed if client use Elementor Pro
 	}
 }
 .single_add_to_cart_button{
-	padding: 0 32px;
+	padding: 0 35px!important;
 	background-color: var(--cms-primary);
 }
 form.cart:not(.variations_form):not(.grouped_form),
@@ -664,7 +665,7 @@ body.single-product-full{
 			text-transform: none;
 		}
 	}
-	.product-subtotal{
+	.woocommerce-Price-amount{
 		color: var(--cms-accent-regular);
 	}
 }
@@ -693,6 +694,9 @@ body.single-product-full{
 			//font-family: var(--cms-heading-family);
 			font-weight: 600;
 		}
+	}
+	.woocommerce-Price-amount{
+		color: var(--cms-accent-regular);
 	}
 	@media #{$min-tablet}{
 		padding-top: 45px;
@@ -1139,12 +1143,12 @@ button[name="save_account_details"]{
 }
 // Quantity Form
 .quantity{
-	width: 166px;
-	height: 58px;
-	padding: 0 54px;
+	width: 142px;
+	height: 60px;
+	padding: 0 42px;
 	position: relative;
-	border: 1px solid var(--cms-menu);
-	border-radius: 2px;
+	border: 1px solid var(--cms-divider-dark);
+	border-radius: 10px;
 	overflow: hidden;
 	color: var(--cms-menu);
 	@media (max-width: 320px){
@@ -1153,17 +1157,17 @@ button[name="save_account_details"]{
 	}
 	input.qty{
 		border: none;
-		height: 56px;
-		line-height: 56px;
+		height: 58px;
+		line-height: 58px;
 		color: var(--cms-menu);
 		text-align: center;
 		width: 100%;
 		font-size: 16px;
-		font-weight: 400;
+		font-weight: 700;
 	}
 	.cms-qty-act{
 		cursor: pointer;
-		width: 54px;
+		width: 42px;
 		position: absolute;
 		top:0;
 		bottom: 0;
@@ -1491,10 +1495,7 @@ $bar_handle_color: var(--cms-accent);
 		background-color: transparent!important;
 		padding: 0!important;
 		color: var(--cms-menu)!important;
-		border-top: none!important;
-		border-right: none!important;
-		border-left: none!important;
-		border-bottom: 1px solid transparent!important;
+		border: none!important;
 		border-radius: 0!important;
 		height: unset;
 		min-height: unset!important;
@@ -1541,12 +1542,13 @@ $bar_handle_color: var(--cms-accent);
 .woocommerce-info,
 .woocommerce-form-coupon,
 .woocommerce-form-login-toggle + .woocommerce-form-login{
-	border: 8px solid var(--cms-divider);
-	background-color: var(--cms-white);
-	padding: 24px;
+	background-color: var(--cms-on-dark);
+	padding: 32px;
 	font-size: 20px;
+	font-weight: 500;
 	font-family: var(--cms-heading-family);
 	color: var(--cms-sub-text);
+	border-radius: 12px;
 	+ .return-to-shop{
 		margin-top: 40px;
 	}

@@ -5,7 +5,8 @@ $this->add_render_attribute('wrap',[
 		'cms-emenu',
 		'cms-emenu-'.$settings['layout'],
 		'p-40 p-lr-tablet-20 p-lr-smobile-20',
-		'bg-bg-light'
+		'bg-bg-light',
+		'cms-radius-16'
 	],
 	'style' => '--cms-divider-color:'.$this->get_setting('divider_color','var(--cms-divider)').';'
 ]);
@@ -14,8 +15,9 @@ $this->add_inline_editing_attributes( 'title', 'none' );
 $this->add_render_attribute( 'title', [
 	'class' => [
 		'cms-title empty-none',
+		'text-xl',
 		'text-'.$this->get_setting('title_color', 'heading-regular'),
-		'pb-30 m-tb-n5'
+		'pb-33 m-tb-nxl'
 	]
 ]);
 // Menu
@@ -24,15 +26,26 @@ $link_class = implode(' ', array_filter([
 	'text-'.$this->get_setting('link_color', 'white'),
 	'text-hover-'.$this->get_setting('link_color_hover', 'white'),
 	'text-active-'.$this->get_setting('link_color_hover', 'white'),
-	'bg-menu bg-hover-accent-regular bg-active-accent-regular',
+	'bg-menu bg-hover-gradient-1 bg-active-gradient-1',
 	'cms-hover-move-icon-right',
-	'cms-hover-change'
+	'cms-hover-change',
+	'cms-radius-6'
 ]));
 // icon
 $menu_icon = genzia_svgs_icon([
 	'icon'      => 'arrow-right',
 	'icon_size' => 10,
-	'class'     => 'menu-icon',
+	'class'     => genzia_nice_class([
+		'menu-icon',
+		'cms-eicon',
+		'cms-box-48 cms-radius-6',
+		'bg-'.$this->get_setting('link__icon_bg','white'),
+		'text-'.$this->get_setting('link__icon_color','menu'),
+		'bg-hover-'.$this->get_setting('link__icon_bg_hover','white'),
+		'bg-on-hover-'.$this->get_setting('link__icon_bg_hover','white'),
+		'text-hover-'.$this->get_setting('link__icon_color_hover','accent-regular'),
+		'text-on-hover-'.$this->get_setting('link__icon_color_hover','accent-regular')
+	]),
 	'echo'      => false
 ]);
 if ( ! empty( $menu ) ) : ?>

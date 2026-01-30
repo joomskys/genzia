@@ -21,7 +21,9 @@ $this->add_render_attribute('wrap', [
 	'class' => [
 		'cms-egmap',
 		'cms-egmap-'.$settings['layout'],
-		'relative'
+		'relative',
+		'overflow-hidden',
+		'cms-radius-16'
 	]
 ]);
 ?>

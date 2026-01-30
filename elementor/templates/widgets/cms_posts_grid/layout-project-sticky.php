@@ -6,22 +6,19 @@ $source      = $this->get_setting('source_'.$post_type);
 $orderby     = $this->get_setting('orderby', 'date');
 $order       = $this->get_setting('order', 'desc');
 $limit       = $this->get_setting('limit', 6);
-$layout_type = 'grid';
-$filter      = $this->get_setting('filter', 'false');
-$bdr_color   = $this->get_setting('bdr_color', 'divider');
+
 extract(ctc_get_posts_of_grid($post_type, [
     'source'   => $source,
     'orderby'  => $orderby,
     'order'    => $order,
     'limit'    => $limit
 ], [genzia_taxonomy_by_post_type($post_type, 'category')]));
-
 $thumbnail_size             = $this->get_setting('thumbnail_size','large');
 $thumbnail_custom_dimension = [
-    'width'  => !empty($settings['thumbnail_custom_dimension']['width']) ? $settings['thumbnail_custom_dimension']['width'] : 384,
-    'height' => !empty($settings['thumbnail_custom_dimension']['height']) ? $settings['thumbnail_custom_dimension']['height'] : 421
+    'width'  => !empty($settings['thumbnail_custom_dimension']['width']) ? $settings['thumbnail_custom_dimension']['width'] : 1216,
+    'height' => !empty($settings['thumbnail_custom_dimension']['height']) ? $settings['thumbnail_custom_dimension']['height'] : 736
 ];
-$numn_line = !empty($this->get_setting('num_line')['size']) ? $this->get_setting('num_line')['size'] : 5;
+$numn_line = !empty($this->get_setting('num_line')['size']) ? $this->get_setting('num_line')['size'] : 1;
 $pagination_type = $this->get_setting('pagination_type', 'pagination');
 // Posts Data
 $posts_data = array(
@@ -45,15 +42,13 @@ $posts_data = array(
     'num_line'                   => $numn_line,
     'readmore_text'              => $this->get_setting('readmore_text', esc_html__('Explore More','genzia')),
     //
-    'item_class'    => '', //elementor-invisible
-    'data-settings' => '', //wp_json_encode(['animation'=>'fadeInUp']),
-    'element_id'    => $this->get_id(),
-    //
-    'bdr_color'                  => $bdr_color,
+    'item_class'    => ($filter=='false')?'elementor-invisible cms-sticky':' cms-sticky',
+    'data-settings' => ($filter=='false')?wp_json_encode(['animation'=>'fadeInUp']):'',
+    'element_id'    => $this->get_id()
 );
 // Wrap attributes
 $this->add_render_attribute('wrap',[
-    'class'           => ['cms-post-grid', 'cms-grid', 'cms-grid-'.$settings['layout']],
+    'class' => ['cms-post-grid', 'cms-grid', 'cms-grid-'.$settings['layout']],
     'data-layout'     => $layout_type,
     'data-start-page' => $paged,
     'data-max-pages'  => $max,
@@ -64,35 +59,29 @@ $this->add_render_attribute('wrap',[
 // Content attributes
 $this->add_render_attribute('content',[
     'class' => [
-        'cms-grid-content',
-        'd-flex',
-        genzia_elementor_get_grid_columns($widget, $settings, [
-            'default'    => 3,
-            'tablet'     => 2,
-            'gap'        => 32
-        ])
+        'cms-grid-content'
     ]
 ]);
 ?>
 <div <?php ctc_print_html($this->get_render_attribute_string('wrap')); ?>>
     <?php genzia_elementor_filter_render($widget, $settings, [
-        'categories' => $categories
+        'categories' => $categories,
+        'class'      => 'relative z-top2 gap-8 mb-n32 text-xs'
     ]); ?>
-
     <div <?php ctc_print_html($this->get_render_attribute_string('content')); ?>><?php
         genzia_get_post_grid($settings, $posts, $posts_data);
     ?></div>
     <?php if ($pagination_type == 'pagination') { ?>
-        <div class="cms-grid-pagination mt-40 empty-none" data-loadmore="<?php echo esc_attr(json_encode($posts_data)); ?>"
+        <div class="cms-grid-pagination mt-56 empty-none" data-loadmore="<?php echo esc_attr(json_encode($posts_data)); ?>"
              data-query="<?php echo esc_attr(json_encode($args)); ?>"><?php 
                 genzia_posts_pagination($query, true); 
         ?></div>
     <?php }
     if (!empty($next_link) && $pagination_type == 'loadmore') { ?>
-        <div class="cms-load-more text-center mt-40" data-loadmore="<?php echo esc_attr(json_encode($posts_data)); ?>" data-query="<?php echo esc_attr(json_encode($args)); ?>">
-            <span class="btn btn-outline-menu text-menu btn-hover-outline-menu text-hover-menu cms-hover-change">
-                <span class="cms-on-hover-underline"><?php echo esc_html__('Load More', 'genzia') ?></span>
-            </span>
+        <div class="cms-load-more text-center mt-32" data-loadmore="<?php echo esc_attr(json_encode($posts_data)); ?>" data-query="<?php echo esc_attr(json_encode($args)); ?>">
+            <span class="cms-btn btn-menu text-white btn-hover-accent-regular text-hover-white cms-hover-change"><?php 
+                echo esc_html__('Load More', 'genzia');
+            ?></span>
         </div>
     <?php } 
     if($filter == 'true'){ //$pagination_type == 'false'

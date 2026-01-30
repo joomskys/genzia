@@ -1,5 +1,4 @@
 <?php
-
 $post_type   = $this->get_setting('post_type', 'post');
 $tax         = array();
 $taxonomy_by = $this->get_setting('taxonomy_by', 'category');

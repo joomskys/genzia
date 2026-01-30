@@ -18,12 +18,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 $form_style = [
-	//'--cms-form-field-border-color:var(--cms-sub-text)',
+	'--cms-form-field-bg-color:var(--cms-white)',
+	'--cms-form-field-bg-color-hover:var(--cms-white)',
+	'--cms-form-field-border-color:var(--cms-divider)',
     '--cms-form-field-padding-end:70px',
     '--cms-form-field-padding-start:32px',
     '--cms-placeholder-color:var(--cms-body)',
     '--cms-form-field-height:60px',
-    '--cms-form-field-radius:0',
+    '--cms-form-field-radius:10px',
     '--cms-form-field-border-width:1px',
     '--cms-form-field-border-width-hover:1px',
     '--cms-form-btn-color:var(--cms-menu)',

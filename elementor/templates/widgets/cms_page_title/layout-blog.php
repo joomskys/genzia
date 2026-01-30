@@ -20,7 +20,12 @@ $this->add_render_attribute('wrap',[
 		'cms-eptitle-'.$settings['layout'],
 		'text-center',
 		$header_transparent,
-		'overflow-hidden'
+		'overflow-hidden',
+		'cms-bg-parallax',
+		'cms-lazy'
+	],
+	'style' => [
+		'--cms-bg-lazyload:url('.$background_img.');background-image:var(--cms-bg-lazyload-loaded);'
 	]
 ]);
 // Container
@@ -29,7 +34,7 @@ $this->add_render_attribute('container',[
 		'container relative z-top',
 		'pb'
 	],
-	'style' => '--pb:120px;--pb-tablet:70px;'
+	'style' => '--pb:154px;--pb-tablet:70px;'
 ]);
 // Title
 $this->add_inline_editing_attributes( 'title', 'none' );
@@ -64,12 +69,12 @@ $this->add_render_attribute('breadcrumb',[
 ]);
 ?>
 <div <?php ctc_print_html($this->get_render_attribute_string('wrap')); ?>>
-	<div class="cms-overlay"><img src="<?php echo esc_url($background_img); ?>" alt="<?php echo get_bloginfo('name') ?>" title="<?php echo get_bloginfo('name') ?>" fetchpriority="high" loading="eager" decoding="sync" class="img-cover" data-parallax='{"y": 230}'/></div>
+	<!-- <div class="cms-overlay"><img src="<?php echo esc_url($background_img); ?>" alt="<?php echo get_bloginfo('name') ?>" title="<?php echo get_bloginfo('name') ?>" fetchpriority="high" loading="eager" decoding="sync" class="img-cover" data-parallax='{"y": 230}'/></div> -->
 	<div <?php ctc_print_html($this->get_render_attribute_string('container')); ?>>
 		<h1 <?php ctc_print_html( $this->get_render_attribute_string( 'title' ) ); ?>><?php echo nl2br( $this->get_setting('title', get_the_title()) ); ?></h1>
 		<?php 
 			genzia_breadcrumb([
-	            'class'      => 'd-flex justify-content-center text-sm', 
+	            'class'      => 'd-flex justify-content-center text-sm pt-10', 
 	            'link_class' => 'text-white text-hover-white',
 	            'before'     => '',
 	            'after'      => ''

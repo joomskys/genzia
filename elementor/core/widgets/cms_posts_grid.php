@@ -54,9 +54,26 @@ class Widget_Posts_Grid extends Widget_Base
                     'type'        => Controls_Manager::VISUAL_CHOICE,
                     'default'     => '1',
                     'options'     => genzia_elementor_post_layouts([],[
+                        '2-small' => [
+                            'title' => esc_html__( 'Layout 2 - Space small', 'genzia' ),
+                            'image' => get_template_directory_uri() . '/elementor/templates/layout/2.webp'
+
+                        ],
+                        '4-small' => [
+                            'title' => esc_html__( 'Layout 4 - Space small', 'genzia' ),
+                            'image' => get_template_directory_uri() . '/elementor/templates/layout/4.webp'
+                        ],
                         '-project' => [
                             'title' => esc_html__( 'Project Scroll', 'genzia' ),
                             'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_posts_grid/layout/project.webp'
+                        ],
+                        '-project-sticky' => [
+                            'title' => esc_html__( 'Project Sticky', 'genzia' ),
+                            'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_posts_grid/layout/project.webp'
+                        ],
+                        '-masonry' => [
+                            'title' => esc_html__( 'Porfolio Masonry', 'genzia' ),
+                            'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_theme_posts_scroll_grow/layout/1.webp'
                         ]
                     ]),
                     'label_block' => true
@@ -173,7 +190,7 @@ class Widget_Posts_Grid extends Widget_Base
                     ],
                     'separator' => 'after',
                     'condition' => [
-                        'layout!' => ['6']
+                        'layout!' => ['6','-masonry']
                     ]
                 ]
             );

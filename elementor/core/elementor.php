@@ -1212,24 +1212,24 @@ if (!function_exists('genzia_elementor_filter_render')) {
         $args = wp_parse_args($args, [
             'layout'     => 1,
             'categories' => '',
-            'class'      => 'mb-32 text-btn font-500',
-            'gap'        => 32,
+            'class'      => 'mb-48 text-xs',
+            'gap'        => 8,
             'title'      => esc_html__('All', 'genzia'),
             'alignment'  => 'center',
             //
             'color'        => 'menu',
-            'color_hover'  => 'accent-regular',
-            'color_active' => 'accent-regular',
+            'color_hover'  => 'white',
+            'color_active' => 'white',
             //
-            'bg_color'        => 'transparent',
+            'bg_color'        => 'bg-light',
             'bg_color_hover'  => 'accent-regular',
             'bg_color_active' => 'accent-regular',
             //
-            'border_color'        => 'divider',
+            'border_color'        => 'bg-light',
             'border_color_hover'  => 'accent-regular',
             'border_color_active' => 'accent-regular',
             //
-            'item_class' => 'cms-hover-underline cms-active-underline',
+            'item_class' => 'cms-radius-rounded p-tb-10 p-lr-20',
             // icon
             'icon'  => ''
         ]);

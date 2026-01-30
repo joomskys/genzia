@@ -7,26 +7,17 @@ $this->add_render_attribute('wrap', [
 		'cms-evideo',
 		'cms-evideo-'.$settings['layout'],
 		'relative',
-		'cms-gradient-render cms-gradient-1',
-		'overflow-hidden'
+		'overflow-hidden',
+		'cms-radius-16'
 	]
 ]);
 // Title
 $this->add_render_attribute('title',[
 	'class' => [
-		'cms-heading h6',
+		'cms-heading h5',
 		'empty-none',
 		'text-'.$this->get_setting('heading_color','heading-regular'),
-		'pb-40'
-	]
-]);
-// Description
-$this->add_render_attribute('desc',[
-	'class' => [
-		'cms-desc',
-		'empty-none',
-		'text-'.$this->get_setting('desc_color','body'),
-		'pt-40'
+		'pb-40 mt-nh5'
 	]
 ]);
 ?>
@@ -37,7 +28,7 @@ $this->add_render_attribute('desc',[
 		genzia_elementor_image_render($settings,[
 			'name'        => 'image',
 			//'size'      => '',
-			'custom_size' => ['width' => 800, 'height' => 575],
+			'custom_size' => ['width' => 760, 'height' => 507],
 			'img_class'   => 'img-cover',
 			'max_height'  => true,
 			'min_height'  => true	
@@ -74,4 +65,3 @@ $this->add_render_attribute('desc',[
 	    ]);
 	?>
 </div>
-<div <?php ctc_print_html($this->get_render_attribute_string('desc')); ?>><?php echo wpautop($settings['desc']); ?></div>
