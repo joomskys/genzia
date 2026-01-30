@@ -835,118 +835,97 @@ if (class_exists('Elementor\Plugin')) {
 		// 02 Banner
 		require_once get_template_directory() . '/elementor/core/widgets/cms_banner.php';
 		$widgets_manager->register(new \Genzia\Elementor\Widgets\Widget_Banner());
-		// 03 Blog
-		//require_once get_template_directory() . '/elementor/core/widgets/cms_blog.php';
-		//$widgets_manager->register(new \Genzia\Elementor\Widgets\Widget_Blog());
-		// 04 Button
-		//require_once get_template_directory() . '/elementor/core/widgets/cms_button.php';
-		//$widgets_manager->register(new \Genzia\Elementor\Widgets\Widget_Button());
-		// 05 Client
+		// 03 Client
 		require_once get_template_directory() . '/elementor/core/widgets/cms_clients.php';
 		$widgets_manager->register(new \Genzia\Elementor\Widgets\Widget_Clients());
-		// 06 Copyright
+		// 04 Copyright
 		require_once get_template_directory() . '/elementor/core/widgets/cms_copyright.php';
 		$widgets_manager->register(new \Genzia\Elementor\Widgets\Widget_Copyright());
-		// 07 Counter
+		// 05 Counter
 		require_once get_template_directory() . '/elementor/core/widgets/cms_counter.php';
 		$widgets_manager->register(new \Genzia\Elementor\Widgets\Widget_Counter());
-		// 08 Call to Action
+		// 06 Call to Action
 		require_once get_template_directory() . '/elementor/core/widgets/cms_cta.php';
 		$widgets_manager->register(new \Genzia\Elementor\Widgets\Widget_Cta());
-		// 09 Download
-		//require_once get_template_directory() . '/elementor/core/widgets/cms_download.php';
-		//$widgets_manager->register(new \Genzia\Elementor\Widgets\Widget_Download());
-		// 10 FancyBox
-		//require_once get_template_directory() . '/elementor/core/widgets/cms_fancy_box.php';
-		//$widgets_manager->register(new \Genzia\Elementor\Widgets\Widget_Fancy_Box());
-		// 11 Gallery
-		//require_once get_template_directory() . '/elementor/core/widgets/cms_gallery.php';
-		//$widgets_manager->register(new \Genzia\Elementor\Widgets\Widget_Gallery());
-		// 12 Google Map
+		// 07 Google Map
 		require_once get_template_directory() . '/elementor/core/widgets/cms_google_map.php';
 		$widgets_manager->register(new \Genzia\Elementor\Widgets\Widget_Google_Map());
-		// 13 Heading
+		// 08 Heading
 		require_once get_template_directory() . '/elementor/core/widgets/cms_heading.php';
 		$widgets_manager->register(new \Genzia\Elementor\Widgets\Widget_Heading());
-		// 14 Navigation Menu
+		// 09 Navigation Menu
 		require_once get_template_directory() . '/elementor/core/widgets/cms_navigation_menu.php';
 		$widgets_manager->register(new \Genzia\Elementor\Widgets\Widget_Navigation_Menu());
-		// 15 Page Title
+		// 10 Page Title
 		require_once get_template_directory() . '/elementor/core/widgets/cms_page_title.php';
 		$widgets_manager->register(new \Genzia\Elementor\Widgets\Widget_Page_Title());
-		// 16 Post Feature
-		//require_once get_template_directory() . '/elementor/core/widgets/cms_post_feature.php';
-		//$widgets_manager->register(new \Genzia\Elementor\Widgets\Widget_Post_Feature());
-		// 17 Post Carousel
+		// 11 Post Carousel
 		require_once get_template_directory() . '/elementor/core/widgets/cms_posts_carousel.php';
 		$widgets_manager->register(new \Genzia\Elementor\Widgets\Widget_Posts_Carousel());
-		// 18 Post Grid
+		// 12 Post Grid
 		require_once get_template_directory() . '/elementor/core/widgets/cms_posts_grid.php';
 		$widgets_manager->register(new \Genzia\Elementor\Widgets\Widget_Posts_Grid());
-		// 19 Pricing
+		// 13 Pricing
 		require_once get_template_directory() . '/elementor/core/widgets/cms_pricing.php';
 		$widgets_manager->register(new \Genzia\Elementor\Widgets\Widget_Pricing());
-		// 20 Process
+		// 14 Process
 		require_once get_template_directory() . '/elementor/core/widgets/cms_process.php';
 		$widgets_manager->register(new \Genzia\Elementor\Widgets\Widget_Process());
-		// 21 Progress
-		//require_once get_template_directory() . '/elementor/core/widgets/cms_progress.php';
-		//$widgets_manager->register(new \Genzia\Elementor\Widgets\Widget_Progress());
-		// 22 Quick Contact
+		// 15 Quick Contact
 		require_once get_template_directory() . '/elementor/core/widgets/cms_quickcontact.php';
 		$widgets_manager->register(new \Genzia\Elementor\Widgets\Widget_Quick_Contact());
-		// 23 Slider
+		// 16 Slider
 		require_once get_template_directory() . '/elementor/core/widgets/cms_slider.php';
 		$widgets_manager->register(new \Genzia\Elementor\Widgets\Widget_Sliders());
-		// 24 Social Icons
+		// 17 Social Icons
 		require_once get_template_directory() . '/elementor/core/widgets/cms_social_icons.php';
 		$widgets_manager->register(new \Genzia\Elementor\Widgets\Widget_Social_Icons());
-		// 25 Tabs
+		// 18 Tabs
 		require_once get_template_directory() . '/elementor/core/widgets/cms_tabs.php';
 		$widgets_manager->register(new \Genzia\Elementor\Widgets\Widget_Tabs());
-		// 26 Teams
+		// 19 Teams
 		require_once get_template_directory() . '/elementor/core/widgets/cms_teams.php';
 		$widgets_manager->register(new \Genzia\Elementor\Widgets\Widget_Teams());
-		// 27 Testimonial
+		// 20 Testimonial
 		require_once get_template_directory() . '/elementor/core/widgets/cms_testimonials.php';
 		$widgets_manager->register(new \Genzia\Elementor\Widgets\Widget_Testimonials());
-		// 28 Text Scroll
+		// 21 Text Scroll
 		require_once get_template_directory() . '/elementor/core/widgets/cms_text_scroll.php';
 		$widgets_manager->register(new \Genzia\Elementor\Widgets\Widget_Text_Scroll());
-		// 29 Video
+		// 22 Video
 		require_once get_template_directory() . '/elementor/core/widgets/cms_video_player.php';
 		$widgets_manager->register(new \Genzia\Elementor\Widgets\Widget_Video_Player());
-		// 30
+		// 23
 		if (class_exists('WPCF7')) {
 			require_once get_template_directory() . '/elementor/core/widgets/cms_contact_form.php';
 			$widgets_manager->register(new \Genzia\Elementor\Widgets\Widget_Contact_Form());
 		}
-		// 31
+		// 24
 		if (class_exists('Newsletter')) {
 			require_once get_template_directory() . '/elementor/core/widgets/cms_newsletter.php';
 			$widgets_manager->register(new \Genzia\Elementor\Widgets\Widget_Newsletter());
 		}
-		// 32
+		// 25
 		if (class_exists('TRP_Translate_Press')) {
 			require_once get_template_directory() . '/elementor/core/widgets/cms_language_switcher.php';
 			$widgets_manager->register(new \Genzia\Elementor\Widgets\Widget_Language_Switcher());
 		}
-		// 33
+		// 26
 		if (class_exists('WooCommerce')) {
 			// WooCommerce
 			require_once get_template_directory() . '/elementor/core/widgets/cms_products.php';
 			$widgets_manager->register(new \Genzia\Elementor\Widgets\CMS_Widget_Products());
 		}
-		// 34
+		// 27
 		require_once get_template_directory() . '/elementor/core/widgets/cms_theme_scroll_sticky_grow_up.php';
 		$widgets_manager->register(new \Genzia\Elementor\Widgets\Widget_Theme_Scroll_Sticky_Grow_Up());
-		// 35
+		// 28
 		require_once get_template_directory() . '/elementor/core/widgets/cms_theme_feature.php';
 		$widgets_manager->register(new \Genzia\Elementor\Widgets\Widget_Genzia_Feature());
-		// 36
+		// 29
 		require_once get_template_directory() . '/elementor/core/widgets/cms_theme_posts_scroll_grow.php';
 		$widgets_manager->register(new \Genzia\Elementor\Widgets\Widget_Genzia_Posts_Scroll_Grow());
-		// 37
+		// 30
 		require_once get_template_directory() . '/elementor/core/widgets/cms_theme_separator.php';
 		$widgets_manager->register(new \Genzia\Elementor\Widgets\Widget_Genzia_Separator());
 		
