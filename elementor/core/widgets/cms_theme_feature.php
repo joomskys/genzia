@@ -26,8 +26,8 @@ class Widget_Genzia_Feature extends Widget_Base
         $this->set_title(esc_html__('CMS Genzia Features', 'genzia'));
         $this->set_icon('eicon-featured-image');
         $this->set_keywords(['cms feature', 'feature', 'cms', 'genzia']);
-        $this->set_script_depends(['']);
-        $this->set_style_depends(['']);
+        $this->set_script_depends(['cms-parallax-mouse-move']);
+        $this->set_style_depends(['e-animation-fadeInUp','e-animation-fadeInDown']);
 
         parent::__construct($data, $args);
     }
@@ -88,6 +88,10 @@ class Widget_Genzia_Feature extends Widget_Base
                         '8' => [
                             'title' => esc_html__('Layout Awards #2', 'genzia'),
                             'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_theme_feature/layout/8.webp'
+                        ],
+                        '9' => [
+                            'title' => esc_html__('Layout 9', 'genzia'),
+                            'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_theme_feature/layout/9.webp'
                         ]
                     ],
                     'label_block' => true
@@ -130,7 +134,7 @@ class Widget_Genzia_Feature extends Widget_Base
                     'label_block' => false,
                     'skin'        => 'inline',
                     'condition'   => [
-                        'layout' => ['1','2','4','5','6']
+                        'layout' => ['1','2','4','5','6','9']
                     ]
                 ]
             );
@@ -143,7 +147,7 @@ class Widget_Genzia_Feature extends Widget_Base
                     'placeholder' => esc_html__('Enter your title', 'genzia'),
                     'label_block' => true,
                     'condition'   => [
-                        'layout' => ['1','2','3','4','5','6']
+                        'layout' => ['1','2','3','4','5','6','9']
                     ]
                 ]
             );
@@ -157,7 +161,7 @@ class Widget_Genzia_Feature extends Widget_Base
                     'rows'        => 10,
                     'show_label'  => true,
                     'condition'   => [
-                        'layout' => ['1','2','3','4','5','6']
+                        'layout' => ['1','2','3','4','5','6','9']
                     ]
                 ]
             );
@@ -167,7 +171,7 @@ class Widget_Genzia_Feature extends Widget_Base
                     'label'       => esc_html__('Galleries', 'genzia'),
                     'type'        => Controls_Manager::GALLERY,
                     'condition'   => [
-                        'layout' => ['1']
+                        'layout' => ['1','9']
                     ]
                 ]
             );
@@ -181,7 +185,7 @@ class Widget_Genzia_Feature extends Widget_Base
                         'library' => 'fa-solid'
                     ],
                     'condition' => [
-                        'layout' => ['1']
+                        'layout' => ['1','9']
                     ],
                     'skin'        => 'inline',  
                     'label_block' => false
@@ -194,7 +198,7 @@ class Widget_Genzia_Feature extends Widget_Base
                     'type'        => Controls_Manager::TEXTAREA,
                     'default'     => 'Gallery Description',
                     'condition' => [
-                        'layout' => ['1']
+                        'layout' => ['1','9']
                     ],
                     'label_block' => false
                 ]
@@ -204,7 +208,37 @@ class Widget_Genzia_Feature extends Widget_Base
                 'label'     => esc_html__('Gallery Link','genzia'),
                 'text'      => 'Click Here',
                 'condition' => [
-                    'layout' => ['1']
+                    'layout' => ['1','9']
+                ]
+            ]);
+            // Button
+            genzia_elementor_link_settings($this,[
+                'name'      => 'btn_',
+                'label'     => esc_html__('Button Settings','genzia'),
+                'text'      => 'Click Here',
+                'icon_settings' => [
+                    'enable' => true
+                ],
+                'condition' => [
+                    'layout' => ['9']
+                ]
+            ]);
+            genzia_elementor_link_settings($this,[
+                'name'      => 'phone_',
+                'mode'      => 'link',
+                'label'     => esc_html__('Phone Settings','genzia'),
+                'text'      => '+2 011 6114 5741',
+                'condition' => [
+                    'layout' => ['9']
+                ]
+            ]);
+            genzia_elementor_link_settings($this,[
+                'name'      => 'email_',
+                'mode'      => 'link',
+                'label'     => esc_html__('Email Settings','genzia'),
+                'text'      => 'Genzia@mail.com',
+                'condition' => [
+                    'layout' => ['9']
                 ]
             ]);
             // Testimonial
@@ -258,6 +292,212 @@ class Widget_Genzia_Feature extends Widget_Base
                     'condition'   => [
                         'layout' => ['3'],
                         'ttmn!'  => ''
+                    ]
+                ]
+            );
+            // SEO
+            $seo = new Repeater();
+                // Title
+                $seo->add_control(
+                    'seo_title',
+                    [
+                        'label'       => esc_html__('Title', 'genzia'),
+                        'type'        => Controls_Manager::TEXT,
+                        'default'     => 'Your title',
+                        'label_block' => false,
+                        'skin'        => 'inline'
+                    ]
+                );
+                // Color
+                genzia_elementor_colors_opts($seo, [
+                    'name'      => 'seo_color',
+                    'label'     => esc_html__('Title Color', 'genzia'),
+                    'custom'    => false
+                ]);
+                // Background
+                genzia_elementor_colors_opts($seo, [
+                    'name'      => 'seo_bg',
+                    'label'     => esc_html__('Background Color', 'genzia'),
+                    'custom'    => false
+                ]);
+                // Dimension
+                $seo->add_control(
+                    'seo_dimentions',
+                    [
+                        'label'       => esc_html__('Dimensions', 'genzia'),
+                        'type'        => Controls_Manager::SLIDER,
+                        'default'     => [],
+                        'label_block' => true,
+                        'default'     => [
+                            'size' => 124,
+                        ],
+                        'range' => [
+                            'px' => [
+                                'min'  => 80,
+                                'max'  => 400,
+                                'step' => 1
+                            ]
+                        ],
+                    ]
+                );
+                // X Position
+                $seo->add_control(
+                    'seo_xpos',
+                    [
+                        'label'       => esc_html__('X Position', 'genzia'),
+                        'type'        => Controls_Manager::SLIDER,
+                        'default'     => [],
+                        'label_block' => true,
+                        'range' => [
+                            'px' => [
+                                'min'  => -1200,
+                                'max'  => 1200,
+                                'step' => 1
+                            ]
+                        ],
+                        'default'     => [
+                            'size' => '',
+                        ],
+                        'selectors' => [
+                            '{{WRAPPER}} {{CURRENT_ITEM}}.seo-item' => 'left:{{SIZE}}px;',
+                        ]
+                    ]
+                );
+                // Y Position
+                $seo->add_control(
+                    'seo_ypos',
+                    [
+                        'label'       => esc_html__('Y Position', 'genzia'),
+                        'type'        => Controls_Manager::SLIDER,
+                        'default'     => [],
+                        'label_block' => true,
+                        'range' => [
+                            'px' => [
+                                'min'  => -1200,
+                                'max'  => 1200,
+                                'step' => 1
+                            ]
+                        ],
+                        'default'     => [
+                            'size' => '',
+                        ],
+                        'selectors' => [
+                            '{{WRAPPER}} {{CURRENT_ITEM}}.seo-item' => 'top:{{SIZE}}px;',
+                        ]
+                    ]
+                );
+            $this->add_control(
+                'seo',
+                [
+                    'label'       => esc_html__('Seo List', 'genzia'),
+                    'type'        => Controls_Manager::REPEATER,
+                    'fields'      => $seo->get_controls(),
+                    'title_field' => '{{seo_title}}',
+                    'default'     => [
+                        [
+                            'seo_title' => 'Development',
+                            'seo_color' => 'menu',
+                            'seo_bg'    => 'white',
+                            'seo_dimentions' => [
+                                'size'  => 136
+                            ],
+                            'seo_xpos' => -100,
+                            'seo_ypos' => 30
+                        ],
+                        [
+                            'seo_title' => 'Marketing',
+                            'seo_color' => 'white',
+                            'seo_bg'    => 'accent-regular',
+                            'seo_dimentions' => [
+                                'size'  => 127
+                            ],
+                            'seo_xpos' => 209,
+                            'seo_ypos' => 119
+                        ],
+                        [
+                            'seo_title' => 'Illustrations',
+                            'seo_color' => 'menu',
+                            'seo_bg'    => 'white',
+                            'seo_dimentions' => [
+                                'size'  => 140
+                            ],
+                            'seo_xpos' => 296,
+                            'seo_ypos' => 110
+                        ],
+                        [
+                            'seo_title' => 'Ecommerce',
+                            'seo_color' => 'white',
+                            'seo_bg'    => 'warning',
+                            'seo_dimentions' => [
+                                'size'  => 140
+                            ],
+                            'seo_xpos' => 242,
+                            'seo_ypos' => 40
+                        ],
+                        [
+                            'seo_title' => 'Strategy',
+                            'seo_color' => 'menu',
+                            'seo_bg'    => 'white',
+                            'seo_dimentions' => [
+                                'size'  => 116
+                            ],
+                            'seo_xpos' => 0,
+                            'seo_ypos' => 106
+                        ],
+                        [
+                            'seo_title' => 'UI/UX',
+                            'seo_color' => 'white',
+                            'seo_bg'    => 'warning',
+                            'seo_dimentions' => [
+                                'size'  => 92
+                            ],
+                            'seo_xpos' => 84,
+                            'seo_ypos' => 110
+                        ],
+                        [
+                            'seo_title' => 'Analysis',
+                            'seo_color' => 'white',
+                            'seo_bg'    => 'accent-regular',
+                            'seo_dimentions' => [
+                                'size'  => 124
+                            ],
+                            'seo_xpos' => 40,
+                            'seo_ypos' => 0
+                        ],
+                        [
+                            'seo_title' => 'Branding',
+                            'seo_color' => 'white',
+                            'seo_bg'    => 'menu',
+                            'seo_dimentions' => [
+                                'size'  => 140
+                            ],
+                            'seo_xpos' => 138,
+                            'seo_ypos' => 20
+                        ],
+                        [
+                            'seo_title' => 'Seo',
+                            'seo_color' => 'menu',
+                            'seo_bg'    => 'white',
+                            'seo_dimentions' => [
+                                'size'  => 80
+                            ],
+                            'seo_xpos' => 232,
+                            'seo_ypos' => -10
+                        ],
+                        [
+                            'seo_title' => 'SMM',
+                            'seo_color' => 'menu',
+                            'seo_bg'    => 'white',
+                            'seo_dimentions' => [
+                                'size'  => 86
+                            ],
+                            'seo_xpos' => 138,
+                            'seo_ypos' => 146
+                        ]
+                    ],
+                    'button_text' => esc_html__('Add Seo', 'genzia'),
+                    'condition'   => [
+                        'layout' => ['5']
                     ]
                 ]
             );

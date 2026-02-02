@@ -29,7 +29,7 @@ $data_header_settings =[
 //
 $header_left_classes = [
     'flex-auto d-flex gap p-lr-24 p-lr-mobile-menu-20 bg-backdrop cms-radius-10',
-    (genzia_get_opts( 'header_transparent', 'on', 'header_custom') === 'on') ? '' : 'bg-white cms-shadow-3'
+    (genzia_get_opts( 'header_transparent', 'on', 'header_custom') === 'on') ? '' : 'bg-white cms-shadow-4'
 ];
 $logo_class = [
     'site-branding',
@@ -100,7 +100,7 @@ $nav_content = ob_get_clean();
 //
 $header_tools_classes = [
     'flex-auto d-flex gap-20 gap-xsmobile-10 align-items-center bg-backdrop cms-radius-10 p-lr-24 p-lr-xsmobile-10 cms-header-height',
-    (genzia_get_opts( 'header_transparent', 'on', 'header_custom') === 'on') ? '' : 'bg-white cms-shadow-3'
+    (genzia_get_opts( 'header_transparent', 'on', 'header_custom') === 'on') ? '' : 'bg-white cms-shadow-4'
 ];
 ?>
 <header id="cms-header-wrap" class="<?php echo genzia_header_wrap_classes(); ?>">
@@ -216,7 +216,7 @@ $header_tools_classes = [
                 <?php 
                     // Button 01
                     genzia_header_button_render([
-                        'class'      => 'h-btn1 cms-shadow-3 cms-btn btn-white text-menu btn-hover-accent-regular text-hover-white cms-hover-move-icon-right cms-hidden-mobile-menu cms-hover-change',
+                        'class'      => 'h-btn1 cms-shadow-4 cms-btn btn-white text-menu btn-hover-accent-regular text-hover-white cms-hover-move-icon-right cms-hidden-mobile-menu cms-hover-change',
                         'data'       => [
                             'default_class'     => ['btn-white','text-menu','btn-hover-accent-regular','text-hover-white'],
                             'sticky_class'      => ['btn-accent-regular','text-white','btn-hover-primary-regular','text-hover-white'],

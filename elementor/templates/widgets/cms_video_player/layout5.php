@@ -78,11 +78,13 @@ $this->add_render_attribute('wrap', [
 	<?php 
 		// Banner Background
 		genzia_elementor_image_render($settings,[
-			'name'        => 'banner_bg',
-			'size'        => 'custom',
-			'custom_size' => ['width' => 1600, 'height' => 864],
-			'img_class'   => 'img-cover',
-			'max_height'  => true
+			'name'                => 'banner_bg',
+			'size'                => 'custom',
+			'custom_size'         => ['width' => 1600, 'height' => 864],
+			'img_class'           => 'img-cover',
+			'max_height'          => true,
+			'as_background'       => true,
+			'as_background_class' => 'cms-bg-parallax'
 		]);
 	?>
 </div>

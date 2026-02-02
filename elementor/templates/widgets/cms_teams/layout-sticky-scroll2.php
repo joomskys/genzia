@@ -64,8 +64,8 @@ $this->add_render_attribute('wrap', [
 ]);
 // Grid Wrap
 $wrap_styles = [
-    '--cms-stroke-width:3;',
-    '--cms-stroke-dash-length:1650px;'
+    '--cms-stroke-width:2;',
+    '--cms-stroke-dash-length:600px;' //1650
 ];
 $this->add_render_attribute('grid-wrap',[
     'class' => [

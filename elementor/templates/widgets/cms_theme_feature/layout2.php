@@ -16,14 +16,15 @@ $this->add_render_attribute('wrap',[
 		'cms-genzia-features-'.$settings['layout'],
 		'bg-bg-light',
 		'cms-radius-16',
-		'p-40 pb-0',
+		'pt-40 p-lr-38 pb-0',
 		'd-flex flex-column justify-content-between',
 		'relative',
 		'cms-shadow-2',
 		'text-center',
 		'cms-bg-cover',
 		'cms-lazy',
-		'overflow-hidden'
+		'overflow-hidden',
+		'cms-hover-change'
 	],
 	'style' => [
 		'min-height:512px;',
@@ -49,6 +50,7 @@ $this->add_render_attribute( 'desc', [
 		'text-'.$this->get_setting('description_color','on-dark'),
 		'text-md',
 		'pt-10',
+		'ls--07',
 		'elementor-invisible'
 	],
 	'data-settings' => wp_json_encode([
@@ -67,9 +69,23 @@ $this->add_render_attribute( 'desc', [
 		?></div>
 	</div>
 	<?php 
+		// Banner
+		genzia_elementor_image_render($settings,[
+			'name'        => 'banner',
+			'size'        => 'full',
+			'custom_size' => ['width' => 320, 'height' => 364],
+			'img_class'   => 'img-cover cms-on-hover-translateY',
+			'before'      => '<div class="absolute top left right mt m-lr" style="--mt:148px;--m-lr:36px;">',
+			'after'       => '</div>',
+			'attrs'		  => [
+				'style' => '--cms-on-hover-translateY:-108px;'
+			]
+		]);
+	?>
+	<?php 
 		ob_start();
 	?>
-		<div class="cms-feature-chat p-25 pb-55 overflow-hidden absolute left right bottom text-sm text-start">
+		<div class="cms-feature-chat p-25 pb-55 overflow-hidden align-self-end text-sm text-start relative z-top2">
 			<?php 
 				$count = 0;
 				foreach ($chatbot as $key => $chat) {
@@ -120,14 +136,6 @@ $this->add_render_attribute( 'desc', [
 		</div>
 	<?php
 		$chatbot = ob_get_clean();
-		// Banner
-		genzia_elementor_image_render($settings,[
-			'name'        => 'banner',
-			'size'        => 'custom',
-			'custom_size' => ['width' => 320, 'height' => 364],
-			'img_class'   => 'mt-n25 img-cover',
-			'before'      => '<div class="align-items-end relative d-flex justify-content-end pt-25">',
-			'after'       => '<div class="overflow-hidden cms-overlay mt-25">'.$chatbot.'</div></div>'
-		]);
+		printf('%s', $chatbot);
 	?>
 </div>

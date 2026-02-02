@@ -131,9 +131,8 @@ $this->add_render_attribute( 'desc', [
 		$process_item_class = [
 			'cms-process',
 			'cms-sticky cms-mobile-relative',
-			'elementor-invisible',
+			//'elementor-invisible',
 			'cms-transition',
-			'h-100vh h-mobile-auto',
 			'd-flex align-items-center'
 		];
 		$process__item_class = [
@@ -168,9 +167,9 @@ $this->add_render_attribute( 'desc', [
 				]),
 				'style' => [
 					'z-index:'.$count.';',
-					'--cms-sticky:'.($count_sticky*63).'px;',
+					'--cms-sticky:'.(($count_sticky*113)+30).'px;',
 					'--cms-sticky-tablet:'.($count_sticky*40).'px;',
-					//($count%2==0)?'transform:rotate(-5deg);':'transform:rotate(5deg);'
+					($count%2==0)?'transform:rotate(-5deg);':'transform:rotate(5deg);'
 				]
 			]);
 			// Items

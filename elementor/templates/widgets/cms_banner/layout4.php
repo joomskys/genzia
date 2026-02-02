@@ -14,7 +14,9 @@ $img_scale_height = $this->get_setting('img_scale_height',920);
 $this->add_render_attribute('wrap',[
 	'class' => [
 		'cms-ebanner',
-		'd-flex'
+		'cms-ebanner-'.$settings['layout'],
+		'd-flex',
+		'min-w'
 	],
 	'data-parallax' => wp_json_encode([
 		'width'     => $img_width,
@@ -25,6 +27,8 @@ $this->add_render_attribute('wrap',[
 	'style' => [
 		'width:'.$img_width.'px;',
 		'height:'.$img_scale_height.'px;',
+		'--min-w-widescreen:57.25%;',
+		'--min-w:58.75%;'
 	]
 ]);
 // Banner

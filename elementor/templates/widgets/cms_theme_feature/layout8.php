@@ -83,9 +83,9 @@ $this->add_render_attribute('wrap',[
 	?> 
 		<<?php ctc_print_html($tag.' '.$this->get_render_attribute_string($item_key)); ?>>
 			<div class="d-flex gutter gutter-mobile-10 align-items-center">
-				<div <?php ctc_print_html($this->get_render_attribute_string($item_title)); ?>><?php echo $award['awards_title']; ?></div>
-				<div <?php ctc_print_html($this->get_render_attribute_string($item_desc)); ?>><?php  echo $award['awards_desc']; ?></div>
-				<div <?php ctc_print_html($this->get_render_attribute_string($item_year)); ?>><?php  echo $award['awards_year']; ?></div>
+				<div <?php ctc_print_html($this->get_render_attribute_string($item_title)); ?>><?php echo esc_html($award['awards_title']); ?></div>
+				<div <?php ctc_print_html($this->get_render_attribute_string($item_desc)); ?>><?php  echo esc_html($award['awards_desc']); ?></div>
+				<div <?php ctc_print_html($this->get_render_attribute_string($item_year)); ?>><?php  echo esc_html($award['awards_year']); ?></div>
 			</div>
 		</<?php ctc_print_html($tag);?>>
 	<?php } ?>

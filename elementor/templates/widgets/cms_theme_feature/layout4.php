@@ -52,7 +52,8 @@ $this->add_render_attribute( 'desc', [
 			'name'        => 'banner',
 			'size'        => 'custom',
 			'custom_size' => ['width' => 392, 'height' => 299],
-			'img_class'	  => ''
+			'img_class'	  => 'img-cover',
+			'max_height'  => true	
 		]);
 	?>
 	<div class="align-sefl-end relative pt-20 pb-33 p-lr-40 w-100">

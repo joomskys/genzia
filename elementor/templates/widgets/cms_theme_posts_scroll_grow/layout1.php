@@ -89,7 +89,7 @@ $this->add_render_attribute('heading',[
     ]),
     'style' => '--max-w:670px;--pb:270px;--pb-tablet:135px;--pb-mobile:40px;'
 ]);
-$readmore_text = $this->get_setting('readmore_text', esc_html__('View project'));
+$readmore_text = $this->get_setting('readmore_text', esc_html__('View project','genzia'));
 ?>
 <div <?php ctc_print_html( $this->get_render_attribute_string( 'heading' ) ); ?>>
     <div <?php ctc_print_html( $this->get_render_attribute_string( 'smallheading_text' ) ); ?>><?php 
@@ -137,7 +137,8 @@ $readmore_text = $this->get_setting('readmore_text', esc_html__('View project'))
                 (in_array($count, [4]))? 'mr-70' : '',
                 'cms-parallax-tablet-no',
                 'relative',
-                'cms-hover-change'
+                'cms-hover-change',
+                'hover-image-zoom-out'
             ]),
             'data-parallax' => wp_json_encode([
                 'scale'   => "1.2",
@@ -166,7 +167,7 @@ $readmore_text = $this->get_setting('readmore_text', esc_html__('View project'))
                         'custom_size' => ['width' => 800, 'height' => 560],
                         'img_class'   => 'cms-radius-16', 
                         'max_height'  => true,
-                        'before'      => '<div class="relative mb-33">',
+                        'before'      => '<div class="relative mb-33 overflow-hidden cms-radius-16">',
                         'after'       => $readmore.'</div>'
                     ]);
                 ?>
@@ -176,7 +177,7 @@ $readmore_text = $this->get_setting('readmore_text', esc_html__('View project'))
                 ?></div>
                 <?php
                 // Taxonomy
-                genzia_the_terms($post->ID, $taxonomy_by, '', 'bg-white text-menu bdr-1 bdr-divider text-hover-white bg-hover-accent-regular bdr-hover-accent-regular cms-radius-4 p-lr-10 p-tb-5', ['before' => '<div class="d-flex gap-4 text-xs pt-30">', 'after' => '</div>']);
+                genzia_the_terms($post->ID, genzia_taxonomy_by_post_type($post_type, $taxonomy_by), '', 'bg-white text-menu bdr-1 bdr-divider text-hover-white bg-hover-accent-regular bdr-hover-accent-regular cms-radius-4 p-lr-10 p-tb-5', ['before' => '<div class="d-flex gap-4 text-xs pt-30">', 'after' => '</div>']);
                 ?>
                 <a href="<?php echo esc_url(get_permalink( $post->ID )); ?>" class="cms-overlay cms-hidden-mobile cms-cursor cms-cursor-text" data-cursor-text="<?php echo esc_attr($readmore_text); ?>" data-cursor-class="bg-accent-regular text-white">
                     <span class="screen-reader-text"><?php ctc_print_html($readmore_text); ?></span>

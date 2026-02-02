@@ -15,7 +15,7 @@ extract(ctc_get_posts_of_grid($post_type, [
 ], [genzia_taxonomy_by_post_type($post_type, 'category')]));
 
 $numn_line = !empty($this->get_setting('num_line')['size']) ? $this->get_setting('num_line')['size'] : 1;
-
+$readmore_text = $this->get_setting('readmore_text', esc_html__('Explore More','genzia'));
 // Wrap attributes
 $this->add_render_attribute('wrap',[
     'class' => ['cms-post-grid', 'cms-grid', 'cms-grid-'.$settings['layout']]
@@ -62,7 +62,8 @@ $this->add_render_attribute( 'heading_text', [
         $this->add_render_attribute($item_tax,[
             'class' => [
                 'category text-xs d-flex gap-4 w-100',
-                'elementor-invisible'
+                'elementor-invisible',
+                'relative z-top'
             ],
             'data-settings' => wp_json_encode([
                 'animation' => 'fadeInUp',
@@ -99,7 +100,7 @@ $this->add_render_attribute( 'heading_text', [
         ]);
     ?>
     <div <?php ctc_print_html($this->get_render_attribute_string($item_key)); ?>>
-        <div class="cms--item relative cms-radius-16 overflow-hidden cms-shadow-2">
+        <div class="cms--item relative cms-radius-16 overflow-hidden">
             <?php
                 // Post Image
                 genzia_elementor_post_thumbnail_render($settings, [
@@ -112,11 +113,12 @@ $this->add_render_attribute( 'heading_text', [
                 ]);          
             ?>
             <div class="cms--item cms-overlay d-flex flex-column gap-20 justify-content-between p-48 p-smobile-20">
+                <a href="<?php echo esc_url(get_permalink( $post->ID )); ?>" class="cms-overlay cms-cursor cms-cursor-text" data-cursor-text="<?php echo esc_attr($readmore_text);?>" data-cursor-class="bg-accent-regular text-white"><span class="screen-reader-text"><?php echo esc_html($readmore_text); ?></span></a>
                 <div <?php ctc_print_html($this->get_render_attribute_string($item_tax)); ?>><?php 
                     // Taxonomy
-                    genzia_the_terms($post->ID, $taxonomy_by, '', 'bg-white text-menu bg-hover-accent-regular text-hover-white cms-radius-4 p-tb-5 p-lr-10', ['before' => '', 'after' => '']);
+                    genzia_the_terms($post->ID, genzia_taxonomy_by_post_type($post_type, $taxonomy_by), '', 'bg-white text-menu bg-hover-accent-regular text-hover-white cms-radius-4 p-tb-5 p-lr-10', ['before' => '', 'after' => '']);
                 ?></div>
-                <div class="w-100 align-self-end">
+                <div class="w-100 align-self-end relative z-top">
                     <a <?php ctc_print_html($this->get_render_attribute_string($item_title_key)); ?>><?php 
                         echo get_the_title($post->ID); 
                     ?></a>

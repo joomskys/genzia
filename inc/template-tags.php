@@ -1411,7 +1411,7 @@ if(!function_exists('genzia_header_side_nav_toggle')){
             $content = $cms_post->post_content;
         }
     ?>
-    <div id="cms-side-nav-toggle" class="cms-toggle-content cms-shadow-3 absolute top right bg-white p-40 p-lr-smobile-0 cms-radius-10 cms-transition min-w" style="--min-w:510px;--min-w-smobile:280px;">
+    <div id="cms-side-nav-toggle" class="cms-toggle-content cms-shadow-3 absolute top right bg-white p-40 p-lr-smobile-0 cms-radius-10 cms-transition max-w min-w" style="--max-w:500px;--max-w-smobile:280px;--min-w:500px;--min-w-smobile:280px;">
         <?php printf('%s', $content); ?>
         <?php genzia_svgs_icon([
             'icon'      => 'core/close',
@@ -3598,6 +3598,10 @@ if(!function_exists('genzia_theme_custom_colors')){
                 'title' => esc_html__('Diviver/ Divider Light','genzia'),
                 'value' => 'rgba(234,234,234, 0.5)'
             ],
+            'warning' => [
+                'title' => esc_html__('Warning', 'genzia'),
+                'value' => '#FFAA00'
+            ],
             'gradient-1' => [
                 'title' => esc_html__('Mixed Gradient #1', 'genzia'),
                 'value' => 'linear-gradient(69.88deg, var(--cms-accent-regular) 2.47%, var(--cms-warning) 98.44%)'
@@ -4289,9 +4293,9 @@ class Genzia_Mega_Menu_Walker extends Walker_Nav_Menu
     public function menu_parent_icon(){
         // icon
         return genzia_svgs_icon([
-            'icon'      => 'core/chevron-down',
-            'icon_size' => 8,
-            'class'     => 'main-menu-toggle cms-hidden-mobile-menu pt-3',
+            'icon'      => 'dot',
+            'icon_size' => 4,
+            'class'     => 'main-menu-toggle cms-hidden-mobile-menu order-first',
             'echo'      => false
         ]).genzia_svgs_icon([
             'icon'      => 'arrow-right',

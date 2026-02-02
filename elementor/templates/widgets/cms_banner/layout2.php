@@ -14,6 +14,48 @@ $img_class = genzia_nice_class([
 	'cms-radius-16',
 	'elementor-invisible'
 ]);
+// Banner Title
+$this->add_render_attribute('banner-title', [
+	'class' => [
+		'cms-banner-title heading',
+		'text-xl text-'.$this->get_setting('banner_text_color', 'on-dark'),
+		'absolute bottom left right',
+		'p-40 p-lr-smobile-20',
+		'cms-hover-show move-down cms-transition'
+	]
+]);
+ob_start();
+?>
+<div <?php ctc_print_html($this->get_render_attribute_string('banner-title')); ?>>
+	<?php 
+		// Banner title
+		echo esc_html($settings['banner_text']); 
+		// Banner Link
+		genzia_elementor_link_render($this, $settings, [
+			'name'			   => 'banner_link_',
+			'mode'			   => 'link',
+			'class'            => 'cms-underline cms-hover-underline text-md font-700 cms-link mt-15',
+			'text_color'       => 'white',
+			'text_color_hover' => 'white',
+			// Icons
+			'text_icon' => genzia_svgs_icon([
+				'icon'       => 'arrow-right',
+				'icon_size'  => 10,
+				'icon_class' =>  genzia_nice_class([
+					'order-first'
+				]),
+				'echo' => false
+			]),
+			'attrs' => [
+				'data-settings' => wp_json_encode([
+					'animation' => 'fadeInUp'
+				])
+			]
+		]);
+	?>
+</div>
+<?php
+$banner_title = ob_get_clean();
 // Large Heading
 $this->add_inline_editing_attributes( 'heading_text' );
 $this->add_render_attribute( 'heading_text', [
@@ -48,19 +90,19 @@ $this->add_render_attribute( 'desc', [
 ]);
 ?>
 <div <?php ctc_print_html($this->get_render_attribute_string('wrap')); ?>>
-	<div class="col-4 col-tablet-5 col-mobile-12"><?php 
+	<div class="col-4 col-tablet-5 col-mobile-12 hover-image-zoom-out cms-hover-image-blur"><?php 
 		genzia_elementor_image_render($settings,[
 			'name'        => 'banner',
 			'custom_size' => ['width' => 384, 'height' => 576],
 			'img_class'   => $img_class,
 			'max_height'  => true,
-			'before'	  => '<div class="relative d-inline-block">',
+			'before'	  => '<div class="relative d-inline-block cms-hover-change overflow-hidden cms-radius-16">',
 			'after'		  => genzia_svgs_icon([
 				'icon'      => 'core/plus',
 				'icon_size' => 14,
 				'class'     => 'cms-box-30 cms-radius-10 bg-menu text-white absolute top right mt-10 mr-10',
 				'echo'	    => false
-			]).'</div>',
+			]).$banner_title.'</div>',
 			'attrs'		  => [
 				'data-settings' => wp_json_encode([
 					'animation' => 'fadeInLeft'
@@ -97,8 +139,8 @@ $this->add_render_attribute( 'desc', [
 							'text-'.$this->get_setting('link__icon_color','menu'),
 							'bg-hover-'.$this->get_setting('link__icon_bg_hover','white'),
 							'bg-on-hover-'.$this->get_setting('link__icon_bg_hover','white'),
-							'text-hover-'.$this->get_setting('link__icon_color_hover','menu'),
-							'text-on-hover-'.$this->get_setting('link__icon_color_hover','menu')
+							'text-hover-'.$this->get_setting('link__icon_color_hover','accent-regular'),
+							'text-on-hover-'.$this->get_setting('link__icon_color_hover','accent-regular')
 						]),
 						'echo' => false
 					]),

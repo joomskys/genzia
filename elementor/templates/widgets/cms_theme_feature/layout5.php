@@ -14,7 +14,8 @@ $this->add_render_attribute('wrap',[
 		'cms-shadow-2',
 		'overflow-hidden'
 	],
-	'style' => 'min-height:512px;'
+	'style' => 'min-height:512px;',
+	//'data-px-throwable-scene' => true
 ]);
 //Title
 $this->add_render_attribute( 'title', [
@@ -45,9 +46,21 @@ $this->add_render_attribute( 'banner', [
 	'class' => [
 		'cms-banner empty-none',
 		'align-self-end',
-		'w-100'
+		'w-100',
+		'text-md font-700',
+		'relative'
+	],
+	'style' => 'height:210px;'
+]);
+$this->add_render_attribute( 'banner-inner', [
+	'class' => [
+		'cms--banner',
+		'absolute bottom left right',
+		'overflow-hidden'
 	]
 ]);
+// SEO
+$seos = $this->get_setting('seo',[]);
 // Output HTMl
 ?>
 <div <?php ctc_print_html($this->get_render_attribute_string('wrap')); ?>>
@@ -64,12 +77,49 @@ $this->add_render_attribute( 'banner', [
 		?></div>
 	</div>
 	<div <?php ctc_print_html($this->get_render_attribute_string('banner')); ?>>
-		<?php // Banner
-		genzia_elementor_image_render($settings,[
-			'name'        => 'banner',
-			'size'        => 'custom',
-			'custom_size' => ['width' => 392, 'height' => 230],
-			'img_class'	  => 'align-self-end'
-		]); ?>
+			<?php 
+			$count = 0;
+			foreach ($seos as $seo_key => $seo) {
+				$count++;
+				$item_key = $this->get_repeater_setting_key('item', 'cms_theme_feature', $seo_key);
+				$this->add_render_attribute($item_key, [
+					'class' => [
+						'item seo-item',
+						'absolute top left',
+						'elementor-repeater-item-' . $seo['_id'],
+						'cms-parallax-mouse-move',
+						'cms-transition'
+					],
+					'data-offset' => $count*10,
+					'style'       => 'width:'.$seo['seo_dimentions']['size'].'px;height:'.$seo['seo_dimentions']['size'].'px;top:'.$seo['seo_ypos']['size'].'px;left:'.$seo['seo_xpos']['size'].'px;'
+				]);
+				//
+				$item_inner_key = $this->get_repeater_setting_key('item-inner', 'cms_theme_feature', $seo_key);
+				$this->add_render_attribute($item_inner_key, [
+					'class' => [
+						'item-inner',
+						'cms-box- circle',
+						'text-'.$seo['seo_color'],
+						'bg-'.$seo['seo_bg'],
+						($seo['seo_bg']=='white') ? 'bdr-1 bdr-divider' : '',
+						'elementor-invisible'
+					],
+					'style'       => 'width:'.$seo['seo_dimentions']['size'].'px;height:'.$seo['seo_dimentions']['size'].'px;',
+					'data-settings' => wp_json_encode([
+						'animation' => 'fadeInDown',
+						'animation_delay' => 100+($count*100)
+					]),
+					'data-width'  => $seo['seo_dimentions']['size'],
+					'data-height' => $seo['seo_dimentions']['size']
+				]);
+			?>
+			<div <?php ctc_print_html($this->get_render_attribute_string($item_key)); ?>>
+				<div <?php ctc_print_html($this->get_render_attribute_string($item_inner_key)); ?>>
+					<?php 
+						echo esc_html($seo['seo_title']);
+					?>
+				</div>
+			</div>
+		<?php } ?>
 	</div>
 </div>

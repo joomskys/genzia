@@ -36,7 +36,8 @@ $this->add_render_attribute('wrap', [
                 'd-flex align-items-center justify-content-'.$default_align,
                 'cms-radius-10 bg-bg-light',
                 'overflow-hidden',
-                'elementor-invisible'
+                'elementor-invisible',
+                'cms-on-hover-scale-09'
             ]),
             'aria-label' => $client['name'],
             'data-settings' => wp_json_encode([
@@ -44,7 +45,7 @@ $this->add_render_attribute('wrap', [
             ])
         ]);
         ?>
-        <div class="client-item">
+        <div class="client-item cms-hover-change">
             <a <?php ctc_print_html($this->get_render_attribute_string( $link_key )); ?>><?php
                 genzia_elementor_image_render($client,[
                     'name'           => 'image',

@@ -117,8 +117,8 @@ $this->add_render_attribute('counter--number', [
 							'text-'.$this->get_setting('link__icon_color','menu'),
 							'bg-hover-'.$this->get_setting('link__icon_bg_hover','white'),
 							'bg-on-hover-'.$this->get_setting('link__icon_bg_hover','white'),
-							'text-hover-'.$this->get_setting('link__icon_color_hover','menu'),
-							'text-on-hover-'.$this->get_setting('link__icon_color_hover','menu')
+							'text-hover-'.$this->get_setting('link__icon_color_hover','accent-regular'),
+							'text-on-hover-'.$this->get_setting('link__icon_color_hover','accent-regular')
 						]),
 						'echo' => false
 					]),
@@ -132,7 +132,7 @@ $this->add_render_attribute('counter--number', [
 		</div>
 	</div>
 	<div class="flex-basic">
-		<div class="pl-40 pl-tablet-0"><?php 
+		<div class="pl-100 pl-tablet-0"><?php 
 			genzia_elementor_image_render($settings,[
 				'name'        => 'banner_small',
 				'size'		  => 'custom',

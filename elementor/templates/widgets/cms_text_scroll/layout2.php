@@ -6,6 +6,8 @@ $this->add_render_attribute('wrap', [
 		'cms-text-scroll',
 		'heading',
 		'text-'.$this->get_setting('text_color', 'divider'),
+		'text-hover-'.$this->get_setting('text_color_hover', 'menu'),
+		'cms-transition',
 		'text-size font-500 lh-07',
 		'm-tb'
 	],

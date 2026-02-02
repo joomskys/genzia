@@ -28,5 +28,7 @@
         //elementorFrontend.hooks.addAction('frontend/element_ready/cms_theme_chatbot.default', WidgetCMSParallaxMouseMoveHandler);
         elementorFrontend.hooks.addAction('frontend/element_ready/cms_slider.default', WidgetCMSParallaxMouseMoveHandler);
         elementorFrontend.hooks.addAction('frontend/element_ready/cms_video_player.default', WidgetCMSParallaxMouseMoveHandler);
+        // Theme
+        elementorFrontend.hooks.addAction('frontend/element_ready/cms_theme_feature.default', WidgetCMSParallaxMouseMoveHandler);
     });
 })(jQuery);

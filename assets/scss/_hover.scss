@@ -24,6 +24,14 @@
 		}
 	}
 }
+// Hover blur image
+.cms-hover-image-blur{
+	&:hover{
+		img{
+			filter: blur(5px);
+		}
+	}
+}
 
 // Hover underline 
 .cms-hover-underline,
@@ -201,6 +209,13 @@
 	// Min Width
 	.mw-on-hover-90{
 		min-width: 90px;
+	}
+	// Scale
+	.cms-on-hover-scale-09{
+		@include scale(0.9);
+	}
+	.cms-on-hover-scale-13{
+		@include scale(1.3);
 	}
 }
 .active{

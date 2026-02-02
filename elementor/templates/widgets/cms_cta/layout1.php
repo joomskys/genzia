@@ -43,12 +43,13 @@ $this->add_render_attribute('text', [
 					'text-'.$this->get_setting('link__icon_color','menu'),
 					'bg-hover-'.$this->get_setting('link__icon_bg_hover','white'),
 					'bg-on-hover-'.$this->get_setting('link__icon_bg_hover','white'),
-					'text-hover-'.$this->get_setting('link__icon_color_hover','menu'),
-					'text-on-hover-'.$this->get_setting('link__icon_color_hover','menu')
+					'text-hover-'.$this->get_setting('link__icon_color_hover','accent-regular'),
+					'text-on-hover-'.$this->get_setting('link__icon_color_hover','accent-regular')
 				])
 			]),
 			'class'            => [
-				'cms-hover-move-icon-right'
+				'cms-hover-move-icon-right',
+				'cms-hover-change'
 			],
 			'btn_color'        => 'primary-regular',
 			'text_color'       => 'white',

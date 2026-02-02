@@ -254,7 +254,7 @@ class Widget_Accordion extends Widget_Base
         $this->start_controls_section(
             'eheading_section',
             [
-                'label'     => esc_html__('Element Heading'),
+                'label'     => esc_html__('Element Heading','genzia'),
                 'tab'       =>  Controls_Manager::TAB_CONTENT
             ]
         );

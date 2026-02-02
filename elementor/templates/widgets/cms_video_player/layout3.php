@@ -183,7 +183,7 @@ $this->add_render_attribute('gallery-desc',[
 					'icon'           => $this->get_setting('video_icon'),
 					'icon_size'      => 10,
 					'icon_color'     => $this->get_setting('video_icon_color', 'menu'),
-					'icon_class'     => ' cms-box- circle bg-white bg-on-hover-accent-regular text-on-hover-white',
+					'icon_class'     => ' cms-box- circle bg-white bg-hover-accent-regular text-hover-white bg-on-hover-accent-regular text-on-hover-white cms-on-hover-scale-13',
 					'icon_dimension' => 36,
 					// text
 					'text'       => $this->get_setting('video_text'),

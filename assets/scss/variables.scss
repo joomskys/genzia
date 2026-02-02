@@ -134,8 +134,8 @@ $form_field_checkbox_bg_hover: var(--cms-accent);
 	--cms-body: var(--cms-body-color);
 	--cms-warning: #FFAA00;
 	--cms-error: #EE443F;
-	--cms-invalid-bg: #f9f6f2;
-	--cms-invalid-color: #282828;
+	--cms-invalid-bg: var(--cms-error);
+	--cms-invalid-color: var(--cms-white);
 	//
 	--cms-divider-30:#{rgba(var(--cms-divider-rgb), 0.3)};
 	--cms-divider-50:#{rgba(var(--cms-divider-rgb), 0.5)};

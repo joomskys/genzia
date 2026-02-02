@@ -14,3 +14,15 @@
 		min-width: 280px;
 	}
 }
+
+//
+#cms-side-nav-toggle{
+	transform-origin: 50% 50%; 
+	transform: scale(1.1, 1.1) translate(50px, -50px); 
+	filter: blur(20px);
+	&.open{
+		transform-origin: 100% 0%; 
+		transform: scale(1, 1) translate(0,0); 
+		filter: none;
+	}
+}

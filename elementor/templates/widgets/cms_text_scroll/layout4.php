@@ -6,6 +6,7 @@ $this->add_render_attribute('wrap', [
 		'cms-text-scroll',
 		'heading h4',
 		'text-'.$this->get_setting('text_color', 'sub-text'),
+		'text-hover-'.$this->get_setting('text_color_hover', 'sub-text'),
 		'm-tb-nh4'
 	],
 	'data-direction'            => $this->get_setting('direction', 'false'),

@@ -465,7 +465,7 @@ $text_sizes_m:(
     }
 }
 .text-2xl{
-    line-height: 1;
+    line-height: 1.2;
 }
 .text-xl{
     line-height: 1.4;
@@ -682,10 +682,12 @@ $text_lines:(
 /**
  * Letter Spacing
 */
-$cms_letter_spacing:();
+$cms_letter_spacing:(
+    '-07' : '-0.7'
+);
 @each $name, $space in $cms_letter_spacing{
     .ls-#{$name}{
-        letter-spacing: #{$space}rem;
+        letter-spacing: #{$space}px;
     }
 }
 /**

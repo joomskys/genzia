@@ -7,6 +7,7 @@ $this->add_render_attribute('wrap', [
 		'cms-text-scroll',
 		'heading',
 		'text-'.$this->get_setting('text_color', 'divider'),
+		'text-hover-'.$this->get_setting('text_color_hover', 'divider'),
 		'text-2xl lh-09',
 		($overflow=='yes')?'overflow-hidden':''
 	]),

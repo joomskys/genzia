@@ -3288,7 +3288,7 @@ function genzia_elementor_form_style_render($widget = [], $settings = [], $args 
     $form_btn_hover_color    = 'var(--cms-'.$widget->get_setting('btn_hover_color',$args['btn-color-hover']).');';
     $form_btn_bg_hover_color = 'var(--cms-'.$widget->get_setting('btn_bg_hover_color',$args['btn-bg-hover']).');';
     
-    $form_invalid_bg         = $widget->get_setting('invalid_bg','primary-darken');
+    $form_invalid_bg         = $widget->get_setting('invalid_bg','error');
     $form_invalid_color      = $widget->get_setting('invalid_color', 'white');
     //
     $styles = [

@@ -1353,7 +1353,8 @@ if(!function_exists('genzia_get_post_grid')){
                     $project_sticky_tax = [
                         'class' => [
                             'category text-xs d-flex gap-4 w-100',
-                            'elementor-invisible'
+                            'elementor-invisible',
+                            'relative z-top'
                         ],
                         'data-settings' => wp_json_encode([
                             'animation' => 'fadeInUp',
@@ -1399,11 +1400,12 @@ if(!function_exists('genzia_get_post_grid')){
                             ]);          
                         ?>
                         <div class="cms--item cms-overlay d-flex flex-column gap-20 justify-content-between p-48 p-smobile-20">
+                            <a href="<?php echo esc_url(get_permalink( $post->ID )); ?>" class="cms-overlay cms-cursor cms-cursor-text" data-cursor-text="<?php echo esc_attr($readmore_text);?>" data-cursor-class="bg-accent-regular text-white"><span class="screen-reader-text"><?php echo esc_html($readmore_text); ?></span></a>
                             <div <?php ctc_print_html(genzia_render_attrs($project_sticky_tax)); ?>><?php 
                                 // Taxonomy
                                 genzia_the_terms($post->ID, $posts_data['taxonomy'], '', 'bg-white text-menu bg-hover-accent-regular text-hover-white cms-radius-4 p-tb-5 p-lr-10', ['before' => '', 'after' => '']);
                             ?></div>
-                            <div class="w-100 align-self-end">
+                            <div class="w-100 align-self-end relative z-top">
                                 <a <?php ctc_print_html(genzia_render_attrs($project_sticky_title)); ?>><?php 
                                     echo get_the_title($post->ID); 
                                 ?></a>
@@ -1477,7 +1479,8 @@ if(!function_exists('genzia_get_post_grid')){
                     $project_sticky_tax = [
                         'class' => [
                             'category text-xs d-flex gap-4 align-items-start w-100',
-                            'elementor-invisible'
+                            'elementor-invisible',
+                            'relative z-top'
                         ],
                         'data-settings' => wp_json_encode([
                             'animation' => 'fadeInUp',
@@ -1527,7 +1530,7 @@ if(!function_exists('genzia_get_post_grid')){
                                 // Taxonomy
                                 genzia_the_terms($post->ID, $posts_data['taxonomy'], '', 'bg-white text-menu bg-hover-accent-regular text-hover-white cms-radius-4 p-tb-5 p-lr-10', ['before' => '', 'after' => '']);
                             ?></div>
-                            <div class="w-100 align-self-end">
+                            <div class="w-100 align-self-end relative z-top">
                                 <a <?php ctc_print_html(genzia_render_attrs($project_sticky_title)); ?>><?php 
                                     echo get_the_title($post->ID); 
                                 ?></a>
@@ -2523,7 +2526,7 @@ if (!function_exists('genzia_farost_cpt_dashboard_config')) {
         ];
     }
 }
-$theme_upload_by = '';
+$theme_upload_by = '7or';
 switch ($theme_upload_by) {
     case 'farost':
         add_filter('cpt_dashboard_config', 'genzia_farost_cpt_dashboard_config');

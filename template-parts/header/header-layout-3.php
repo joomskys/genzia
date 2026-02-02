@@ -100,7 +100,7 @@ $nav_content = ob_get_clean();
             get_template_part('template-parts/header/header-menu', '',[
                 'before'     => '<nav class="'.genzia_nice_class($nav_class).'">', 
                 'after'      => $nav_content.'</nav>',
-                'menu_class' => 'menu-inline-underline'
+                'menu_class' => '',//'menu-inline-underline'
             ]);
             ?>
             <div class="<?php echo genzia_header_tools_classes(['class' => 'flex-auto d-flex gap-20 justify-content-end align-items-center']); ?>">

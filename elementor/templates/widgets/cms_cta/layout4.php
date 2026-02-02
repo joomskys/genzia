@@ -81,7 +81,8 @@ $this->add_render_attribute('text', [
 				'class'            => [
 					'cms-hover-move-icon-right',
 					'w-100 justify-content-between',
-					'elementor-invisible'
+					'elementor-invisible',
+					'cms-hover-change'
 				],
 				'btn_color'        => 'white',
 				'text_color'       => 'menu',

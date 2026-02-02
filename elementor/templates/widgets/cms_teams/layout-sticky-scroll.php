@@ -62,8 +62,8 @@ $this->add_render_attribute('wrap', [
 ]);
 // Grid Wrap
 $wrap_styles = [
-    '--cms-stroke-width:3;',
-    '--cms-stroke-dash-length:1650px;'
+    '--cms-stroke-width:2;',
+    '--cms-stroke-dash-length:600px;' //1650
 ];
 $this->add_render_attribute('grid-wrap',[
     'class' => [
@@ -173,7 +173,7 @@ $this->add_render_attribute('team-desc',[
                     ]);
                     ob_start();
                     ?>
-                        <div class="cms-team-socials cms-hover-show move-left bg-backdrop cms-radius-16 d-flex flex-column justify-content-center gap-16 cms-transition absolute top left mt-10 ml-10 p-16"><?php
+                        <div class="cms-team-socials cms-hover-show move-left bg-backdrop cms-radius-10 d-flex flex-column justify-content-center gap-16 cms-transition absolute top left mt-10 ml-10 p-16"><?php
                             for ($i = 1; $i <= 4; $i++) {
                                 $social_icon = isset($team["social_icon_{$i}"]) ? $team["social_icon_{$i}"] : null;
                                 $social_link = isset($team["social_link_{$i}"]) ? $team["social_link_{$i}"] : null;

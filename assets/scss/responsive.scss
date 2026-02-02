@@ -824,8 +824,12 @@ $cms_gutter_mobile:(0, 10);
 }
 @media #{$min-widescreen}{
 	.m-lr{
-		margin-inline-start: var(--m-lr-widescreen);
-		margin-inline-end: var(--m-lr-widescreen);
+		margin-inline-start: var(--m-lr-widescreen, var(--m-lr));
+		margin-inline-end: var(--m-lr-widescreen, var(--m-lr));
+	}
+	// Min Width
+	.min-w{
+		min-width: var(--min-w-widescreen,var(--min-w));
 	}
 }
 @media #{$hidden-wide}{

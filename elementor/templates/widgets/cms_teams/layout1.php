@@ -83,8 +83,8 @@ switch ($default_col) {
 $wrap_styles = [
     '--gutter-x:32px;',
     '--gutter-y:64px;',
-    '--cms-stroke-width:3;',
-    '--cms-stroke-dash-length:1650px;'
+    '--cms-stroke-width:2;',
+    '--cms-stroke-dash-length:600px;' //1650px
 ];
 $this->add_render_attribute('grid-wrap',[
     'class' => [

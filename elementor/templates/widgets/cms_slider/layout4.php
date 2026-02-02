@@ -131,6 +131,7 @@ $this->add_render_attribute('title', [
 $this->add_render_attribute('desc', [
     'class' =>  [
         'cms-slider-desc empty-none cms-nl2br',
+        'heading',
         'text-on-dark',
         'text-lg',
         genzia_add_hidden_device_controls_render($settings, 'desc_'),

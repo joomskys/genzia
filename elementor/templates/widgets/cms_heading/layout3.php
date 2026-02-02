@@ -12,7 +12,7 @@ $this->add_inline_editing_attributes( 'smallheading_text' );
 $this->add_render_attribute( 'smallheading_text', [
 	'class' => [
 		'cms-small',
-		'elementor-invisible',
+		//'elementor-invisible',
 		'cms-nl2br',
 		'text-sm',
 		'text-'.$this->get_setting('smallheading_color','sub-text'),
@@ -21,10 +21,10 @@ $this->add_render_attribute( 'smallheading_text', [
 		'cms-sticky',
 		'd-flex gap-8 flex-nowrap'
 	],
-	'data-settings' => wp_json_encode([
+	/*'data-settings' => wp_json_encode([
 		'animation'       => 'fadeInLeft',
 		'animation_delay' => 100
-	])
+	])*/
 ]);
 $small_icon_classes = genzia_nice_class([
 	'cms-small-icon pt-7',

@@ -81,7 +81,7 @@ if (!function_exists('genzia_cf7_submit_button_handler')) {
 		unset($atts['icon_class']);
 		$atts = wpcf7_format_atts($atts);	
 		
-		$html = sprintf('<button %1$s>%2$s%3$s%4$s%5$s</button>', $atts, $icon_before, '<span class="cms-on-hover-underline">'.$value.'</span>', $icon_after, $icon_loading);
+		$html = sprintf('<button %1$s>%2$s%3$s%4$s%5$s</button>', $atts, $icon_before, $value, $icon_after, $icon_loading);
 		return $html;
 	}
 }

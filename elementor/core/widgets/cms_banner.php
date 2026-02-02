@@ -123,6 +123,43 @@ class Widget_Banner extends Widget_Base
                     'label_block' => false
                 ]
             );
+            // Banner Text
+            $this->add_control(
+                'banner_text',
+                [
+                    'label'       => esc_html__('Banner Title', 'genzia'),
+                    'type'        => Controls_Manager::TEXTAREA,
+                    'default'     => 'This is the banner title',
+                    'placeholder' => esc_html__('Enter your text', 'genzia'),
+                    'label_block' => true,
+                    'condition'   => [
+                        'layout' => ['2']
+                    ]
+                ]
+            );
+            genzia_elementor_colors_opts($this, [
+                'name'      => 'banner_title_color',
+                'label'     => esc_html__('Color', 'genzia'),
+                'selectors' => [
+                    '{{WRAPPER}} .cms-banner-title' => '--text-custom-color: {{VALUE}};'
+                ],
+                'condition'   => [
+                    'layout'        => ['2'],
+                    'banner_text!' => ''
+                ]
+            ]);
+            // Banner Link
+            genzia_elementor_link_settings($this, [
+                'name'          => 'banner_link_',
+                'mode'          => 'link',
+                'group'         => false,
+                'color_label'   => esc_html__('Banner Link', 'genzia'),
+                'text'          => 'Click Here',
+                'condition'   => [
+                    'layout' => ['2']
+                ]
+            ]);
+            // Banner Small   
             $this->add_control(
                 'banner_small',
                 [

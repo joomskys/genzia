@@ -320,7 +320,7 @@ class Widget_Video_Player extends Widget_Base
                 'label' => esc_html__('Video Settings', 'genzia'),
                 'tab' => Controls_Manager::TAB_SETTINGS,
                 'condition' => [
-                    'layout' => ['-video-bg']
+                    'layout' => ['4','-video-bg']
                 ]
             ]
         );

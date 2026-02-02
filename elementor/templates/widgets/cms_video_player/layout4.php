@@ -12,18 +12,36 @@ if(!empty($settings['image']['id'])){
 // Wrap
 $this->add_render_attribute('wrap', [
 	'class' => [
-		'cms-evideo',
-		'cms-evideo-'.$settings['layout'],
 		'relative',
 		'overflow-hidden',
 		'cms-radius-16',
-		'pt-120 pb-136 p-tb-tablet-80',
-		'p-lr-48 p-lr-smobile-20',
 		'cms-bg-cover',
 		'cms-lazy'
 	],
 	'style' => [
 		'--cms-bg-lazyload:'.$background_img.';background-image:var(--cms-bg-lazyload-loaded);'
+	]
+]);
+// Wrap Inner
+$this->add_render_attribute('wrap-inner', [
+	'class' => [
+		'cms-evideo',
+		'cms-evideo-'.$settings['layout'],
+		($settings['lightbox'] != 'yes') ? 'cms-evideo-playback' : '',
+		($settings['video_fit'] === 'yes') ? 'cms-evideo-fit' : '',
+	]
+]);
+// YT Video
+$this->add_render_attribute('yt-video',[
+	'class'           => 'yt-video relative z-top-2',
+	'data-video-link' => $this->get_setting('video_link'),
+	'style'           => 'width: 100%;height:100%;'
+]);
+$this->add_render_attribute('wrap-content', [
+	'class' => [
+		'pt-120 pb-136 p-tb-tablet-80',
+		'p-lr-48 p-lr-smobile-20',
+		($settings['lightbox'] != 'yes') ? 'cms-overlay' : '',
 	]
 ]);
 // Heading
@@ -85,56 +103,67 @@ $this->add_render_attribute('gallery',[
 ]);
 ?>
 <div <?php ctc_print_html($this->get_render_attribute_string('wrap')); ?>>
-	<h1 <?php ctc_print_html($this->get_render_attribute_string('heading')); ?>><?php 
-		echo esc_html($settings['heading_text']);
-	?></h1>
-	<div <?php ctc_print_html($this->get_render_attribute_string('desc-button')); ?>>
-		<div <?php ctc_print_html($this->get_render_attribute_string('desc')); ?>><?php 
-			echo esc_html($settings['desc']);
-		?></div>
-		<div class="flex-auto">
-			<div <?php ctc_print_html($this->get_render_attribute_string('gallery')); ?>><?php 
-				$g_count = 0;
-				foreach ($galleries as $g_key => $gallery) {
-					$g_count ++;
-					$gallery['gallery'] = $gallery;
-					//
-					$classes = genzia_nice_class([
-						'cms-box-56 circle bg-white p-4',
-						($g_count>1)?'ml-n16':''
-					]);
-					//
-					genzia_elementor_image_render($gallery,[
-						'name'        => 'gallery',
-						'size'        => 'custom',  
-						'img_class'   => 'circle',
-						'custom_size' => ['width' => 48, 'height' => 48],
-						'before'	  => '<div class="'.$classes.'">',
-						'after'		  => '</div>'	
-					]);
-				}
+	<div <?php ctc_print_html($this->get_render_attribute_string('wrap-inner')); ?>>
+		<?php 
+			if($settings['lightbox']!='yes'){
+		?>
+		<div <?php ctc_print_html($this->get_render_attribute_string('yt-video')); ?>></div>
+		<?php } ?>
+	</div>
+	<div <?php ctc_print_html($this->get_render_attribute_string('wrap-content')); ?>>
+		<h1 <?php ctc_print_html($this->get_render_attribute_string('heading')); ?>><?php 
+			echo esc_html($settings['heading_text']);
+		?></h1>
+		<div <?php ctc_print_html($this->get_render_attribute_string('desc-button')); ?>>
+			<div <?php ctc_print_html($this->get_render_attribute_string('desc')); ?>><?php 
+				echo esc_html($settings['desc']);
 			?></div>
-			<?php 
-			    // Video button
-                genzia_elementor_button_video_render($this, $settings, [
-                    ///'_id'           => $cms_slide['_id'],   
-                    'name'          => 'video_link',
-                    'icon_class'    => 'cms-transition cms-box-48 circle bg-accent-regular text-white m-lr-auto',
-                    'icon_size'     => 10,
-                    'layout'        => '1 bg-white cms-radius-16 p-8',
-                    'class'         => 'elementor-invisible',
-                    'inner_class'   => 'cms-radius-10 bg-bg-light p-12 text-center',
-                    'content_class' => 'd-flex gap-10 flex-column justify-content-center',
-                    'text'          => $this->get_setting('video_text'),
-                    'text_class'    => 'text-btn font-700 mb-n5',
-                    'echo'          => true,
-                    'attrs'         => [
-                        'data-settings' => wp_json_encode([
-                        	'animation' => 'fadeInUp'
-                        ])
-                    ]
-                ]);
-			?>
+			<div class="flex-auto">
+				<div <?php ctc_print_html($this->get_render_attribute_string('gallery')); ?>><?php 
+					$g_count = 0;
+					foreach ($galleries as $g_key => $gallery) {
+						$g_count ++;
+						$gallery['gallery'] = $gallery;
+						//
+						$classes = genzia_nice_class([
+							'cms-box-56 circle bg-white p-4',
+							($g_count>1)?'ml-n16':''
+						]);
+						//
+						genzia_elementor_image_render($gallery,[
+							'name'        => 'gallery',
+							'size'        => 'custom',  
+							'img_class'   => 'circle',
+							'custom_size' => ['width' => 48, 'height' => 48],
+							'before'	  => '<div class="'.$classes.'">',
+							'after'		  => '</div>'	
+						]);
+					}
+				?></div>
+				<?php 
+				    // Video button
+		            genzia_elementor_button_video_render($this, $settings, [
+		                ///'_id'           => $cms_slide['_id'],   
+		                'name'          => 'video_link',
+		                'icon_class'    => 'cms-transition cms-box-48 circle bg-accent-regular text-white m-lr-auto',
+		                'icon_size'     => 10,
+		                'layout'        => '1 bg-white cms-radius-16 p-8',
+		                'class'         => 'elementor-invisible',
+		                'inner_class'   => 'cms-radius-10 bg-bg-light p-12 text-center',
+		                'content_class' => 'd-flex gap-10 flex-column justify-content-center',
+		                'text'          => $this->get_setting('video_text'),
+		                'text_class'    => 'text-btn font-700 mb-n5',
+		                'echo'          => true,
+		                'attrs'         => [
+		                    'data-settings' => wp_json_encode([
+		                    	'animation' => 'fadeInUp'
+		                    ])
+		                ],
+		                // LightBox
+		                'lightbox' => $this->get_setting('lightbox'),
+		            ]);
+				?>
+			</div>
 		</div>
 	</div>
 </div>

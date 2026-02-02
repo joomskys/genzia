@@ -5,7 +5,8 @@ $this->add_render_attribute('wrap', [
 		'cms-swiper-container swiper-container',
 		'cms-text-scroll',
 		'heading text-3xl text-mobile-h3 lh-11 m-tb-n2xl',
-		'text-'.$this->get_setting('text_color', 'divider')
+		'text-'.$this->get_setting('text_color', 'divider'),
+		'text-hover-'.$this->get_setting('text_color_hover', 'divider'),
 	],
 	'data-direction'            => $this->get_setting('direction', 'false'),
 	'data-speed'                => $this->get_setting('speed', 4000),

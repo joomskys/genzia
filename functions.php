@@ -244,6 +244,7 @@ function genzia_scripts()
 		'in_footer' => true,
 		'strategy' => 'defer'
 	]);
+	//
 	wp_register_script('cms-video-widget-js', get_template_directory_uri() . '/elementor/js/cms-video-widget.js', ['jquery'], $theme->get('Version'), [
 		'in_footer' => true,
 		'strategy' => 'defer'
@@ -252,11 +253,7 @@ function genzia_scripts()
 		'in_footer' => true,
 		'strategy' => 'defer'
 	]);
-	// Mouse Move Parallax cms-parallax-mouse-move
-	wp_register_script('cms-parallax-mouse-move', get_template_directory_uri() . '/elementor/js/cms-parallax-mouse-move.js', [], $theme->get('Version'), [
-		'in_footer' => true,
-		'strategy' => 'defer'
-	]);
+	//
 	if (!((!class_exists('CSH_Theme_Core') || !class_exists('\Elementor\Plugin')) || is_singular('cms-header-top') || is_singular('cms-footer') || is_singular('cms-mega-menu')) && 'internal' !== get_option('elementor_css_print_method')) {
 		$header_top_layout = genzia_get_opts('header_top_layout', '', 'header_top_custom');
 		if (!in_array($header_top_layout, ['-1', '0', 'none', ''])) {
@@ -291,6 +288,21 @@ function genzia_theme_scripts()
 	wp_register_script('cms-scroll-sticky-grow-up', get_template_directory_uri() . '/elementor/js/cms-scroll-sticky-grow-up.js', ['jquery', 'etc-scroller'], $theme->get('Version'), true);
 	// Scroll Sticky Horizontal
 	wp_register_script( 'cms-scroll-sticky-horizontal', get_template_directory_uri() . '/elementor/js/cms-scroll-sticky-horizontal.js', [ 'jquery' ], $theme->get( 'Version' ), true );
+	//
+	// throwable
+	wp_register_script('cms-matter', get_template_directory_uri() . '/elementor/js/matter.js', ['jquery'], $theme->get('Version'), [
+		'in_footer' => true,
+		'strategy' => 'defer'
+	]);
+	wp_register_script('cms-throwable', get_template_directory_uri() . '/elementor/js/cms-throwable.js', ['jquery','cms-matter'], $theme->get('Version'), [
+		'in_footer' => true,
+		'strategy' => 'defer'
+	]);
+	// Mouse Move Parallax cms-parallax-mouse-move
+	wp_register_script('cms-parallax-mouse-move', get_template_directory_uri() . '/elementor/js/cms-parallax-mouse-move.js', [], $theme->get('Version'), [
+		'in_footer' => true,
+		'strategy' => 'defer'
+	]);
 }
 add_action('wp_enqueue_scripts', 'genzia_theme_scripts');
 
