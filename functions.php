@@ -84,19 +84,19 @@ if (!function_exists('genzia_thumbnail_size')) {
 			// Large
 			'large_size_w' => 740,
 			'large_size_h' => 514,
-			'large_crop'   => 1,
+			'large_crop' => 1,
 			// Medium Large
 			'medium_large_size_w' => 728,
 			'medium_large_size_h' => 728,
-			'medium_large_crop'   => 1,
+			'medium_large_crop' => 1,
 			// Medium
 			'medium_size_w' => 728,
 			'medium_size_h' => 506,
-			'medium_crop'   => 1,
+			'medium_crop' => 1,
 			// thumbnail
 			'thumbnail_size_w' => 80,
 			'thumbnail_size_h' => 80,
-			'thumbnail_crop'   => 1
+			'thumbnail_crop' => 1
 		);
 		foreach ($thumbnail_size as $option => $value) {
 			if (get_option($option, '') != $value)
@@ -156,7 +156,8 @@ add_action('cms_locations', function ($cms_locations) {
  *
  */
 
-function genzia_content_width(){
+function genzia_content_width()
+{
 	$content_width = apply_filters('genzia_content_width', 760);
 	$GLOBALS['content_width'] = $content_width;
 	return $content_width;
@@ -253,6 +254,22 @@ function genzia_scripts()
 		'in_footer' => true,
 		'strategy' => 'defer'
 	]);
+	wp_register_script('cms-stack-scatter', get_template_directory_uri() . '/elementor/js/cms-stack-scatter.js', ['jquery'], $theme->get('Version'), [
+		'in_footer' => true,
+		'strategy' => 'defer'
+	]);
+	wp_register_script('cms-image-scale', get_template_directory_uri() . '/elementor/js/cms-image-scale.js', ['jquery'], $theme->get('Version'), [
+		'in_footer' => true,
+		'strategy' => 'defer'
+	]);
+	wp_register_script('cms-in-view', get_template_directory_uri() . '/elementor/js/cms-in-view.js', ['jquery'], $theme->get('Version'), [
+		'in_footer' => true,
+		'strategy' => 'defer'
+	]);
+	wp_register_script('cms-testimonials', get_template_directory_uri() . '/elementor/js/cms-testimonials.js', ['jquery'], $theme->get('Version'), [
+		'in_footer' => true,
+		'strategy' => 'defer'
+	]);
 	//
 	if (!((!class_exists('CSH_Theme_Core') || !class_exists('\Elementor\Plugin')) || is_singular('cms-header-top') || is_singular('cms-footer') || is_singular('cms-mega-menu')) && 'internal' !== get_option('elementor_css_print_method')) {
 		$header_top_layout = genzia_get_opts('header_top_layout', '', 'header_top_custom');
@@ -287,14 +304,14 @@ function genzia_theme_scripts()
 	// Scroll Sticky Grow Up
 	wp_register_script('cms-scroll-sticky-grow-up', get_template_directory_uri() . '/elementor/js/cms-scroll-sticky-grow-up.js', ['jquery', 'etc-scroller'], $theme->get('Version'), true);
 	// Scroll Sticky Horizontal
-	wp_register_script( 'cms-scroll-sticky-horizontal', get_template_directory_uri() . '/elementor/js/cms-scroll-sticky-horizontal.js', [ 'jquery' ], $theme->get( 'Version' ), true );
+	wp_register_script('cms-scroll-sticky-horizontal', get_template_directory_uri() . '/elementor/js/cms-scroll-sticky-horizontal.js', ['jquery'], $theme->get('Version'), true);
 	//
 	// throwable
 	wp_register_script('cms-matter', get_template_directory_uri() . '/elementor/js/matter.js', ['jquery'], $theme->get('Version'), [
 		'in_footer' => true,
 		'strategy' => 'defer'
 	]);
-	wp_register_script('cms-throwable', get_template_directory_uri() . '/elementor/js/cms-throwable.js', ['jquery','cms-matter'], $theme->get('Version'), [
+	wp_register_script('cms-throwable', get_template_directory_uri() . '/elementor/js/cms-throwable.js', ['jquery', 'cms-matter'], $theme->get('Version'), [
 		'in_footer' => true,
 		'strategy' => 'defer'
 	]);
@@ -324,14 +341,12 @@ if (!function_exists('genzia_default_fonts')) {
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<?php if ($body_font_opts == 'default') { ?>
-			<link
-				href="https://fonts.googleapis.com/css2?family=<?php echo esc_html($body_font); ?>:wght@200..800&display=swap"
+			<link href="https://fonts.googleapis.com/css2?family=<?php echo esc_html($body_font); ?>:wght@200..800&display=swap"
 				rel="stylesheet" media="all">
 		<?php }
 		if ($heading_font_opts == 'default') {
 			?>
-			<link
-				href="https://fonts.googleapis.com/css2?family=<?php echo esc_html($heading_font); ?>:wght@300..800&display=swap"
+			<link href="https://fonts.googleapis.com/css2?family=<?php echo esc_html($heading_font); ?>:wght@300..800&display=swap"
 				rel="stylesheet" media="all">
 			<?php
 		}
@@ -940,7 +955,7 @@ if (class_exists('Elementor\Plugin')) {
 		// 30
 		require_once get_template_directory() . '/elementor/core/widgets/cms_theme_separator.php';
 		$widgets_manager->register(new \Genzia\Elementor\Widgets\Widget_Genzia_Separator());
-		
+
 	}
 	add_action('elementor/widgets/register', 'genzia_elementor_register_widgets');
 }

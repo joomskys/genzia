@@ -26,7 +26,7 @@ class Widget_Testimonials extends Widget_Base
         $this->set_title(esc_html__('CMS Testimonials', 'genzia'));
         $this->set_icon('eicon-testimonial');
         $this->set_keywords(['testimonials', 'carousel', 'cms', 'genzia']);
-        $this->set_script_depends(['cms-post-carousel-widget-js']);
+        $this->set_script_depends(['cms-post-carousel-widget-js', 'cms-testimonials']);
         $this->set_style_depends(['swiper','e-animation-fadeInUp','e-animation-fadeInLeft','e-animation-fadeInRight','e-animation-rotateInUpRight']);
 
         parent::__construct($data, $args);

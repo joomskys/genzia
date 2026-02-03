@@ -26,7 +26,7 @@ class Widget_Banner extends Widget_Base
         $this->set_title(esc_html__('CMS Banner', 'genzia'));
         $this->set_icon('eicon-banner');
         $this->set_keywords(['genzia', 'banner', 'image']);
-        $this->set_script_depends(['jquery-numerator','jquery-parallax-scroll','cms-elementor-custom']);
+        $this->set_script_depends(['jquery-numerator','jquery-parallax-scroll','cms-elementor-custom', 'cms-image-scale']);
         $this->set_style_depends([
             'e-animation-fadeInUp',
             'e-animation-fadeInLeft',

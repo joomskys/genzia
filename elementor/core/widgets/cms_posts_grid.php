@@ -25,6 +25,7 @@ class Widget_Posts_Grid extends Widget_Base
         $this->set_title(esc_html__('CMS Posts Grid', 'genzia'));
         $this->set_icon('eicon-posts-grid');
         $this->set_keywords(['posts', 'grid', 'blog', 'cms', 'genzia']);
+        $this->set_script_depends(['cms-in-view']);
 
         parent::__construct($data, $args);
     }

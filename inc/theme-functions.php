@@ -1328,7 +1328,9 @@ if(!function_exists('genzia_get_post_grid')){
         ];
         // Item Attributes
         $items_attrs=[
-            'class' => genzia_nice_class($items_classes)
+            'class' => genzia_nice_class($items_classes),
+            'data-observed' => 'true',
+            'data-threshold' => 0.3,
         ];
         // Render HTML
         foreach ($posts as $key => $post):
