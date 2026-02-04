@@ -903,7 +903,7 @@
 /* Testimonials Section */
 .cms-ettmn-section {
     /* Extra height for scroll animation */
-    min-height: 300vh;
+    min-height: 200vh;
     position: relative;
 }
 
@@ -912,6 +912,7 @@
     position: sticky;
     top: 0;
     height: 100vh;
+    padding-top: 20vh;
 }
 
 .cms-ttmn-item {

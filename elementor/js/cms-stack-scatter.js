@@ -19,7 +19,9 @@
         let scrollStart = 0;
         let scrollEnd = 0;
         let originalRotations = [];
-
+        let cards_first = $scope.find('.stack-scatter-card-first');
+        cards_first.parent().css('height',cards_first.outerHeight());
+        
         // Utility: Linear interpolation
         function lerp(start, end, progress) {
             return start + (end - start) * progress;

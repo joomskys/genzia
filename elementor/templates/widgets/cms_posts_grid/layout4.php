@@ -44,9 +44,10 @@ $posts_data = array(
     'num_line'                   => $numn_line,
     'readmore_text'              => $this->get_setting('readmore_text', esc_html__('Explore More','genzia')),
     //
-    'item_class'    => '', //elementor-invisible
-    'data-settings' => '', //wp_json_encode(['animation'=>'fadeInUp']),
-    'element_id'    => $this->get_id()
+    'item_class'       => 'cms-img-scale-inview', //elementor-invisible
+    'item_inner_class' => 'cms-img-scale--inview',
+    'data-settings'    => '', //wp_json_encode(['animation'=>'fadeInUp']),
+    'element_id'       => $this->get_id()
 );
 // Wrap attributes
 $this->add_render_attribute('wrap',[

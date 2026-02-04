@@ -1,0 +1,17 @@
+.cms-img-scale-inview{
+    .cms-img-scale--inview{
+    	transform: scale(0.9, 0.9);
+    	@include transition();
+    	img{
+    		transform: scale(1.3, 1.3);
+    	}
+    }
+    &.in-view{
+    	.cms-img-scale--inview{
+	    	transform: scale(1, 1);
+	    	img{
+	    		transform: scale(1, 1);
+	    	}
+	    }
+    }
+}

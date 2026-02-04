@@ -89,6 +89,16 @@ $cms_texts = $this->get_setting('cms_texts', []);
 ?>
 <div class="stack-scatter--wrapper" style="--card-count: <?php echo esc_attr(count($accordions)); ?>">
 	<div class="stack-scatter--inner" style="--sticky-offset: 136px;">
+		<div <?php ctc_print_html($this->get_render_attribute_string('scroll-text-wrap')); ?>>
+			<div class="cms-swiper-wrapper swiper-wrapper">
+				<?php foreach ($cms_texts as $key => $value) { ?>
+					<div class="cms-swiper-slide swiper-slide cms-scroll-item"
+						data-title="<?php echo esc_html($value['text']); ?>">
+						<?php echo nl2br($value['text']); ?>
+					</div>
+				<?php } ?>
+			</div>
+		</div>
 		<div <?php ctc_print_html($this->get_render_attribute_string('heading_text')); ?>>
 			<?php
 			// Text
@@ -98,16 +108,6 @@ $cms_texts = $this->get_setting('cms_texts', []);
 			?>
 		</div>
 		<div <?php ctc_print_html($this->get_render_attribute_string('wrap')); ?>>
-			<div <?php ctc_print_html($this->get_render_attribute_string('scroll-text-wrap')); ?>>
-				<div class="cms-swiper-wrapper swiper-wrapper">
-					<?php foreach ($cms_texts as $key => $value) { ?>
-						<div class="cms-swiper-slide swiper-slide cms-scroll-item"
-							data-title="<?php echo esc_html($value['text']); ?>">
-							<?php echo nl2br($value['text']); ?>
-						</div>
-					<?php } ?>
-				</div>
-			</div>
 			<?php
 			$count = 0;
 			foreach ($accordions as $key => $value):
@@ -122,20 +122,16 @@ $cms_texts = $this->get_setting('cms_texts', []);
 				$item_key = $this->get_repeater_setting_key('item_key', 'cms_accordion', $key);
 				$this->add_render_attribute($item_key, [
 					'class' => array_filter([
-						// 'cms-accordion-item',
 						'stack-scatter-card',
+						($count==1)? 'stack-scatter-card-first' : '',
 						$is_active ? 'active' : '',
 						'bdr-1',
 						'bdr-' . $this->get_setting('border_color', 'menu'),
 						'cms-bdr',
 						'p-64 p-smobile-20',
 						'bg-' . $this->get_setting('bg_color', 'accent-regular'),
-						// ($count > 1) ? 'absolute top left right' : '',
 						'absolute top left right',
-					]),
-					// 'style' => [
-					// 	($count % 2 == 0) ? 'transform:rotate(5deg);' : 'transform:rotate(-5deg);'
-					// ]
+					])
 				]);
 				// item title
 				$item_title_key = $this->get_repeater_setting_key('item_title', 'cms_accordion', $key);

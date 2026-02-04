@@ -61,7 +61,7 @@ class Widget_Testimonials extends Widget_Base
                 ],
                 'default' => 'carousel',
                 'condition' => [
-                    'layout!' => ['-sticky-scroll']
+                    'layout!' => ['-sticky-scroll','-scroll-up']
                 ]
             ]
         );
@@ -87,6 +87,10 @@ class Widget_Testimonials extends Widget_Base
                     '-sticky-scroll' => [
                         'title' => esc_html__('Scroll Sticky', 'genzia'),
                         'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_testimonials/layout/sticky-scroll.webp'
+                    ],
+                    '-scroll-up' => [
+                        'title' => esc_html__('Scroll Up', 'genzia'),
+                        'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_testimonials/layout/3.webp'
                     ]
                 ],
                 'label_block' => true
@@ -211,7 +215,7 @@ class Widget_Testimonials extends Widget_Base
                     'label_block' => false,
                     'condition' => [
                         'smallheading_text!' => '',
-                        'layout'             => ['3']
+                        'layout'             => ['3','-scroll-up']
                     ]
                 ]
             );
@@ -224,7 +228,7 @@ class Widget_Testimonials extends Widget_Base
                 'condition' => [
                     'smallheading_text!'        => '',
                     'smallheading_icon[value]!' => '',
-                    'layout'             => ['3']
+                    'layout'             => ['3','-scroll-up']
                 ]
             ]);
             $this->add_control(
@@ -236,7 +240,7 @@ class Widget_Testimonials extends Widget_Base
                     'placeholder' => esc_html__('Enter your text', 'genzia'),
                     'label_block' => true,
                     'condition'   => [
-                        'layout' => ['1','3','-sticky-scroll']
+                        'layout' => ['1','3','-sticky-scroll','-scroll-up']
                     ]
                 ]
             );
@@ -248,7 +252,7 @@ class Widget_Testimonials extends Widget_Base
                 ],
                 'condition' => [
                     'smallheading_text!' => '',
-                    'layout' => ['1','3','-sticky-scroll']
+                    'layout' => ['1','3','-sticky-scroll','-scroll-up']
                 ]
             ]);
             //
@@ -261,7 +265,7 @@ class Widget_Testimonials extends Widget_Base
                     'placeholder' => esc_html__('Enter your text', 'genzia'),
                     'label_block' => true,
                     'condition'   => [
-                        'layout' => ['2','3']
+                        'layout' => ['2','3','-scroll-up']
                     ]
                 ]
             );
@@ -272,7 +276,7 @@ class Widget_Testimonials extends Widget_Base
                     '{{WRAPPER}} .cms-title' => '--text-custom-color: {{VALUE}};'
                 ],
                 'condition'   => [
-                    'layout'        => ['2','3'],
+                    'layout'        => ['2','3','-scroll-up'],
                     'heading_text!' => ''
                 ]
             ]);
@@ -353,7 +357,7 @@ class Widget_Testimonials extends Widget_Base
         genzia_elementor_carousel_settings($this, [
             'condition' => [
                 'layout_mode' => 'carousel',
-                'layout!'     => '-sticky-scroll'
+                'layout!'     => ['-sticky-scroll','-scroll-up']
             ],
             'slides_to_show'   => 1,
             'slides_to_scroll' => 1
@@ -362,7 +366,7 @@ class Widget_Testimonials extends Widget_Base
         genzia_elementor_grid_columns_settings($this, [
             'condition' => [
                 'layout_mode' => ['grid'],
-                'layout!'     => '-sticky-scroll'
+                'layout!'     => ['-sticky-scroll','-scroll-up']
             ],
             'divider' => false,
             'gap'     => true

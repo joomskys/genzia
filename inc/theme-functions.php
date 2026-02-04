@@ -1326,6 +1326,7 @@ if(!function_exists('genzia_get_post_grid')){
             'cms-transition',
             $posts_data['item_class']
         ];
+        $item_inner_class = isset($posts_data['item_inner_class']) ? $posts_data['item_inner_class'] : '';
         // Item Attributes
         $items_attrs=[
             'class' => genzia_nice_class($items_classes),
@@ -1388,7 +1389,7 @@ if(!function_exists('genzia_get_post_grid')){
                         ])
                     ];
                 ?>
-                    <div class="cms--item relative cms-radius-16 overflow-hidden cms-shadow-2 mt-80">
+                    <div class="cms--item <?php echo esc_attr($item_inner_class); ?> relative cms-radius-16 overflow-hidden cms-shadow-2 mt-80">
                         <?php
                             // Post Image
                             genzia_elementor_post_thumbnail_render($settings, [
@@ -1427,6 +1428,7 @@ if(!function_exists('genzia_get_post_grid')){
                         $item_inner_key = [
                             'class' => array_filter([
                                 'cms--item',
+                                $item_inner_class,
                                 'm-lr-tablet-0',
                                 (in_array($count, [1, 7, 10]))? 'mr-70' : '',
                                 (in_array($count, [5, 8, 11]))? 'ml-70' : '',
@@ -1560,7 +1562,7 @@ if(!function_exists('genzia_get_post_grid')){
                             'custom_size' => $posts_data['thumbnail_custom_dimension'],
                             'img_class'   => 'img-cover swiper-nav-vert', 
                             'max_height'  => true,
-                            'before'      => '<div class="overflow-hidden relative cms-radius-16" style="max-height:'.$posts_data['thumbnail_custom_dimension']['height'].'px;">',
+                            'before'      => '<div class="overflow-hidden relative cms-radius-16 '.$item_inner_class.'" style="max-height:'.$posts_data['thumbnail_custom_dimension']['height'].'px;">',
                             'after'       => $thumb_content.'</div>'
                         ]);
                     ?>
@@ -1598,7 +1600,7 @@ if(!function_exists('genzia_get_post_grid')){
                             'custom_size' => $posts_data['thumbnail_custom_dimension'],
                             'img_class'   => 'img-cover swiper-nav-vert', 
                             'max_height'  => true,
-                            'before'      => '<div class="overflow-hidden relative cms-radius-16" style="max-height:'.$posts_data['thumbnail_custom_dimension']['height'].'px;">',
+                            'before'      => '<div class="overflow-hidden relative cms-radius-16 '.$item_inner_class.'" style="max-height:'.$posts_data['thumbnail_custom_dimension']['height'].'px;">',
                             'after'       => $thumb_content.'</div>'
                         ]);
                     ?>
@@ -1638,7 +1640,7 @@ if(!function_exists('genzia_get_post_grid')){
                             'custom_size' => $custom_size,
                             'img_class'   => 'img-cover swiper-nav-vert', 
                             'max_height'  => true,
-                            'before'      => '<div class="cms-radius-16 mb-20 overflow-hidden">',
+                            'before'      => '<div class="cms-radius-16 mb-20 overflow-hidden '.$item_inner_class.'">',
                             'after'       => '</div>'
                         ]);
                     ?>
@@ -1679,7 +1681,7 @@ if(!function_exists('genzia_get_post_grid')){
                             'custom_size' => $posts_data['thumbnail_custom_dimension'],
                             'img_class'   => 'img-cover swiper-nav-vert', 
                             'max_height'  => true,
-                            'before'      => '<div class="overflow-hidden relative cms-radius-10" style="max-height:'.$posts_data['thumbnail_custom_dimension']['height'].'px;">',
+                            'before'      => '<div class="overflow-hidden relative cms-radius-10 '.$item_inner_class.'" style="max-height:'.$posts_data['thumbnail_custom_dimension']['height'].'px;">',
                             'after'       => $thumb_content.'</div>'
                         ]);
                     ?>
@@ -1715,7 +1717,7 @@ if(!function_exists('genzia_get_post_grid')){
                             'custom_size' => $posts_data['thumbnail_custom_dimension'],
                             'img_class'   => 'img-cover swiper-nav-vert', 
                             'max_height'  => true,
-                            'before'      => '<div class="overflow-hidden relative cms-radius-10" style="max-height:'.$posts_data['thumbnail_custom_dimension']['height'].'px;">',
+                            'before'      => '<div class="overflow-hidden relative cms-radius-10 '.$item_inner_class.'" style="max-height:'.$posts_data['thumbnail_custom_dimension']['height'].'px;">',
                             'after'       => $thumb_content.'</div>'
                         ]);
                     ?>
@@ -1758,7 +1760,7 @@ if(!function_exists('genzia_get_post_grid')){
                             'custom_size' => $posts_data['thumbnail_custom_dimension'],
                             'img_class'   => 'img-cover swiper-nav-vert', 
                             'max_height'  => true,
-                            'before'      => '<div class="overflow-hidden relative cms-radius-10" style="max-height:'.$posts_data['thumbnail_custom_dimension']['height'].'px;">',
+                            'before'      => '<div class="overflow-hidden relative cms-radius-10 '.$item_inner_class.'" style="max-height:'.$posts_data['thumbnail_custom_dimension']['height'].'px;">',
                             'after'       => $thumb_content.'</div>'
                         ]);
                     ?>
@@ -1808,7 +1810,7 @@ if(!function_exists('genzia_get_post_grid')){
                             'custom_size' => $posts_data['thumbnail_custom_dimension'],
                             'img_class'   => 'img-cover swiper-nav-vert', 
                             'max_height'  => true,
-                            'before'      => '<div class="cms-post-thumbnail overflow-hidden relative ml-40 cms-translateY--40 divider divider-date divider-top divider-accent">',
+                            'before'      => '<div class="cms-post-thumbnail overflow-hidden relative ml-40 cms-translateY--40 divider divider-date divider-top divider-accent '.$item_inner_class.'">',
                             'after'       => $post_date.'</div>'
                         ]);
                     ?>
