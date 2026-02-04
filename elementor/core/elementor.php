@@ -209,8 +209,8 @@ if (!function_exists('genzia_elementor_grid_columns_settings')) {
             $widget->start_controls_section(
                 $args['name'] . '_grid_section',
                 [
-                    'label' => $args['label'],
-                    'tab' => $args['tab'],
+                    'label'     => $args['label'],
+                    'tab'       => $args['tab'],
                     'condition' => $args['condition']
                 ]
             );
