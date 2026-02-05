@@ -82,16 +82,16 @@ if (!function_exists('genzia_thumbnail_size')) {
 		/* Change default image thumbnail sizes in wordpress */
 		$thumbnail_size = array(
 			// Large
-			'large_size_w' => 740,
-			'large_size_h' => 514,
+			'large_size_w' => 760,
+			'large_size_h' => 528,
 			'large_crop' => 1,
 			// Medium Large
 			'medium_large_size_w' => 728,
 			'medium_large_size_h' => 728,
 			'medium_large_crop' => 1,
 			// Medium
-			'medium_size_w' => 728,
-			'medium_size_h' => 506,
+			'medium_size_w' => 768,
+			'medium_size_h' => 534,
 			'medium_crop' => 1,
 			// thumbnail
 			'thumbnail_size_w' => 80,
