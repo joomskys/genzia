@@ -125,12 +125,13 @@ $this->add_render_attribute( 'desc', [
 		</div>
 	</div>
 	<div class="col-6 col-tablet-8 col-mobile-12">
-		<div class="pl" style="--pl:52px;--pl-tablet:0;"><?php 
+		<div class="pl stacking-cards" style="--pl:52px;--pl-tablet:0;"><?php 
 		$count = 0;
 		$count_sticky = -1;
 		$process_item_class = [
+			'stack-card',
 			'cms-process',
-			'cms-sticky cms-mobile-relative',
+			// 'cms-sticky cms-mobile-relative',
 			//'elementor-invisible',
 			'cms-transition',
 			'd-flex align-items-center'
@@ -161,16 +162,16 @@ $this->add_render_attribute( 'desc', [
 						($count>1) ? 'mt-80 mt-tablet-40' : ''
 					]
 				),
-				'data-settings' => wp_json_encode([
-					'animation'       => 'fadeInUp',
-					'animation_delay' => $count*100
-				]),
-				'style' => [
-					'z-index:'.$count.';',
-					'--cms-sticky:'.(($count_sticky*113)+30).'px;',
-					'--cms-sticky-tablet:'.($count_sticky*40).'px;',
-					($count%2==0)?'transform:rotate(-5deg);':'transform:rotate(5deg);'
-				]
+				// 'data-settings' => wp_json_encode([
+				// 	'animation'       => 'fadeInUp',
+				// 	'animation_delay' => $count*100
+				// ]),
+				// 'style' => [
+				// 	'z-index:'.$count.';',
+				// 	'--cms-sticky:'.(($count_sticky*113)+30).'px;',
+				// 	'--cms-sticky-tablet:'.($count_sticky*40).'px;',
+				// 	($count%2==0)?'transform:rotate(-5deg);':'transform:rotate(5deg);'
+				// ]
 			]);
 			// Items
 			$item__key = $this->get_repeater_setting_key('item__key', 'cms_process', $key);

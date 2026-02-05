@@ -27,7 +27,8 @@ class Widget_Process extends Widget_Base
         $this->set_icon('eicon-flow');
         $this->set_script_depends([
             'swiper',
-            'cms-carousel-vertical'
+            'cms-carousel-vertical',
+            'cms-process-sticky'
         ]);
         $this->set_style_depends([
             'swiper',
