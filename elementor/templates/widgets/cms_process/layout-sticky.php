@@ -134,7 +134,8 @@ $this->add_render_attribute( 'desc', [
 			// 'cms-sticky cms-mobile-relative',
 			//'elementor-invisible',
 			'cms-transition',
-			'd-flex align-items-center'
+			'd-flex align-items-center',
+			'w-100'
 		];
 		$process__item_class = [
 			'cms--process',
