@@ -4,6 +4,9 @@
      * @param $ The jQuery alias
      */
     var StackingCardHandler = function ($scope, $) {
+        if ($scope.find('.stacking-cards').length === 0) {
+            return;
+        }
         // Initialize on DOM ready
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', () => {
@@ -95,12 +98,13 @@
             // Style the wrapper for sticky behavior
             this.wrapper.style.cssText = `
             position: sticky;
-            top: 80px;
+            top: 50%;
             width: 100%;
             height: 70vh;
             display: flex;
             justify-content: center;
             overflow: visible;
+            transform: translateY(-50%);
         `;
 
             // Style the container
@@ -121,7 +125,7 @@
             }
 
             // Total scroll height = scroll distance for all cards
-            const totalScrollHeight = this.cardCount * this.scrollPerCard;
+            const totalScrollHeight = (this.cardCount + 1) * this.scrollPerCard;
             this.spacer.style.height = `${totalScrollHeight + window.innerHeight}px`;
         }
 
@@ -188,7 +192,8 @@
             const easedRotate = this.easeOutCubic(rotateProgress);
 
             // Target rotation based on card index (each card has unique final rotation)
-            const targetRotation = (index + 1) * -1.5; // Card 0: -1.5°, Card 1: -3°, Card 2: -4.5°, etc.
+            // const targetRotation = (index + 1) * -1.5; // Card 0: -1.5°, Card 1: -3°, Card 2: -4.5°, etc.
+            const targetRotation = index % 2 === 0 ? -5 : 5; // Card 0: -1.5°, Card 1: +1.5°, Card 2: -4.5°, etc.
             const currentRotation = targetRotation * easedRotate;
 
             // Apply transforms

@@ -26,7 +26,7 @@ class Widget_Accordion extends Widget_Base
         $this->set_title(esc_html__('CMS Accordion', 'genzia'));
         $this->set_icon('eicon-accordion');
         $this->set_keywords(['accordion', 'toggle', 'collapse', 'cms', 'genzia']);
-        $this->set_script_depends(['cms-elementor-custom', 'cms-stack-scatter']);
+        $this->set_script_depends(['cms-elementor-custom', 'cms-stack-scatter', 'cms-stacking-accordion']);
         $this->set_style_depends(['e-animation-fadeInUp', 'e-animation-rotateInUpLeft']);
 
         parent::__construct($data, $args);

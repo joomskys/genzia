@@ -940,3 +940,16 @@
 .stack-card {
     position: absolute;
 }
+
+/**
+ * Stacking Accordion
+ *
+**/
+.stacking-accordion-spacer {
+    position: relative;
+}
+.stacking-accordion-wrapper {
+    position: sticky;
+    top: 0;
+    width: 100%;
+}
