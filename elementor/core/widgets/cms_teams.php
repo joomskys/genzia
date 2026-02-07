@@ -28,7 +28,7 @@ class Widget_Teams extends Widget_Base
         $this->set_title(esc_html__('CMS Teams', 'genzia'));
         $this->set_icon('eicon-user-circle-o');
         $this->set_keywords(['teams', 'grid', 'carousel', 'cms', 'genzia']);
-        $this->set_script_depends(['etc-scroller', 'cms-scroll-sticky-horizontal',]);
+        $this->set_script_depends(['etc-scroller', 'cms-scroll-sticky-horizontal', 'cms-horizontal-scroll',]);
         $this->set_style_depends(['swiper']);
 
         parent::__construct($data, $args);

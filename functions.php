@@ -278,6 +278,10 @@ function genzia_scripts()
 		'in_footer' => true,
 		'strategy' => 'defer'
 	]);
+	wp_register_script('cms-horizontal-scroll', get_template_directory_uri() . '/elementor/js/cms-horizontal-scroll.js', ['jquery'], $theme->get('Version'), [
+		'in_footer' => true,
+		'strategy' => 'defer'
+	]);
 	//
 	if (!((!class_exists('CSH_Theme_Core') || !class_exists('\Elementor\Plugin')) || is_singular('cms-header-top') || is_singular('cms-footer') || is_singular('cms-mega-menu')) && 'internal' !== get_option('elementor_css_print_method')) {
 		$header_top_layout = genzia_get_opts('header_top_layout', '', 'header_top_custom');

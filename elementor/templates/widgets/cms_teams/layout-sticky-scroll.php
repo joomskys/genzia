@@ -72,7 +72,7 @@ $this->add_render_attribute('grid-wrap',[
         'cms-team-grid',
         'd-flex gap-20',
         'flex-nowrap',
-        'cms-scroll-sticky-horizontal-content',
+        // 'cms-scroll-sticky-horizontal-content',
         // tablet
         'flex-tablet-wrap',
         'flex-col-tablet-3 flex-col-mobile-extra-2',
@@ -112,7 +112,8 @@ $this->add_render_attribute('team-desc',[
     ]
 ]);
 ?>
-<div class="cms-scroll-sticky-horizontal" data-breakpoint='1024'>
+<!-- <div class="cms-scroll-sticky-horizontal" data-breakpoint='1024'> -->
+<div class="horizontal-scroll">
     <div <?php ctc_print_html( $this->get_render_attribute_string( 'heading-wrap' ) ); ?>>
         <div class="col-5 col-tablet-4 col-mobile-12">
             <div <?php ctc_print_html( $this->get_render_attribute_string( 'smallheading_text' ) ); ?>><?php
@@ -129,8 +130,9 @@ $this->add_render_attribute('team-desc',[
         </div>
     </div>
     <div class="d-flex gutter">
-        <div class="col-5 col-tablet-2 col-mobile-12 cms-hidden-tablet"> </div>
-        <div class="col-7 col-tablet-12">
+        <!-- <div class="col-5 col-tablet-2 col-mobile-12 cms-hidden-tablet"> </div> -->
+        <!-- <div class="col-7 col-tablet-12"> -->
+        <div class="cards-track">
             <div <?php ctc_print_html($this->get_render_attribute_string('grid-wrap')) ?>>
                 <?php
                 $count = 0;
@@ -139,11 +141,12 @@ $this->add_render_attribute('team-desc',[
                     $item_key = $this->get_repeater_setting_key( 'item', 'cms_team', $key );
                     $this->add_render_attribute( $item_key,[
                         'class' => array_filter([
+                            'team-card',
                             'cms-team-item',
                             'cms-hover-stroke-dasharray',
                             'cms-hover-change',
                             'elementor-invisible',
-                            'cms-scroll-sticky-horizontal-item'
+                            // 'cms-scroll-sticky-horizontal-item'
                         ]),
                         'data-settings' => json_encode([
                             'animation'       => 'fadeInUp',
