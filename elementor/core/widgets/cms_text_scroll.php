@@ -55,34 +55,39 @@ class Widget_Text_Scroll extends Widget_Base
             'layout',
             [
                 'label'   => esc_html__('Templates', 'genzia'),
-                'type'    => CSH_Theme_Core::LAYOUT_CONTROL,
+                'type'    => Controls_Manager::VISUAL_CHOICE,
                 'default' => '1',
                 'options' => [
                     '1' => [
-                        'label' => esc_html__('Layout 1', 'genzia'),
+                        'title' => esc_html__('Layout 1', 'genzia'),
                         'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_text_scroll/layout/1.webp'
                     ],
                     '2' => [
-                        'label' => esc_html__('Layout 2', 'genzia'),
+                        'title' => esc_html__('Layout 2', 'genzia'),
                         'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_text_scroll/layout/2.webp'
                     ],
                     '3' => [
-                        'label' => esc_html__('Layout 3', 'genzia'),
+                        'title' => esc_html__('Layout 3', 'genzia'),
                         'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_text_scroll/layout/3.webp'
                     ],
                     '4' => [
-                        'label' => esc_html__('Layout 4', 'genzia'),
+                        'title' => esc_html__('Layout 4', 'genzia'),
                         'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_text_scroll/layout/4.webp'
                     ],
                     '5' => [
-                        'label' => esc_html__('Layout 5', 'genzia'),
+                        'title' => esc_html__('Layout 5', 'genzia'),
                         'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_text_scroll/layout/3.webp'
                     ],
                     '6' => [
-                        'label' => esc_html__('Layout 6', 'genzia'),
+                        'title' => esc_html__('Layout 6', 'genzia'),
                         'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_text_scroll/layout/6.webp'
+                    ],
+                    '-static' => [
+                        'title' => esc_html__('Layout Static', 'genzia'),
+                        'image' => get_template_directory_uri() . '/elementor/templates/widgets/cms_text_scroll/layout/2.webp'
                     ]
-                ]
+                ],
+                'label_block' => true
             ]
         );
         $this->end_controls_section();

@@ -73,7 +73,7 @@ $this->add_render_attribute('gallery-wrap',[
 				'text_color'       => 'white',
 				'btn_color_hover'  => 'accent-regular',	
 				'text_color_hover' => 'white',
-				'class'            => 'mt-25 cms-hover-move-icon-right',
+				'class'            => 'mt-25 cms-hover-move-icon-right cms-hover-change',
 				// Icons
 				'text_icon' => genzia_svgs_icon([
 					'icon'       => 'arrow-right',

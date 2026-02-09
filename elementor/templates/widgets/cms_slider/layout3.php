@@ -292,8 +292,8 @@ $this->add_render_attribute('features',[
                                                 'bg-hover-accent-regular',
                                                 'bg-on-hover-white',
                                                 'text-white',
-                                                'text-hover-menu',
-                                                'text-on-hover-menu',
+                                                'text-hover-accent-regular',
+                                                'text-on-hover-accent-regular',
                                             ])
                                         ]);
                                         // text

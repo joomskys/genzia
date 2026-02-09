@@ -28,8 +28,8 @@ $this->add_render_attribute('wrap', [
 	'style' => [
 		// 	'width:'.$img_width.'px;',
 		// 	'height:'.$img_scale_height.'px;',
-		// 	'--min-w-widescreen:57.25%;',
-		// 	'--min-w:58.75%;',
+		//'--min-w-widescreen:57.25%;',
+		//'--min-w:58.75%;',
 		'--sticky-offset: 31px;'
 	]
 ]);
@@ -41,7 +41,7 @@ genzia_elementor_image_render($settings, [
 	'img_class' => $img_class,
 	// 'before'      => '<div class="d-flex justify-content-end overflow-hidden"><div '.$this->get_render_attribute_string('wrap').'>',
 	// 'after'       => '</div></div>'
-	'before' => '<div class="image-scale-section"><div ' . $this->get_render_attribute_string('wrap') . '><div class="image-scale-container">',
+	'before' => '<div class="image-scale-section"><div ' . $this->get_render_attribute_string('wrap') . '><div class="image-scale-container min-w" style="--min-w-widescreen:57.25%;--min-w:58.75%;">',
 	'after' => '</div></div></div>'
 ]);
 ?>

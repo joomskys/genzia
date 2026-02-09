@@ -26,14 +26,15 @@ $this->add_render_attribute( 'heading_text', [
     'class' => [
         'cms-small cms-nl2br',
         'text-'.$this->get_setting('heading_color','heading-regular'),
-        'text-2xl',
+        'text-3xl',
         'h-100vh',
         'cms-sticky',
         'd-flex align-items-center justify-content-center',
-        'text-center'
+        'text-center',
+        'text-nowrap'
     ],
     'data-parallax' => wp_json_encode([
-        'scale' => 1.5
+        'scale' => 0.5
     ])
 ]);
 ?>

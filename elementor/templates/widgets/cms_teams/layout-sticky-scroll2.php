@@ -114,7 +114,7 @@ $this->add_render_attribute('team-desc',[
     ]
 ]);
 ?>
-<div class="cms-scroll-sticky-horizontal" data-breakpoint='1024'>
+<div class="horizontal-scroll" data-breakpoint='1024'>
     <div <?php ctc_print_html( $this->get_render_attribute_string( 'heading-wrap' ) ); ?>>
         <div class="col-5 col-tablet-4 col-mobile-12">
             <div <?php ctc_print_html( $this->get_render_attribute_string( 'smallheading_text' ) ); ?>><?php
@@ -130,109 +130,107 @@ $this->add_render_attribute('team-desc',[
             ?></h2>
         </div>
     </div>
-    <div <?php ctc_print_html($this->get_render_attribute_string('grid-wrap')) ?>>
-        <?php
-        $count = 0;
-        foreach ($teams as $key => $team) {
-            $count ++;
-            $item_key = $this->get_repeater_setting_key( 'item', 'cms_team', $key );
-            $this->add_render_attribute( $item_key,[
-                'class' => array_filter([
-                    'cms-team-item',
-                    'cms-hover-change',
-                    'elementor-invisible',
-                    'cms-scroll-sticky-horizontal-item'
-                ]),
-                'data-settings' => json_encode([
-                    'animation'       => 'fadeInUp',
-                    'animation_delay' => $key*100
-                ])
-            ]);
-            // link
-            $link_key = $this->get_repeater_setting_key( 'link', 'cms_team', $key );
-            $this->add_render_attribute( $link_key, [
-                'class' => [
-                    'team-name',
-                    'd-block text-center',
-                    'overflow-hidden'
-                ],
-                'href'       => genzia_elementor_link_url_render($this, $team, ['name' => 'link', 'echo' => false, 'suffix' => false]),
-                'aria-label' => $team['name']
-            ]);
-            $link_key2 = $this->get_repeater_setting_key( 'link2', 'cms_team', $key );
-            $this->add_render_attribute( $link_key2, [
-                'class'      => [
-                    'team-name',
-                    'text-'.$title_color,
-                    'text-hover-'.$title_color_hover,
-                    'cms-hover-underline'
-                ],
-                'href'       => genzia_elementor_link_url_render($this, $team, ['name' => 'link', 'echo' => false, 'suffix' => false]),
-                'aria-label' => $team['name']
-            ]);
-            ob_start();
-            ?>
-                <div class="cms-team-socials cms-hover-show move-left d-flex gap-16 cms-transition pb-33"><?php
-                    for ($i = 1; $i <= 4; $i++) {
-                        $social_icon = isset($team["social_icon_{$i}"]) ? $team["social_icon_{$i}"] : null;
-                        $social_link = isset($team["social_link_{$i}"]) ? $team["social_link_{$i}"] : null;
-                        if($social_icon && !empty($social_icon['value']) && $social_link){
-                            if ( ! empty( $social_link['url'] ) ) {
-                                $social_link_key = $this->get_repeater_setting_key( "social_link_{$i}", 'cms_team', $key );
-                                $this->add_link_attributes( $social_link_key, $social_link );
-                                $this->add_render_attribute( $social_link_key, 'class', 'team-social text-white text-hover-white cms-hover-zoomout lh-0' );
-                                ?>
-                                    <a <?php ctc_print_html($this->get_render_attribute_string( $social_link_key )); ?>><?php 
-                                        echo '<span class="screen-reader-text">'.esc_html($team['name']).'</span>';
-                                        genzia_elementor_icon_render( $social_icon, [], [ 
-                                            'aria-hidden' => 'true', 
-                                            'class'       => 'cms-eicon d-inline-block', 
-                                            'icon_size'   => 20 
-                                        ]); 
-                                    ?></a>
-                                <?php
+    <div class="cards-track">
+        <div <?php ctc_print_html($this->get_render_attribute_string('grid-wrap')) ?>>
+            <?php
+            $count = 0;
+            foreach ($teams as $key => $team) {
+                $count ++;
+                $item_key = $this->get_repeater_setting_key( 'item', 'cms_team', $key );
+                $this->add_render_attribute( $item_key,[
+                    'class' => array_filter([
+                        'team-card',
+                        'cms-team-item',
+                        'cms-hover-change',
+                        'cms-scroll-sticky-horizontal-item'
+                    ])
+                ]);
+                // link
+                $link_key = $this->get_repeater_setting_key( 'link', 'cms_team', $key );
+                $this->add_render_attribute( $link_key, [
+                    'class' => [
+                        'team-name',
+                        'd-block text-center',
+                        'overflow-hidden'
+                    ],
+                    'href'       => genzia_elementor_link_url_render($this, $team, ['name' => 'link', 'echo' => false, 'suffix' => false]),
+                    'aria-label' => $team['name']
+                ]);
+                $link_key2 = $this->get_repeater_setting_key( 'link2', 'cms_team', $key );
+                $this->add_render_attribute( $link_key2, [
+                    'class'      => [
+                        'team-name',
+                        'text-'.$title_color,
+                        'text-hover-'.$title_color_hover,
+                        'cms-hover-underline'
+                    ],
+                    'href'       => genzia_elementor_link_url_render($this, $team, ['name' => 'link', 'echo' => false, 'suffix' => false]),
+                    'aria-label' => $team['name']
+                ]);
+                ob_start();
+                ?>
+                    <div class="cms-team-socials cms-hover-show move-left d-flex gap-16 cms-transition pb-33"><?php
+                        for ($i = 1; $i <= 4; $i++) {
+                            $social_icon = isset($team["social_icon_{$i}"]) ? $team["social_icon_{$i}"] : null;
+                            $social_link = isset($team["social_link_{$i}"]) ? $team["social_link_{$i}"] : null;
+                            if($social_icon && !empty($social_icon['value']) && $social_link){
+                                if ( ! empty( $social_link['url'] ) ) {
+                                    $social_link_key = $this->get_repeater_setting_key( "social_link_{$i}", 'cms_team', $key );
+                                    $this->add_link_attributes( $social_link_key, $social_link );
+                                    $this->add_render_attribute( $social_link_key, 'class', 'team-social text-white text-hover-white cms-hover-zoomout lh-0' );
+                                    ?>
+                                        <a <?php ctc_print_html($this->get_render_attribute_string( $social_link_key )); ?>><?php 
+                                            echo '<span class="screen-reader-text">'.esc_html($team['name']).'</span>';
+                                            genzia_elementor_icon_render( $social_icon, [], [ 
+                                                'aria-hidden' => 'true', 
+                                                'class'       => 'cms-eicon d-inline-block', 
+                                                'icon_size'   => 20 
+                                            ]); 
+                                        ?></a>
+                                    <?php
+                                }
                             }
                         }
-                    }
-                ?></div>
-            <?php
-            $socials_html = ob_get_clean();
-            ?>
-            <div <?php ctc_print_html($this->get_render_attribute_string( $item_key )); ?>>
-                <div class="cms-team--item cms-hover-change hover-image-zoom-out cms-transition relative overflow-hidden cms-radius-16 cms-width" style="--width:384px;--width-tablet:auto;">
-                    <?php
-                        $team['image_size'] = $this->get_setting('image_size');
-                        $team['image_custom_dimension'] = $thumbnail_custom_dimension;
-                        genzia_elementor_image_render($team,[
-                            'name'           => 'image',
-                            'image_size_key' => 'image',
-                            'img_class'      => 'cms-radius-16',
-                            'custom_size'    => $thumbnail_custom_dimension,
-                            'max_height'     => true,
-                            'before'         => '',
-                            'after'          => ''
-                        ]);
-                    ?>
-                    <div class="cms-overlay cms-gradient-render cms-gradient-6 cms-hover-gradient-7 d-flex align-items-end">
-                        <div class="cms-team-info p-32 p-lr-smobile-20">
-                            <?php printf('%s',$socials_html); ?>
-                            <div <?php ctc_print_html($this->get_render_attribute_string('team-name')) ?>>
-                                <a <?php ctc_print_html($this->get_render_attribute_string( $link_key2 )); ?>>
-                                    <?php echo esc_html($team['name']); ?>
-                                </a>
+                    ?></div>
+                <?php
+                $socials_html = ob_get_clean();
+                ?>
+                <div <?php ctc_print_html($this->get_render_attribute_string( $item_key )); ?>>
+                    <div class="cms-team--item cms-hover-change hover-image-zoom-out cms-transition relative overflow-hidden cms-radius-16 cms-width" style="--width:384px;--width-tablet:auto;">
+                        <?php
+                            $team['image_size'] = $this->get_setting('image_size');
+                            $team['image_custom_dimension'] = $thumbnail_custom_dimension;
+                            genzia_elementor_image_render($team,[
+                                'name'           => 'image',
+                                'image_size_key' => 'image',
+                                'img_class'      => 'cms-radius-16',
+                                'custom_size'    => $thumbnail_custom_dimension,
+                                'max_height'     => true,
+                                'before'         => '',
+                                'after'          => ''
+                            ]);
+                        ?>
+                        <div class="cms-overlay cms-gradient-render cms-gradient-6 cms-hover-gradient-7 d-flex align-items-end">
+                            <div class="cms-team-info p-32 p-lr-smobile-20">
+                                <?php printf('%s',$socials_html); ?>
+                                <div <?php ctc_print_html($this->get_render_attribute_string('team-name')) ?>>
+                                    <a <?php ctc_print_html($this->get_render_attribute_string( $link_key2 )); ?>>
+                                        <?php echo esc_html($team['name']); ?>
+                                    </a>
+                                </div>
+                                <div <?php ctc_print_html($this->get_render_attribute_string('team-pos')) ?>><?php 
+                                    ctc_print_html($team['position']); 
+                                ?></div>
+                                <div <?php ctc_print_html($this->get_render_attribute_string('team-desc')) ?>><?php 
+                                    ctc_print_html($team['description']); 
+                                ?></div>
                             </div>
-                            <div <?php ctc_print_html($this->get_render_attribute_string('team-pos')) ?>><?php 
-                                ctc_print_html($team['position']); 
-                            ?></div>
-                            <div <?php ctc_print_html($this->get_render_attribute_string('team-desc')) ?>><?php 
-                                ctc_print_html($team['description']); 
-                            ?></div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <?php
-        }
-        ?>
+                <?php
+            }
+            ?>
+        </div>
     </div>
 </div>

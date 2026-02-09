@@ -23,7 +23,7 @@ $this->add_render_attribute('smallheading_text', [
 		'text-' . $this->get_setting('smallheading_color', 'accent-regular'),
 		'empty-none',
 		'm-tb-nsm',
-		'pb-10',
+		'pb-20',
 		'd-flex gap-8 flex-nowrap'
 	],
 	'data-settings' => wp_json_encode([
@@ -72,7 +72,7 @@ $this->add_render_attribute('desc', [
 ?>
 <div <?php ctc_print_html($this->get_render_attribute_string('wrap')); ?>>
 	<div class="col-4 col-mobile-12 max-h d-flex flex-column justify-content-between cms-sticky cms-mobile-relative"
-		style="--max-h:100vh;--max-h-mobile:auto;">
+		style="--max-h:900px;--max-h-mobile:auto;">
 		<div class="w-100 align-self-start">
 			<div <?php ctc_print_html($this->get_render_attribute_string('smallheading_text')); ?>><?php
 				  // Icon

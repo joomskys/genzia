@@ -103,7 +103,7 @@ $nav_content = ob_get_clean();
                 'menu_class' => '',//'menu-inline-underline'
             ]);
             ?>
-            <div class="<?php echo genzia_header_tools_classes(['class' => 'flex-auto d-flex gap-20 justify-content-end align-items-center']); ?>">
+            <div class="<?php echo genzia_header_tools_classes(['class' => 'flex-auto d-flex gap-20 justify-content-end align-items-center relative']); ?>">
                 <?php
                     // Phone
                     genzia_header_phone_render2([
@@ -131,7 +131,10 @@ $nav_content = ob_get_clean();
                         ]
                     ]);
                     // Search icon
-                    genzia_header_search([
+                    genzia_header_search_toggle([
+                        'content_class' => 'w-100'
+                    ]);
+                    /*genzia_header_search([
                         'text'  => '',
                         'class' => 'cms-transition cms-hover-zoomout',
                         'data'  => [
@@ -139,7 +142,7 @@ $nav_content = ob_get_clean();
                             'sticky_class'      => [],
                             'transparent_class' => []
                         ]
-                    ]);
+                    ]);*/
                     // Login
                     genzia_header_login([
                         'class' => 'cms-transition cms-hover-zoomout',
@@ -186,14 +189,8 @@ $nav_content = ob_get_clean();
                         'after'      => '</div>'
                     ]);
                     // Side Nav
-                    genzia_header_side_nav_render([
-                        'class'      => 'cms-transition cms-hover-zoomout',
-                        'icon_class' => '',
-                        'data'       => [
-                            'default_class'     => [],
-                            'sticky_class'      => [],
-                            'transparent_class' => []
-                        ]
+                    genzia_header_side_nav_toggle([
+                        'top' => 40
                     ]);
                     // Button 01
                     genzia_header_button_render([

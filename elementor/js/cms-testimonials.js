@@ -28,7 +28,7 @@
         // Initialize
         function initTestimonials() {
             section = document.querySelector('.cms-ettmn-section');
-            cards = Array.from(document.querySelectorAll('.cms-ttmn-item'));
+            cards = Array.from(document.querySelectorAll('.cms-item-scroll-up'));
 
             if (!section || cards.length === 0) return;
 

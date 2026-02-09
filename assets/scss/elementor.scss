@@ -915,7 +915,7 @@
     padding-top: 20vh;
 }
 
-.cms-ttmn-item {
+.cms-item-scroll-up {
     /* Initial state: below viewport */
     opacity: 0;
     // transform: translateY(100vh);
@@ -925,11 +925,11 @@
 }
 
 /* Testimonial animation states */
-.cms-ttmn-item.visible {
+.cms-item-scroll-up.visible {
     opacity: 1;
 }
 
-.cms-ttmn-item.exiting {
+.cms-item-scroll-up.exiting {
     opacity: 0;
 }
 

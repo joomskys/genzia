@@ -107,7 +107,7 @@ $nav_content = ob_get_clean();
             ]);
             ?>
             <div class="flex-auto d-flex justify-content-end gap-8 align-items-center">
-                <div class="d-flex gap flex-auto cms-header-height bg-backdrop cms-radius-10 p-lr-24 p-lr-xsmobile-10" style="--cms-gap:96px;--cms-gap-mobile-menu:10px;">
+                <div class="d-flex gap flex-auto cms-header-height bg-backdrop cms-radius-10 p-lr-24 p-lr-xsmobile-10 relative" style="--cms-gap:96px;--cms-gap-mobile-menu:10px;">
                     <?php
                         // Navigation 
                         get_template_part('template-parts/header/header-menu', '',[
@@ -146,7 +146,9 @@ $nav_content = ob_get_clean();
                                 ]
                             ]);
                             // Search Toggle
-                            genzia_header_search_toggle();
+                            genzia_header_search_toggle([
+                                'content_class' => 'w-100'
+                            ]);
                             // Login
                             genzia_header_login([
                                 'class' => 'cms-transition',

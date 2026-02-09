@@ -16,7 +16,8 @@ $this->add_render_attribute('wrap', [
 // Items
 $this->add_render_attribute('ttmn-item', [
     'class' => [
-        'cms-ttmn-item'
+        'cms-ttmn-item',
+        'cms-item-scroll-up'
     ]
 ]);
 // Element Heading

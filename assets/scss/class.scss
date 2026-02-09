@@ -29,6 +29,9 @@
 	&.top{
 		top: 0;
 	}
+	&.cms-top{
+		top: var(--cms-top, 0);
+	}
 	&.bottom{
 		bottom: 0;
 	}

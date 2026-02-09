@@ -328,9 +328,9 @@ $this->add_render_attribute('statics',[
                                     genzia_elementor_button_video_render($widget, $cms_slide, [
                                         '_id'           => $cms_slide['_id'],   
                                         'name'          => 'video_link',
-                                        'icon_class'    => 'cms-transition cms-box-48 circle bg-accent-regular text-white m-lr-auto',
+                                        'icon_class'    => 'cms-transition cms-box-48 circle bg-accent-regular text-white m-lr-auto cms-on-hover-scale-13',
                                         'icon_size'     => 10,
-                                        'layout'        => '1 bg-white cms-radius-16 p-8',
+                                        'layout'        => '1 bg-white cms-radius-16 p-8 cms-hover-change',
                                         'class'         => genzia_add_hidden_device_controls_render($settings, 'btn_video_'),
                                         'inner_class'   => 'cms-radius-10 bg-bg-light p-12 text-center',
                                         'content_class' => 'd-flex gap-10 flex-column justify-content-center',

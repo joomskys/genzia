@@ -150,8 +150,8 @@ $this->add_render_attribute('fdesc',[
 									'bg-hover-'.$this->get_setting('dl_btn_icon_bg_hover','white'),
 									'bg-on-hover-'.$this->get_setting('dl_btn_icon_bg_hover','white'),
 									'text-'.$this->get_setting('dl_btn_icon_color','menu'),
-									'text-hover-'.$this->get_setting('dl_btn_icon_color_hover','menu'),
-									'text-on-hover-'.$this->get_setting('dl_btn_icon_color_hover','menu'),
+									'text-hover-'.$this->get_setting('dl_btn_icon_color_hover','accent-regular'),
+									'text-on-hover-'.$this->get_setting('dl_btn_icon_color_hover','accent-regular'),
 								])
 							]);
 							// Text
@@ -180,8 +180,8 @@ $this->add_render_attribute('fdesc',[
 									'bg-hover-'.$this->get_setting('ac_link_icon_bg_hover','white'),
 									'bg-on-hover-'.$this->get_setting('ac_link_icon_bg_hover','white'),
 									'text-'.$this->get_setting('ac_link_icon_color','menu'),
-									'text-hover-'.$this->get_setting('ac_link_icon_color_hover','menu'),
-									'text-on-hover-'.$this->get_setting('ac_link_icon_color_hover','menu'),
+									'text-hover-'.$this->get_setting('ac_link_icon_color_hover','accent-regular'),
+									'text-on-hover-'.$this->get_setting('ac_link_icon_color_hover','accent-regular'),
 								]),
 								'echo' => false
 							]),

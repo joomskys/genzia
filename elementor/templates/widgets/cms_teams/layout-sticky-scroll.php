@@ -144,13 +144,7 @@ $this->add_render_attribute('team-desc',[
                             'team-card',
                             'cms-team-item',
                             'cms-hover-stroke-dasharray',
-                            'cms-hover-change',
-                            'elementor-invisible',
-                            // 'cms-scroll-sticky-horizontal-item'
-                        ]),
-                        'data-settings' => json_encode([
-                            'animation'       => 'fadeInUp',
-                            'animation_delay' => $key*100
+                            'cms-hover-change'
                         ])
                     ]);
                     // link
