@@ -52,9 +52,14 @@
 
             const rect = section.getBoundingClientRect();
             const scrollY = window.scrollY;
+            const viewportHeight = window.innerHeight;
 
-            scrollStart = scrollY + rect.top;
-            scrollEnd = scrollStart + (section.offsetHeight - window.innerHeight);
+            // Start animation when 30% of the cards container is visible
+            // This means we start earlier by offsetting the scroll start
+            const earlyStartOffset = viewportHeight * 0.7; // Start when 30% visible (100% - 70%)
+
+            scrollStart = scrollY + rect.top - earlyStartOffset;
+            scrollEnd = scrollStart + (section.offsetHeight - viewportHeight) + earlyStartOffset;
         }
 
         // Handle scroll

@@ -912,7 +912,17 @@
     position: sticky;
     top: 0;
     height: 100vh;
-    padding-top: 20vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cms-ettmn--scroll-up {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .cms-item-scroll-up {
@@ -948,6 +958,7 @@
 .stacking-accordion-spacer {
     position: relative;
 }
+
 .stacking-accordion-wrapper {
     position: sticky;
     top: 0;
