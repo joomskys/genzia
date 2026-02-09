@@ -53,9 +53,11 @@ $this->add_render_attribute( 'heading_text', [
         $item_key = $this->get_repeater_setting_key('item', 'cms_posts_grid', $key);
         $this->add_render_attribute($item_key, [
             'class' => [
-                'cms-item relative cms-sticky cms-mobile-relative',
+                'tilt-card cms-item relative cms-mobile-relative',
+                // 'cms-item relative cms-sticky cms-mobile-relative',
                 ($count>1)?'mt-80 mt-mobile-40': '',
-                'h-100vh h-mobile-auto d-flex align-items-center'
+                'd-flex align-items-center',
+                // 'h-100vh h-mobile-auto d-flex align-items-center',
             ]
         ]);
         // item taxonomy
@@ -101,7 +103,7 @@ $this->add_render_attribute( 'heading_text', [
         ]);
     ?>
     <div <?php ctc_print_html($this->get_render_attribute_string($item_key)); ?>>
-        <div class="cms--item relative cms-radius-16 overflow-hidden">
+        <div class="tilt-card-inner cms--item relative cms-radius-16 overflow-hidden">
             <?php
                 // Post Image
                 genzia_elementor_post_thumbnail_render($settings, [

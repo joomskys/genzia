@@ -278,7 +278,12 @@ function genzia_scripts()
 		'in_footer' => true,
 		'strategy' => 'defer'
 	]);
-	wp_register_script('cms-horizontal-scroll', get_template_directory_uri() . '/elementor/js/cms-horizontal-scroll.js', ['jquery'], $theme->get('Version'), [
+	wp_register_script('cms-horizontal-scroll', get_template_directory_uri() . '/elementor/js/cms-horizontal-scroll.js', 
+	['jquery'], $theme->get('Version'), [
+		'in_footer' => true,
+		'strategy' => 'defer'
+	]);
+	wp_register_script('cms-tilt-cards', get_template_directory_uri() . '/elementor/js/cms-tilt-cards.js', ['jquery'], $theme->get('Version'), [
 		'in_footer' => true,
 		'strategy' => 'defer'
 	]);
