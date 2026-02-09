@@ -15,14 +15,14 @@
     });
 
     /**
- * Horizontal Scroll - Scroll-based UI Component
- * 
- * Vertical scroll triggers horizontal movement:
- * - Section becomes sticky when reaching viewport top
- * - Cards start positioned to the right (showing first 4)
- * - Scroll moves cards left until last 4 are shown
- * - Fully reversible when scrolling up
- */
+     * Horizontal Scroll - Scroll-based UI Component
+     * 
+     * Vertical scroll triggers horizontal movement:
+     * - Section becomes sticky when reaching viewport top
+     * - Cards start positioned to the right (showing first 4)
+     * - Scroll moves cards left until last 4 are shown
+     * - Fully reversible when scrolling up
+     */
 
     class HorizontalScroll {
         constructor(sectionSelector) {
