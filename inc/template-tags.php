@@ -557,7 +557,7 @@ if(!function_exists('genzia_header_search_toggle')){
         $placeholder               = genzia_get_opt('search_field_placeholder', esc_html__('Search', 'genzia'));
         printf('%s', $search_icon);
 ?>
-    <div id="cms-toggle-search" class="cms-toggle-content cms-toggle-search absolute right cms-transition">
+    <div id="cms-toggle-search" class="cms-toggle-content cms-toggle-search absolute right cms-transition w-100">
         <form method="get" class="<?php echo esc_attr($classes); ?>" action="<?php echo esc_url( home_url( '/' ) ); ?>" style="<?php echo implode(';', $form_style); ?>">
             <input type="text" name="s" class="cms-search-field" placeholder="<?php echo esc_attr($placeholder);?>"/>
             <button type="submit" class="cms-search-plain-btn absolute top-left cms-box-60" data-title="<?php echo esc_attr__('Search','genzia');?>"><?php
@@ -1373,7 +1373,8 @@ if(!function_exists('genzia_header_side_nav_toggle')){
                 'default_class'     => [],
                 'sticky_class'      => [],
                 'transparent_class' => []
-            ]
+            ],
+            'top'                  => 0
         ]);
         $args['data'] = wp_parse_args($args['data'], [
             'default_class'     => [],
@@ -1411,7 +1412,7 @@ if(!function_exists('genzia_header_side_nav_toggle')){
             $content = $cms_post->post_content;
         }
     ?>
-    <div id="cms-side-nav-toggle" class="cms-toggle-content cms-shadow-3 absolute top right bg-white p-40 p-lr-smobile-0 cms-radius-10 cms-transition max-w min-w" style="--max-w:500px;--max-w-smobile:280px;--min-w:500px;--min-w-smobile:280px;">
+    <div id="cms-side-nav-toggle" class="cms-toggle-content cms-shadow-3 absolute cms-top right bg-white p-40 p-lr-smobile-0 cms-radius-10 cms-transition max-w min-w" style="--max-w:500px;--max-w-smobile:280px;--min-w:500px;--min-w-smobile:280px;--cms-top:<?php echo esc_attr($args['top'].'px;'); ?>">
         <?php printf('%s', $content); ?>
         <?php genzia_svgs_icon([
             'icon'      => 'core/close',

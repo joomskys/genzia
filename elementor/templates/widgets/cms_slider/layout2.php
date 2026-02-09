@@ -459,13 +459,13 @@ $this->add_render_attribute('statics',[
                                 //'icon'           => $this->get_setting('video_icon'),
                                 'icon_size'      => 10,
                                 'icon_color'     => $this->get_setting('video_icon_color', 'menu'),
-                                'icon_class'     => ' cms-box- circle bg-white bg-on-hover-accent-regular text-on-hover-white',
+                                'icon_class'     => ' cms-box- circle bg-white bg-on-hover-accent-regular text-on-hover-white cms-on-hover-scale-13',
                                 'icon_dimension' => 36,
                                 // text
                                 'text'        => $cms_slide['video_text'],
                                 'text_class'  => 'text-sm font-700 text-white',
                                 // other
-                                'layout'      => '1',
+                                'layout'      => '1 cms-hover-change',
                                 'class'       => genzia_add_hidden_device_controls_render($settings, 'btn_video_'),
                                 'inner_class' => '',
                                 // content

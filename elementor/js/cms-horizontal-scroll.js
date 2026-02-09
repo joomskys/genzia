@@ -125,7 +125,6 @@
             position: sticky;
             top: 60px;
             width: 100%;
-            background-color: #f5f5f5;
         `;
         }
 

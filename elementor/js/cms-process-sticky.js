@@ -101,8 +101,10 @@
             top: 50%;
             width: 100%;
             height: 70vh;
+            max-height:900px;
             display: flex;
             justify-content: center;
+            align-items:center;
             overflow: visible;
             transform: translateY(-50%);
         `;

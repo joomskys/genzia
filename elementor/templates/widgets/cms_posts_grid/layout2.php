@@ -70,7 +70,7 @@ $this->add_render_attribute('content',[
             'gap_prefix' => 'gutter-'
         ])
     ],
-    'style' => '--gutter-x:32px;--gutter-y:64px;'
+    'style' => '--gutter-x:32px;--gutter-y:32px;'
 ]);
 ?>
 <div <?php ctc_print_html($this->get_render_attribute_string('wrap')); ?>>
