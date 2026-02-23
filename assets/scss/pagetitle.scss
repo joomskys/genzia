@@ -1,7 +1,7 @@
 // Page Title
 //--------------------------------------------------
 /* Post Page Title */
-$ptitle_spacing_top: 138px;
+$ptitle_spacing_top: 122px;
 $ptitle_spacing_top_small: 70px;
 
 $ptitle_spacing_bot: 0;
@@ -67,9 +67,19 @@ $ptitle_spacing_bot_small2: 70px;
 		}
 		// Layout 3
 		&.cms-ptitle-3{
-			padding-top: calc(93px  + var(--cms-wrap-header-height, var(--cms-header-height)));
+			padding-top: calc(73px  + var(--cms-wrap-header-height, var(--cms-header-height)));
 			@media #{$max-tablet}{
-				padding-top: calc(68px  + var(--cms-wrap-header-height, var(--cms-header-height)));
+				padding-top: calc(73px  + var(--cms-wrap-header-height, var(--cms-header-height)));
+			}
+			// For Shop Page
+			.woocommerce-shop &,
+			.woocommerce-page &,
+			body.single-product &{
+				padding-top: calc(50px  + var(--cms-wrap-header-height, var(--cms-header-height)));
+				padding-bottom: 67px;
+				@media #{$max-tablet}{
+					padding-top: calc(50px  + var(--cms-wrap-header-height, var(--cms-header-height)));
+				}
 			}
 		}
 	}

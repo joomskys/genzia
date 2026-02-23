@@ -85,11 +85,52 @@ $this->add_render_attribute('fitem-value', [
 		?></h1>
 		<div <?php ctc_print_html($this->get_render_attribute_string('features')); ?>><?php 
 			foreach ($features as $key => $feature) {
+			//
+			$values = [];
+			// value #1
+			$value1_key = $this->get_repeater_setting_key( 'value1', 'cms_page_title', $key );
+			$this->add_render_attribute( $value1_key, [
+				'class' => [
+					'text-sub-text',
+					'text-hover-accent-regular'
+				]
+			]);
+			$this->add_link_attributes( $value1_key, $feature['fvalue1_url'] );
+			if(!empty($feature['fvalue1'])){
+				$values[] = '<a '.$this->get_render_attribute_string($value1_key).'>'.esc_html($feature['fvalue1']).'</a>';
+			}
+			// value #2
+			$value2_key = $this->get_repeater_setting_key( 'value2', 'cms_page_title', $key );
+			$this->add_render_attribute( $value2_key, [
+				'class' => [
+					'text-sub-text',
+					'text-hover-accent-regular'
+				]
+			]);
+			$this->add_link_attributes( $value2_key, $feature['fvalue2_url'] );
+			if(!empty($feature['fvalue2'])){
+				$values[] = '<a '.$this->get_render_attribute_string($value2_key).'>'.esc_html($feature['fvalue2']).'</a>';
+			}
+			// value #3
+			$value3_key = $this->get_repeater_setting_key( 'value3', 'cms_page_title', $key );
+			$this->add_render_attribute( $value3_key, [
+				'class' => [
+					'text-sub-text',
+					'text-hover-accent-regular'
+				]
+			]);
+			$this->add_link_attributes( $value3_key, $feature['fvalue3_url'] );
+			if(!empty($feature['fvalue3'])){
+				$values[] = '<a '.$this->get_render_attribute_string($value3_key).'>'.esc_html($feature['fvalue3']).'</a>';
+			}
 		?>
 			<div <?php ctc_print_html($this->get_render_attribute_string('fitem')); ?>>
 				<div <?php ctc_print_html($this->get_render_attribute_string('fitem-inner')); ?>>
 					<div <?php ctc_print_html($this->get_render_attribute_string('fitem-title')); ?>><?php echo esc_html($feature['ftitle']); ?></div>
-					<div <?php ctc_print_html($this->get_render_attribute_string('fitem-value')); ?>><?php echo esc_html($feature['fvalue']); ?></div>
+					<div <?php ctc_print_html($this->get_render_attribute_string('fitem-value')); ?>><?php
+						echo esc_html($feature['fvalue']);
+						echo implode(', ', $values);
+					?></div>
 				</div>
 			</div>
 		<?php

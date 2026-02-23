@@ -189,6 +189,10 @@
 		height: 100%;
 		max-height: 100vh;
 	}
+	// fix for window
+	body:not(.e--ua-mac) &{
+		padding-inline-end: calc(#{$mousewheel-width} - 20px);
+	}
 }
 // width
 .w-auto{

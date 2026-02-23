@@ -39,12 +39,14 @@ $this->add_render_attribute( 'heading_text', [
 ]);
 ?>
 <div <?php ctc_print_html($this->get_render_attribute_string('wrap')); ?>>
+    <?php if(!empty($settings['heading_text'])){ ?>
     <h2 <?php ctc_print_html( $this->get_render_attribute_string( 'heading_text' ) ); ?>>
         <span class="cms-gradient-render cms-gradient-4"><?php 
         echo nl2br( $settings['heading_text'] ); 
         ?></span>
     </h2>
     <?php
+    }
         $count = 0;
         // Render HTML
         foreach ($posts as $key => $post){

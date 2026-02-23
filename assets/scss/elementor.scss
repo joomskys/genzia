@@ -905,14 +905,20 @@
     /* Extra height for scroll animation */
     min-height: 200vh;
     position: relative;
+    //margin-bottom: -100vh;
 }
-
+.mt-n100vh{
+    margin-top: -70vh;
+}
+.mt-n70vh{
+    margin-top: -70vh;
+}
 /* Testimonials Sticky container */
 .cms-ettmn-wrapper {
     position: sticky;
     top: 0;
     height: 100vh;
-    overflow: hidden;
+    //overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;

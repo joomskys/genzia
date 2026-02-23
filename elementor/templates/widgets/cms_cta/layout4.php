@@ -74,8 +74,8 @@ $this->add_render_attribute('text', [
 						'text-'.$this->get_setting('link__icon_color','white'),
 						'bg-hover-'.$this->get_setting('link__icon_bg_hover','white'),
 						'bg-on-hover-'.$this->get_setting('link__icon_bg_hover','white'),
-						'text-hover-'.$this->get_setting('link__icon_color_hover','menu'),
-						'text-on-hover-'.$this->get_setting('link__icon_color_hover','menu')
+						'text-hover-'.$this->get_setting('link__icon_color_hover','accent-regular'),
+						'text-on-hover-'.$this->get_setting('link__icon_color_hover','accent-regular')
 					])
 				]),
 				'class'            => [
@@ -86,7 +86,7 @@ $this->add_render_attribute('text', [
 				],
 				'btn_color'        => 'white',
 				'text_color'       => 'menu',
-				'btn_color_hover'  => 'primary-regular',
+				'btn_color_hover'  => 'accent-regular',
 				'text_color_hover' => 'white',
 				'attrs'			   => [
 					'data-settings' => wp_json_encode([

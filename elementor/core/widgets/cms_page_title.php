@@ -233,7 +233,62 @@ class Widget_Page_Title extends Widget_Base
                     'fvalue',
                     [
                         'label'       => esc_html__('Value','genzia'),
-                        'type'        => Controls_Manager::TEXTAREA,
+                        'type'        => Controls_Manager::TEXT,
+                        'label_block' => false
+                    ]
+                );
+                //
+                $features->add_control(
+                    'fvalue1',
+                    [
+                        'label'       => esc_html__('URL Title','genzia'),
+                        'type'        => Controls_Manager::TEXT,
+                        'label_block' => false,
+                        'separator'   => 'before',
+                        'classes'     => 'cms-eseparator'
+                    ]
+                );
+                $features->add_control(
+                    'fvalue1_url',
+                    [
+                        'label'       => esc_html__('URL','genzia'),
+                        'type'        => Controls_Manager::URL,
+                        'label_block' => false
+                    ]
+                );
+                $features->add_control(
+                    'fvalue2',
+                    [
+                        'label'       => esc_html__('URL Title','genzia').' #2',
+                        'type'        => Controls_Manager::TEXT,
+                        'label_block' => false,
+                        'separator'   => 'before',
+                        'classes'     => 'cms-eseparator'
+                    ]
+                );
+                $features->add_control(
+                    'fvalue2_url',
+                    [
+                        'label'       => esc_html__('URL','genzia').' #2',
+                        'type'        => Controls_Manager::URL,
+                        'label_block' => false
+                    ]
+                );
+                $features->add_control(
+                    'fvalue3',
+                    [
+                        'label'       => esc_html__('URL Title','genzia').' #3',
+                        'type'        => Controls_Manager::TEXT,
+                        'label_block' => false,
+                        'separator'   => 'before',
+                        'classes'     => 'cms-eseparator'
+                    ]
+                );
+                $features->add_control(
+                    'fvalue3_url',
+                    [
+                        'label'       => esc_html__('URL','genzia').' #3',
+                        'type'        => Controls_Manager::URL,
                         'label_block' => false
                     ]
                 );

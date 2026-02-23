@@ -32,7 +32,7 @@ $this->add_render_attribute('container',[
 	]
 ]);
 // Content
-$content_width = !empty($settings['content_width']['size']) ? $settings['content_width']['size'] : '100%';
+$content_width = !empty($settings['content_width']['size']) ? $settings['content_width']['size'] : '645';
 $this->add_render_attribute('cms--content',[
 	'class' => [
 		'cms--content',
@@ -41,7 +41,7 @@ $this->add_render_attribute('cms--content',[
 	],
 	'style' => [
 		'--max-w:'.$content_width.'px;',
-		'--pt:calc(137px + var(--cms-wrap-header-height, 0px));',
+		'--pt:calc(120px + var(--cms-wrap-header-height, 0px));',
 		'--pt-tablet:calc(60px + var(--cms-wrap-header-height, 0px));',
 		'--pb:145px;--pb-tablet:65px;'
 	]

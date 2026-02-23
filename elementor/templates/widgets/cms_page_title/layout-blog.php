@@ -34,7 +34,7 @@ $this->add_render_attribute('container',[
 		'container relative z-top',
 		'pb'
 	],
-	'style' => '--pb:154px;--pb-tablet:70px;'
+	'style' => '--pb:156px;--pb-tablet:70px;'
 ]);
 // Title
 $this->add_inline_editing_attributes( 'title', 'none' );
@@ -69,7 +69,8 @@ $this->add_render_attribute('breadcrumb',[
 ]);
 ?>
 <div <?php ctc_print_html($this->get_render_attribute_string('wrap')); ?>>
-	<!-- <div class="cms-overlay"><img src="<?php echo esc_url($background_img); ?>" alt="<?php echo get_bloginfo('name') ?>" title="<?php echo get_bloginfo('name') ?>" fetchpriority="high" loading="eager" decoding="sync" class="img-cover" data-parallax='{"y": 230}'/></div> -->
+	<?php /* ?> <div class="cms-overlay"><img src="<?php echo esc_url($background_img); ?>" alt="<?php echo get_bloginfo('name') ?>" title="<?php echo get_bloginfo('name') ?>" fetchpriority="high" loading="eager" decoding="sync" class="img-cover" data-parallax='{"y": 230}'/></div> 
+	<?php */ ?>
 	<div <?php ctc_print_html($this->get_render_attribute_string('container')); ?>>
 		<h1 <?php ctc_print_html( $this->get_render_attribute_string( 'title' ) ); ?>><?php echo nl2br( $this->get_setting('title', get_the_title()) ); ?></h1>
 		<?php 

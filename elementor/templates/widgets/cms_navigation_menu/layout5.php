@@ -26,10 +26,10 @@ $link_class = implode(' ', array_filter([
 	'text-'.$this->get_setting('link_color', 'white'),
 	'text-hover-'.$this->get_setting('link_color_hover', 'white'),
 	'text-active-'.$this->get_setting('link_color_hover', 'white'),
-	'bg-menu bg-hover-gradient-1 bg-active-gradient-1',
+	'bg-menu bg-hover-accent-regular bg-active-accent-regular',
 	'cms-hover-move-icon-right',
 	'cms-hover-change',
-	'cms-radius-6'
+	'cms-radius-10'
 ]));
 // icon
 $menu_icon = genzia_svgs_icon([
@@ -44,7 +44,8 @@ $menu_icon = genzia_svgs_icon([
 		'bg-hover-'.$this->get_setting('link__icon_bg_hover','white'),
 		'bg-on-hover-'.$this->get_setting('link__icon_bg_hover','white'),
 		'text-hover-'.$this->get_setting('link__icon_color_hover','accent-regular'),
-		'text-on-hover-'.$this->get_setting('link__icon_color_hover','accent-regular')
+		'text-on-hover-'.$this->get_setting('link__icon_color_hover','accent-regular'),
+		'text-active-'.$this->get_setting('link__icon_color_hover','accent-regular')
 	]),
 	'echo'      => false
 ]);

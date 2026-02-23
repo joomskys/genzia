@@ -178,7 +178,7 @@ $this->add_render_attribute('feature-title',[
 	<div <?php ctc_print_html($this->get_render_attribute_string($item_key)); ?>>
 		<div <?php ctc_print_html($this->get_render_attribute_string($item_inner_key)); ?>>
 			<?php // Ribbon ?>
-			<div class="cms-pricing-badge bg-menu text-white text-xs text-center empty-none p-tb p-lr absolute top right mt-10 mr-10 cms-radius-10" style="--p-tb:6px;--p-lr:10px;"><?php 
+			<div class="cms-pricing-badge bg-menu text-white text-xs text-center empty-none p-tb p-lr absolute top right mt-10 mr-10 cms-radius-8" style="--p-tb:6px;--p-lr:10px;"><?php 
 				ctc_print_html($pricing['badge_text']); 
 			?></div>
 			<h6 <?php ctc_print_html($this->get_render_attribute_string($item_pricing_title_key)); ?>><?php ctc_print_html($pricing['heading_text']) ?></h6>

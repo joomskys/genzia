@@ -2,19 +2,19 @@
 /**
  * Template part for displaying default header layout
  */
-$header_classes = 'pt-32 pt-mobile-menu-20';
+$header_classes = 'pt-32 pt-mobile-menu-20 mb-16';
 $default_class = [
     $header_classes,
-    'mb-16',
     'bg-white',
     (genzia_get_opts( 'header_shadow', 'on', 'header_custom') === 'on') ? 'header-shadow' : ''
 ];
-$sticky_class  = array_merge($default_class, [
-    'header-shadow',
-    'bg-white',
+$sticky_class  = [
+    //'header-shadow',
+    //'bg-white',
+    $header_classes,
     'w-100',
     'p-tb-10'
-]);
+];
 $ontop_class   = [
     $header_classes,
     'bg-transparent',
@@ -28,6 +28,8 @@ $data_header_settings =[
 ];
 //
 $header_left_classes = [
+    'cms-header-change',
+    'cms-header-hover cms-transition',
     'flex-auto d-flex gap p-lr-24 p-lr-mobile-menu-20 bg-backdrop cms-radius-10',
     (genzia_get_opts( 'header_transparent', 'on', 'header_custom') === 'on') ? '' : 'bg-white cms-shadow-4'
 ];
@@ -99,6 +101,7 @@ ob_start();
 $nav_content = ob_get_clean();
 //
 $header_tools_classes = [
+    'cms-header-change',
     'flex-auto d-flex gap-20 gap-xsmobile-10 align-items-center bg-backdrop cms-radius-10 p-lr-24 p-lr-xsmobile-10 cms-header-height',
     (genzia_get_opts( 'header_transparent', 'on', 'header_custom') === 'on') ? '' : 'bg-white cms-shadow-4'
 ];
@@ -107,7 +110,11 @@ $header_tools_classes = [
     <?php genzia_header_top(); ?>
     <div id="cms-header" class="<?php echo genzia_header_classes(implode(' ', $default_class )); ?>" data-settings='<?php echo wp_json_encode($data_header_settings); ?>' style="<?php echo implode(';', $header_style); ?>">
         <div class="<?php echo genzia_header_container_classes('d-flex gap-32 gap-mobile-menu-10 justify-content-between align-items-start p-lr-48 p-lr-mobile-menu-20'); ?>">
-            <div class="<?php echo genzia_nice_class($header_left_classes); ?>" style="--cms-gap:80px;">
+            <div class="<?php echo genzia_nice_class($header_left_classes); ?>" style="--cms-gap:80px;" data-classes=<?php echo wp_json_encode([
+                    'default_class'     => [],
+                    'sticky_class'      => ['cms-shadow-4'],
+                    'transparent_class' => []
+                ]); ?>>
                 <?php 
                 // logo
                 get_template_part('template-parts/header/header-branding', '', [
@@ -123,7 +130,11 @@ $header_tools_classes = [
                 ?>
             </div>
             <div class="<?php echo genzia_header_tools_classes(['class' => 'flex-auto d-flex gap-8 justify-content-end align-items-center']); ?>">
-                <div class="<?php echo genzia_nice_class($header_tools_classes); ?>">
+                <div class="<?php echo genzia_nice_class($header_tools_classes); ?>" data-classes=<?php echo wp_json_encode([
+                    'default_class'     => [],
+                    'sticky_class'      => ['cms-shadow-4'],
+                    'transparent_class' => []
+                ]); ?>>
                     <?php
                         // Phone
                         genzia_header_phone_render2([

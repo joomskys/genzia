@@ -520,6 +520,8 @@ if(!function_exists('genzia_header_search_toggle')){
         ]);
         $form_style = [
             '--cms-form-field-height:60px',
+            '--cms-form-field-bg-color:#ffffff',
+            '--cms-form-field-bg-hover-color:#ffffff',
             //'--cms-form-field-radius:0',
             //'--cms-form-field-border-width:0',
             //'--cms-form-field-border:none',
@@ -1931,7 +1933,7 @@ if(!function_exists('genzia_default_copyright_text')){
         if(!empty($text)){
             $default_copyright_text = str_replace(['[[copy]]', '[[year]]'], ['&copy;', date('Y')], $text);
         } else {
-            $default_text = sprintf(esc_html__('&copy;%s %s, All Rights Reserved. With Love by %s ','genzia'), date('Y') , get_bloginfo('name'), '<a class="'.$args['link_color'].' '.$args['link_hover_color'].'" href="'.esc_url('https://7oroofthemes.com/').'" target="_blank" rel="nofollow" aria-label="'.get_bloginfo('name').' - ' .get_bloginfo('description').'">7oroof</a>');
+            $default_text = sprintf(esc_html__('&copy;%s %s, All Rights Reserved. With Love by %s ','genzia'), date('Y') , get_bloginfo('name'), '<a class="'.$args['link_color'].' '.$args['link_hover_color'].'" href="'.esc_url('https://cmssuperheroes.com/').'" target="_blank" rel="nofollow" aria-label="'.get_bloginfo('name').' - ' .get_bloginfo('description').'">CMSSuperheroes</a>');
             //
             $default_copyright_text = str_replace(['[[copy]]', '[[year]]'], ['&copy;', date('Y')], genzia_get_opts('footer_copyright', $default_text, 'footer_custom'));
         }
@@ -2308,6 +2310,25 @@ if(!function_exists('genzia_entry_readmore')){
             ]);
         ?></a>
     </div>
+    <?php
+    }
+}
+if(!function_exists('genzia_entry_readmore_btn')){
+    function genzia_entry_readmore_btn(){
+    ?>
+        <a class="cms-readmore cms-btn btn-menu text-white btn-hover-accent-regular text-hover-white cms-hover-move-icon-right mt-33 cms-hover-change" href="<?php echo esc_url( get_permalink() ); ?>">
+            <?php 
+                // Text
+                echo esc_html__( 'Explore More', 'genzia' );
+            ?>
+            <?php
+            // Icon
+            genzia_svgs_icon([
+                'icon'      => 'arrow-right',
+                'icon_size' => 10,
+                'class'     => 'order-first cms-box-48 cms-radius-6 bg-white text-menu text-on--hover-accent-regular'
+            ]);
+        ?></a>
     <?php
     }
 }
@@ -3128,7 +3149,7 @@ if(!function_exists('genzia_comment_form_args')){
             ),
             $required_text
         );
-        $btn_icon = genzia_svgs_icon(['class' => 'cms-box-48 cms-radius-6 bg-white text-menu order-first', 'icon' => 'arrow-right','icon_size' => 12, 'echo' => false]);
+        $btn_icon = genzia_svgs_icon(['class' => 'cms-box-48 cms-radius-6 bg-white text-menu text-on-hover-accent-regular order-first', 'icon' => 'arrow-right','icon_size' => 12, 'echo' => false]);
         $cms_comment_fields = array(
             'id_form'              => 'commentform',
             'class_container'      => 'comment-respond', 
@@ -3138,7 +3159,7 @@ if(!function_exists('genzia_comment_form_args')){
             'title_reply_to'       => is_singular('product') ? esc_attr__('Leave A Review To','genzia').'%s' : esc_attr__('Leave A Reply To','genzia').'%s',
             'cancel_reply_link'    => is_singular('product') ? esc_attr__('Cancel Review', 'genzia') : esc_attr__( 'Cancel Reply', 'genzia'),
             'id_submit'            => 'submit',
-            'class_submit'         => 'btn-cmt-submit cms-btn btn-menu text-white btn-hover-accent-regular text-hover-white cms-hover-move-icon-right',
+            'class_submit'         => 'btn-cmt-submit cms-btn btn-menu text-white btn-hover-accent-regular text-hover-white cms-hover-move-icon-right cms-hover-change',
             'label_submit'         => is_singular('product') ? esc_attr__('Submit Review','genzia') : esc_attr__('Submit Comment','genzia'),
             'submit_button'        => '<button name="%1$s" type="submit" id="%2$s" class="%3$s" value="%4$s">'.$btn_icon.'%4$s</button>',
             'submit_field'         => '<div class="form-submit pt-25">%1$s %2$s</div>',

@@ -41,7 +41,7 @@ $this->add_render_attribute('cms--content',[
 	],
 	'style' => [
 		'--max-w:'.$content_width.'px;',
-		'--pt:calc(131px + var(--cms-wrap-header-height, 0px));',
+		'--pt:calc(100px + var(--cms-wrap-header-height, 0px));',
 		'--pt-tablet:calc(60px + var(--cms-wrap-header-height, 0px));',
 		'--pb:130px;--pb-tablet:53px;'
 	]

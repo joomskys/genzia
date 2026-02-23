@@ -4,12 +4,20 @@
  *
  * @see https://woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates
- * @version 10.2.0
+ * @version 10.5.1
  */
 
 defined( 'ABSPATH' ) || exit;
 
 global $product;
+
+/*
+ * By default, the add to cart button is disabled to prevent shoppers from interacting with it
+ * while the WooCommerce variation script is still loading. If the default variation script
+ * (wc-add-to-cart-variation) is not enqueued, the button remains enabled to ensure compatibility
+ * with stores that use this template without the script.
+ */
+$is_add_to_cart_button_disabled = wp_script_is( 'wc-add-to-cart-variation', 'enqueued' );
 ?>
 <div class="woocommerce-variation-add-to-cart variations_button">
 	<?php do_action( 'woocommerce_before_add_to_cart_button' ); ?>
@@ -19,8 +27,8 @@ global $product;
 
 	woocommerce_quantity_input(
 		array(
-			'min_value'   => apply_filters( 'woocommerce_quantity_input_min', $product->get_min_purchase_quantity(), $product ),
-			'max_value'   => apply_filters( 'woocommerce_quantity_input_max', $product->get_max_purchase_quantity(), $product ),
+			'min_value'   => $product->get_min_purchase_quantity(),
+			'max_value'   => $product->get_max_purchase_quantity(),
 			'input_value' => isset( $_POST['quantity'] ) ? wc_stock_amount( wp_unslash( $_POST['quantity'] ) ) : $product->get_min_purchase_quantity(), // WPCS: CSRF ok, input var ok.
 		)
 	);
@@ -28,7 +36,7 @@ global $product;
 	do_action( 'woocommerce_after_add_to_cart_quantity' );
 	?>
 
-	<button type="submit" class="single_add_to_cart_button btn btn-accent-regular text-white btn-hover-primary-regular text-hover-white <?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?>"><?php 
+	<button type="submit" class="single_add_to_cart_button btn btn-accent-regular text-white btn-hover-primary-regular text-hover-white <?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?>"<?php echo $is_add_to_cart_button_disabled ? ' disabled' : ''; ?>><?php 
 		// Text
 		echo esc_html( $product->single_add_to_cart_text() );
 		// Icon
@@ -38,7 +46,6 @@ global $product;
 			'class' 	=> 'cms-spin loading show-on-loading'
 		]);
 	?></button>
-
 	<?php do_action( 'woocommerce_after_add_to_cart_button' ); ?>
 
 	<input type="hidden" name="add-to-cart" value="<?php echo absint( $product->get_id() ); ?>" />

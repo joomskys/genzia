@@ -99,15 +99,15 @@
             //  height: 70vh;
             this.wrapper.style.cssText = `
             position: sticky;
-            top: calc(50% - 80px);
+            top: 50%;
             width: 100%;
-            height: 70vh;
+            height: 470px;
             max-height:470px;
             display: flex;
             justify-content: center;
             align-items:center;
             overflow: visible;
-            transform: translateY(calc(-50% - 80px));
+            transform: translateY(-50%);
         `;
 
             // Style the container

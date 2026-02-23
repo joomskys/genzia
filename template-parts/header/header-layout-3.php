@@ -6,9 +6,11 @@ $default_class = [
     'bg-white',
     (genzia_get_opts( 'header_shadow', 'on', 'header_custom') === 'on') ? 'header-shadow' : ''
 ];
-$sticky_class  = array_merge($default_class, [
-    'header-shadow'
-]);
+$sticky_class  = [
+    //'header-shadow'
+    'w-100',
+    'p-tb-10'
+];
 $ontop_class   = [
     'bg-transparent',
     (genzia_get_opts( 'header_shadow', 'on', 'header_custom') === 'on') ? 'header-shadow' : '',
@@ -23,14 +25,17 @@ $data_header_settings =[
 $logo_class = [
     'site-branding',
     'flex-auto',
+    'cms-header-change'
     //genzia_header_has_tools() ? 'justify-content-center' : 'justify-content-end'
 ];
 //
 $nav_class = [
     'site-navigation site-navigation-dropdown',
-    'flex-basic',
+    'flex-auto',
     'd-flex',
-    genzia_header_has_tools() ? 'justify-content-center' : 'justify-content-end'
+    genzia_header_has_tools() ? 'justify-content-center' : 'justify-content-end',
+    'cms-header-change',
+    'cms-header-hover'
 ];
 $header_style = [
     '--cms-menu-outline:transparent',
@@ -88,22 +93,34 @@ $nav_content = ob_get_clean();
 ?>
 <header id="cms-header-wrap" class="<?php echo genzia_header_wrap_classes(); ?>">
     <?php genzia_header_top(); ?>
-    <div id="cms-header" class="<?php echo genzia_header_classes('w-100 p-lr-40 p-lr-mobile-menu-20 '.implode(' ', $default_class )); ?>" data-settings='<?php echo wp_json_encode($data_header_settings); ?>' style="<?php echo implode(';', $header_style); ?>">
+    <div id="cms-header" class="<?php echo genzia_header_classes('w-100 p-tb-22 p-lr-40 p-lr-mobile-menu-20 '.implode(' ', $default_class )); ?>" data-settings='<?php echo wp_json_encode($data_header_settings); ?>' style="<?php echo implode(';', $header_style); ?>">
         <div class="<?php echo genzia_header_container_classes('d-flex gap-10 justify-content-between'); ?>">
             <?php 
             // logo
             get_template_part('template-parts/header/header-branding', '', [
-                'before' => '<div class="'.genzia_nice_class($logo_class).'">',
+                'before' => '<div class="'.genzia_nice_class($logo_class).'" data-classes='.wp_json_encode([
+                    'default_class'     => [],
+                    'sticky_class'      => ['cms-shadow-4','cms-radius-10', 'bg-backdrop', 'p-lr-20'],
+                    'transparent_class' => []
+                ]).'>',
                 'after'  => '</div>',
             ]);
             // Navigation 
             get_template_part('template-parts/header/header-menu', '',[
-                'before'     => '<nav class="'.genzia_nice_class($nav_class).'">', 
+                'before'     => '<nav class="'.genzia_nice_class($nav_class).'" data-classes='.wp_json_encode([
+                    'default_class'     => [],
+                    'sticky_class'      => ['cms-shadow-4','cms-radius-10', 'bg-backdrop', 'p-lr-20'],
+                    'transparent_class' => []
+                ]).'>', 
                 'after'      => $nav_content.'</nav>',
                 'menu_class' => '',//'menu-inline-underline'
             ]);
             ?>
-            <div class="<?php echo genzia_header_tools_classes(['class' => 'flex-auto d-flex gap-20 justify-content-end align-items-center relative']); ?>">
+            <div class="<?php echo genzia_header_tools_classes(['class' => 'flex-auto d-flex gap-20 justify-content-end align-items-center relative cms-header-change']); ?>" data-classes=<?php echo wp_json_encode([
+                    'default_class'     => [],
+                    'sticky_class'      => ['cms-shadow-4','cms-radius-10', 'bg-backdrop', 'p-lr-20'],
+                    'transparent_class' => []
+                ]) ?>>
                 <?php
                     // Phone
                     genzia_header_phone_render2([

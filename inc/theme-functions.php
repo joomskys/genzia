@@ -2328,7 +2328,7 @@ if(!function_exists('genzia_add_post_type')){
             'labels' => [],
         ];
         // Service
-        $service_slug      = genzia_get_opt('service_slug', 'cms-service');
+        $service_slug      = genzia_get_opt('service_slug', 'services');
         $service_name = genzia_get_opt(
             'service_name',
             esc_attr__('CMS Service', 'genzia')
@@ -2530,7 +2530,7 @@ if (!function_exists('genzia_farost_cpt_dashboard_config')) {
         ];
     }
 }
-$theme_upload_by = '7or';
+$theme_upload_by = '';
 switch ($theme_upload_by) {
     case 'farost':
         add_filter('cpt_dashboard_config', 'genzia_farost_cpt_dashboard_config');

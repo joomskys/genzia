@@ -318,3 +318,41 @@ $header_box_shadow: 0px 4px 24px rgba(0, 0, 0, 0.1);
 @import "header_layout2";
 @import "header_layout3";
 @import "header_layout_left";
+
+/**
+ * Custom Header Hover
+ * 
+ * */
+@media screen and (min-width: 1216px) {
+	.cms-header-hover:hover{
+		//background-color: white;
+    	//.header-transparent:not(.header-sticky-show) & {
+    		.cms-primary-menu-dropdown>li{
+    			>a{
+    				//color: var(--cms-menu-regular);
+    			}
+    			&:not(:hover) {
+    				> a{
+	        			opacity: 0.2;
+	        		}
+	        	}
+	        	&:hover{
+	        		>a{
+	        			opacity: 1;
+	        		}
+	        	}
+	        	// Sub menu
+	        	>.sub-menu{
+	        		&:hover > li {
+	        			> a{
+	        				opacity: 0.5;
+	        			}
+	        			&:hover > a{
+	        				opacity: 1;
+	        			}
+	        		}
+	        	}
+	        }
+	    //}
+	}
+}

@@ -43,6 +43,7 @@ function genzia_theme_options_args()
     $api         = include get_template_directory() . '/inc/theme-options/args/api.php';
     $page_404    = include get_template_directory() . '/inc/theme-options/args/404-page.php';
     $popup       = include get_template_directory() . '/inc/theme-options/args/popup.php';
+    $seo         = include get_template_directory() . '/inc/theme-options/args/seo.php';
 
     $args = [
         'general'     => $general,
@@ -58,7 +59,8 @@ function genzia_theme_options_args()
         $args['shop'] =  $shop;
     }
     $args['popup'] = $popup;
-    $args['api'] = $api;
+    $args['seo']   = $seo;
+    $args['api']   = $api;
 
     return $args;
 }

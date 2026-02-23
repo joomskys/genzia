@@ -136,7 +136,8 @@ $this->add_render_attribute('desc', [
 			//'elementor-invisible',
 			'cms-transition',
 			'd-flex align-items-center',
-			'w-100'
+			'w-100',
+			//'mt-80'
 		];
 		$process__item_class = [
 			'cms--process',
@@ -159,6 +160,7 @@ $this->add_render_attribute('desc', [
 			$item_key = $this->get_repeater_setting_key('item_key', 'cms_process', $key);
 			$this->add_render_attribute($item_key, [
 				'class' => $process_item_class,
+				'style' => 'margin-top:'.($count_sticky*80).'px;'
 				// 'class' => array_merge(
 				// 	$process_item_class,
 				// 	[

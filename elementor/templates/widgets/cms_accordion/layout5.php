@@ -112,6 +112,8 @@ $cms_texts = $this->get_setting('cms_texts', []);
 			$count = 0;
 			foreach ($accordions as $key => $value):
 				$count++;
+				$is_active = ( $key + 1 ) == $active_section;
+				$_id      = 'cms-accordion-'.$value['_id'];
 				$ac_title = isset($value['ac_title']) ? $value['ac_title'] : '';
 				$ac_content = isset($value['ac_content']) ? $value['ac_content'] : '';
 				$ac_document_text = isset($value['ac_document_text']) ? $value['ac_document_text'] : '';

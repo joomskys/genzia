@@ -38,6 +38,8 @@ $readmore = ob_get_clean();
 		// Post Excerpt
 		genzia_entry_excerpt(['class' => 'text-line-4 pt-15']);
 		//
+		genzia_entry_readmore_btn();
+		//
 		genzia_entry_link_pages();
 	?></div>
 </article>

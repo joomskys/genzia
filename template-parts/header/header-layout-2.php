@@ -7,12 +7,12 @@ $default_class = [
     'bg-white',
     (genzia_get_opts( 'header_shadow', 'on', 'header_custom') === 'on') ? 'header-shadow' : ''
 ];
-$sticky_class  = array_merge($default_class, [
-    'header-shadow',
-    'bg-white',
+$sticky_class  = [
+    //'header-shadow',
+    //'bg-white',
     'w-100',
     'p-tb-10'
-]);
+];
 $ontop_class   = [
     $header_classes,
     'bg-transparent',
@@ -30,7 +30,8 @@ $logo_class = [
     'flex-auto',
     'p-tb-14 p-lr-20',
     'cms-radius-10',
-    'bg-backdrop'
+    'bg-backdrop',
+    'cms-header-change'
     //genzia_header_has_tools() ? 'justify-content-center' : 'justify-content-end'
 ];
 //
@@ -102,12 +103,20 @@ $nav_content = ob_get_clean();
             <?php 
             // logo
             get_template_part('template-parts/header/header-branding', '', [
-                'before' => '<div class="'.genzia_nice_class($logo_class).'">',
+                'before' => '<div class="'.genzia_nice_class($logo_class).'" data-classes='.wp_json_encode([
+                    'default_class'     => [],
+                    'sticky_class'      => ['cms-shadow-4'],
+                    'transparent_class' => []
+                ]).'>',
                 'after'  => '</div>',
             ]);
             ?>
             <div class="flex-auto d-flex justify-content-end gap-8 align-items-center">
-                <div class="d-flex gap flex-auto cms-header-height bg-backdrop cms-radius-10 p-lr-24 p-lr-xsmobile-10 relative" style="--cms-gap:96px;--cms-gap-mobile-menu:10px;">
+                <div class="d-flex gap flex-auto cms-header-height bg-backdrop cms-radius-10 p-lr-24 p-lr-xsmobile-10 relative cms-header-change cms-header-hover" style="--cms-gap:96px;--cms-gap-mobile-menu:10px;" data-classes=<?php echo wp_json_encode([
+                    'default_class'     => [],
+                    'sticky_class'      => ['cms-shadow-4'],
+                    'transparent_class' => []
+                ]); ?>>
                     <?php
                         // Navigation 
                         get_template_part('template-parts/header/header-menu', '',[

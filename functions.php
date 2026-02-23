@@ -846,7 +846,7 @@ endif;
  *  Enable Upload SVG
  *
  */
-add_filter('upload_genzia_mimes', 'genzia_mime_types');
+add_filter('upload_mimes', 'genzia_mime_types');
 function genzia_mime_types($mimes)
 {
 	$mimes['svg'] = 'image/svg+xml';

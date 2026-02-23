@@ -269,13 +269,13 @@ if(!function_exists('genzia_woocommerce_loop_add_to_cart_link')){
         $add_to_cart_icon = genzia_svgs_icon([
             'icon'      => 'arrow-right',
             'icon_size' => 10,
-            'class'     => 'cms-icon hide-on-loading cms-box-48 cms-radius-6 bg-accent-regular text-white bg-on--hover-white text-on--hover-menu bg-hover-white text-hover-menu',
+            'class'     => 'cms-icon hide-on-loading cms-box-48 cms-radius-6 bg-accent-regular text-white bg-on--hover-white text-on--hover-accent-regular bg-hover-white text-hover-accent-regular',
             'echo'      => false
         ]);
         $add_to_cart_loading_icon = genzia_svgs_icon([
             'icon'      => 'core/spinner',
             'icon_size' => 15,
-            'class'     => 'show-on-loading loading cms-box-48 cms-radius-6 bg-accent-regular text-white bg-on--hover-white text-on--hover-menu bg-hover-white text-hover-menu',
+            'class'     => 'show-on-loading loading cms-box-48 cms-radius-6 bg-accent-regular text-white bg-on--hover-white text-on--hover-accent-regular bg-hover-white text-hover-accent-regular',
             'echo'      => false,
             'before_icon' => '<span class="cms-spin">',
             'after_icon'  => '</span>'
@@ -299,7 +299,7 @@ if(!function_exists('genzia_woocommerce_loop_add_to_cart_link')){
                     'cms-hover-show move-up',
                     'cms-hover-change'
                 ]),
-                'icon_class' => 'cms-box-48 cms-radius-6 bg-accent-regular text-white bg-on--hover-white text-on--hover-menu bg-hover-white text-hover-menu'
+                'icon_class' => 'cms-box-48 cms-radius-6 bg-accent-regular text-white bg-on--hover-white text-on--hover-accent-regular bg-hover-white text-hover-menu'
             ])
         );
     }
@@ -565,7 +565,7 @@ if(!function_exists('genzia_wc_add_to_cart_message_html')){
         $added_text = sprintf( _n( '%s has been added to your cart.', '%s have been added to your cart.', $count, 'genzia' ), wc_format_list_of_items( $titles ) );
 
         // Output success messages.
-        $wp_button_class = 'cms-single-viewcart cms-btn btn-md btn-menu text-white btn-hover-accent-regular text-hover-white order-last cms-hover-move-icon-right';
+        $wp_button_class = 'cms-single-viewcart cms-btn btn-md btn-menu text-white btn-hover-accent-regular text-hover-white order-last cms-hover-move-icon-right cms-hover-change';
         //
         if ( 'yes' === get_option( 'woocommerce_cart_redirect_after_add' ) ) {
             $message   = sprintf( '%s <a href="%s" tabindex="1" class="%s" style="--cms-btn-padding:0 6px 0 24px;">%s%s</a>', 
@@ -573,7 +573,7 @@ if(!function_exists('genzia_wc_add_to_cart_message_html')){
                 esc_url( $return_to ), 
                 esc_attr( $wp_button_class ), 
                 esc_html__( 'Continue shopping', 'genzia' ),
-                genzia_svgs_icon(['icon' => 'arrow-right','icon_size' => 10, 'class' => 'cms-box-38 cms-radius-6 bg-white text-menu', 'echo' => false])
+                genzia_svgs_icon(['icon' => 'arrow-right','icon_size' => 10, 'class' => 'cms-box-38 cms-radius-6 bg-white text-menu text-on-hover-accent-regular', 'echo' => false])
             );
         } else {
             $message = sprintf( '%s <a href="%s" tabindex="1" class="%s" style="--cms-btn-padding:0 6px 0 24px;">%s%s</a>', 
@@ -581,7 +581,7 @@ if(!function_exists('genzia_wc_add_to_cart_message_html')){
                 esc_url( wc_get_cart_url() ), 
                 esc_attr( $wp_button_class ),
                 esc_html__( 'View cart', 'genzia' ), 
-                genzia_svgs_icon(['icon' => 'arrow-right','icon_size' => 10, 'class' => 'cms-box-38 cms-radius-6 bg-white text-menu', 'echo' => false])
+                genzia_svgs_icon(['icon' => 'arrow-right','icon_size' => 10, 'class' => 'cms-box-38 cms-radius-6 bg-white text-menu text-on-hover-accent-regular', 'echo' => false])
             );
         }
         return $message;
@@ -670,7 +670,7 @@ if ( ! function_exists( 'woocommerce_widget_shopping_cart_proceed_to_checkout' )
      */
     function woocommerce_widget_shopping_cart_proceed_to_checkout() {
         //wc_get_checkout_url()
-        echo '<a href="' . esc_url( wc_get_cart_url() ) . '" class="btn-checkout cms-btn btn-menu text-white btn-hover-accent-regular text-hover-white  cms-hover-change w-100 cms-hover-move-icon-right">'.esc_html__( 'Proceed To Checkout', 'genzia' ).genzia_svgs_icon(['icon' => 'arrow-right','icon_size' => 10, 'class' => 'cms-box-48 cms-radius-6 bg-white text-menu', 'echo' => false]).'</a>';
+        echo '<a href="' . esc_url( wc_get_cart_url() ) . '" class="btn-checkout cms-btn btn-menu text-white btn-hover-accent-regular text-hover-white  cms-hover-change w-100 cms-hover-move-icon-right justify-content-between">'.esc_html__( 'Proceed To Checkout', 'genzia' ).genzia_svgs_icon(['icon' => 'arrow-right','icon_size' => 10, 'class' => 'cms-box-48 cms-radius-6 bg-white text-menu text-hover-accent-regular text-on-hover-accent-regular', 'echo' => false]).'</a>';
     }
 }
 /**
